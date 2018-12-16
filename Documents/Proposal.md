@@ -5,70 +5,91 @@ HCM50</p>
 
 # Music Generation in Microsoft Excel
 
-<p style="text-align: center;"><br><br> 10/10/2018 </p>
+<p style="text-align: center;"><br><br> 16/10/2018 </p>
 
 <div style="page-break-after: always;"></div>
 
 ## Introduction
 
-Calculation view is an extension to Microsoft Excel that was announced in a conference on October 2<sup>nd</sup> 2018 by Advait Sarkar from Microsoft Research [1]. Its purpose is to provide an alternative representation of the spreadsheet as a textual program. This project would explore using this new functionality towards end-user music programming in Excel as in Advait's SheetMusic [2].
+Excel and other spreadsheet tools have become universally popular, both in businesses and individually,  for storing, processing and visualising data. However, at present there is not the functionality for the playback of music. Many existing music production packages utilise a grid like format with time passing along the x-axis and parts down the y-axis. Therefore, spreadsheets seem like a promising environment from which to be able to carry out basic music composition in this format and others.
 
-The aim of this project will be to convert an existing musical format such as MusicXML to the Calculation View language so that the music can be represented in a spreadsheet format. By using a Typescript version of Excel run in browser, music playback could then be achieved from within Excel. This could then be extended to have application in live music coding. 
+Many people are already familiar with representing concepts in spreadsheet form. This project will explore the use of Excel for musical expression and, as an extension, as a live music coding environment. 
 
 ##Starting Point
 
-No existing work or further knowledge than part Ia and Ib courses. 
+No existing work or further knowledge than part Ia and Ib courses. I am a seasoned musician and musical theory enthusiast so possess all the required musical theory knowledge. 
 
-I will be building on top of existing Microsoft products but I have not been able to discuss the details of this with my supervisor. For example, I will not need to reimplement Excel.
+I will be building on top of existing spreadsheet service. I would aim to use the Microsoft Office API Office.JS (a public API) and use Add-ins for adding my own functionality, if there is sufficient support for sound. This is publicly available. If not, I would either be able to use a Typescript prototype of Excel from Microsoft or an existing open source JavaScript implementation of a spreadsheet.
 
 ## Substance and Structure
 
-Most important is the implementation of an API for music generation. A version of Excel built in Typescript can be used, therefore, it can be run from the browser. Playback functionality can be built on top of the web audio API. Functionality for note and sequence synthesis functions will be required. Additional library functionality for notes of chords and scales could also be added to help reduce the complexity of the representation within the spreadsheet. 
+By using a TypeScript or JavaScript version of Excel run in browser, playback functionality can be built on top of the web audio API. Functionality for note and sequence synthesis functions will be required. A converter from an existing formal music specification to the spreadsheet representation will be implemented. As an extension, live coding can be implemented. 
 
-As outlined in Advait's SheetMusic paper, a method for representing time will be required. Time should elapse independently of the layout of the spreadsheet. Cells either recalculate on a publish/subscribe basis, or polling basis. This is implemented in Excel's Real Time Data feature. I suspect this will be used to facilitate timing in the spreadsheet API for music generation.
+Firstly I will have to establish what notation is used within the cells. Within a given cell, I would like to be able to play single notes and chords. Beyond this defining scales and arpeggios would be useful for reducing the size of grid required to define pieces. This notation must then be interpreted with a resulting call to the browser audio API. It would also be desirable to be able to define sequences of notes (e.g. baselines, repeating melodies) elsewhere in the grid and then be able to call these elsewhere in the playback. This means that users do not have to copy and paste repeating sections and it would also be clearer where sections are repeated. 
 
-*I have not been able to discuss the details of this with Advait.*
+Next, the representation that is supported between cells must be decided and implemented. The flexibility of spreadsheets allows users to define their own secondary notation in the way that sections within the grid are laid out. As a result, allowing for the relative positions of different sections within a sheet and their orientation to vary would allow familiar Excel users to continue defining their own layout.  The definition and re-use of phrases and parts would allow for fast prototyping of musical ideas. The representation will likely be that of a main playback loop (which can be split into multiple parts), with definitions of sequences outside of this main loop section.
 
-Once playback is facilitated, the next stage of the project would be to build a compiler from the formal musical notation, e.g. MusicXML, to the Calculation View Language. As edits in Calculation View are propagated to the standard grid, understanding the structure of Excel files wouldn't be required. 
+After establishing my notation and supported layouts, the program must compile this representation into audio output for playback. Firstly, defined variables (e.g. Tempo)  and regions where melodic lines are defined out of the main playback loop must be detected. Next, the main playback loop region and its orientation must be detected. After this, the information can be processed and converted into calls to the audio API.
 
-Once within Calculation View, the desired musical notation can then be represented within the spreadsheet from which playback will occur. 
+As an extension, I can add support for live music coding. To facilitate live music coding, it should be possible to change notes within the grid and recompile whilst playback is occurring. Live music coding encourages a loop based approach to music so run/compiled changes to the grid should become apparent in the playback whilst not requiring a restart of the output. The program would be able to parse the data within the spreadsheet and identify different regions and declarations. From this it would convert the main playback loop with the output being calls to the growers audio API. This would include integrating sequences that are defined out of the main loop but called with in. 
+
+Once the representation of musical structure has been decided and the playback of this representation implemented, I will implement a conversion from some form of formal music notation (e.g. MusicXML or MIDI) to the spreadsheet representation. Existing pieces can then be immediately transformed into the spreadsheet layout and played back using the spreadsheet music API.
 
 As an extension I could explore reducing the size of the representation within the spreadsheet. For example, a repeated chord sequence could only be shown once in the spreadsheet whilst keeping an understandable representation. Whilst this is not conventional compression, similar lossless or lossy algorithms for eliminating statistical redundancy can be employed.
 
-
-
 The project has the following main sections:
 
-1. Facilitating Musical playback through a TypeScript version of Excel run from the browser.
-2. Execution and playback of musical definition code in the grid cells
-3. Converting a formal music notation to Calculation View to then populate a spreadsheet for music generation.
-4. Evaluation and the preparation of examples to demonstrate the success of the implementation.
-5. User testing to evaluate the success of extension tasks.
-6. Writing the dissertation.
+1. Facilitating audio playback from a spreadsheet, run from the browser.
+2. Execution and playback of musical definition code in the grid cells.
+3. Playback of multiple cells where time is represented in an axis or the code within cells.
+4. Implementation of a converter from a formal music notation to the spreadsheet representation.
+5. Evaluation and the preparation of examples to demonstrate the success of the implementation.
+6. User testing.
+7. Writing the dissertation.
+
+<div style="page-break-after: always;"></div>
 
 ##Evaluation and Success Criteria
 
-The spreadsheet API for music generation could be evaluated using a list of requirements that the implementation covers. For example, a user is able to play loops, compound operations exist for chords, notes can be played above a minimum playback frequency, etc.
+A successful implementation should allow a user to carry out the following:
 
-Usability testing can be carried out for evaluating the interface and the language provided for generating music.
+* Play individual notes and chords and define their durations.
+* Defining multiple parts.
+* Play loops.
+* Define sequences of notes and chords and be able to call these for playback.
+* Define the tempo of playback.
 
-For evaluating the conversion to Calculation View, unit tests can be run on a series of inputs where outputs are verifiable. For example, we can test based on the calls to browsers sound API. If compression is used, user testing can be used again to establish if the compression version sounds sufficiently similar. Round trip verification could be used for lossless compression. 
+Qualitatively, use of the music playback API can be analysed using a friction analysis approach as in [3] and a cognitive dimensions profile strategy.
+
+With some basic explanation, users can be measured carrying out simple tasks or free composition. From this we can measure Time To Hello World (TTHW) (e.g. playing a note). Friction diagrams generated based on observation of a user working with the program in a usability study can be used to evaluate the productivity of users of the tool.
+
+We define the following desirable features in a cognitive dimensions profile. This defines the desirable structural usability properties of the API and interaction UI.
+
+* Reasonable **closeness of mapping** (use of the grid structure should allow for much higher closeness of mapping than e.g. Sonic Pi where there is only one file of code).
+* High **consistency** for the definition of notes and chords within phrases.
+* Layout within the grid should allow for high **secondary notation**
+* Low **viscosity**
+* High **visibility**
+
+We shall then use a Cognitive Dimensions questionnaire to empirically categorise users' response to it. Evaluation can be carried out by comparing that response to this desired profile.
+
+Quantitatively, the expressiveness of the API can be verified by a translation of a musical corpus from the formal notation to the spreadsheet representation. 
+
+The compression rates achieved in the compression of the representation can also be measured and compared to a benchmark of a naive conversion.
 
 ####Success criteria
 
 For the project to be deemed a success the following must be completed:
 
-* Implementation of an API for music playback within the Microsoft Excel.
-* Conversion of a formal music notation to Calculation View to then populate a spreadsheet for music generation.
-* (Extension) Successful conversion from a musical notation to Calculation View. This can be evaluated by round-trip verification. 
-* (Extension) Lossy compression can be evaluated by user testing. 
-* (Extension) Usability testing can be employed if the ability to use Excel for live music coding is realised.
+* Implementation of an API for music playback within a spreadsheet using the above implementation features.
+* Implementation of a converter from formal music notation to the spreadsheet representation.
+* Usability testing for music generation implementation.
 
 <div style="page-break-after: always;"></div>
 
 ##Plan of work
 
-Below I outline the plan for successful completion of a successful project. I have outline above various extensions, some of which I hope to be able to also implement.
+Below I outline the plan for successful completion of a successful project. I have outlined above various extensions, some of which I hope to be able to also implement. I am aiming to finish coding in good time to allow for user testing, evaluation and the dissertation writeup to be completed in time for me to carry out ample revision before my finals. 
 
 #### Before Proposal Submission: - 19/10/18
 
@@ -80,67 +101,77 @@ Submit the final project proposal before Friday 19th October, 12:00.
 
 Gain familiarity with the system which I will be building on. Work on facilitating basic music playback so that basic notes can be played from cells within the Excel grid.
 
-<u>Milestone: Ability to sound from within Excel grid</u> 
+This time can also be used to consider the layouts of musical representation that will be supported by the API. 
 
-#### Section 2: 9/10/18 - 30/11/18
+<u>Milestone: Ability to create sound from within Excel grid</u> 
+
+#### Section 2: 9/11/18 - 30/11/18
 
 **3 weeks**<br>**Weeks 6-8 of Michaelmas term**
 
-Begin implementation of spreadsheet API for music generation and implement tempo/tick so that timing can be specified. Implement playing of arbitrary notes at arbitrary times.
+Begin implementation of spreadsheet API for music generation and implement tempo/tick so that timing can be specified. Implement playing of arbitrary notes at arbitrary times. At this point sequences can be defined and played back. 
 
-<u>Milestone: Ability to play arbitrary notes at arbitrary timings</u>
+<u>Milestone: Ability to play through arbitrary notes at arbitrary timings</u>
 
-#### Section 3: 10/12/18 - 4/1/19
+#### Section 3: 10/12/18 - 24/1/19
 
-**3.5 weeks**<br>**Out of Cambridge**
+**2 weeks**<br>**Out of Cambridge**
 
-Increase API for music performance so that chords, scales and precision can be specified. It may also be useful to provide other functionality that may aid in compression. However I don't want to sacrifice usability for live coding in the process.
+Make it possible to define note/chord sequences outside of the main playback loop and have this integrated into playback. The sections where these are defined must be found within the spreadsheet and their definitions matches to names in the main playback section. 
 
-<u>Milestone: Completion of spreadsheet API for music generation</u>
+Increase API for music performance so that chords, scales and precision can be specified. 
 
-#### Section 4: 4/1/19 - 17/1/19
+<u>Milestone: Completion of spreadsheet API for music generation (not live coding)</u>
 
-**2 weeks**<br>**In Cambridge before term starts, Lent term week 0**
+#### Section 4: 24/12/18 - 4/1/19
 
-Write progress report. 
+**1.5 weeks**<br>**Out of Cambridge**
 
-Implement a simple conversion from formal music format to Excel grid via Calculation View. 
+History would suggest that the presence of Christmas and the end of the year will require a reasonable amount of my attention. My family will most likely appreciate this period being a little less demanding.
 
-<u>Milestone: Conversion of formal music format to Excel grid via Calculation View</u>
+This period can be used to neaten the existing codebase. It may be useful to reimplement certain functions to help with the following stages for implementing live coding and conversion. This time can also be used to research and consider the method for implementing the conversion and live coding. At this point I should be familiar with the audio API and have more sensible ideas for doing this.
 
-#### Section 5: 17/1/19 - 7/2/19
+This would also be a good time to write a first draft of the introduction section to ensure adequate time can be given to the implementation and evaluation sections at the end of the project. 
+
+<u>Milestone: Introduction section draft</u> 
+
+#### Section 5: 4/1/19 - 17/1/19
+
+**2 weeks**<br>**In Cambridge before term starts including Lent term week 0**
+
+Build converter from formal music format to the spreadsheet representation. Demonstrate success with the conversion of a corpus to the spreadsheet format.
+
+<u>Milestone: Conversion of formal music format to spreadsheet representation</u>
+
+#### Section 6: 17/1/19 - 7/2/19
 
 **2 weeks**<br>**Weeks 1-3 of Lent Term**
 
-Overflow period. As this marks the end of key task of the project it is also a time where I may wish to restructure/neaten certain parts of the code to help with future tasks. Time to research and explore techniques for compression of the musical representation in Excel. Familiarity with the music generation API should help inform decision making at this point. 
-
 Prepare Presentation
+
+This time can be used to catch up if any of the previous milestones have not been adequately reached. Then this time can be used to work on extension tasks.  
 
 <u>Milestone: Submission of Project Report and Presentation</u>
 
 Progress Report Deadline: Fri 1 Feb 2019 (12 noon)<br>Progress Report Presentations: Thu 7, Fri 8, Mon 11 or Tue 12 Feb 2019 (2:00 pm)
 
-#### Section 6: 7/2/19 - 28/2/19
+#### Section 7: 7/2/19 - 28/2/19
 
-**2 weeks**<br>**Weeks 4-6 of Lent Term**
+**2 weeks**<br>**Weeks 4-5 of Lent Term**
 
-(Extension) Implement compression of musical representation in Excel grid. This will be done as part of the conversion to Calculation View process.
-
-Evaluation of conversion to Calculation View.
-
-Prepare examples and methods for evaluation. If human evaluation is required, the examples that are played must be prepared, and the interface and tasks to perform planned.  
+Prepare examples and methods for evaluation. For human evaluation, the interface and tasks to perform must be planned and prepared. 
 
 <u>Milestone: Prepare examples and methods for evaluation</u>
 
-#### Section 7: 28/2/19 - 14/3/19
+#### Section 8: 28/2/19 - 14/3/19
 
-**2 weeks**<br>**Weeks 7-8 of Lent term**
+**3 weeks**<br>**Weeks 6-8 of Lent term**
 
-Run evaluation trials and summarise results of trials. Prepare suitable examples for  evaluation and inclusion in final dissertation write-up.
+Perform write up of results of user testing and analysis. This time can be used to perform small changes for potential improvements that may arise during testing and evaluation.
 
 <u>Milestone: Complete coding and evaluation for dissertation write up</u>
 
-#### Section 8: 14/3/19 - 18/4/19
+#### Section 9: 14/3/19 - 18/4/19
 
 **5 weeks**<br>**Easter vacation**
 
@@ -148,11 +179,11 @@ Full time Dissertation write up. As marks are awarded on the final dissertation 
 
 <u>Milestone: Submit Dissertation First Draft</u>
 
-#### Section 9: 18/4/19 - 9/5/19
+#### Section 10: 18/4/19 - 9/5/19
 
 **3 weeks**<br>**Start of Easter term**
 
-I will have returned to Cambridge by this time and hope to be spending the majority of my time revising for my final exam. This, however, allows time between a draft submission and final deadline to make any final changes. This also leaves time if evaluations have run over. 
+I will have returned to Cambridge by this time and hope to be spending the majority of my time revising for my final exams. This, however, allows time between a draft submission and final deadline to make any final changes.  
 
 <u>Milestone: Submit Final Dissertation</u>
 
@@ -165,7 +196,7 @@ Source Code Deadline (electronic copies): Fri 17 May 2019 (5:00 pm)
 
 **Development Machine** I shall use my personal laptop for most development work for this project. It is an _Apple MacBook Pro_ 13" (2015), 2.9 GHz _Intel_ i5 CPU with 16GB RAM.  I accept full responsibility for this machine and I have made contingency plans to protect myself against hardware and/or software failure. I can use MCS machines to do any lighter, more portable work. These shall certainly be used if my machine become unavailable. 
 
-**Software** Access to version of _Excel_ run in typescript with Calculation View would be required. This can be facilitated by my supervisor (Advait Sarkar, advait@microsoft.com) who works at Microsoft Research. _Git_ will be employed for version control of both implementation source code and documentation. The Dissertation shall be written in _LaTeX_.
+**Software** Access to a suitable spreadsheet tool will be required. This will depend on the audio capabilities of the implementations outlined above. If OfficeJS if unsuccessful, this will be facilitated by my supervisor (Advait Sarkar, advait@microsoft.com) who works at Microsoft Research. _Git_ will be employed for version control of both implementation source code and documentation. The Dissertation shall be written in _LaTeX_.
 
 **Backups** I shall use _Github_ to remotely back up source code and documentation. These can then be pulled to an MCS machine in the case of personal machine failure. I shall periodically pull this repository to the MCS anyway so that a recent snapshot is always stored on the University system.
 
@@ -174,3 +205,5 @@ Source Code Deadline (electronic copies): Fri 17 May 2019 (5:00 pm)
 [1] A. Sarkar, A.D. Gordon, S. Peyton Jones and N. Toronto, "Calculation View: multiple-representation editing in spreadsheets" in _Visual Languages and Human-Centric Computing (VL/HCC), 2018  IEEE Symposium on._ IEEE, Oct 2015 pp. 85-94
 
 [2] A. Sarkar, "Towards spreadsheet tools for end-user music programming", Computer Laboratory University or Cambridge
+
+[3] Macvean. A, Church. L, Daughtry. J, Citro. C, "API Usability at Scale" in *Psychology of Programming Interest Group (PPIG), 2016 - 27th Annual Conference.*<br>Accessed (15/10/2018): <http://www.ppig.org/sites/default/files/2016-PPIG-27th-Macvean.pdf>

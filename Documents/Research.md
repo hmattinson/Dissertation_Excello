@@ -85,5 +85,65 @@ Debate whether tool for composition, musical instrument or programming language.
 
 Application: Custom data signification and musical prototyping.
 
+### Manhattan: End-user programming for music
 
+*Nash, C.*
 
+*In Caramiaux,B. Tahirolu, K., Fiebrink, R. and Tana, A., eds (2014) Proceedings of the International Conference on New Interfaces for Musical Expression*
+
+*London, UK: Goldsmiths, University of London, pp 221-226.*
+
+Combines formulae with a grid (like established spreadsheets) style of musical sequencer. Intermediate between generative/algorithmic music and traditional methods for music editing.
+
+for loops, goto, if-then-else
+
+CDN evaluation with early feedback from artists.
+
+Traditional: static detailed specification
+Recording: capturing a live performance
+Music Programming: define abstract processes, compose dynamically. Increasing abstraction leads to decreased lower-level control. Lose freedom to deviate from algorithms
+
+Dynamic effects e.g. rand
+
+Digital creativity [14]
+End user programming [13]
+CDNs [4]
+
+####Spreadsheets
+
+"possible that more people program with spreadsheets than any other programming environment" [5]
+
+Spreadsheet UI: table (flexible) with formulae added for relationship definitions. Cells: variables, functions: relationships between cells. Spreadsheets allow users to learn incrementally with a low threshold. Closeness of mapping of spreadsheets let users bring knowledge from different domains to spreadsheets to solve problems. 
+
+In spreadsheets in general: rapid editing (low viscosity) -> reduces premature commitment from planning and offsets error proneness. There is a fast feedback cycle
+
+Formulae lower the threshold but still allow for high level as they extend not replace the workflow. 
+
+####Manhattan
+
+Manhattan combines sequencing (direct) and end-user music programming. 
+Tracker: columns = tracks, rows = times
+C#5 01 64 D01 - C#5, voice 1, volume 64, slow diminuendo
+
+Parallelism in music: counter-point, polyrhythms, polytempi.
+Musicians also more familiar with iteration that recursion
+
+Scripting at cell-level.
+
+Can give custom name to co-ordinates *Could CV be used for something similar?*
+
+Manhattan has two modes for different level of visualisation of dependencies. In a strict spreadsheet setting this isn't as feasible. 
+
+Formulae can provide automation but also random variation to help mimic true human performance.
+
+End user programming tools to help make generative music more mainstream. 
+
+Live playback so users can change things mid playback and not have to play again from the start.
+
+Extension: 
+
+* graphical debugging
+* meta-programming
+* self-modifying code
+* function calling and recursion
+* **modularity (custom abstractions or groupings)**
