@@ -19,7 +19,8 @@ In most musical interfaces one axis is time (and the other is normally pitch). I
 Notes are played by defining turtles to navigate the spreadsheet. Turtles are defined as follow
 
 ```
-!turtle(<Starting Cell>, <Instructions>)
-!turtle(E6, r m2 r m2 l m3)
+!turtle(<Starting Cell>, <Instructions>, <Speed>)
+!turtle(E6, r m2 r m2 l m3, 1)
 ```
 The turtle in the above example will start in cell E6 facing North. It will then turn right, move two steps forward, turn right again, move two steps forward, turn left, then move 3 steps forward. This path will be repeated (starting from E6 each time). 
+Speed is default 1. This is currently not very explicit but allows for defining differences as in Steve Reich's Piano Phase.
