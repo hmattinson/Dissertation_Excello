@@ -12,6 +12,8 @@ Open Excel online (example notebook included)
 Add an Add-in
 Add the manifest from this project
 
+This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial?tutorial-step=1
+
 ## Current Usage
 
 A single note can be defined in a cell, this currently only of the form "A4". Options for volume and length will be added later.
