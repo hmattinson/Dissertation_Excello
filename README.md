@@ -16,7 +16,7 @@ This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/e
 
 ## Current Usage
 
-A single note can be defined in a cell, this currently only of the form "A4". Options for volume and length will be added later.
+A single note can be defined in a cell, this currently only of the form "A4". Options for volume and other features will be added later. Notes are sustained by placing "s" in the next cell in the path. A rest is simply an empty cell.
 In most musical interfaces one axis is time (and the other is normally pitch). In this case we wanted to explore the use of both axes as just space - ideomatic to Excel. As a result the user is free to arrange the data as they wish.
 Notes are played by defining turtles to navigate the spreadsheet. Turtles are defined as follow
 
@@ -31,8 +31,6 @@ Speed is default 1. This is currently not very explicit but allows for defining 
 
 * Not just restless loops:
   * Turtles that repeat n times
-  * Rests
-  * Sustained notes
 * Chords
 * Turtles deployed by turtles
 * Definable tempo
@@ -40,10 +38,10 @@ Speed is default 1. This is currently not very explicit but allows for defining 
 * Input sanitisation
 * Different Synths
 * Turtle(A1:A5, ...)
+* Turtle Jumps
+* Easier way of playing a long line (i.e. not counting)
 
 ## Issues
-
-* Stopping doesn't remove previously defined loops/sequences when playing a new sheet or having changed cell contents
 
 ## Log
 
@@ -67,8 +65,8 @@ Speed is default 1. This is currently not very explicit but allows for defining 
 | 6/12            | Playback (Piano Phases)                                      | 5    | Can now define turtles in the grid. Upon running they will be detected, their note sequences worked out and these loops triggered via tones. Still behaves oddly if there are gaps. Colouring also implemented | Use tones examples to find more stable methods for playback. A method that also allows for it not necessarily being a loop would be good too. Can then have turtles triggering turtles without madness |
 | 7/12            | Meeting with Advait                                          | 1    | Regarding chords, defining each note separately has a cleanness. You can then just define multiple turtles. If the system could add in the notes for chords for you that would be helpful and give the best of both worlds. Could then also do !turtle(A1:A6, path, speed)</br>Keep subdividing of cells rare but possible (e.g. if there is one fill) </br>Ishall give a talk to Excel team - existing, objectives, design decision, implementation. Use demos.</br> Good to keep Excel things rather than making my own alternatives. E.g for chord completion have it fill in downwards and let user transpose rather than adding extra complexity to chord methods.</br>Being able to track the turtles would be useful. | Convert to VS code, add to github, and get working outside of Scriptlab. Then share to Advait.</br> Things to implement over the holiday: Chord system, input checks (sanitation),  turtle tracking, stopping the playback, longer notes, rests |
 | 16/12           | Make the conversions to proper development and share with Advait. | 5    | Lots of time wrestling with dependencies and web stuff for the add-in (this is all quite unfamiliar). Got this working so code is now edited in VS code, run on localhost and then manifest added to Excel online and run there. Also spent a lot of time setting up Windows virtual machine as we thought that maybe manifest based running could only be done in Edge. Turns out Chrome is fine, but the hint about requiring it running locally isn't shown in chrome >:( | Next step, more stable playback method. Then I can start making the cool extras! |
-| 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. | 4    | Rests are now handled as they should be by loops</br>Highlighting refreshes upon running of the sheet</br>Familiarised myself with the Tone transport system and have a better idea of how I will reimplement playing/turtles. | Reimplement general turtle playback to be more flexible.     |
+| 21/12           | Reimplement turtle playback then start on other features     | 3.5  | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of loops with rests and sustained notes now supported</br> |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |

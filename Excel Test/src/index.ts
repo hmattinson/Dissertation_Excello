@@ -3,8 +3,9 @@ import * as Tone from 'tone'
 
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
+$("#test").click(() => tryCatch(test));
 
-Tone.Transport.bpm.value = 120;
+Tone.Transport.bpm.value = 160;
 
 /**
  * Run when play button pressed. Starts playback of music
@@ -24,10 +25,10 @@ async function run() {
 
         highlightSheet(sheet);
 
-        Tone.Transport.start("+0.1");
-
         runTurtles(sheet.values);
         console.log(`The range values "${selectedRange.values}".`);
+
+        Tone.Transport.start("+0.1");
     });
 }
 
@@ -37,8 +38,41 @@ async function run() {
 async function stop() {
     await Excel.run(async (context) => {
         Tone.Transport.stop();
-        Tone.Transport.unsyncSignal();
-        Tone.Transport.clear();
+        Tone.context.close();
+        Tone.context = new AudioContext();
+    });
+}
+
+// Won't be in final version but useful for development
+async function test() {
+    await Excel.run(async (context) => {
+        Tone.Transport.start("+0.1");
+
+        var piano = new Tone.PolySynth(4, Tone.Synth, {
+			"volume" : -8,
+			"oscillator" : {
+				"partials" : [1, 2, 1],
+			},
+			"portamento" : 0.05
+        }).toMaster()
+		// var pianoPart = new Tone.Part(function(time, note){
+        //     console.log(note[1])
+		// 	piano.triggerAttackRelease(note[0], note[1], time);
+		// }, [["0:0", ['C4', "0:1:0"]], ["0:1", ['D4', "0:1:0"]], ["0:2", ['E4', "0:2:0"]], ["0:4", ['F4', "0:1:0"]], ["0:5", ['G4', "0:1:0"]]]).start();
+        
+        var testPath: string[] = ["A3","s","B3",null,"C4"];
+        var noteTimes = createNoteTimes(testPath);
+        var testNoteLengths: [string,[string,string]][] = noteTimes[0];
+        playSequence(testPath);
+
+        // var pianoPart = new Tone.Part(function(time, note){
+        //     console.log(note[1])
+		// 	piano.triggerAttackRelease(note[0], note[1], time);
+		// }, testNoteLengths).start();
+
+        // pianoPart.loop = true;
+		// pianoPart.loopEnd = noteTimes[1];
+        // pianoPart.humanize = false;
     });
 }
 
@@ -71,10 +105,8 @@ function highlightSheet(sheet: Excel.Range): void {
     var rows = sheetVals.length;
     var cols = sheetVals[0].length;
 
-    var row, col;
-
-    for (row = 0; row < rows; row++){
-        for (col = 0; col < cols; col++){
+    for (var row = 0; row < rows; row++){
+        for (var col = 0; col < cols; col++){
             var value = sheetVals[row][col]
                 // Highlight notes red
                 if (isNote(value)) {
@@ -93,16 +125,87 @@ function highlightSheet(sheet: Excel.Range): void {
 }
 
 // May not be needed but if it's required to define timings more precisely for a sequence
-function makeSeqWithTimes(values: string[]): [string, number][]{
+function createNoteTimes(values: string[]): [[string, [string, string]][],string] {
     var len = values.length;
-    var i: number = 0;
-    var seq = new Array(len);
-
-    for (i = 0; i <= len; i++) {
-        seq[i] = ["0:" + i,values[i]];
+    // find how many notes are defined
+    var notesCount = 0;
+    for(let value of values){
+        if(isNote(value)){
+            notesCount++;
+        }
     }
+    var noteSequence: [string, [string, string]][] = new Array(notesCount);
 
-    return seq;
+    var beatCount = 0; // how many cells through
+    var noteCount = 0; // how many notes through
+    var noteLength = 0; // for keeping track of note sustain
+    var inRest = true // if the current value in the trace is a rest (else we're in a note)
+    var currentStart: string; // start time of note currently in
+    var currentNote: string; // note currently being played
+
+    for (let value of values) {
+        if(isNote(value)){
+            if(inRest){
+                // Rest -> Note
+                // start new note
+                currentStart = "0:" + beatCount + ":0";
+                currentNote = value;
+                noteLength = 1;
+                inRest = false;
+            }
+            else{
+                // Note -> Note
+                // end current note
+                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]]
+                // start new note
+                currentStart = "0:" + beatCount + ":0";
+                currentNote = value;
+                noteLength = 1;
+            }
+        }
+        else if(value == null){ //rest
+            if(!inRest){
+                // Note -> Rest
+                // end current note
+                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]];
+                inRest = true;
+            }
+        }
+        else if(value == 's'){
+            // x -> x
+            noteLength++;
+        }
+        beatCount++
+    }
+    // add note if we finished in a note
+    if(!inRest){
+        noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]];
+    }
+    return [noteSequence, "0:" + beatCount + ":0"];
+}
+
+function playSequence(values: string[], speedFactor: number = 1): void {
+    var [noteTimes, turtleLength]: [[string, [string, string]][],string] = createNoteTimes(values);
+    console.log(noteTimes);
+    console.log(turtleLength);
+    
+    var piano = new Tone.PolySynth(4, Tone.Synth, {
+        "volume" : -8,
+        "oscillator" : {
+            "partials" : [1, 2, 1],
+        },
+        "portamento" : 0.05
+    }).toMaster();
+
+    var pianoPart = new Tone.Part(function(time, note){
+        piano.triggerAttackRelease(note[0], note[1], time);
+    }, noteTimes).start();
+
+    pianoPart.loop = true;
+    pianoPart.loopEnd = turtleLength;
+    pianoPart.humanize = false;
+    pianoPart.playbackRate = speedFactor;
+    // TODO: loop end (and later start)
 }
 
 /**
@@ -189,8 +292,8 @@ function dirChange(current: string, move: string): string {
                 case 'e': return 'n';
                 case 's': return 'e';
                 case 'w': return 's';
+            }
         }
-    }
     }    
 }
 
@@ -262,7 +365,7 @@ function turtle(instructions: string, sheetVals: any[][]): void {
     var speedFactor: number = +instructionsArray[2].replace(/\s/g, "");
     
     var notes: string[] = getTurtleSequence(start, moves, sheetVals);
-    loopSequence(notes, speedFactor);
+    playSequence(notes, speedFactor);
 }
 
 /**
