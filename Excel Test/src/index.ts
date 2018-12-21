@@ -5,8 +5,6 @@ $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
 $("#test").click(() => tryCatch(test));
 
-Tone.Transport.bpm.value = 160;
-
 /**
  * Run when play button pressed. Starts playback of music
  */
@@ -25,6 +23,9 @@ async function run() {
 
         highlightSheet(sheet);
 
+        Tone.context = new AudioContext();
+        Tone.Transport.bpm.value = getBPM(sheet.values);
+
         runTurtles(sheet.values);
         console.log(`The range values "${selectedRange.values}".`);
 
@@ -39,7 +40,6 @@ async function stop() {
     await Excel.run(async (context) => {
         Tone.Transport.stop();
         Tone.context.close();
-        Tone.context = new AudioContext();
     });
 }
 
@@ -124,7 +124,16 @@ function highlightSheet(sheet: Excel.Range): void {
     }
 }
 
-// May not be needed but if it's required to define timings more precisely for a sequence
+function getBPM(sheetVAls: any[][]): number {
+    return 160;
+}
+
+/**
+ * Takes a list of cell values and creates a list of time and note pairs for Tone Part playback
+ * @param values List of notes as strings e.g. ['A4','A5']
+ * @param speedFactor Multipication factor for playback speed
+ * @return If val is a definition of a note
+ */
 function createNoteTimes(values: string[]): [[string, [string, string]][],string] {
     var len = values.length;
     // find how many notes are defined
@@ -184,6 +193,11 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],string
     return [noteSequence, "0:" + beatCount + ":0"];
 }
 
+/**
+ * Takes a list of Cell Values and plays a Tone sequence
+ * @param values List of notes as strings e.g. ['A4','A5']
+ * @param speedFactor Multipication factor for playback speed
+ */
 function playSequence(values: string[], speedFactor: number = 1): void {
     var [noteTimes, turtleLength]: [[string, [string, string]][],string] = createNoteTimes(values);
     console.log(noteTimes);
@@ -205,7 +219,6 @@ function playSequence(values: string[], speedFactor: number = 1): void {
     pianoPart.loopEnd = turtleLength;
     pianoPart.humanize = false;
     pianoPart.playbackRate = speedFactor;
-    // TODO: loop end (and later start)
 }
 
 /**
