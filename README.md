@@ -40,6 +40,7 @@ Speed is default 1. This is currently not very explicit but allows for defining 
 * Turtle(A1:A5, ...)
 * Turtle Jumps
 * Easier way of playing a long line (i.e. not counting)
+* Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
 
 ## Issues
 

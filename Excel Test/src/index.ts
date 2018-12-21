@@ -47,32 +47,11 @@ async function stop() {
 async function test() {
     await Excel.run(async (context) => {
         Tone.Transport.start("+0.1");
-
-        var piano = new Tone.PolySynth(4, Tone.Synth, {
-			"volume" : -8,
-			"oscillator" : {
-				"partials" : [1, 2, 1],
-			},
-			"portamento" : 0.05
-        }).toMaster()
-		// var pianoPart = new Tone.Part(function(time, note){
-        //     console.log(note[1])
-		// 	piano.triggerAttackRelease(note[0], note[1], time);
-		// }, [["0:0", ['C4', "0:1:0"]], ["0:1", ['D4', "0:1:0"]], ["0:2", ['E4', "0:2:0"]], ["0:4", ['F4', "0:1:0"]], ["0:5", ['G4', "0:1:0"]]]).start();
-        
+		
         var testPath: string[] = ["A3","s","B3",null,"C4"];
         var noteTimes = createNoteTimes(testPath);
         var testNoteLengths: [string,[string,string]][] = noteTimes[0];
         playSequence(testPath);
-
-        // var pianoPart = new Tone.Part(function(time, note){
-        //     console.log(note[1])
-		// 	piano.triggerAttackRelease(note[0], note[1], time);
-		// }, testNoteLengths).start();
-
-        // pianoPart.loop = true;
-		// pianoPart.loopEnd = noteTimes[1];
-        // pianoPart.humanize = false;
     });
 }
 
@@ -134,7 +113,7 @@ function getBPM(sheetVAls: any[][]): number {
  * @param speedFactor Multipication factor for playback speed
  * @return If val is a definition of a note
  */
-function createNoteTimes(values: string[]): [[string, [string, string]][],string] {
+function createNoteTimes(values: string[]): [[string, [string, string]][],number] {
     var len = values.length;
     // find how many notes are defined
     var notesCount = 0;
@@ -190,7 +169,7 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],string
     if(!inRest){
         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]];
     }
-    return [noteSequence, "0:" + beatCount + ":0"];
+    return [noteSequence, beatCount];
 }
 
 /**
@@ -198,10 +177,11 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],string
  * @param values List of notes as strings e.g. ['A4','A5']
  * @param speedFactor Multipication factor for playback speed
  */
-function playSequence(values: string[], speedFactor: number = 1): void {
-    var [noteTimes, turtleLength]: [[string, [string, string]][],string] = createNoteTimes(values);
+function playSequence(values: string[], speedFactor: number =1, repeats: number =0): void {
+    var [noteTimes, beatsLength]: [[string, [string, string]][],number] = createNoteTimes(values);
     console.log(noteTimes);
-    console.log(turtleLength);
+    var beatsLengthTransport: string = "0:" + beatsLength + ":0";
+    console.log(beatsLength);
     
     var piano = new Tone.PolySynth(4, Tone.Synth, {
         "volume" : -8,
@@ -215,33 +195,14 @@ function playSequence(values: string[], speedFactor: number = 1): void {
         piano.triggerAttackRelease(note[0], note[1], time);
     }, noteTimes).start();
 
+    if (repeats>0){
+        pianoPart = pianoPart.stop("0:" + (repeats*beatsLength) + ":0");
+    }
+
     pianoPart.loop = true;
-    pianoPart.loopEnd = turtleLength;
+    pianoPart.loopEnd = beatsLengthTransport;
     pianoPart.humanize = false;
     pianoPart.playbackRate = speedFactor;
-}
-
-/**
- * Takes a list of notes and plays them via Tone
- * @param values List of notes as strings e.g. ['A4','A5']
- * @param speedFactor Multipication factor for playback speed
- * @return If val is a definition of a note
- */
-function loopSequence(values: string[], speedFactor: number = 1): void {
-    console.log(values);
-    var synth = new Tone.PolySynth(4, Tone.Synth, {
-        "volume" : -8,
-        "oscillator" : {
-            "partials" : [1, 2, 1],
-        },
-        "portamento" : 0.05
-    }).toMaster();
-
-    var seq = new Tone.Sequence(function (time, note) {
-        synth.triggerAttackRelease(note, "8n", time);
-    }, values, "8n").start();
-
-    seq.playbackRate = speedFactor;
 }
 
 /**
@@ -341,14 +302,12 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
     var pos: [number, number] = [startCoords[1],startCoords[0]];
 
     for (let entry of moves) {
-        console.log(entry);
         if (isDirChange(entry)) {
             dir = dirChange(dir, entry);
         }
         else {
             var steps = entry.substring(1);
             var steps_int = +steps;
-            console.log(steps_int);
             var i
             for (i = 0; i < steps_int; i++) {
                 pos = move(pos, dir);
@@ -361,7 +320,6 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
         }
 
     }
-    // console.log(notes)
     return notes;
 }
 
@@ -376,9 +334,13 @@ function turtle(instructions: string, sheetVals: any[][]): void {
     var start: string = instructionsArray[0];
     var moves: string[] = instructionsArray[1].split(" ");
     var speedFactor: number = +instructionsArray[2].replace(/\s/g, "");
+    var repeats: number = 0;
+    if (instructionsArray.length > 3){
+        repeats = +instructionsArray[3].replace(/\s/g, "");
+    }
     
     var notes: string[] = getTurtleSequence(start, moves, sheetVals);
-    playSequence(notes, speedFactor);
+    playSequence(notes, speedFactor, repeats);
 }
 
 /**
