@@ -38,7 +38,6 @@ async function run() {
  */
 async function stop() {
     await Excel.run(async (context) => {
-        Tone.Transport.stop();
         Tone.context.close();
     });
 }
@@ -46,12 +45,24 @@ async function stop() {
 // Won't be in final version but useful for development
 async function test() {
     await Excel.run(async (context) => {
-        Tone.Transport.start("+0.1");
-		
-        var testPath: string[] = ["A3","s","B3",null,"C4"];
-        var noteTimes = createNoteTimes(testPath);
-        var testNoteLengths: [string,[string,string]][] = noteTimes[0];
-        playSequence(testPath);
+        // var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
+        // var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
+        // const sheet: Excel.Worksheet = context.workbook.worksheets.getItem(sheetChoice);
+        // const definedRange = sheet.getRange('B2:C5');
+        // definedRange.load('values');
+        // await context.sync();
+        // console.log([].concat.apply([], definedRange.values));
+
+        var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
+        var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
+        const sheet: Excel.Range = context.workbook.worksheets.getItem(sheetChoice).getUsedRange();
+        sheet.load('values');
+
+        await context.sync();
+
+        var sheetValues = sheet.values;
+
+        console.log(sheetValues.slice(1,3));
     });
 }
 
@@ -73,6 +84,16 @@ function isNote(val: string): boolean {
 function isTurtle(val: string): boolean {
     var re = new RegExp('^(!turtle\().*(\))$');
     return re.test(val);
+}
+
+/**
+ * If a string is an Excel cell address e.g. "AA14"
+ * @param val
+ * @return if val is an Excel cell address
+ */
+function isCell(val: string): boolean {
+    var re = new RegExp('^ *[a-zA-Z]+[0-9]+ *$')
+    return re.test(val)
 }
 
 /**
@@ -103,7 +124,12 @@ function highlightSheet(sheet: Excel.Range): void {
     }
 }
 
-function getBPM(sheetVAls: any[][]): number {
+/**
+ * INCOMPLETE, find bpm as defined in spreadsheet
+ * @param sheetVals the values in the used spreadsheet range
+ * @return the beats per minute
+ */
+function getBPM(sheetVals: any[][]): number {
     return 160;
 }
 
@@ -179,9 +205,7 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],number
  */
 function playSequence(values: string[], speedFactor: number =1, repeats: number =0): void {
     var [noteTimes, beatsLength]: [[string, [string, string]][],number] = createNoteTimes(values);
-    console.log(noteTimes);
     var beatsLengthTransport: string = "0:" + beatsLength + ":0";
-    console.log(beatsLength);
     
     var piano = new Tone.PolySynth(4, Tone.Synth, {
         "volume" : -8,
@@ -228,6 +252,31 @@ function lettersToNumber(letters: string): number {
 function getCellCoords(battleship: string): [number, number] {
     var x = battleship.match(/[a-zA-Z]+|[0-9]+/g);
     return [lettersToNumber(x[0]) - 1, +x[1] - 1];
+}
+
+/**
+ * INCOMPLETE, takes a start and end cell and gives addresses of cells between (currently only does a column)
+ * @param range e.g. B1:B10
+ * @return list of addresses in range (inclusive)
+ */
+function expandRange(range: string): string[] {
+    var [start, end] = range.split(":");
+    var startCoords = getCellCoords(start);
+    var endCoords = getCellCoords(end);
+    var colChange = endCoords[0] - startCoords[0];
+    var rowChange = endCoords[1] - startCoords[1];
+    var startSplit = start.match(/[a-z]+|[^a-z]+/gi);
+    var endSplit = end.match(/[a-z]+|[^a-z]+/gi);
+    console.log(startSplit);
+    console.log(endSplit);
+    if (rowChange!=0) {
+        var col: string = startSplit[0];
+        var cells: string[] = []
+        for (var i = Math.min(+startSplit[1], +endSplit[1]); i <= Math.max(+startSplit[1], +endSplit[1]); i++) {
+            cells.push(col + i);
+        }
+    }
+    return cells;
 }
 
 /**
@@ -331,16 +380,49 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
 function turtle(instructions: string, sheetVals: any[][]): void {
 
     var instructionsArray: string[] = instructions.split(',');
-    var start: string = instructionsArray[0];
-    var moves: string[] = instructionsArray[1].split(" ");
-    var speedFactor: number = +instructionsArray[2].replace(/\s/g, "");
-    var repeats: number = 0;
-    if (instructionsArray.length > 3){
-        repeats = +instructionsArray[3].replace(/\s/g, "");
+
+    if (isCell(instructionsArray[0])) {
+        var notes: string[];
+        if (isCell(instructionsArray[1])){
+            // TODO: Better regex
+            var rangeStart = getCellCoords(instructionsArray[0]);
+            var rangeEnd = getCellCoords(instructionsArray[1]);
+            notes = [].concat.apply([], sheetVals.slice(rangeStart[1], rangeEnd[1]+1).map(function(arr) { 
+                return arr.slice(rangeStart[0], rangeEnd[0]+1); 
+            }));
+        }
+        else{
+            var start: string = instructionsArray[0];
+            var moves: string[] = instructionsArray[1].split(" ");
+            notes = getTurtleSequence(start, moves, sheetVals);
+        }
+        var speedFactor: number = 1;
+        var repeats: number = 0;
+        if (instructionsArray.length > 2){
+            speedFactor = +instructionsArray[2].replace(/\s/g, "");
+            if (instructionsArray.length > 3){
+                repeats = +instructionsArray[3].replace(/\s/g, "");
+            }
+        }
+        playSequence(notes, speedFactor, repeats);
+    }
+    else {
+        var turtlesStarts = expandRange(instructionsArray[0].replace(/\s/g, "")); // list of starting notes
+        console.log(turtlesStarts);
+        var moves: string[] = instructionsArray[1].trim().split(" ");
+        if (instructionsArray.length > 2){
+            speedFactor = +instructionsArray[2].replace(/\s/g, "");
+            if (instructionsArray.length > 3){
+                repeats = +instructionsArray[3].replace(/\s/g, "");
+            }
+        }
+        for (let turtleStart of turtlesStarts){
+            console.log(turtleStart, moves, speedFactor, repeats);
+            playSequence(getTurtleSequence(turtleStart, moves, sheetVals), speedFactor, repeats);
+        }
     }
     
-    var notes: string[] = getTurtleSequence(start, moves, sheetVals);
-    playSequence(notes, speedFactor, repeats);
+    
 }
 
 /**

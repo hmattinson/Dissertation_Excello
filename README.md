@@ -25,12 +25,12 @@ Notes are played by defining turtles to navigate the spreadsheet. Turtles are de
 !turtle(E6, r m2 r m2 l m3, 1)
 ```
 The turtle in the above example will start in cell E6 facing North. It will then turn right, move two steps forward, turn right again, move two steps forward, turn left, then move 3 steps forward. This path will be repeated (starting from E6 each time). 
-Speed is default 1. This is currently not very explicit but allows for defining differences as in Steve Reich's Piano Phase.
+Speed is default 1. This is currently not very explicit but allows for defining differences, for example as in Steve Reich's Piano Phase.
+
+Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=BtarK1
 
 ## Features to add
 
-* Not just restless loops:
-  * Turtles that repeat n times
 * Chords
 * Turtles deployed by turtles
 * Definable tempo
@@ -67,7 +67,7 @@ Speed is default 1. This is currently not very explicit but allows for defining 
 | 7/12            | Meeting with Advait                                          | 1    | Regarding chords, defining each note separately has a cleanness. You can then just define multiple turtles. If the system could add in the notes for chords for you that would be helpful and give the best of both worlds. Could then also do !turtle(A1:A6, path, speed)</br>Keep subdividing of cells rare but possible (e.g. if there is one fill) </br>Ishall give a talk to Excel team - existing, objectives, design decision, implementation. Use demos.</br> Good to keep Excel things rather than making my own alternatives. E.g for chord completion have it fill in downwards and let user transpose rather than adding extra complexity to chord methods.</br>Being able to track the turtles would be useful. | Convert to VS code, add to github, and get working outside of Scriptlab. Then share to Advait.</br> Things to implement over the holiday: Chord system, input checks (sanitation),  turtle tracking, stopping the playback, longer notes, rests |
 | 16/12           | Make the conversions to proper development and share with Advait. | 5    | Lots of time wrestling with dependencies and web stuff for the add-in (this is all quite unfamiliar). Got this working so code is now edited in VS code, run on localhost and then manifest added to Excel online and run there. Also spent a lot of time setting up Windows virtual machine as we thought that maybe manifest based running could only be done in Edge. Turns out Chrome is fine, but the hint about requiring it running locally isn't shown in chrome >:( | Next step, more stable playback method. Then I can start making the cool extras! |
 | 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. | 4    | Rests are now handled as they should be by loops</br>Highlighting refreshes upon running of the sheet</br>Familiarised myself with the Tone transport system and have a better idea of how I will reimplement playing/turtles. | Reimplement general turtle playback to be more flexible.     |
-| 21/12           | Reimplement turtle playback then start on other features     | 3.5  | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of loops with rests and sustained notes now supported</br> | Neaten that stuff.                                           |
+| 21/12           | Reimplement turtle playback then start on other features     | 5.5  | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of sequences with rests and sustained notes now supported, with or without looping (number of times, or infinite definable)</br> | Move into multiple files, defining multiple turtles with an end cell. |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
