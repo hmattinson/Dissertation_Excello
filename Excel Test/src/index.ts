@@ -1,9 +1,11 @@
 import * as OfficeHelpers from '@microsoft/office-js-helpers';
-import * as Tone from 'tone'
+import * as Tone from 'tone';
 
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
 $("#test").click(() => tryCatch(test));
+
+var piano: Tone.Sampler;
 
 /**
  * Run when play button pressed. Starts playback of music
@@ -26,10 +28,47 @@ async function run() {
         Tone.context = new AudioContext();
         Tone.Transport.bpm.value = getBPM(sheet.values);
 
-        runTurtles(sheet.values);
-        console.log(`The range values "${selectedRange.values}".`);
-
-        Tone.Transport.start("+0.1");
+        piano = new Tone.Sampler({
+            'A0' : 'A0.[mp3|ogg]',
+            'C1' : 'C1.[mp3|ogg]',
+            'D#1' : 'Ds1.[mp3|ogg]',
+            'F#1' : 'Fs1.[mp3|ogg]',
+            'A1' : 'A1.[mp3|ogg]',
+            'C2' : 'C2.[mp3|ogg]',
+            'D#2' : 'Ds2.[mp3|ogg]',
+            'F#2' : 'Fs2.[mp3|ogg]',
+            'A2' : 'A2.[mp3|ogg]',
+            'C3' : 'C3.[mp3|ogg]',
+            'D#3' : 'Ds3.[mp3|ogg]',
+            'F#3' : 'Fs3.[mp3|ogg]',
+            'A3' : 'A3.[mp3|ogg]',
+            'C4' : 'C4.[mp3|ogg]',
+            'D#4' : 'Ds4.[mp3|ogg]',
+            'F#4' : 'Fs4.[mp3|ogg]',
+            'A4' : 'A4.[mp3|ogg]',
+            'C5' : 'C5.[mp3|ogg]',
+            'D#5' : 'Ds5.[mp3|ogg]',
+            'F#5' : 'Fs5.[mp3|ogg]',
+            'A5' : 'A5.[mp3|ogg]',
+            'C6' : 'C6.[mp3|ogg]',
+            'D#6' : 'Ds6.[mp3|ogg]',
+            'F#6' : 'Fs6.[mp3|ogg]',
+            'A6' : 'A6.[mp3|ogg]',
+            'C7' : 'C7.[mp3|ogg]',
+            'D#7' : 'Ds7.[mp3|ogg]',
+            'F#7' : 'Fs7.[mp3|ogg]',
+            'A7' : 'A7.[mp3|ogg]',
+            'C8' : 'C8.[mp3|ogg]'
+            }, {
+            'release' : 1,
+            'baseUrl' : '../assets/samples/salamander/',
+            'onload': function() {
+                runTurtles(sheet.values);
+                Tone.Transport.start("+0.1");
+            }
+        }).toMaster();
+        
+        // console.log(`The range values "${selectedRange.values}".`);
     });
 }
 
@@ -45,14 +84,6 @@ async function stop() {
 // Won't be in final version but useful for development
 async function test() {
     await Excel.run(async (context) => {
-        // var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
-        // var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
-        // const sheet: Excel.Worksheet = context.workbook.worksheets.getItem(sheetChoice);
-        // const definedRange = sheet.getRange('B2:C5');
-        // definedRange.load('values');
-        // await context.sync();
-        // console.log([].concat.apply([], definedRange.values));
-
         var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
         var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
         const sheet: Excel.Range = context.workbook.worksheets.getItem(sheetChoice).getUsedRange();
@@ -62,7 +93,18 @@ async function test() {
 
         var sheetValues = sheet.values;
 
-        console.log(sheetValues.slice(1,3));
+        Tone.context = new AudioContext();
+        Tone.Transport.bpm.value = getBPM(sheet.values);
+
+        // console.log(piano)
+
+        // piano.triggerAttackRelease('D5', "0:0:2", "0:4:0");
+        // var synthPart = new Tone.Part(function(time, note){
+        //     console.log(time, note);
+        //     piano.triggerAttackRelease(note[0], note[1], time);
+        // }, [["0:0:0",['C5', "0:1:0"]], ["0:1:0",['D5',"0:2:0"]], ["0:3:0",['F5',"0:1:0"]]]).start();
+
+        Tone.Transport.start("+0.1");
     });
 }
 
@@ -111,6 +153,10 @@ function highlightSheet(sheet: Excel.Range): void {
                 // Highlight notes red
                 if (isNote(value)) {
                     sheet.getCell(row,col).format.fill.color = "#FFada5";
+                }
+                // Highlight sustains a lighter red
+                else if (value == "s"){
+                    sheet.getCell(row,col).format.fill.color = "#FFd6d6";
                 }
                 // Highlight turtles green
                 else if (isTurtle(value)) {
@@ -207,7 +253,7 @@ function playSequence(values: string[], speedFactor: number =1, repeats: number 
     var [noteTimes, beatsLength]: [[string, [string, string]][],number] = createNoteTimes(values);
     var beatsLengthTransport: string = "0:" + beatsLength + ":0";
     
-    var piano = new Tone.PolySynth(4, Tone.Synth, {
+    var polySynth = new Tone.PolySynth(4, Tone.Synth, {
         "volume" : -8,
         "oscillator" : {
             "partials" : [1, 2, 1],
@@ -215,18 +261,18 @@ function playSequence(values: string[], speedFactor: number =1, repeats: number 
         "portamento" : 0.05
     }).toMaster();
 
-    var pianoPart = new Tone.Part(function(time, note){
+    var synthPart = new Tone.Part(function(time, note){
         piano.triggerAttackRelease(note[0], note[1], time);
     }, noteTimes).start();
 
     if (repeats>0){
-        pianoPart = pianoPart.stop("0:" + (repeats*beatsLength) + ":0");
+        synthPart = synthPart.stop("0:" + (repeats*beatsLength) + ":0");
     }
 
-    pianoPart.loop = true;
-    pianoPart.loopEnd = beatsLengthTransport;
-    pianoPart.humanize = false;
-    pianoPart.playbackRate = speedFactor;
+    synthPart.loop = true;
+    synthPart.loopEnd = beatsLengthTransport;
+    synthPart.humanize = false;
+    synthPart.playbackRate = speedFactor;
 }
 
 /**

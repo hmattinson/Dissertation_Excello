@@ -51,7 +51,7 @@ Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/
 * Definable tempo
 * Turtle tracking
 * Input sanitisation
-* Different Synths
+* Different Synths - in a more sustainable way, and such that they can be selected
 * Turtle(A1:A5, EL1)
 * Turtle Jumps
 * Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
@@ -82,7 +82,7 @@ Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/
 | 16/12           | Make the conversions to proper development and share with Advait. | 5    | Lots of time wrestling with dependencies and web stuff for the add-in (this is all quite unfamiliar). Got this working so code is now edited in VS code, run on localhost and then manifest added to Excel online and run there. Also spent a lot of time setting up Windows virtual machine as we thought that maybe manifest based running could only be done in Edge. Turns out Chrome is fine, but the hint about requiring it running locally isn't shown in chrome >:( | Next step, more stable playback method. Then I can start making the cool extras! |
 | 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. | 4    | Rests are now handled as they should be by loops</br>Highlighting refreshes upon running of the sheet</br>Familiarised myself with the Tone transport system and have a better idea of how I will reimplement playing/turtles. | Reimplement general turtle playback to be more flexible.     |
 | 21/12           | Reimplement turtle playback then start on other features     | 7    | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of sequences with rests and sustained notes now supported, with or without looping (number of times, or infinite definable)</br>Can define turtle with moves or an end cell.</br>Can define multiple turtles with turtle(A1:A5, \<moves>,..) - multiple with an end cell not implemented yet. | Move into multiple files, defining multiple turtles with an end cell + other loose ends outlined in code. |
-|                 |                                                              |      |                                                              |                                                              |
+| 22/12           | Look into getting nicer sounds                               | 2.5  | Used a sampler and some piano sounds to replace the existing playback synth with a much nicer piano. The Christmas example sounds pretty nice now! | This does cause some delay for it to be loaded and currently the context is cleared every time playback is stopped so that may need to be changed so the synths/samplers don't need to be reloaded on every playback. |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
