@@ -235,11 +235,11 @@ function playSequence(values: string[], speedFactor: number =1, repeats: number 
  * @return index of this column
  */
 function lettersToNumber(letters: string): number {
-    var num = 0, len = letters.length;
+    var num: number = 0;
+    const len: number = letters.length;
     letters = letters.toUpperCase();
-    var i;
-    for (i = 0; i < len; i++) {
-        num += (letters.charCodeAt(num) - 64) * Math.pow(26, len - i - 1);
+    for (var i = 0; i < len; i++) {
+        num += (letters.charCodeAt(i) - 64) * Math.pow(26, len - i - 1);
     }
     return num;
 }
@@ -267,8 +267,6 @@ function expandRange(range: string): string[] {
     var rowChange = endCoords[1] - startCoords[1];
     var startSplit = start.match(/[a-z]+|[^a-z]+/gi);
     var endSplit = end.match(/[a-z]+|[^a-z]+/gi);
-    console.log(startSplit);
-    console.log(endSplit);
     if (rowChange!=0) {
         var col: string = startSplit[0];
         var cells: string[] = []
@@ -408,7 +406,6 @@ function turtle(instructions: string, sheetVals: any[][]): void {
     }
     else {
         var turtlesStarts = expandRange(instructionsArray[0].replace(/\s/g, "")); // list of starting notes
-        console.log(turtlesStarts);
         var moves: string[] = instructionsArray[1].trim().split(" ");
         if (instructionsArray.length > 2){
             speedFactor = +instructionsArray[2].replace(/\s/g, "");
@@ -417,7 +414,6 @@ function turtle(instructions: string, sheetVals: any[][]): void {
             }
         }
         for (let turtleStart of turtlesStarts){
-            console.log(turtleStart, moves, speedFactor, repeats);
             playSequence(getTurtleSequence(turtleStart, moves, sheetVals), speedFactor, repeats);
         }
     }
