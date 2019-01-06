@@ -67,6 +67,9 @@ async function run() {
                 Tone.Transport.start("+0.1");
             }
         }).toMaster();
+
+        // runTurtles(sheet.values);
+        // Tone.Transport.start("+0.1");
         
         // console.log(`The range values "${selectedRange.values}".`);
     });
