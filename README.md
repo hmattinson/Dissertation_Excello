@@ -7,9 +7,13 @@ The aim of this project is to take Microsoft's Excel, one of the most omnipresen
 ## Set up
 
 Clone the repo
+
 npm run from within the repo
-Open Excel online (example notebook included)
+
+Open Excel online (example notebook included in examples)
+
 Add an Add-in
+
 Add the manifest from this project
 
 This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial?tutorial-step=1

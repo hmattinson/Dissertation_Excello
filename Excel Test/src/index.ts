@@ -212,8 +212,6 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
     var volume: number;
     var value: string;
 
-    console.log(values)
-
     for (let valVol of values) {
         volume = valVol[1];
         value = valVol[0];
@@ -256,7 +254,6 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
     if(!inRest){
         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
     }
-    console.log(noteSequence);
     return [noteSequence, beatCount];
 }
 
@@ -270,7 +267,7 @@ function playSequence(values: [string, number][], speedFactor: number =1, repeat
     var beatsLengthTransport: string = "0:" + beatsLength + ":0";
     
     var polySynth = new Tone.PolySynth(4, Tone.Synth, {
-        "volume" : -1,
+        "volume" : -4,
         "oscillator" : {
             "partials" : [1, 2, 1],
         },
@@ -474,7 +471,6 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
         }
 
     }
-    console.log(notes);
     return notes;
 }
 
