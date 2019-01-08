@@ -17,32 +17,86 @@ This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/e
 ## Current Usage
 
 A single note can be defined in a cell, this currently only of the form "A4". Options for volume and other features will be added later. Notes are sustained by placing "s" in the next cell in the path. A rest is simply an empty cell.
+
 In most musical interfaces one axis is time (and the other is normally pitch). In this case we wanted to explore the use of both axes as just space - ideomatic to Excel. As a result the user is free to arrange the data as they wish.
+
+#### Turtles
+
+##### Documentation
+
 Notes are played by defining turtles to navigate the spreadsheet. Turtles are defined as follow
 
 ```
 !turtle(<Starting Cell>, <Instructions>, <Speed>, <Number of loops>)
-!turtle(E6, r m2 r m2 l m3, 1, 2)
 ```
-The turtle in the above example will start in cell E6 facing North. It will then turn right, move two steps forward, turn right again, move two steps forward, turn left, then move 3 steps forward. This path will be repeated (starting from E6 each time). 
+###### Starting Cell
 
-To define multiple turtles following cell paths immediately on top of each other, rather than writing a cell per turtle you can use the following shorthand
+e.g. B2. As with normal Excel formulae, you provide a reference to a cell by using the battleship style coordinates of the cell. This is where the turtle will start. This cell will also be played and forms the first cell in the path of the turtle. 
+
+###### Instructions
+
+The following expressions can be used:
+
+* Relative turning:
+  * r: turn right
+  * l: turn left
+* Absolute turning:
+  * n: turn to face up/north
+  * e: turn to face right/east
+  * s: turn to face down/south
+  * w: turn to face left/west
+* movement:
+  * m: move the number of cells specified forward e.g. m3
+* Dynamics:
+  * ppp, pp, p, mp, mf, f, ff, fff
+* Jumps
+  * j: jump to a cell (that cell will also be played) e.g. jB2
+
+The turtle starts facing north by default. 
+
+###### Speed
+
+Default 1.
+
+This is a relative speed factor that can be used to define turtles to move at different speeds. A turtle defined with speed 2 will move through the grid twice as fast as one with speed 1.
+
+###### Number of loops
+
+Default 0 - which creates an infinite loop
+
+The number of times the turtle will travel through the path defined. If left blank or defined as 0, it will loop infinitely.
+
+###### Shorthands
+
+The following shorthands also exist.
+
+To define multiple turtles following paths immediately on top of each other, rather than writing a cell per turtle you can define a range of starting cells:
 
 ```
 !turtle(E6:E11, r m2 r m2 l m3, 1)
 ```
 
-If a single turtle is following a straight line (e.g. Christmas example) the start and end cells can be given instead.
+If a single turtle is following a straight line (e.g. Christmas example) the start and end cells can be given instead:
 
 ```
 !turtle(B13, EL13)
 ```
 
-Speed is default 1. This is currently not very explicit but allows for defining differences, for example as in Steve Reich's Piano Phase.
+##### Examples
 
-Number of loops default will have it looping indefinitely. Use 0 if you wish to explicitly call this.
+```
+!turtle(E6, r m2 r m2 l m3, 1, 2)
+```
 
-Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=BtarK1
+This turtle will start in cell E6 facing north. It will then turn right, move two steps forward, turn right again, move two steps forward, turn left, then move 3 steps forward. This path will be repeated twice (starting from E6 each time). The path is 8 cells long.
+
+```
+!turtle(d6, ff r m3 pp jG8 w m3)
+```
+
+This turtle will start in cell d6 facing north with fortissimo (loud) volume. It will then turn to face east. The note of that cell and the 3 cells to its right will be played fortissimo. It's volume is then reduced to pianissimo (quiet) and it jumps to cell G8. It turns to face west. The cell G8 and the 3 cells to its left will then be played. The following path is followed: D6 (pp), E6 (pp), F6 (pp), G6 (pp), G8 (ff), F8 (ff), E8 (ff), D8 (ff).
+
+Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=BtarK1
 
 ## Features to add
 
@@ -53,7 +107,6 @@ Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/
 * Input sanitisation
 * Different Synths - in a more sustainable way, and such that they can be selected
 * Turtle(A1:A5, EL1)
-* Turtle Jumps
 * Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
 
 ## Issues
@@ -83,7 +136,7 @@ Have a look at my example: https://universityofcambridgecloud-my.sharepoint.com/
 | 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. | 4    | Rests are now handled as they should be by loops</br>Highlighting refreshes upon running of the sheet</br>Familiarised myself with the Tone transport system and have a better idea of how I will reimplement playing/turtles. | Reimplement general turtle playback to be more flexible.     |
 | 21/12           | Reimplement turtle playback then start on other features     | 7    | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of sequences with rests and sustained notes now supported, with or without looping (number of times, or infinite definable)</br>Can define turtle with moves or an end cell.</br>Can define multiple turtles with turtle(A1:A5, \<moves>,..) - multiple with an end cell not implemented yet. | Move into multiple files, defining multiple turtles with an end cell + other loose ends outlined in code. |
 | 22/12           | Look into getting nicer sounds                               | 2.5  | Used a sampler and some piano sounds to replace the existing playback synth with a much nicer piano. The Christmas example sounds pretty nice now! | This does cause some delay for it to be loaded and currently the context is cleared every time playback is stopped so that may need to be changed so the synths/samplers don't need to be reloaded on every playback. |
-|                 |                                                              |      |                                                              |                                                              |
+| 8/1/2019        | Dynamics and Turtle jumps                                    | 2    | Dynamics and Turtle jumps both implemented. Both defined within the instruction part of the turtle definition e.g. !turtle(d6, ff r m3 pp jG8 r r m3, 1) |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |

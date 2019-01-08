@@ -1,5 +1,8 @@
-import * as OfficeHelpers from '@microsoft/office-js-helpers';
+import stringify, * as OfficeHelpers from '@microsoft/office-js-helpers';
 import * as Tone from 'tone';
+
+$("#run").hide();
+$("#run").show(); // may want to use this to let sounds load first
 
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
@@ -28,48 +31,48 @@ async function run() {
         Tone.context = new AudioContext();
         Tone.Transport.bpm.value = getBPM(sheet.values);
 
-        piano = new Tone.Sampler({
-            'A0' : 'A0.[mp3|ogg]',
-            'C1' : 'C1.[mp3|ogg]',
-            'D#1' : 'Ds1.[mp3|ogg]',
-            'F#1' : 'Fs1.[mp3|ogg]',
-            'A1' : 'A1.[mp3|ogg]',
-            'C2' : 'C2.[mp3|ogg]',
-            'D#2' : 'Ds2.[mp3|ogg]',
-            'F#2' : 'Fs2.[mp3|ogg]',
-            'A2' : 'A2.[mp3|ogg]',
-            'C3' : 'C3.[mp3|ogg]',
-            'D#3' : 'Ds3.[mp3|ogg]',
-            'F#3' : 'Fs3.[mp3|ogg]',
-            'A3' : 'A3.[mp3|ogg]',
-            'C4' : 'C4.[mp3|ogg]',
-            'D#4' : 'Ds4.[mp3|ogg]',
-            'F#4' : 'Fs4.[mp3|ogg]',
-            'A4' : 'A4.[mp3|ogg]',
-            'C5' : 'C5.[mp3|ogg]',
-            'D#5' : 'Ds5.[mp3|ogg]',
-            'F#5' : 'Fs5.[mp3|ogg]',
-            'A5' : 'A5.[mp3|ogg]',
-            'C6' : 'C6.[mp3|ogg]',
-            'D#6' : 'Ds6.[mp3|ogg]',
-            'F#6' : 'Fs6.[mp3|ogg]',
-            'A6' : 'A6.[mp3|ogg]',
-            'C7' : 'C7.[mp3|ogg]',
-            'D#7' : 'Ds7.[mp3|ogg]',
-            'F#7' : 'Fs7.[mp3|ogg]',
-            'A7' : 'A7.[mp3|ogg]',
-            'C8' : 'C8.[mp3|ogg]'
-            }, {
-            'release' : 1,
-            'baseUrl' : '../assets/samples/salamander/',
-            'onload': function() {
-                runTurtles(sheet.values);
-                Tone.Transport.start("+0.1");
-            }
-        }).toMaster();
+        // piano = new Tone.Sampler({
+        //     'A0' : 'A0.[mp3|ogg]',
+        //     'C1' : 'C1.[mp3|ogg]',
+        //     'D#1' : 'Ds1.[mp3|ogg]',
+        //     'F#1' : 'Fs1.[mp3|ogg]',
+        //     'A1' : 'A1.[mp3|ogg]',
+        //     'C2' : 'C2.[mp3|ogg]',
+        //     'D#2' : 'Ds2.[mp3|ogg]',
+        //     'F#2' : 'Fs2.[mp3|ogg]',
+        //     'A2' : 'A2.[mp3|ogg]',
+        //     'C3' : 'C3.[mp3|ogg]',
+        //     'D#3' : 'Ds3.[mp3|ogg]',
+        //     'F#3' : 'Fs3.[mp3|ogg]',
+        //     'A3' : 'A3.[mp3|ogg]',
+        //     'C4' : 'C4.[mp3|ogg]',
+        //     'D#4' : 'Ds4.[mp3|ogg]',
+        //     'F#4' : 'Fs4.[mp3|ogg]',
+        //     'A4' : 'A4.[mp3|ogg]',
+        //     'C5' : 'C5.[mp3|ogg]',
+        //     'D#5' : 'Ds5.[mp3|ogg]',
+        //     'F#5' : 'Fs5.[mp3|ogg]',
+        //     'A5' : 'A5.[mp3|ogg]',
+        //     'C6' : 'C6.[mp3|ogg]',
+        //     'D#6' : 'Ds6.[mp3|ogg]',
+        //     'F#6' : 'Fs6.[mp3|ogg]',
+        //     'A6' : 'A6.[mp3|ogg]',
+        //     'C7' : 'C7.[mp3|ogg]',
+        //     'D#7' : 'Ds7.[mp3|ogg]',
+        //     'F#7' : 'Fs7.[mp3|ogg]',
+        //     'A7' : 'A7.[mp3|ogg]',
+        //     'C8' : 'C8.[mp3|ogg]'
+        //     }, {
+        //     'release' : 1,
+        //     'baseUrl' : '../assets/samples/salamander/',
+        //     'onload': function() {
+        //         runTurtles(sheet.values);
+        //         Tone.Transport.start("+0.1");
+        //     }
+        // }).toMaster();
 
-        // runTurtles(sheet.values);
-        // Tone.Transport.start("+0.1");
+        runTurtles(sheet.values);
+        Tone.Transport.start("+0.1");
         
         // console.log(`The range values "${selectedRange.values}".`);
     });
@@ -188,16 +191,16 @@ function getBPM(sheetVals: any[][]): number {
  * @param speedFactor Multipication factor for playback speed
  * @return If val is a definition of a note
  */
-function createNoteTimes(values: string[]): [[string, [string, string]][],number] {
+function createNoteTimes(values: [string, number][]): [[string, [string, string, number]][],number] {
     var len = values.length;
     // find how many notes are defined
     var notesCount = 0;
     for(let value of values){
-        if(isNote(value)){
+        if(isNote(value[0])){
             notesCount++;
         }
     }
-    var noteSequence: [string, [string, string]][] = new Array(notesCount);
+    var noteSequence: [string, [string, string, number]][] = new Array(notesCount);
 
     var beatCount = 0; // how many cells through
     var noteCount = 0; // how many notes through
@@ -205,8 +208,16 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],number
     var inRest = true // if the current value in the trace is a rest (else we're in a note)
     var currentStart: string; // start time of note currently in
     var currentNote: string; // note currently being played
+    var currentVolume: number = values[0][1];
+    var volume: number;
+    var value: string;
 
-    for (let value of values) {
+    console.log(values)
+
+    for (let valVol of values) {
+        volume = valVol[1];
+        value = valVol[0];
+
         if(isNote(value)){
             if(inRest){
                 // Rest -> Note
@@ -219,18 +230,19 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],number
             else{
                 // Note -> Note
                 // end current note
-                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]]
+                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                 // start new note
                 currentStart = "0:" + beatCount + ":0";
                 currentNote = value;
                 noteLength = 1;
+                currentVolume = volume;
             }
         }
         else if(value == null){ //rest
             if(!inRest){
                 // Note -> Rest
                 // end current note
-                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]];
+                noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                 inRest = true;
             }
         }
@@ -242,8 +254,9 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],number
     }
     // add note if we finished in a note
     if(!inRest){
-        noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0"]];
+        noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
     }
+    console.log(noteSequence);
     return [noteSequence, beatCount];
 }
 
@@ -252,20 +265,20 @@ function createNoteTimes(values: string[]): [[string, [string, string]][],number
  * @param values List of notes as strings e.g. ['A4','A5']
  * @param speedFactor Multipication factor for playback speed
  */
-function playSequence(values: string[], speedFactor: number =1, repeats: number =0): void {
-    var [noteTimes, beatsLength]: [[string, [string, string]][],number] = createNoteTimes(values);
+function playSequence(values: [string, number][], speedFactor: number =1, repeats: number =0): void {
+    var [noteTimes, beatsLength]: [[string, [string, string, number]][],number] = createNoteTimes(values);
     var beatsLengthTransport: string = "0:" + beatsLength + ":0";
     
     var polySynth = new Tone.PolySynth(4, Tone.Synth, {
-        "volume" : -8,
+        "volume" : -1,
         "oscillator" : {
             "partials" : [1, 2, 1],
         },
         "portamento" : 0.05
     }).toMaster();
 
-    var synthPart = new Tone.Part(function(time, note){
-        piano.triggerAttackRelease(note[0], note[1], time);
+    var synthPart = new Tone.Part(function(time: string, note: [string, string, number]){
+        polySynth.triggerAttackRelease(note[0], note[1], time, note[2]);
     }, noteTimes).start();
 
     if (repeats>0){
@@ -342,6 +355,7 @@ function isDirChange(s: string): boolean {
  * @return direction facing after following instruction
  */
 function dirChange(current: string, move: string): string {
+    current = current.toLowerCase();
     if (RegExp(/^(n|e|s|w)$/).test(move)) {
         return move;
     }
@@ -383,16 +397,50 @@ function move(current: [number, number], dir: string): [number, number] {
 }
 
 /**
+ * If a string is musical dynamic / volume
+ * @param s a string
+ * @return if it is a dynamic
+ */
+function isDynamic(s: string) : boolean {
+    s = s.toLowerCase();
+    return RegExp(/^(ppp|pp|p|mp|mf|f|ff|fff)$/).test(s);
+}
+
+/**
+ * Given current a dynamic, return volume in range [0,1]
+ * @param dynamic dynamic marking
+ * @return number in [0,1]
+ */
+function dynamicToVolume(dynamic: string): number {
+    switch (dynamic) {
+        case 'ppp': return 0.125;
+        case 'pp': return 0.25;
+        case 'p': return 0.375;
+        case 'mp': return 0.5;
+        case 'mf': return 0.625;
+        case 'f': return 0.75;
+        case 'ff': return 0.875;
+        case 'fff': return 1;
+    } 
+}
+
+/**
  * Given current coordinates and direction, return coordinates after step forwards
  * @param current current coordinates
  * @param dir compass direction turtle is facing
  * @return new coordinates of turtle
  */
-function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): string[] {
+function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): [string, number][] {
 
     var startCoords: [number, number] = getCellCoords(start);
+    var volume: number = dynamicToVolume('mf');
 
-    var notes: string[] = [sheetVals[startCoords[1]][startCoords[0]]];
+    if (isDynamic(moves[0])) {
+        volume = dynamicToVolume(moves[0]);
+    }
+
+    // notes are stored in the format [note, volume] at this stage
+    var notes: [string, number][] = [[sheetVals[startCoords[1]][startCoords[0]], volume]];
 
     var dir: string = 'n';
     var pos: [number, number] = [startCoords[1],startCoords[0]];
@@ -401,7 +449,17 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
         if (isDirChange(entry)) {
             dir = dirChange(dir, entry);
         }
+        else if (entry.substring(0,1) == 'j' || entry.substring(0,1) == 'J') {
+            // Jump
+            var newCoords = getCellCoords(entry.substring(1));
+            pos = [newCoords[1], newCoords[0]];
+            notes.push([sheetVals[pos[0]][pos[1]],volume]);
+        }
+        else if (isDynamic(entry)) {
+            volume = dynamicToVolume(entry);
+        }
         else {
+            // move
             var steps = entry.substring(1);
             var steps_int = +steps;
             var i
@@ -411,11 +469,12 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
                 if (sheetVal == "") {
                     sheetVal = null;
                 }
-                notes.push(sheetVal);
+                notes.push([sheetVal, volume]);
             }
         }
 
     }
+    console.log(notes);
     return notes;
 }
 
@@ -429,13 +488,15 @@ function turtle(instructions: string, sheetVals: any[][]): void {
     var instructionsArray: string[] = instructions.split(',');
 
     if (isCell(instructionsArray[0])) {
-        var notes: string[];
+        var notes: [string, number][];
         if (isCell(instructionsArray[1])){
             // TODO: Better regex
             var rangeStart = getCellCoords(instructionsArray[0]);
             var rangeEnd = getCellCoords(instructionsArray[1]);
             notes = [].concat.apply([], sheetVals.slice(rangeStart[1], rangeEnd[1]+1).map(function(arr) { 
-                return arr.slice(rangeStart[0], rangeEnd[0]+1); 
+                return arr.slice(rangeStart[0], rangeEnd[0]+1).map(function(x) {
+                    return [x,dynamicToVolume('mf')];
+                });
             }));
         }
         else{
