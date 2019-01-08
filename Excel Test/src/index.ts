@@ -1,5 +1,6 @@
 import stringify, * as OfficeHelpers from '@microsoft/office-js-helpers';
 import * as Tone from 'tone';
+import { type } from 'os';
 
 $("#run").hide();
 $("#run").show(); // may want to use this to let sounds load first
@@ -102,15 +103,13 @@ async function test() {
         Tone.context = new AudioContext();
         Tone.Transport.bpm.value = getBPM(sheet.values);
 
-        // console.log(piano)
+        var seq = new Tone.Sequence(function(time, note){
+            //play the note
+        }, ["C3", [null, "Eb3"], ["F4", "Bb4", "C5"]], "4n");
 
-        // piano.triggerAttackRelease('D5', "0:0:2", "0:4:0");
-        // var synthPart = new Tone.Part(function(time, note){
-        //     console.log(time, note);
-        //     piano.triggerAttackRelease(note[0], note[1], time);
-        // }, [["0:0:0",['C5', "0:1:0"]], ["0:1:0",['D5',"0:2:0"]], ["0:3:0",['F5',"0:1:0"]]]).start();
+        console.log(seq);
 
-        Tone.Transport.start("+0.1");
+        //Tone.Transport.start("+0.1");
     });
 }
 
@@ -155,23 +154,23 @@ function highlightSheet(sheet: Excel.Range): void {
 
     for (var row = 0; row < rows; row++){
         for (var col = 0; col < cols; col++){
-            var value = sheetVals[row][col]
-                // Highlight notes red
-                if (isNote(value)) {
-                    sheet.getCell(row,col).format.fill.color = "#FFada5";
-                }
-                // Highlight sustains a lighter red
-                else if (value == "s"){
-                    sheet.getCell(row,col).format.fill.color = "#FFd6d6";
-                }
-                // Highlight turtles green
-                else if (isTurtle(value)) {
-                    sheet.getCell(row, col).format.fill.color = "#a8ffd0";
-                }
-                // Else remove highlighting
-                else {
-                    sheet.getCell(row, col).format.fill.clear();
-                }
+            var value = sheetVals[row][col];
+            // Highlight notes red
+            if (isNote(value) || isMultiNote(value)) {
+                sheet.getCell(row,col).format.fill.color = "#FFada5";
+            }
+            // Highlight sustains a lighter red
+            else if (value == "s"){
+                sheet.getCell(row,col).format.fill.color = "#FFd6d6";
+            }
+            // Highlight turtles green
+            else if (isTurtle(value)) {
+                sheet.getCell(row, col).format.fill.color = "#a8ffd0";
+            }
+            // Else remove highlighting
+            else {
+                sheet.getCell(row, col).format.fill.clear();
+            }
         }
     }
 }
@@ -186,6 +185,36 @@ function getBPM(sheetVals: any[][]): number {
 }
 
 /**
+ * Identifies if a string represents a subdivision with multiple notes/rests e.g. " ,c3,d3"
+ * @param s a string
+ * @return If s is multple notes / rests
+ */
+function isMultiNote(s: string): boolean {
+    if (typeof s != 'string') {
+        return false;
+    }
+    if (!(s.includes(','))) {
+        return false;
+    }
+    var arr = s.replace(/ /g,'').split(',');
+    for (let val of arr) {
+        if (!isNote(val) && !(val=="") && !(val=='s')){
+            return false
+        }
+    }
+    return true;
+}
+
+/**
+ * Assuming a string isMultiLine, returns the number of notes
+ * @param s a string
+ * @return number of notes in multiNote
+ */
+function countMultiNote(s: string): number {
+    return s.replace(/ /g,'').split(',').filter(function(x){return isNote(x)}).length;
+}
+
+/**
  * Takes a list of cell values and creates a list of time and note pairs for Tone Part playback
  * @param values List of notes as strings e.g. ['A4','A5']
  * @param speedFactor Multipication factor for playback speed
@@ -195,9 +224,13 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
     var len = values.length;
     // find how many notes are defined
     var notesCount = 0;
-    for(let value of values){
-        if(isNote(value[0])){
+    for(let valVol of values){
+        value = valVol[0];
+        if(isNote(value)){
             notesCount++;
+        }
+        if(isMultiNote(value)){
+            notesCount = notesCount + countMultiNote(value);
         }
     }
     var noteSequence: [string, [string, string, number]][] = new Array(notesCount);
@@ -248,12 +281,58 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
             // x -> x
             noteLength++;
         }
+        else if(isMultiNote(value)){
+            var noteList = value.replace(/ /g,'').split(',');
+            var numNotes = countMultiNote(value);
+            var subdivisionLength = 1/numNotes;
+
+            var subdivisionCount = 0;
+            
+            //now process all the scenarios of things than could be in the multinote
+            for (let multiVal of noteList) {
+
+                if(isNote(multiVal)){
+                    if(inRest){
+                        // Rest -> Note
+                        // start new note
+                        currentStart = "0:" + (beatCount+subdivisionCount*subdivisionLength) + ":0";
+                        currentNote = multiVal;
+                        noteLength = subdivisionLength;
+                        inRest = false;
+                    }
+                    else{
+                        // Note -> Note
+                        // end current note
+                        noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
+                        // start new note
+                        currentStart = "0:" + (beatCount+subdivisionCount*subdivisionLength) + ":0";
+                        currentNote = multiVal;
+                        noteLength = subdivisionLength;
+                        currentVolume = volume;
+                    }
+                }
+                else if(value == null){ //rest
+                    if(!inRest){
+                        // Note -> Rest
+                        // end current note
+                        noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
+                        inRest = true;
+                    }
+                }
+                else if(value == 's'){
+                    // x -> x
+                    noteLength += subdivisionLength;
+                }
+                subdivisionCount++;
+            }
+        }
         beatCount++
     }
     // add note if we finished in a note
     if(!inRest){
         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
     }
+    console.log(noteSequence);
     return [noteSequence, beatCount];
 }
 
