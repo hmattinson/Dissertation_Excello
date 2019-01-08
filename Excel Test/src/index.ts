@@ -1,6 +1,6 @@
-import stringify, * as OfficeHelpers from '@microsoft/office-js-helpers';
+import * as OfficeHelpers from '@microsoft/office-js-helpers';
 import * as Tone from 'tone';
-import { type } from 'os';
+import {isNote, isTurtle, isCell, isMultiNote, isDirChange, isDynamic} from '../src/regex';
 
 $("#run").hide();
 $("#run").show(); // may want to use this to let sounds load first
@@ -114,36 +114,6 @@ async function test() {
 }
 
 /**
- * Returns if a string is a definition of a note. e.g. 'A4'
- * @param val Contents of a cell as a string
- * @return If val is a definition of a note
- */
-function isNote(val: string): boolean {
-    var re = new RegExp('^[A-Z](#|b|)[1-9]$');
-    return re.test(val);
-}
-
-/**
- * Returns if a string is a definition of a turtle. e.g. '!turtle(A1, r m3, 0.5)'
- * @param val Contents of a cell as a string
- * @return If val is a definition of a turtle
- */
-function isTurtle(val: string): boolean {
-    var re = new RegExp('^(!turtle\().*(\))$');
-    return re.test(val);
-}
-
-/**
- * If a string is an Excel cell address e.g. "AA14"
- * @param val
- * @return if val is an Excel cell address
- */
-function isCell(val: string): boolean {
-    var re = new RegExp('^ *[a-zA-Z]+[0-9]+ *$')
-    return re.test(val)
-}
-
-/**
  * Checks selected sheet for cells that can be highlighted
  * @param val Used range of the worksheet
  */
@@ -182,27 +152,6 @@ function highlightSheet(sheet: Excel.Range): void {
  */
 function getBPM(sheetVals: any[][]): number {
     return 160;
-}
-
-/**
- * Identifies if a string represents a subdivision with multiple notes/rests e.g. " ,c3,d3"
- * @param s a string
- * @return If s is multple notes / rests
- */
-function isMultiNote(s: string): boolean {
-    if (typeof s != 'string') {
-        return false;
-    }
-    if (!(s.includes(','))) {
-        return false;
-    }
-    var arr = s.replace(/ /g,'').split(',');
-    for (let val of arr) {
-        if (!isNote(val) && !(val=="") && !(val=='s')){
-            return false
-        }
-    }
-    return true;
 }
 
 /**
@@ -414,15 +363,6 @@ function expandRange(range: string): string[] {
 }
 
 /**
- * If a string is defining a change or direction for a turtle
- * @param s a string
- * @return if it is a turtle direction change definition
- */
-function isDirChange(s: string): boolean {
-    return RegExp(/^(r|l|n|e|s|w)$/).test(s);
-}
-
-/**
  * Next direction of a turtle given current direction and instruction
  * @param current current compass direction being faced
  * @param move next way to turn/look
@@ -468,16 +408,6 @@ function move(current: [number, number], dir: string): [number, number] {
         case 's': return [current[0]+1, current[1]];
         case 'w': return [current[0], Math.max(current[1]-1,0)];
     } 
-}
-
-/**
- * If a string is musical dynamic / volume
- * @param s a string
- * @return if it is a dynamic
- */
-function isDynamic(s: string) : boolean {
-    s = s.toLowerCase();
-    return RegExp(/^(ppp|pp|p|mp|mf|f|ff|fff)$/).test(s);
 }
 
 /**
@@ -600,8 +530,6 @@ function turtle(instructions: string, sheetVals: any[][]): void {
             playSequence(getTurtleSequence(turtleStart, moves, sheetVals), speedFactor, repeats);
         }
     }
-    
-    
 }
 
 /**

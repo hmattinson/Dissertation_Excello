@@ -2,7 +2,13 @@
 
 The following form is for the participatory design process for Henry Mattinson's individual project as part of the University of Cambridge computer science tripos. The project is the development of a music performance system in Microsoft Excel. 
 
-You shall be briefed on how the system works and given an opportunity to use the system to compose, transcribe or otherwise interact with some pieces of music. This shall be the starting point for discussion on how the system and its interface can be improved and any feedback or issues you have.
+You shall be given a short demonstration on how to use the system in its current version. Using these demos and documentation you shall be given some of the following tasks depending on your familiarity with music: 
+
+* Transcribing some sheet music into the spreadsheet format
+* Writing a melody of a song you know
+* Making changes to an existing spreadsheet piece
+
+These exercises shall be the starting point for discussion on how the system and its interface can be improved and any feedback or issues you have. If you would rather try a different task, different piece or implementing an idea of your own using the spreadsheet music system, please do. Just make it clear what you are trying to do. The tasks you are given are simply meant to simulate ways in which this may be used. This is not a test, it is an opportunity to help shape the way the system works to be best for you! 
 
 Whilst the project uses Microsoft Excel and is supervised by a Microsoft employee, Microsoft have no ownership in the outcome of the project. It shall be made open source at the end of the academic year in June 2019. Whilst we offer no reward for your input into the project, your contributions shall be recognised. However, you may also remain anonymous. 
 

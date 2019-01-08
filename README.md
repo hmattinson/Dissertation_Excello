@@ -20,9 +20,13 @@ This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/e
 
 ## Current Usage
 
+#### Cells
+
 A single note can be defined in a cell, this currently only of the form "A4". Options for volume and other features will be added later. Notes are sustained by placing "s" in the next cell in the path. A rest is simply an empty cell.
 
 In most musical interfaces one axis is time (and the other is normally pitch). In this case we wanted to explore the use of both axes as just space - ideomatic to Excel. As a result the user is free to arrange the data as they wish.
+
+It is also possible to subdivide cells e.g. "C3,D3,E3" would create triplets or "s,s,,F4" which would sustain the previous notes for an additional 2 quarter measures, a quarter measure rest and then F4 for the last quarter of the beat.
 
 #### Turtles
 
@@ -140,8 +144,8 @@ Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com
 | 20/12           | Clean up code. Define non looping turtles, rests and sustained notes - may require deleting existing play sequence method. | 4    | Rests are now handled as they should be by loops</br>Highlighting refreshes upon running of the sheet</br>Familiarised myself with the Tone transport system and have a better idea of how I will reimplement playing/turtles. | Reimplement general turtle playback to be more flexible.     |
 | 21/12           | Reimplement turtle playback then start on other features     | 7    | Stopping now removes previously defined loops - needed to clear context</br>Basic playback of sequences with rests and sustained notes now supported, with or without looping (number of times, or infinite definable)</br>Can define turtle with moves or an end cell.</br>Can define multiple turtles with turtle(A1:A5, \<moves>,..) - multiple with an end cell not implemented yet. | Move into multiple files, defining multiple turtles with an end cell + other loose ends outlined in code. |
 | 22/12           | Look into getting nicer sounds                               | 2.5  | Used a sampler and some piano sounds to replace the existing playback synth with a much nicer piano. The Christmas example sounds pretty nice now! | This does cause some delay for it to be loaded and currently the context is cleared every time playback is stopped so that may need to be changed so the synths/samplers don't need to be reloaded on every playback. |
-| 8/1/2019        | Dynamics and Turtle jumps.</br>Subdividing of cells          | 4    | Dynamics and Turtle jumps both implemented. Both defined within the instruction part of the turtle definition e.g. !turtle(d6, ff r m3 pp jG8 r r m3, 1)</br>Subdividing of cells now possible for just notes. Can now put e.g. C3,D3 in a cell and it will play 2 notes equal time each. Needs debugging | Debug subdividing when there are rests and sustaining. Then update documentation. |
-|                 |                                                              |      |                                                              |                                                              |
+| 6/1/2019        | Write consent form                                           | 0.5  | Wrote consent form, sent in for approval.                    | Some minor changes to make.                                  |
+| 8/1/2019        | Dynamics and Turtle jumps.</br></br>Subdividing of cells.</br></br>Edit consent form.</br></br>Separate regex into different file | 4.5  | Dynamics and Turtle jumps both implemented. Both defined within the instruction part of the turtle definition e.g. !turtle(d6, ff r m3 pp jG8 r r m3, 1)</br></br>Subdividing of cells now possible for just notes. Can now put e.g. "C3,D3" in a cell and it will play 2 notes equal time each. Still works with rests and sustains.</br></br>Updated consent form and asked Advait if he had any more advice</br></br>Put regex function in a new file | action feedback from Advait                                  |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
