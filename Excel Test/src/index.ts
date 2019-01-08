@@ -283,8 +283,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
         }
         else if(isMultiNote(value)){
             var noteList = value.replace(/ /g,'').split(',');
-            var numNotes = countMultiNote(value);
-            var subdivisionLength = 1/numNotes;
+            var subdivisionLength = 1/(value.replace(/ /g,'').split(',').length);
 
             var subdivisionCount = 0;
             
@@ -311,7 +310,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         currentVolume = volume;
                     }
                 }
-                else if(value == null){ //rest
+                else if(multiVal == null){ //rest
                     if(!inRest){
                         // Note -> Rest
                         // end current note
@@ -319,7 +318,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         inRest = true;
                     }
                 }
-                else if(value == 's'){
+                else if(multiVal == 's'){
                     // x -> x
                     noteLength += subdivisionLength;
                 }
@@ -332,7 +331,6 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
     if(!inRest){
         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
     }
-    console.log(noteSequence);
     return [noteSequence, beatCount];
 }
 
