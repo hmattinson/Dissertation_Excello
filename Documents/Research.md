@@ -57,6 +57,8 @@ CV works by block detection. First grouping all cells with the equivalent R1C1. 
 * remove block when it can't be grown any more
 * Pick new seed and repeat until all equivalent cells have been assimilated
 
+
+
 ### Towards spreadsheet tools for end-user music programming
 
 _Advait Sarkar_
@@ -84,6 +86,8 @@ Texture - a visual dataflow language.
 Debate whether tool for composition, musical instrument or programming language. 
 
 Application: Custom data signification and musical prototyping.
+
+
 
 ### Manhattan: End-user programming for music
 
@@ -148,3 +152,70 @@ Extension:
 * function calling and recursion
 * **modularity (custom abstractions or groupings)**
 
+
+
+### The Programming Language as a Musical Instrument
+
+*Alan Blackwell and Nick Collins*
+
+Live coding introduces a new class of users to traditional programmers / software engineers. Imaginative programming language developments generally arise from satisfying the needs of novel user classes. People who's understanding is different to mathematical formalisms / compiler understanding of mathmos/compscis. Experts in their own domain. Solving unusual needs can yield new creative solutions.
+
+Hartree 1950: "Programming is the process of drawing up the schedule of the sequence of individual operations required to carry out the calculation"
+
+McCracken 1957: "a process of translating from the language convenient to human being to the language convenient to the computer"
+
+Power 2004 - spreadsheet was created to service the need of business school students.
+
+Music notation can share many features with programming languages in the context of CDNs. Can express concerns common to both domains. We should view the users of music notation systems as composers and editors rather than musicians.
+
+Composition vs performance, notation vs instrument distinction is increasingly indistinct with the rise of different contemporary music systems. Attention Investment Model (Blackwell and Burnett 2002) for describing cognitive effects of transition.
+
+Laptop music is a characteristic of contemporary performance practice in electronic music, not a genre. Gestural rate is often disconnected from the output event rate.
+
+Abelton Live, Reason - sequencing triggering and rigid interface. Lack algorithmic manoeuvrability and customisation potential. Graphical packages may offer more customisation e.g. Cycling 74s Max/MSSP, Miller Puckette's PD. Programming languages e.g. for SuperCollider, ChucK - hard to master but more exploratory potential. 
+
+#### ChucK
+
+low level enough that you have to define sin Oscilators and connect to DAC - <u>this info not from paper.</u>
+
+A new user will have to always check the manual - very poor **closeness of mapping**
+
+Operations have identical presentation even if they offer completely different musical function - terrible **role expressiveness**
+
+**Abstraction Hungry** -> **Hard mental operations**
+
+editor -> command line. High memory load.
+
+**Error prone** as you cannot see the likely scope of your actions as in Abelton. (This is why better turtle tracking would be better).
+
+Why the challenge - "embrace the challenge of live coding; the virtuosity of the required cognitive load, the error-proneness, the diffuseness" - all part of the skills required and reward. 
+
+#### Abelton
+
+Time against track event sequencer - virtual mixer paradigm. Higher **Closeness of mapping** but at the expense of creative exploration. 
+
+**provisionality** - mappings and shortcut keys
+
+Due to the controls all having direct consequences there is immediate commitment to action, potentially causing **premature commitment**
+
+Biased towards the established layout and styles of audio products. Doesn't facilitate experimental designs or algorithmic music. 
+
+
+
+Music design notations needn't support the arbitrary restructuring of the kind enabled by UML. However, they may reflect different musical existing structural concepts such as staff notation, chord tablature. 
+
+Musicians used to a tight feedback loop. - **Progressive evaluation** from being able to support immediate feedback. 
+
+Noble and Biddle 2002 - "programming as creativity, as performance, as striving towards an undefinable product, fragmentary and abstract, free from narrative, constructive the final work by scavenging through the scrap-heap of the Internet."
+
+<u>A thought I had</u>- Problem solving is part of programming. Coming up with a neat representation for performing a piece is very similar to coming up with a low complexity or concise solution to an algorithmic problem.
+
+#### further reading:
+
+* Blackwell an Burnett 2002 - Applying attention investment to end-user programming
+* Blackwell and Green 2002 - A cognitive dimensions questionnaire optimised for users
+* Blackwell, Green and Nunn 2002 - Cognitive Dimensions and Musical Notation Systems Paper
+* Costello/White - A man out of time beats the clock
+* Hartree 1950 - Calculating instruments and machines
+* McCarthney 2002 - Rethinking the computer music language
+* Power 2004 - Brief History of Spreadsheets

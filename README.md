@@ -114,7 +114,7 @@ Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com
 * Turtle tracking
 * Input sanitisation
 * Different Synths - in a more sustainable way, and such that they can be selected
-* Turtle(A1:A5, EL1)
+* turtle(A1:A5, EL1)
 * Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
 
 ## Issues
@@ -148,8 +148,8 @@ Number of playback loops is wrong by factor of speed.
 | 22/12           | Look into getting nicer sounds                               | 2.5  | Used a sampler and some piano sounds to replace the existing playback synth with a much nicer piano. The Christmas example sounds pretty nice now! | This does cause some delay for it to be loaded and currently the context is cleared every time playback is stopped so that may need to be changed so the synths/samplers don't need to be reloaded on every playback. |
 | 6/1/2019        | Write consent form                                           | 0.5  | Wrote consent form, sent in for approval.                    | Some minor changes to make.                                  |
 | 8/1/2019        | Dynamics and Turtle jumps.</br></br>Subdividing of cells.</br></br>Edit consent form.</br></br>Separate regex into different file | 5    | Dynamics and Turtle jumps both implemented. Both defined within the instruction part of the turtle definition e.g. !turtle(d6, ff r m3 pp jG8 r r m3, 1)</br></br>Subdividing of cells now possible for just notes. Can now put e.g. "C3,D3" in a cell and it will play 2 notes equal time each. Still works with rests and sustains.</br></br>Updated consent form and asked Advait if he had any more advice</br></br>Put regex function in a new file | action feedback from Advait                                  |
-| 9/1/2019        | Read a computer music paper                                  | 1    | As part of another project, I was writing some python to manipulate an Excel spreadsheet. I think that a python program exporting to a csv, would be a good way of doing a conversion from e.g. MIDI to the spreadsheet format |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 9/1/2019        | Read a computer music paper                                  | 1    | As part of another project, I was writing some python to manipulate an Excel spreadsheet. I think that a python program exporting to a csv, would be a good way of doing a conversion from e.g. MIDI to the spreadsheet format | Didn't read a paper                                          |
+| 10/1/2019       | Read The programming language as a musical instrument</br></br>Fix speed and looping bug</br></br>Chord inputting and make it look a bit nicer | 5    | Read paper with various extra researches occurring on the way.</br></br>Edited way speed is handled from turtle so arbitrary mathematical expressions can be given.</br></br>Fixed speed and looping bug</br></br>Found and added tonal library and added functionality for basic chord entry | Could define speed by reference to reduce mental operations.</br></br>Look s rubbish and requires specific cell selection to work. I'll make it cleverer and wrestle with the html and css later. |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 

@@ -1,5 +1,6 @@
 import * as OfficeHelpers from '@microsoft/office-js-helpers';
 import * as Tone from 'tone';
+import {Chord, Note} from 'tonal';
 import {isNote, isTurtle, isCell, isMultiNote, isDirChange, isDynamic} from '../src/regex';
 
 $("#run").hide();
@@ -8,6 +9,7 @@ $("#run").show(); // may want to use this to let sounds load first
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
 $("#test").click(() => tryCatch(test));
+$("#insertChord").click(() => tryCatch(insertChord));
 
 var piano: Tone.Sampler;
 
@@ -75,7 +77,7 @@ async function run() {
         runTurtles(sheet.values);
         Tone.Transport.start("+0.1");
         
-        // console.log(`The range values "${selectedRange.values}".`);
+        console.log(`The range values "${selectedRange.values}".`);
     });
 }
 
@@ -112,6 +114,36 @@ async function test() {
         //Tone.Transport.start("+0.1");
     });
 }
+
+async function insertChord() {
+    await Excel.run(async (context) => {
+
+        console.log(Chord.names())
+
+        const selectedRange = context.workbook.getSelectedRange();
+        const selectedSheet = context.workbook.worksheets.getActiveWorksheet();
+        selectedRange.load("address");
+
+        var chordNoteHTMLElement = (document.getElementById("chord_note")) as HTMLSelectElement;
+        var chordNote = chordNoteHTMLElement.options[chordNoteHTMLElement.selectedIndex].value;
+        var chordTypeHTMLElement = (document.getElementById("chord_type")) as HTMLSelectElement;
+        var chordType = chordTypeHTMLElement.options[chordTypeHTMLElement.selectedIndex].value;
+        var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
+        console.log(chordNotes);
+
+        await context.sync();
+        selectedRange.values = chordNotes.map(x => [x]);
+        selectedRange.format.load();
+        await context.sync();
+
+        //console.log(`The range values "${selectedRange.address.split('!')[1]}".`);
+    }).catch(errorHandlerFunction);
+}
+
+function errorHandlerFunction(err) {
+    console.log(err);
+}
+
 
 /**
  * Checks selected sheet for cells that can be highlighted
@@ -290,7 +322,6 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
  */
 function playSequence(values: [string, number][], speedFactor: number =1, repeats: number =0): void {
     var [noteTimes, beatsLength]: [[string, [string, string, number]][],number] = createNoteTimes(values);
-    var beatsLengthTransport: string = "0:" + (beatsLength) + ":0";
     
     var polySynth = new Tone.PolySynth(4, Tone.Synth, {
         "volume" : -4,
@@ -305,14 +336,13 @@ function playSequence(values: [string, number][], speedFactor: number =1, repeat
     }, noteTimes).start();
 
     if (repeats>0){
-        synthPart = synthPart.stop("0:" + (repeats*beatsLength) + ":0");
+        synthPart = synthPart.stop("0:" + (repeats*beatsLength/speedFactor) + ":0");
     }
 
     synthPart.loop = true;
-    synthPart.loopEnd = beatsLengthTransport;
+    synthPart.loopEnd = "0:" + beatsLength + ":0";
     synthPart.humanize = false;
     synthPart.playbackRate = speedFactor;
-    console.log(synthPart);
 }
 
 /**
@@ -331,7 +361,7 @@ function lettersToNumber(letters: string): number {
 }
 
 /**
- * Gives the index coordinates of a cell using Excel coordinates
+ * Gives the index coordinates of a cell using Excel coordinates (column, row)
  * @param letters cell position e.g. B1
  * @return coordinates with 0 indexing
  */
@@ -456,8 +486,16 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
         }
         else if (entry.substring(0,1) == 'j' || entry.substring(0,1) == 'J') {
             // Jump
-            var newCoords = getCellCoords(entry.substring(1));
-            pos = [newCoords[1], newCoords[0]];
+            var jumpInstructions = entry.substring(1);
+            if (isCell(jumpInstructions)) {
+                var newCoords = getCellCoords(entry.substring(1));
+                pos = [newCoords[1], newCoords[0]];
+            }
+            else {
+                // TODO: relative Jump
+            }
+            
+            
             notes.push([sheetVals[pos[0]][pos[1]],volume]);
         }
         else if (isDynamic(entry)) {
@@ -554,7 +592,7 @@ function runTurtles(sheetVals: any[][]): void {
 }
 
 /** Default helper for invoking an action and handling errors. */
-async function tryCatch(callback) {
+export async function tryCatch(callback) {
     try {
         await callback();
     }
