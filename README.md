@@ -119,7 +119,9 @@ Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com
 
 ## Issues
 
-Number of playback loops is wrong by factor of speed.
+Need to trim turtle range to be within defined area - pad with rests
+
+Chord input doesn't require correct highlighting + Octave
 
 ## Log
 
@@ -150,6 +152,6 @@ Number of playback loops is wrong by factor of speed.
 | 8/1/2019        | Dynamics and Turtle jumps.</br></br>Subdividing of cells.</br></br>Edit consent form.</br></br>Separate regex into different file | 5    | Dynamics and Turtle jumps both implemented. Both defined within the instruction part of the turtle definition e.g. !turtle(d6, ff r m3 pp jG8 r r m3, 1)</br></br>Subdividing of cells now possible for just notes. Can now put e.g. "C3,D3" in a cell and it will play 2 notes equal time each. Still works with rests and sustains.</br></br>Updated consent form and asked Advait if he had any more advice</br></br>Put regex function in a new file | action feedback from Advait                                  |
 | 9/1/2019        | Read a computer music paper                                  | 1    | As part of another project, I was writing some python to manipulate an Excel spreadsheet. I think that a python program exporting to a csv, would be a good way of doing a conversion from e.g. MIDI to the spreadsheet format | Didn't read a paper                                          |
 | 10/1/2019       | Read The programming language as a musical instrument</br></br>Fix speed and looping bug</br></br>Chord inputting and make it look a bit nicer | 5    | Read paper with various extra researches occurring on the way.</br></br>Edited way speed is handled from turtle so arbitrary mathematical expressions can be given.</br></br>Fixed speed and looping bug</br></br>Found and added tonal library and added functionality for basic chord entry | Could define speed by reference to reduce mental operations.</br></br>Look s rubbish and requires specific cell selection to work. I'll make it cleverer and wrestle with the html and css later. |
-|                 |                                                              |      |                                                              |                                                              |
+| 11/1            | Meeting with Advait                                          | 1    | There is a limitation with the Excel API and the undo stack<br><br>Implementation part of diss will include reasons for choosing out of different implementations for design choice. <br><br>Participants will help identify aspects of current design that (don't) work particularly well. Add cognitive difficulty. Comparison to interfaces that they use. How it fits into their ongoing workflow<br><br>Summative evaluation: short interview, CDNs questionnaire.<br><br>Presentation: First one to the Excel group. Later + HCI and the future of work meetings. Excel: 15 mins, 5 overview of what currently exists and motivation for the project. 10 minutes of walkthrough and demos. A minute on the PD that's happening. Later Future of work one: after some PD, 20 mins + 10 of questions. | Create manifest that points to an online server e.g. github pages.<br><br>Start PD pilots. Which will require creating examples and tasks. |
 |                 |                                                              |      |                                                              |                                                              |
 

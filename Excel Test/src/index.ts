@@ -133,7 +133,6 @@ async function insertChord() {
 
         await context.sync();
         selectedRange.values = chordNotes.map(x => [x]);
-        selectedRange.format.load();
         await context.sync();
 
         //console.log(`The range values "${selectedRange.address.split('!')[1]}".`);
