@@ -128,13 +128,11 @@ Rather than working out each note for a chord and typing them in, in the window 
 
 ## Issues
 
-Need to trim turtle range to be within defined area - pad with rests
-
-Chord input doesn't require correct highlighting + Octave
-
 Dynamic of first cell
 
 Relative jumps
+
+Active range of spreadsheet currently has to include the top left cell
 
 ## Log
 
