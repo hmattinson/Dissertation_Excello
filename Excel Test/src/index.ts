@@ -569,14 +569,17 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
             // Jump
             var jumpInstructions = entry.substring(1);
             if (isCell(jumpInstructions)) {
-                var newCoords = getCellCoords(entry.substring(1));
+                var newCoords = getCellCoords(jumpInstructions);
                 pos = [newCoords[1], newCoords[0]];
             }
             else {
-                // TODO: relative Jump
+                // relative Jump
+                var regex = /(\+|-)[0-9]+/g;
+                var movements = jumpInstructions.match(regex).map(x => +x);
+                console.log(movements);
+                pos = [pos[0] + movements[1], pos[1] + movements[0]];
+                console.log(pos)
             }
-            
-            
             notes.push([sheetVals[pos[0]][pos[1]],volume]);
         }
         else if (isDynamic(entry)) {

@@ -57,8 +57,9 @@ The following expressions can be used:
   * m: move the number of cells specified forward e.g. m3
 * Dynamics:
   * ppp, pp, p, mp, mf, f, ff, fff
-* Jumps
-  * j: jump to a cell (that cell will also be played) e.g. jB2
+* Jumps j:
+  * absolute jumps e.g. 'jB2' - jump to a cell (that cell will also be played)
+  * relative jumps e.g. 'j-14+4' (jump 14 cells left and 4 cells down) - two numbers each with an associated direction, first indicated how many cells right to move, the next how many cells down.
 
 The turtle starts facing north by default. 
 
@@ -117,7 +118,6 @@ Rather than working out each note for a chord and typing them in, in the window 
 
 ## Features to add
 
-* Chords
 * Turtles deployed by turtles
 * Definable tempo
 * Turtle tracking
@@ -165,4 +165,5 @@ Active range of spreadsheet currently has to include the top left cell
 | 10/1/2019       | Read The programming language as a musical instrument</br></br>Fix speed and looping bug</br></br>Chord inputting and make it look a bit nicer | 5    | Read paper with various extra researches occurring on the way.</br></br>Edited way speed is handled from turtle so arbitrary mathematical expressions can be given.</br></br>Fixed speed and looping bug</br></br>Found and added tonal library and added functionality for basic chord entry | Could define speed by reference to reduce mental operations.</br></br>Look s rubbish and requires specific cell selection to work. I'll make it cleverer and wrestle with the html and css later. |
 | 11/1            | Meeting with Advait                                          | 1    | There is a limitation with the Excel API and the undo stack<br><br>Implementation part of diss will include reasons for choosing out of different implementations for design choice. <br><br>Participants will help identify aspects of current design that (don't) work particularly well. Add cognitive difficulty. Comparison to interfaces that they use. How it fits into their ongoing workflow<br><br>Summative evaluation: short interview, CDNs questionnaire.<br><br>Presentation: First one to the Excel group. Later + HCI and the future of work meetings. Excel: 15 mins, 5 overview of what currently exists and motivation for the project. 10 minutes of walkthrough and demos. A minute on the PD that's happening. Later Future of work one: after some PD, 20 mins + 10 of questions. | Create manifest that points to an online server e.g. github pages.<br><br>Start PD pilots. Which will require creating examples and tasks. |
 | 11/1            | Create tutorial for new users, to be used at start of participatory design sessions. <br><br>Add inversions and octave to chord inputting and make it work whatever range has been selected. | 4    | Created a follow along tutorial introducing all the current aspects of the system.<br><br>Completed the functionality of chord adding. | The whole side window could look nicer but this is purely cosmetic<br><br>Exercises/tasks for the participatory design then good to go.<br><br>It would also be nice to move the chord stuff into a new file, and separate my code out a little more |
+| 13/1            | Create exercises for pilot participatory design session      | 2.5  | Fixed some bugs: Sampler now does dynamics (required Tone upgrade), Turtles can be defined to have path outside of defined range.<br><br>Began exercises for pilot scheme.<br><br>Added relative jumps to the turtle functionality. | Still need to finish exercises.                              |
 
