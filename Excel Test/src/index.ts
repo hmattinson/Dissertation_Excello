@@ -76,7 +76,7 @@ async function run() {
         // }).toMaster();
 
         runTurtles(sheet.values);
-        Tone.Transport.start("+0.1");
+        Tone.Transport.start("+0.2");
         
         /// console.log(`The range values "${selectedRange.values}".`);
     });
@@ -576,9 +576,7 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
                 // relative Jump
                 var regex = /(\+|-)[0-9]+/g;
                 var movements = jumpInstructions.match(regex).map(x => +x);
-                console.log(movements);
                 pos = [pos[0] + movements[1], pos[1] + movements[0]];
-                console.log(pos)
             }
             notes.push([sheetVals[pos[0]][pos[1]],volume]);
         }
@@ -593,7 +591,6 @@ function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): 
             var sheetVal;
             for (i = 0; i < steps_int; i++) {
                 pos = move(pos, dir);
-                console.log(pos);
                 if (pos[0] >= sheetValsRows || pos[1] >= sheetValsCols) {
                     sheetVal = null;
                 }
