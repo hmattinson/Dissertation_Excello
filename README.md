@@ -132,6 +132,26 @@ Dynamic of first cell
 
 Active range of spreadsheet currently has to include the top left cell
 
+## PD feedback to implement
+
+chords the other way round
+
+inversions currently off by one
+
+Pick sheets drop down from actual sheets
+
+ties as '-'
+
+separate simpler chords
+
+colour playback button when clicked
+
+Change layout of chord input so you know what is what
+
+Sustain at the start of a loop
+
+Piano graph - funky idea I had with Raj
+
 ## Log
 
 | Date            | Goals                                                        | Time | Progress                                                     | Next Steps                                                   |
@@ -166,12 +186,12 @@ Active range of spreadsheet currently has to include the top left cell
 | 13/1            | Create exercises for pilot participatory design session      | 2.5  | Fixed some bugs: Sampler now does dynamics (required Tone upgrade), Turtles can be defined to have path outside of defined range.<br><br>Began exercises for pilot scheme.<br><br>Added relative jumps to the turtle functionality. | Still need to finish exercises.                              |
 | 14/1            | Finish prep for pilots and organise pilot sessions           | 3.5  | Finished creating exercises for the design sessions. Ran first pilot session with Harri, also set up remote site for the code using surge so that anyone can be sent the manifest file. | Write up Harri's report and try and arrange a second PD session. |
 | 15/1            | Write up 1st PD session and make changes to tutorial. Organise a second. | 2    | Typed up 1st session and made changes to the tutorial.       |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 16/1            | Meeting with Advait<Br><br>PD session with Pao + write up    | 2.5  | There is a parallel with this style of programming and puzzle games. e.g. Lightbot, Zacktronic games. Crossover population on musical technologists and technologists who like music.<br><br>For the start dynamic you can offset by a cell or use an extra argument - this helps show that the dynamic is a current property of the turtle not of the notes or cells.<br><br>Can use the count function in Excel to count how many cells the turtle should use.<br><br>Lots of alternatives for turtles calling turtles. Could have turtle launching on the condition another turtle is somewhere else. Could name turtles. | Run lots of PD sessions.<br><br>Mull over meta turtles / sub turtles ideas |
+| 18/1            | 2 PD sessions                                                | 2    | Had PD sessions with Matteo and Ollie.                       | Write up                                                     |
+| 20/1            | Write up PD sessions                                         | 1.5  | Matteo and half of Ollie                                     |                                                              |
+| 21/1            | 4 PD sessions                                                | 4    | PD sessions with Raj, Jamie, Max and Lucy. 1,3 and 4 went particularly well and I think they will all continue to use it |                                                              |
+| 22/1            | 3 PD sessions<br><br>Start writing up yesterdays sessions    | 3.5  | Wrote up the second half of Ollie's session.                 |                                                              |
+| 23/1            | 3 PD sessions<br><br>Start writing up                        | 4.5  | Sessions with Ian, Aiden and Dom. <br><br>Wrote up Raj and Jamie. |                                                              |
+| 24/1            | Meeting with Advait                                          | 1    | Can justify not using "s4" in instructions because then you loose track of which way you're facing and sense of turtle. <br><br>Running till end of music discussion: could use a "*" because then you keep the syntax of putting instruction and number of times. Could have an explicit stopping symbol but that doesn't look as nice, also given turtle can travel in multiple directions, it may have undesirable effects on other turtles. May then want to use an explicit rest for  padding out some sections. This could be compared to accidentals which can be used explicitly and implicitly. <br><br>Both dynamics and octave in cell seems best. Using previous octave. Can then format cells where they are first defined differently - helps to debug. Also solves the problem of dynamics of the first cell. <br><br>Could put colour shading depending on octave but this would require running the turtle path. It could also vary depending on the turtle. | Look at Logo - initial turtle programming environment.<br><br>Dynamics in cell<br><br>Use existing octave<br><br>Get running to end of cell work in 1 dimension. 2 dimensions is less clear but can be tackled later (not for scale of project). |
+| 24/1            | Write up some sessions<br><br>Graph of sheet music in Excel  | 1.5  | Wrote up Max, <br><br>Made a graph to show music             |                                                              |
 

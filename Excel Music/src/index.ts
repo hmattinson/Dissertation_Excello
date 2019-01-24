@@ -154,7 +154,7 @@ async function insertChord() {
             // find the end cell for where the chord will be inputted
             var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0]) + (selectedRangeStartCoords[1]+chordNotes.length);
             var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
-            selectedSheet.getRange(inputRange).values = chordNotes.map(x => [x]);
+            selectedSheet.getRange(inputRange).values = chordNotes.reverse().map(x => [x]);
         }else {
             var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0] + chordNotes.length-1) + (selectedRangeStartCoords[1]+1);
             var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
