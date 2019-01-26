@@ -133,7 +133,7 @@ async function insertChord() {
         var chordOctaveHTMLElement = (document.getElementById("octave")) as HTMLSelectElement;
         var chordOctave = chordOctaveHTMLElement.options[chordOctaveHTMLElement.selectedIndex].value;
         var chordInversionHTMLElement = (document.getElementById("inversion")) as HTMLSelectElement;
-        var chordInversion:number = +chordInversionHTMLElement.options[chordInversionHTMLElement.selectedIndex].value -1;
+        var chordInversion:number = +chordInversionHTMLElement.options[chordInversionHTMLElement.selectedIndex].value;
 
         // get notes of defined chord
         var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));

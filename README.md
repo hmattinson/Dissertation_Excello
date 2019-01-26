@@ -134,23 +134,21 @@ Active range of spreadsheet currently has to include the top left cell
 
 ## PD feedback to implement
 
-chords the other way round
+1) inversions currently off by one
 
-inversions currently off by one
+2) ties as '-'
 
-Pick sheets drop down from actual sheets
+3) Separate Chords
 
-ties as '-'
+4) Playback when clicked
 
-separate simpler chords
+5) Chord input layout
 
-colour playback button when clicked
+6) Pick sheets drop down from actual sheets
 
-Change layout of chord input so you know what is what
+7) Dynamics in cell
 
 Sustain at the start of a loop
-
-Piano graph - funky idea I had with Raj
 
 ## Log
 
@@ -194,4 +192,14 @@ Piano graph - funky idea I had with Raj
 | 23/1            | 3 PD sessions<br><br>Start writing up                        | 4.5  | Sessions with Ian, Aiden and Dom. <br><br>Wrote up Raj and Jamie. |                                                              |
 | 24/1            | Meeting with Advait                                          | 1    | Can justify not using "s4" in instructions because then you loose track of which way you're facing and sense of turtle. <br><br>Running till end of music discussion: could use a "*" because then you keep the syntax of putting instruction and number of times. Could have an explicit stopping symbol but that doesn't look as nice, also given turtle can travel in multiple directions, it may have undesirable effects on other turtles. May then want to use an explicit rest for  padding out some sections. This could be compared to accidentals which can be used explicitly and implicitly. <br><br>Both dynamics and octave in cell seems best. Using previous octave. Can then format cells where they are first defined differently - helps to debug. Also solves the problem of dynamics of the first cell. <br><br>Could put colour shading depending on octave but this would require running the turtle path. It could also vary depending on the turtle. | Look at Logo - initial turtle programming environment.<br><br>Dynamics in cell<br><br>Use existing octave<br><br>Get running to end of cell work in 1 dimension. 2 dimensions is less clear but can be tackled later (not for scale of project). |
 | 24/1            | Write up some sessions<br><br>Graph of sheet music in Excel  | 1.5  | Wrote up Max, <br><br>Made a graph to show music             |                                                              |
+| 25/1            | Meeting with Alan                                            | 1    | Comparison to Dave Griffiths Al-Jazzari would be good<br><br>I'm not really using the term participatory design correctly given the product is already somewhat created. <br><br>Being able to use the editor aids in Excel would bring some real value to the project.  e.g. for transposing notes <br><br>ixi.lang makes changes to the data in the editor so this would be a good comparison<br><br>Could have buttons on the side to edit the current instruction. The active cell could flash to the current position of the turtles path.<br><br>Good to talk about the dual formalism of the cells and the turtle instruction. Make sure tradeoffs in functionality are covered and the decisions are systematic.<br><br>EXPLAIN THE DESIGN DECISIONS. reference to research. |                                                              |
+| 26/1            | Plan more PD sessions<br><br>Implement some of the changes that came up in evaluation sessions. |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
+|                 |                                                              |      |                                                              |                                                              |
 
