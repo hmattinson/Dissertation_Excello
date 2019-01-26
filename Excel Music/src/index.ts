@@ -2,6 +2,8 @@ import * as OfficeHelpers from '@microsoft/office-js-helpers';
 import * as Tone from 'tone';
 import {Chord, Note} from 'tonal';
 import {isNote, isTurtle, isCell, isMultiNote, isDirChange, isDynamic} from '../src/regex';
+import {insertChord, addChordOctave} from '../src/chords';
+import {numberToLetter, lettersToNumber, getCellCoords, dynamicToVolume} from '../src/conversions';
 
 $("#run").hide();
 $("#run").show(); // may want to use this to let sounds load first
@@ -114,101 +116,6 @@ async function test() {
 
         //Tone.Transport.start("+0.1");
     });
-}
-
-async function insertChord() {
-    await Excel.run(async (context) => {
-
-        const selectedRange = context.workbook.getSelectedRange();
-        const selectedSheet = context.workbook.worksheets.getActiveWorksheet();
-        selectedRange.load("address");
-        selectedRange.load("rowCount");
-        selectedRange.load("columnCount");
-
-        // get info from the selects
-        var chordNoteHTMLElement = (document.getElementById("chord_note")) as HTMLSelectElement;
-        var chordNote = chordNoteHTMLElement.options[chordNoteHTMLElement.selectedIndex].value;
-        var chordTypeHTMLElement = (document.getElementById("chord_type")) as HTMLSelectElement;
-        var chordType = chordTypeHTMLElement.options[chordTypeHTMLElement.selectedIndex].value;
-        var chordOctaveHTMLElement = (document.getElementById("octave")) as HTMLSelectElement;
-        var chordOctave = chordOctaveHTMLElement.options[chordOctaveHTMLElement.selectedIndex].value;
-        var chordInversionHTMLElement = (document.getElementById("inversion")) as HTMLSelectElement;
-        var chordInversion:number = +chordInversionHTMLElement.options[chordInversionHTMLElement.selectedIndex].value;
-
-        // get notes of defined chord
-        var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
-        // invert the chord as required
-        while(chordInversion--)chordNotes.push(chordNotes.shift());
-        // Add the correct octave
-        chordNotes = addChordOctave(chordNotes, chordOctave);
-        
-        await context.sync();
-
-        // find cell for start of where chord will be inputted
-        var selectedRangeStart = selectedRange.address.split('!')[1].split(':')[0];
-        var selectedRangeStartCoords  = getCellCoords(selectedRangeStart);
-        // if the chord should be inserted vertically
-        var vertical: boolean = (selectedRange.rowCount - selectedRange.columnCount) >= 0;
-
-        if (vertical) {
-            // find the end cell for where the chord will be inputted
-            var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0]) + (selectedRangeStartCoords[1]+chordNotes.length);
-            var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
-            selectedSheet.getRange(inputRange).values = chordNotes.reverse().map(x => [x]);
-        }else {
-            var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0] + chordNotes.length-1) + (selectedRangeStartCoords[1]+1);
-            var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
-            selectedSheet.getRange(inputRange).values = [chordNotes];
-        }
-
-    }).catch(errorHandlerFunction);
-}
-
-/**
- * Given a list of notes and a starting octave, applies octave numbers to the notes assuming always ascending
- * @param chordNotes List of notes without octave as strings e.g. ['C','E','G','Bb','D']
- * @param startingOctave the octave number of the first note in the list e.g. 4
- * @return The notes with octave numbers applied e.g. ['C4','E4','G4','Bb4','D5']
- */
-function addChordOctave(chordNotes: string[], startingOctave: string): string[]{
-    var noteOrder = {
-        'C': 1,
-        'C#': 2,
-        'Db': 2,
-        'D': 3,
-        'D#': 4,
-        'Eb': 4,
-        'E': 5,
-        'F': 6,
-        'F#': 7,
-        'Gb': 7,
-        'G': 8,
-        'G#': 9,
-        'Ab': 9,
-        'A': 10,
-        'A#': 11,
-        'Bb': 11,
-        'B': 12
-      }; // used to check when an octave boundary has been passed
-    var octave: number = +startingOctave;
-    var octavedNotes: string[] = new Array(chordNotes.length);
-    octavedNotes[0] = chordNotes[0] + startingOctave;
-    var previousNote = chordNotes[0]
-    for (var i=1; i<chordNotes.length; i++) {
-        var note = chordNotes[i];
-        if (noteOrder[note] <= noteOrder[previousNote]) {
-            // new octave
-            octave++;
-        }
-        octavedNotes[i] = note + octave;
-        previousNote = note;
-    }
-
-    return octavedNotes;
-}
-
-function errorHandlerFunction(err) {
-    console.log(err);
 }
 
 
@@ -325,7 +232,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                 inRest = true;
             }
         }
-        else if(value == 's' || value == "-"){
+        else if(value == 's' || value == '-'){
             // x -> x
             noteLength++;
         }
@@ -337,6 +244,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
             
             //now process all the scenarios of things than could be in the multinote
             for (let multiVal of noteList) {
+                console.log(multiVal);
 
                 if(isNote(multiVal)){
                     if(inRest){
@@ -366,7 +274,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         inRest = true;
                     }
                 }
-                else if(multiVal == 's' || multiVal == "-"){
+                else if(multiVal == 's' || multiVal == '-'){
                     // x -> x
                     noteLength += subdivisionLength;
                 }
@@ -412,40 +320,6 @@ function playSequence(values: [string, number][], speedFactor: number =1, repeat
     synthPart.loopEnd = "0:" + beatsLength + ":0";
     synthPart.humanize = false;
     synthPart.playbackRate = speedFactor;
-}
-
-/**
- * Gives the column heading of a number e.g. 1->A, 27->AA
- * @param x number
- * @return x base 26 using the letters of the alphabet
- */
-function numberToLetter(x: number): string {
-    return (x >= 26 ? numberToLetter((x / 26 >> 0) - 1) : '') +  'abcdefghijklmnopqrstuvwxyz'[x % 26 >> 0];
-}
-
-/**
- * Gives the index of the column of given letters
- * @param letters column e.g. AB
- * @return index of this column
- */
-function lettersToNumber(letters: string): number {
-    var num: number = 0;
-    const len: number = letters.length;
-    letters = letters.toUpperCase();
-    for (var i = 0; i < len; i++) {
-        num += (letters.charCodeAt(i) - 64) * Math.pow(26, len - i - 1);
-    }
-    return num;
-}
-
-/**
- * Gives the index coordinates of a cell using Excel coordinates (column, row)
- * @param letters cell position e.g. B1
- * @return coordinates with 0 indexing
- */
-function getCellCoords(battleship: string): [number, number] {
-    var x = battleship.match(/[a-zA-Z]+|[0-9]+/g);
-    return [lettersToNumber(x[0]) - 1, +x[1] - 1];
 }
 
 /**
@@ -516,24 +390,6 @@ function move(current: [number, number], dir: string): [number, number] {
         case 'e': return [current[0], current[1]+1];
         case 's': return [current[0]+1, current[1]];
         case 'w': return [current[0], Math.max(current[1]-1,0)];
-    } 
-}
-
-/**
- * Given current a dynamic, return volume in range [0,1]
- * @param dynamic dynamic marking
- * @return number in [0,1]
- */
-function dynamicToVolume(dynamic: string): number {
-    switch (dynamic) {
-        case 'ppp': return 0.125;
-        case 'pp': return 0.25;
-        case 'p': return 0.375;
-        case 'mp': return 0.5;
-        case 'mf': return 0.625;
-        case 'f': return 0.75;
-        case 'ff': return 0.875;
-        case 'fff': return 1;
     } 
 }
 

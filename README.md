@@ -144,6 +144,8 @@ Active range of spreadsheet currently has to include the top left cell
 
 7) Dynamics in cell
 
+8) Octave context
+
 Sustain at the start of a loop
 
 ## Log

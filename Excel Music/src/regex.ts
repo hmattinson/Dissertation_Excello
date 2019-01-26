@@ -46,7 +46,7 @@ export function isMultiNote(s: string): boolean {
     }
     var arr = s.replace(/ /g,'').split(',');
     for (let val of arr) {
-        if (!isNote(val) && !(val=="") && !(val=='s')){
+        if (!isNote(val) && !(val=="") && !(val=='s') && !(val=='-')){
             return false
         }
     }
