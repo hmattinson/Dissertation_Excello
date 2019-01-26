@@ -229,7 +229,7 @@ function highlightSheet(sheet: Excel.Range): void {
                 sheet.getCell(row,col).format.fill.color = "#FFada5";
             }
             // Highlight sustains a lighter red
-            else if (value == "s"){
+            else if (value == "s" || value == "-"){
                 sheet.getCell(row,col).format.fill.color = "#FFd6d6";
             }
             // Highlight turtles green
@@ -325,7 +325,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                 inRest = true;
             }
         }
-        else if(value == 's'){
+        else if(value == 's' || value == "-"){
             // x -> x
             noteLength++;
         }
@@ -366,7 +366,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         inRest = true;
                     }
                 }
-                else if(multiVal == 's'){
+                else if(multiVal == 's' || multiVal == "-"){
                     // x -> x
                     noteLength += subdivisionLength;
                 }

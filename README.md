@@ -134,10 +134,6 @@ Active range of spreadsheet currently has to include the top left cell
 
 ## PD feedback to implement
 
-1) inversions currently off by one
-
-2) ties as '-'
-
 3) Separate Chords
 
 4) Playback when clicked
