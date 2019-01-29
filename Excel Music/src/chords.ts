@@ -1,4 +1,3 @@
-
 import {Chord, Note} from 'tonal';
 import {getCellCoords, numberToLetter} from '../src/conversions';
 

@@ -6,6 +6,20 @@ The aim of this project is to take Microsoft's Excel, one of the most omnipresen
 
 ## Set up
 
+### For Users
+
+* Download the manifest.xml file from the Excel Music folder
+* Download the Excel Music spreadsheet (.xlsx)
+* Visit [https://universityofcambridgecloud-my.sharepoint.com](https://universityofcambridgecloud-my.sharepoint.com/)
+* Log in with your Cambridge University credentials
+* Upload and open the spreadsheet.
+* On the Insert tab click Office Add-ins
+* In the top-right of the window click "upload my add-in"
+* Find and upload the manifest file
+* The add-in will now be available to open from the home tab.
+
+### For Developers
+
 Clone the repo
 
 npm run from within the repo
@@ -123,8 +137,9 @@ Rather than working out each note for a chord and typing them in, in the window 
 * Turtle tracking
 * Input sanitisation
 * Different Synths - in a more sustainable way, and such that they can be selected
-* turtle(A1:A5, EL1)
 * Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
+* Have nested instructions with numbers
+* move as far as there are notes
 
 ## Issues
 
@@ -134,17 +149,15 @@ Active range of spreadsheet currently has to include the top left cell
 
 ## PD feedback to implement
 
-3) Separate Chords
-
-4) Playback when clicked
-
-5) Chord input layout
-
 6) Pick sheets drop down from actual sheets
 
 7) Dynamics in cell
 
 8) Octave context
+
+9) play selected
+
+10) (de)activate turtle
 
 Sustain at the start of a loop
 
@@ -191,9 +204,9 @@ Sustain at the start of a loop
 | 24/1            | Meeting with Advait                                          | 1    | Can justify not using "s4" in instructions because then you loose track of which way you're facing and sense of turtle. <br><br>Running till end of music discussion: could use a "*" because then you keep the syntax of putting instruction and number of times. Could have an explicit stopping symbol but that doesn't look as nice, also given turtle can travel in multiple directions, it may have undesirable effects on other turtles. May then want to use an explicit rest for  padding out some sections. This could be compared to accidentals which can be used explicitly and implicitly. <br><br>Both dynamics and octave in cell seems best. Using previous octave. Can then format cells where they are first defined differently - helps to debug. Also solves the problem of dynamics of the first cell. <br><br>Could put colour shading depending on octave but this would require running the turtle path. It could also vary depending on the turtle. | Look at Logo - initial turtle programming environment.<br><br>Dynamics in cell<br><br>Use existing octave<br><br>Get running to end of cell work in 1 dimension. 2 dimensions is less clear but can be tackled later (not for scale of project). |
 | 24/1            | Write up some sessions<br><br>Graph of sheet music in Excel  | 1.5  | Wrote up Max, <br><br>Made a graph to show music             |                                                              |
 | 25/1            | Meeting with Alan                                            | 1    | Comparison to Dave Griffiths Al-Jazzari would be good<br><br>I'm not really using the term participatory design correctly given the product is already somewhat created. <br><br>Being able to use the editor aids in Excel would bring some real value to the project.  e.g. for transposing notes <br><br>ixi.lang makes changes to the data in the editor so this would be a good comparison<br><br>Could have buttons on the side to edit the current instruction. The active cell could flash to the current position of the turtles path.<br><br>Good to talk about the dual formalism of the cells and the turtle instruction. Make sure tradeoffs in functionality are covered and the decisions are systematic.<br><br>EXPLAIN THE DESIGN DECISIONS. reference to research. |                                                              |
-| 26/1            | Plan more PD sessions<br><br>Implement some of the changes that came up in evaluation sessions. |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 26/1            | Plan more PD sessions<br><br>Implement some of the changes that came up in evaluation sessions.<br><br>Write up some PD<br><br>Write progress report | 4    | Planned some PD sessions<br><br>Implemented rests as '-', fixed chord inversions and separated common chords.  <Br><br>Wrote up PD session with Lucy (long recording)<br><br>Wrote up Simeon and looked into bug from that - fixed. Volume was only updated if going note to note, not when there were rests and sustains. | In simpsons example the dynamics of the first note was wrong even though the dynamic change was defined cells easier. |
+| 27/1            | Finish Progress Report<br>Send instruction for how to run to people who ran on my laptop | 1    | Finished Progress Report                                     |                                                              |
+| 29/1            | small fixes, finalise progress report                        | 0.5  | Chord input layout, play button green on playback            |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |

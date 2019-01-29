@@ -8,6 +8,7 @@ import {numberToLetter, lettersToNumber, getCellCoords, dynamicToVolume} from '.
 $("#run").hide();
 $("#run").show(); // may want to use this to let sounds load first
 
+$("#refresh").click(() => tryCatch(refresh));
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
 $("#test").click(() => tryCatch(test));
@@ -20,6 +21,8 @@ var piano: Tone.Sampler;
  */
 async function run() {
     await Excel.run(async (context) => {
+
+        document.getElementById("run").style.background='#A8FFD0';
 
         const selectedRange = context.workbook.getSelectedRange();
         selectedRange.load("values");
@@ -89,6 +92,7 @@ async function run() {
  */
 async function stop() {
     await Excel.run(async (context) => {
+        document.getElementById("run").style.removeProperty("background-color");
         Tone.context.close();
     });
 }
@@ -117,6 +121,28 @@ async function test() {
         //Tone.Transport.start("+0.1");
     });
 }
+
+/**
+ * refreshes sheets in the dropdown based on sheets that are in workbook
+ */
+async function refresh() {
+    await Excel.run(async (context) => {
+        var sheets = context.workbook.worksheets;
+        // var sheet = context.workbook.worksheets.getActiveWorksheet();
+        sheets.load("items/name");
+        // sheet.load("name");
+        await context.sync();
+        $("#sheet_select").empty()
+        for (var i in sheets.items) {
+            var name = sheets.items[i].name
+            $('#sheet_select').append($('<option>', {
+                value: name,
+                text: name
+            }));
+        }
+    });
+}
+
 
 
 /**
@@ -211,6 +237,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                 currentStart = "0:" + beatCount + ":0";
                 currentNote = value;
                 noteLength = 1;
+                currentVolume = volume;
                 inRest = false;
             }
             else{
@@ -230,11 +257,13 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                 // end current note
                 noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                 inRest = true;
+                currentVolume = volume;
             }
         }
         else if(value == 's' || value == '-'){
             // x -> x
             noteLength++;
+            currentVolume = volume;
         }
         else if(isMultiNote(value)){
             var noteList = value.replace(/ /g,'').split(',');
@@ -244,7 +273,6 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
             
             //now process all the scenarios of things than could be in the multinote
             for (let multiVal of noteList) {
-                console.log(multiVal);
 
                 if(isNote(multiVal)){
                     if(inRest){
@@ -254,6 +282,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         currentNote = multiVal;
                         noteLength = subdivisionLength;
                         inRest = false;
+                        currentVolume = volume;
                     }
                     else{
                         // Note -> Note
@@ -272,11 +301,13 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         // end current note
                         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                         inRest = true;
+                        currentVolume = volume;
                     }
                 }
                 else if(multiVal == 's' || multiVal == '-'){
                     // x -> x
                     noteLength += subdivisionLength;
+                    currentVolume = volume;
                 }
                 subdivisionCount++;
             }
