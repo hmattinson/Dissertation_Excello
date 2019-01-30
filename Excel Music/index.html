@@ -22,24 +22,25 @@
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />
 
+    <script src="fabric.min.js"></script>
+
     <!-- Template styles -->
     <link href="app.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <h1 class="ms-font-m">Select Sheet</h1>
+    <h1 class="ms-font-l">Select Sheet</h1>
 
-    <select name="sheet_select" id="sheet_select">
-        <option value="Tutorial">Tutorial</option>
-        <option value="Exercise 1">Exercise 1</option>
-        <option value="Exercise 1 Solution">Exercise 1 Solution</option>
-        <option value="Exercise 2">Exercise 2</option>
-        <option value="Exercise 2 Solution">Exercise 2 Solution</option>
-        <option value="Sheet1">Sheet1</option>
-        <option value="Piano Phase">Piano Phase</option>
-        <!-- <option value="Clapping Music">Clapping Music</option> -->
-        <option value="Christmas">Christmas</option>
-      </select>
+        <select name="sheet_select" id="sheet_select">
+            <option value="Tutorial">Tutorial</option>
+            <option value="Exercise 1">Exercise 1</option>
+            <option value="Exercise 1 Solution">Exercise 1 Solution</option>
+            <option value="Exercise 2">Exercise 2</option>
+            <option value="Exercise 2 Solution">Exercise 2 Solution</option>
+            <option value="Sheet1">Sheet1</option>
+            <option value="Piano Phase">Piano Phase</option>
+            <option value="Christmas">Christmas</option>
+        </select>
 
       <button id="refresh" onclick="update_select">
             <span>refresh</span>
@@ -57,7 +58,11 @@
         <span class="ms-Button-label">Test</span>
     </button> -->
 
-    <h1 class="ms-font-m">Insert Chords</h1>
+    <button id="toggle" class="ms-Button">
+            <span class="ms-Button-label">Toggle activation</span>
+    </button>
+
+    <h1 class="ms-font-l">Insert Chords</h1>
 
 
     <table align="left">

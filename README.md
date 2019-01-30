@@ -147,9 +147,9 @@ Dynamic of first cell
 
 Active range of spreadsheet currently has to include the top left cell
 
-## PD feedback to implement
+Double clicking play
 
-6) Pick sheets drop down from actual sheets
+## PD feedback to implement
 
 7) Dynamics in cell
 
@@ -206,7 +206,7 @@ Sustain at the start of a loop
 | 25/1            | Meeting with Alan                                            | 1    | Comparison to Dave Griffiths Al-Jazzari would be good<br><br>I'm not really using the term participatory design correctly given the product is already somewhat created. <br><br>Being able to use the editor aids in Excel would bring some real value to the project.  e.g. for transposing notes <br><br>ixi.lang makes changes to the data in the editor so this would be a good comparison<br><br>Could have buttons on the side to edit the current instruction. The active cell could flash to the current position of the turtles path.<br><br>Good to talk about the dual formalism of the cells and the turtle instruction. Make sure tradeoffs in functionality are covered and the decisions are systematic.<br><br>EXPLAIN THE DESIGN DECISIONS. reference to research. |                                                              |
 | 26/1            | Plan more PD sessions<br><br>Implement some of the changes that came up in evaluation sessions.<br><br>Write up some PD<br><br>Write progress report | 4    | Planned some PD sessions<br><br>Implemented rests as '-', fixed chord inversions and separated common chords.  <Br><br>Wrote up PD session with Lucy (long recording)<br><br>Wrote up Simeon and looked into bug from that - fixed. Volume was only updated if going note to note, not when there were rests and sustains. | In simpsons example the dynamics of the first note was wrong even though the dynamic change was defined cells easier. |
 | 27/1            | Finish Progress Report<br>Send instruction for how to run to people who ran on my laptop | 1    | Finished Progress Report                                     |                                                              |
-| 29/1            | small fixes, finalise progress report                        | 0.5  | Chord input layout, play button green on playback            |                                                              |
+| 29/1            | small fixes, finalise progress report, pick sheet selection from actual sheets <br><br>Tom Edney and TMarge | 3.5  | Chord input layout, play button green on playback<br><br>Sessions with TEdney and TMarge | Make sheet selection drop down and refresh button look nicer. |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |

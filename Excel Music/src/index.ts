@@ -12,6 +12,7 @@ $("#refresh").click(() => tryCatch(refresh));
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
 $("#test").click(() => tryCatch(test));
+$("#toggle").click(() => tryCatch(toggle));
 $("#insertChord").click(() => tryCatch(insertChord));
 
 var piano: Tone.Sampler;
@@ -140,6 +141,34 @@ async function refresh() {
                 text: name
             }));
         }
+    });
+}
+
+/**
+ * If a turtle cell is selected, it will toggle the activation of the cell
+ */
+async function toggle() {
+    await Excel.run(async (context) => {
+        const selectedRange = context.workbook.getSelectedRange();
+        selectedRange.load("values");
+        selectedRange.load("address");
+        await context.sync();
+        var newValues = selectedRange.values;
+        // add/remove ! as required
+        for (var row=0; row<newValues.length; row++) {
+            for (var col=0; col<newValues[0].length; col++) {
+                var val = newValues[row][col]
+                if (isTurtle(val)) {
+                    newValues[row][col] = val.substring(1);
+                }
+                else if (isTurtle("!" + val)) {
+                    newValues[row][col] = "!" + val;
+                }
+            }
+        }
+        // propogate changes to grid
+        const selectedSheet = context.workbook.worksheets.getActiveWorksheet();
+        selectedSheet.getRange(selectedRange.address.split('!')[1]).values = newValues;
     });
 }
 

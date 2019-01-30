@@ -2,23 +2,19 @@
 
 Name: **Henry Mattinson** (hcm50)<br>Date: 27/1/18<br>Project Title: **Music Generation in Microsoft Excel**<br>Supervisor: Advait Sarkar (advait@microsoft.com)<br>Director of Studies: Richard Mortier (rmm1002)<br>Overseers: Andrew Pitts (amp12) and Rafal Mantiuk (rkm38)<br>
 
-
-
-one line what is my project
-
 The following tasks were to be completed for the project to be deemed a success:
 
-* Implementation of an API for music playback within a spreadsheet.
-* Implementation of a converter from formal music notation to the spreadsheet representation.
+* Implement an API for music playback within a spreadsheet.
+* Implement a converter from formal music notation to the spreadsheet representation.
 * Usability testing for music generation implementation.
 
 At this point in time I was expecting to have finished the API for music generation within Excel. The specified features, all of which have been completed are as follows:
 
-- Play individual notes and chords and define their durations.
-- Defining multiple parts.
-- Play loops.
-- Define sequences of notes and chords and be able to call these for playback.
-- Define the tempo of playback.
+- Playing individual notes and chords, defining their durations.
+- Having multiple musical parts play at once.
+- Being able to define loops. 
+- Being able to define sequences of notes and chords which can be referred to elsewhere. 
+- Defining the tempo of playback.
 
 The Microsoft spreadsheet API has broadly been pretty usable and quickly allowed me to write my own code using data within the spreadsheet. I have also made use of the Javascript library Tones for creating sounds. As my understanding of this library has evolved there have been a couple of redesigns.
 
