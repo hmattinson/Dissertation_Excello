@@ -216,7 +216,46 @@ function getBPM(sheetVals: any[][]): number {
 }
 
 /**
- * Assuming a string isMultiLine, returns the number of notes
+ * Assuming a string isNote, returns the number note, octave and volume
+ * @param cellValue the string written in the cell that isNote
+ * @param currentOct the current octave at that point in the createNoteTimes process
+ * @return [note, octave, volume]
+ */
+function getNoteOctVol(cellValue: string, currentOct: number): [string, number, number] {
+    var note: string;
+    var octave: number;
+    var volume: number = null;
+
+    var cellNoteVol = cellValue.split(' ');
+
+    if (cellNoteVol.length == 2) {
+        var cellVol = cellNoteVol[1];
+        // process dynamic
+        if (isDynamic(cellVol)) {
+            volume = dynamicToVolume(cellVol);
+        }
+        else {
+            volume = +cellVol;
+        }
+    }
+
+    // get note (with octave)
+    // octave defined in cell
+    var cellNote = cellNoteVol[0];
+    if (!isNaN(+cellNote[cellNote.length -1])) {
+        octave = +cellNote[cellNote.length -1];
+        note = cellNote;
+    }
+    // octave not defined in cell
+    else {
+        note = cellNote + currentOct;
+        octave = currentOct;
+    }
+    return [note, octave, volume];
+}
+
+/**
+ * Assuming a string isMultiNote, returns the number of notes
  * @param s a string
  * @return number of notes in multiNote
  */
@@ -251,34 +290,41 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
     var inRest = true // if the current value in the trace is a rest (else we're in a note)
     var currentStart: string; // start time of note currently in
     var currentNote: string; // note currently being played
-    var currentVolume: number = values[0][1];
+    // var currentVolume: number = values[0][1];
+    var currentVolume: number = dynamicToVolume('mf');
     var volume: number;
     var value: string;
+    var octave: number = 4;
 
     for (let valVol of values) {
-        volume = valVol[1];
+        //volume = valVol[1];
         value = valVol[0];
 
         if(isNote(value)){
+
+            var noteOctVol = getNoteOctVol(value, octave);
+            value = noteOctVol[0];
+            octave = noteOctVol[1];
+            if (noteOctVol[2] != null) {
+                volume = noteOctVol[2];
+            }
+            else {
+                volume = currentVolume;
+            }
+
             if(inRest){
                 // Rest -> Note
-                // start new note
-                currentStart = "0:" + beatCount + ":0";
-                currentNote = value;
-                noteLength = 1;
-                currentVolume = volume;
                 inRest = false;
             }
             else{
                 // Note -> Note
                 // end current note
                 noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
-                // start new note
-                currentStart = "0:" + beatCount + ":0";
-                currentNote = value;
-                noteLength = 1;
-                currentVolume = volume;
             }
+            currentStart = "0:" + beatCount + ":0"; // start new note
+            currentNote = value;
+            noteLength = 1;
+            currentVolume = volume;
         }
         else if(value == null){ //rest
             if(!inRest){
@@ -295,7 +341,7 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
             currentVolume = volume;
         }
         else if(isMultiNote(value)){
-            var noteList = value.replace(/ /g,'').split(',');
+            var noteList = value.split(',').map(x => x.trim());
             var subdivisionLength = 1/(value.replace(/ /g,'').split(',').length);
 
             var subdivisionCount = 0;
@@ -304,25 +350,29 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
             for (let multiVal of noteList) {
 
                 if(isNote(multiVal)){
+
+                    var multiNoteOctVol = getNoteOctVol(multiVal, octave);
+                    multiVal = multiNoteOctVol[0];
+                    octave = multiNoteOctVol[1];
+                    if (multiNoteOctVol[2] != null) {
+                        volume = multiNoteOctVol[2];
+                    }
+                    else {
+                        volume = currentVolume;
+                    }
+
                     if(inRest){
                         // Rest -> Note
-                        // start new note
-                        currentStart = "0:" + (beatCount+subdivisionCount*subdivisionLength) + ":0";
-                        currentNote = multiVal;
-                        noteLength = subdivisionLength;
                         inRest = false;
-                        currentVolume = volume;
                     }
                     else{
                         // Note -> Note
                         // end current note
                         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
-                        // start new note
-                        currentStart = "0:" + (beatCount+subdivisionCount*subdivisionLength) + ":0";
-                        currentNote = multiVal;
-                        noteLength = subdivisionLength;
-                        currentVolume = volume;
                     }
+                    currentStart = "0:" + (beatCount+subdivisionCount*subdivisionLength) + ":0"; // start new note
+                    currentNote = multiVal;
+                    noteLength = subdivisionLength;
                 }
                 else if(multiVal == null){ //rest
                     if(!inRest){
@@ -330,14 +380,13 @@ function createNoteTimes(values: [string, number][]): [[string, [string, string,
                         // end current note
                         noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                         inRest = true;
-                        currentVolume = volume;
                     }
                 }
                 else if(multiVal == 's' || multiVal == '-'){
                     // x -> x
                     noteLength += subdivisionLength;
-                    currentVolume = volume;
                 }
+                currentVolume = volume;
                 subdivisionCount++;
             }
         }
@@ -558,7 +607,7 @@ function turtle(instructions: string, sheetVals: any[][]): void {
                 repeats = +instructionsArray[3].replace(/\s/g, "");
             }
         }
-        console.log(notes);
+        // console.log(notes);
         playSequence(notes, speedFactor, repeats);
     }
     else {

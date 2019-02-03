@@ -149,6 +149,8 @@ Active range of spreadsheet currently has to include the top left cell
 
 Double clicking play
 
+Bug with Simon
+
 ## PD feedback to implement
 
 7) Dynamics in cell
@@ -158,6 +160,8 @@ Double clicking play
 9) play selected
 
 Sustain at the start of a loop
+
+Which turtles are open
 
 ## Log
 
@@ -205,9 +209,9 @@ Sustain at the start of a loop
 | 26/1            | Plan more PD sessions<br><br>Implement some of the changes that came up in evaluation sessions.<br><br>Write up some PD<br><br>Write progress report | 4    | Planned some PD sessions<br><br>Implemented rests as '-', fixed chord inversions and separated common chords.  <Br><br>Wrote up PD session with Lucy (long recording)<br><br>Wrote up Simeon and looked into bug from that - fixed. Volume was only updated if going note to note, not when there were rests and sustains. | In simpsons example the dynamics of the first note was wrong even though the dynamic change was defined cells easier. |
 | 27/1            | Finish Progress Report<br>Send instruction for how to run to people who ran on my laptop | 1    | Finished Progress Report                                     |                                                              |
 | 29/1            | small fixes, finalise progress report, pick sheet selection from actual sheets <br><br>Tom Edney and TMarge | 3.5  | Chord input layout, play button green on playback<br><br>Sessions with TEdney and TMarge | Make sheet selection drop down and refresh button look nicer. |
-| 30/1            | (De)Activate turtles in selected cells                       | 1    | Button added to activate / deactivate turtles in the selected range. |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 30/1            | (De)Activate turtles in selected cells                       | 1    | Button added to activate / deactivate turtles in the selected range.<br><br>Updated participants version |                                                              |
+| 31/1            | Write up Simon                                               | 1    | Wrote up Simon session.                                      |                                                              |
+| 2/2             | Write ups                                                    | 1.5  | Wrote up Ryan and 11                                         |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |

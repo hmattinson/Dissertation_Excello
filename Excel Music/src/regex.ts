@@ -2,14 +2,16 @@
  * A series of RegExp helpers for identifying the contents of a cell
  */
 
+
 /**
- * Returns if a string is a definition of a note. e.g. 'A4'
+ * Returns if a string is a definition of a note. e.g. 'A4', 'Ab', 'Ab5 ppp', 'A 0.5'
  * @param val Contents of a cell as a string
  * @return If val is a definition of a note
  */
+var re_isNote = new RegExp('^[A-G](#|b|)?[1-9]?( (0(\.\[0-9]+)?|1(\.0)?|ppp|pp|p|mp|mf|f|ff|fff))?$');
 export function isNote(val: string): boolean {
-    var re = new RegExp('^[A-Z](#|b|)[1-9]$');
-    return re.test(val);
+    // var re = new RegExp('^[A-G](#|b|)[1-9]$');
+    return re_isNote.test(val);
 }
 
 /**
@@ -44,8 +46,9 @@ export function isMultiNote(s: string): boolean {
     if (!(s.includes(','))) {
         return false;
     }
-    var arr = s.replace(/ /g,'').split(',');
+    var arr = s.split(',');
     for (let val of arr) {
+        val = val.trim();
         if (!isNote(val) && !(val=="") && !(val=='s') && !(val=='-')){
             return false
         }
