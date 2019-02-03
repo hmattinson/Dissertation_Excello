@@ -62,7 +62,7 @@ export function isMultiNote(s: string): boolean {
  * @return if it is a turtle direction change definition
  */
 export function isDirChange(s: string): boolean {
-    return RegExp(/^(r|l|n|e|s|w)$/).test(s);
+    return RegExp(/^((r|l)[0-9]*|n|e|s|w)$/).test(s);
 }
 
 /**

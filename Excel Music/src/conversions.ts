@@ -49,3 +49,26 @@ export function dynamicToVolume(dynamic: string): number {
         case 'fff': return 1;
     } 
 }
+
+/**
+ * INCOMPLETE, takes a start and end cell and gives addresses of cells between (currently only does a column)
+ * @param range e.g. B1:B10
+ * @return list of addresses in range (inclusive)
+ */
+export function expandRange(range: string): string[] {
+    var [start, end] = range.split(":");
+    var startCoords = getCellCoords(start);
+    var endCoords = getCellCoords(end);
+    var colChange = endCoords[0] - startCoords[0];
+    var rowChange = endCoords[1] - startCoords[1];
+    var startSplit = start.match(/[a-z]+|[^a-z]+/gi);
+    var endSplit = end.match(/[a-z]+|[^a-z]+/gi);
+    if (rowChange!=0) {
+        var col: string = startSplit[0];
+        var cells: string[] = []
+        for (var i = Math.min(+startSplit[1], +endSplit[1]); i <= Math.max(+startSplit[1], +endSplit[1]); i++) {
+            cells.push(col + i);
+        }
+    }
+    return cells;
+}
