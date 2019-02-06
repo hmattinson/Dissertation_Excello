@@ -36,26 +36,47 @@ This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/e
 
 #### Cells
 
-A single note can be defined in a cell, this currently only of the form "A4". Options for volume and other features will be added later. Notes are sustained by placing "s" in the next cell in the path. A rest is simply an empty cell.
+Notes are defined in the cells of the spreadsheet. Using "scientific pitch notation" notes are defined by note name and octave number e.g. "A4". The first note of the octave is C. If the octave number is omitted, the octave of the previously played note is used. **Volume** is defined using either a dynamic marking or a number in the range [0,1] separated from the note by a space. e.g. "A4 0.8", "G pp".
+
+| Dynamic Marking | Volume |
+| --------------- | ------ |
+| ppp             | 0.125  |
+| pp              | 0.25   |
+| p               | 0.375  |
+| mp              | 0.5    |
+| mf              | 0.625  |
+| f               | 0.75   |
+| ff              | 0.875  |
+| fff             | 1      |
+
+Notes are **sustained** by placing "-" in the next cell in the path.
+
+A **rest** is simply an empty cell.
+
+It is also possible to **subdivide** cells using commas e.g. "C3,D3,E3" would create triplets or "s,s,,F4" which would sustain the previous notes for an additional 2 quarter measures, a quarter measure rest and then F4 for the last quarter of the beat.
 
 In most musical interfaces one axis is time (and the other is normally pitch). In this case we wanted to explore the use of both axes as just space - ideomatic to Excel. As a result the user is free to arrange the data as they wish.
 
-It is also possible to subdivide cells e.g. "C3,D3,E3" would create triplets or "s,s,,F4" which would sustain the previous notes for an additional 2 quarter measures, a quarter measure rest and then F4 for the last quarter of the beat.
-
 #### Turtles
-
-##### Documentation
 
 Notes are played by defining turtles to navigate the spreadsheet. Turtles are defined as follow
 
 ```
-!turtle(<Starting Cell>, <Instructions>, <Speed>, <Number of loops>)
+!turtle(<Starting Cell>, <Movement>, <Speed>, <Number of loops>)
 ```
-###### Starting Cell
+The "!" dictates that the turtle will be activated when the play button is pressed.
+
+##### Starting Cell
 
 e.g. B2. As with normal Excel formulae, you provide a reference to a cell by using the battleship style coordinates of the cell. This is where the turtle will start. This cell will also be played and forms the first cell in the path of the turtle. 
 
-###### Instructions
+To define multiple turtles following identical paths but starting from adjacent cells, rather than writing a cell per turtle you can define a range of starting cells:
+
+```
+!turtle(E6:E11, r m2 r m2 l m3, 1)
+```
+
+##### Instructions
 
 The following expressions can be used:
 
@@ -69,59 +90,37 @@ The following expressions can be used:
   * w: turn to face left/west
 * movement:
   * m: move the number of cells specified forward e.g. m3
-* Dynamics:
-  * ppp, pp, p, mp, mf, f, ff, fff
 * Jumps j:
   * absolute jumps e.g. 'jB2' - jump to a cell (that cell will also be played)
   * relative jumps e.g. 'j-14+4' (jump 14 cells left and 4 cells down) - two numbers each with an associated direction, first indicated how many cells right to move, the next how many cells down.
 
 The turtle starts facing north by default. 
 
-###### Speed
+Just like "r2" can be written instead of "r r", the same idea can be used for larger parts of instructions. Using parenthesis, instruction can be repeated and nested.
+
+```
+!turtle(A1, (r m3)4)
+```
+
+This example is equivalent to the movement instructions "m3 r m3 r m3 r m3 r" and has the turtle follow a square
+
+##### Speed
 
 Default 1.
 
 This is a relative speed factor that can be used to define turtles to move at different speeds. A turtle defined with speed 2 will move through the grid twice as fast as one with speed 1.
 
-###### Number of loops
+##### Number of loops
 
 Default 0 - which creates an infinite loop
 
 The number of times the turtle will travel through the path defined. If left blank or defined as 0, it will loop infinitely.
 
-###### Shorthands
-
-The following shorthands also exist.
-
-To define multiple turtles following paths immediately on top of each other, rather than writing a cell per turtle you can define a range of starting cells:
-
-```
-!turtle(E6:E11, r m2 r m2 l m3, 1)
-```
-
-If a single turtle is following a straight line (e.g. Christmas example) the start and end cells can be given instead:
-
-```
-!turtle(B13, EL13)
-```
-
-##### Examples
-
-```
-!turtle(E6, r m2 r m2 l m3, 1, 2)
-```
-
-This turtle will start in cell E6 facing north. It will then turn right, move two steps forward, turn right again, move two steps forward, turn left, then move 3 steps forward. This path will be repeated twice (starting from E6 each time). The path is 8 cells long.
-
-```
-!turtle(d6, ff r m3 pp jG8 w m3)
-```
-
-This turtle will start in cell d6 facing north with fortissimo (loud) volume. It will then turn to face east. The note of that cell and the 3 cells to its right will be played fortissimo. It's volume is then reduced to pianissimo (quiet) and it jumps to cell G8. It turns to face west. The cell G8 and the 3 cells to its left will then be played. The following path is followed: D6 (pp), E6 (pp), F6 (pp), G6 (pp), G8 (ff), F8 (ff), E8 (ff), D8 (ff).
+#### Examples
 
 Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=BtarK1
 
-##### Adding Chords
+#### Adding Chords
 
 Rather than working out each note for a chord and typing them in, in the window in the side you can select a chord and insert it into the spreadsheet. A chord has the following properties:
 
@@ -130,7 +129,7 @@ Rather than working out each note for a chord and typing them in, in the window 
 * Inversion of the chord - which number note in the chord is used to start
 * Octave of the first note in the chord
 
-## Features to add
+## Features that could be added
 
 * Turtles deployed by turtles
 * Definable tempo
@@ -152,8 +151,6 @@ Bug with Simon
 ## PD feedback to implement
 
 9) play selected
-
-Sustain at the start of a loop
 
 Which turtles are open
 
