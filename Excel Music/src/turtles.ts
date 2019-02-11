@@ -455,6 +455,7 @@ export function runTurtles(sheetVals: any[][]): void {
     var rows: number = sheetVals.length;
     var cols: number = sheetVals[0].length;
     var live_turtles = document.createElement('ul');
+    live_turtles.setAttribute('class','ms-List');
 
     var row: number, col: number;
     for (row = 0; row < rows; row++) {

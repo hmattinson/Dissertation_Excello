@@ -20,15 +20,12 @@ The aim of this project is to take Microsoft's Excel, one of the most omnipresen
 
 ### For Developers
 
-Clone the repo
-
-npm run from within the repo
-
-Open Excel online (example notebook included in examples)
-
-Add an Add-in
-
-Add the manifest from this project
+- Clone repo
+- Sort of node stuff
+- nom run from within the repo
+- Open included spreadsheet in Excel Online
+- Add an Add-in
+- Add the manifest from this project
 
 This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial?tutorial-step=1
 
@@ -152,8 +149,6 @@ Bug with Simon
 
 9) play selected
 
-Which turtles are open
-
 ## Log
 
 | Date            | Goals                                                        | Time | Progress                                                     | Next Steps                                                   |
@@ -208,7 +203,7 @@ Which turtles are open
 | 5/2             | Start planning presentation                                  | 0.5  |                                                              |                                                              |
 | 6/2             | Finish presentation<br><br>Session with 21                   | 2    | Finished progress presentation and practiced. <br><br>Session with Luke/Alex |                                                              |
 | 7/2             | Type up candidate 12                                         | 1    | Typed up                                                     |                                                              |
-|                 |                                                              |      |                                                              |                                                              |
+| 11/2            | Send updates (and general reminder) to participants          | 1.5  | List of active turtles now appears in side menu<br><br>Send an update to participants |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
 |                 |                                                              |      |                                                              |                                                              |
