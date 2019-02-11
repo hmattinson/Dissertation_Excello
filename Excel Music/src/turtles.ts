@@ -419,6 +419,9 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         var repeats: number = 0;
         if (instructionsArray.length > 2){
             speedFactor = eval(instructionsArray[2]);
+            if (speedFactor > 10) {
+                speedFactor = speedFactor / 160;
+            }
             if (instructionsArray.length > 3){
                 repeats = +instructionsArray[3].replace(/\s/g, "");
             }
@@ -431,6 +434,9 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         var moves: string[] = processParsedBrackets(parseBrackets(instructionsArray[1])).trim().split(" ");
         if (instructionsArray.length > 2){
             speedFactor = +instructionsArray[2].replace(/\s/g, "");
+            if (speedFactor > 10) {
+                speedFactor = speedFactor / 160;
+            }
             if (instructionsArray.length > 3){
                 repeats = +instructionsArray[3].replace(/\s/g, "");
             }
@@ -448,6 +454,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
 export function runTurtles(sheetVals: any[][]): void {
     var rows: number = sheetVals.length;
     var cols: number = sheetVals[0].length;
+    var live_turtles = document.createElement('ul');
 
     var row: number, col: number;
     for (row = 0; row < rows; row++) {
@@ -456,7 +463,11 @@ export function runTurtles(sheetVals: any[][]): void {
             if (isTurtle(value)) {
                 var  instructions = value.substring(8, value.length - 1);
                 turtle(instructions, sheetVals);
+                var live_turtle = document.createElement('li');
+                live_turtle.appendChild(document.createTextNode(numberToLetter(col).toUpperCase()+(row+1)));
+                live_turtles.appendChild(live_turtle);
             }
         }
     }
+    document.getElementById('live_turtles').appendChild(live_turtles);
 }
