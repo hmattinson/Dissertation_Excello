@@ -1,4 +1,4 @@
-# Excel Music
+# Excello
 
 University of Cambridge final dissertation.
 
@@ -87,6 +87,7 @@ The following expressions can be used:
   * w: turn to face left/west
 * movement:
   * m: move the number of cells specified forward e.g. m3
+    * m* can be used to move forward until the last note/sustain in that path
 * Jumps j:
   * absolute jumps e.g. 'jB2' - jump to a cell (that cell will also be played)
   * relative jumps e.g. 'j-14+4' (jump 14 cells left and 4 cells down) - two numbers each with an associated direction, first indicated how many cells right to move, the next how many cells down.
