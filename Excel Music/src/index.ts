@@ -47,10 +47,6 @@ async function run() {
             turtle_list_div.removeChild(turtle_list_div.firstChild);
         }
 
-        // if (document.getElementById('live_turtles_list')) {
-        //     document.getElementById('live_turtles_list').remove();
-        // }
-
         piano = new Tone.Sampler({
             'A0' : 'A0.[mp3|ogg]',
             'C1' : 'C1.[mp3|ogg]',

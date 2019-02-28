@@ -316,6 +316,7 @@ export function move(current: [number, number], dir: string): [number, number] {
  * @return new coordinates of turtle
  */
 export function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): [string, number][] {
+    console.log(start);
 
     var startCoords: [number, number] = getCellCoords(start);
     var volume: number = dynamicToVolume('mf');
@@ -364,10 +365,45 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
         }
         else if (isDynamic(entry)) {
             volume = dynamicToVolume(entry);
+            console.log("Dynamic in instructions - outdated. Dynamics should go in cell")
         }
         else {
             // move
-            var steps: number = +entry.substring(1); // integer part of the move
+            var steps : number;
+            if (entry == "m") {
+                steps = 1;
+            }
+            else if (entry.substring(1) == "*") {
+                // move as far as there is data
+                // get array it's moving into
+                console.log("*");
+                console.log(pos, dir);
+                var arr: any[];
+                if (dir == 's') {
+                    arr = sheetVals.map(function(value,index) {
+                        return value[pos[1]]; 
+                    }).slice(pos[0]+1);
+                }
+                else if (dir == 'n') {
+                    arr = sheetVals.map(function(value,index) {
+                        return value[pos[1]]; 
+                    }).slice(0,pos[0]).reverse();
+                }
+                else if (dir == 'e') {
+                    arr = sheetVals[pos[0]].slice(pos[1]+1);
+                }
+                else {
+                    // w
+                    arr = sheetVals[pos[0]].slice(0,pos[1]);
+                }
+                console.log(arr);
+                // find last element that is a note
+                steps = arr.length - arr.slice().reverse().findIndex(x => isNote(x) || x == "s" || x == "-" || isMultiNote(x));
+            }
+            else {
+                steps = +entry.substring(1); // integer part of the move
+            }
+            console.log("steps: " + steps);
             var i: number;
             var sheetVal;
             for (i = 0; i < steps; i++) {
