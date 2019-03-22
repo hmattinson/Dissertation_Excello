@@ -1,6 +1,11 @@
 // inspiration taken from:
 // https://github.com/dy/parenthesis/blob/master/index.js
 
+/**
+ * Given a turtle instruction sequence this unwraps any brackets to create exact instrutions
+ * @param str Turtle movement instructions e.g. "(r m3)4"
+ * @return explicit unwrapped instructions e.g. "r m3 r m3 r m3 r m3" 
+ */
 export function parseBrackets(str: string) {
 
 	var unnestedStr = ['will become highest level'];
@@ -15,7 +20,7 @@ export function parseBrackets(str: string) {
 		return idPadding + replacementID + idPadding;
 	}
 
-	// replace brackets
+	// store contents of bracket it unnestedStr and replace contents in str with ID
 	while (deepestLevelBracketsRE.test(str)) {
 		str = str.replace(deepestLevelBracketsRE,replaceDeepestBracket);
 	}
@@ -24,7 +29,7 @@ export function parseBrackets(str: string) {
 	var replacementIDRE = new RegExp('\\' + idPadding + '([0-9]+)' + idPadding);
 
 	// transform references to tree
-	function reNest (outestStr, unnestedStrArray) {
+	function reNest (outestStr: string, unnestedStrArray: string[]) {
 		var renestingStr = [];
 		var match;
 
