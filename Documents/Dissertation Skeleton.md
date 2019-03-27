@@ -18,7 +18,7 @@ Outline of the work:
 
 ## 2) Preparation (+ intro) - 26% (3620 words)
 
-*Work before code was written, refining the project proposal. Demonstrate professional approach / prep to development.*<br>*Requirements analysis*<br>*Cite new programming languages / systems.* Excel add-in in Typescript. <br>*Declare starting point.* Empty Excel add-in. 
+*Work before code was written, refining the project proposal. Demonstrate professional approach / prep to development.*<br>*Requirements analysis*<br>*Cite new programming languages / systems.* Excel add-in in Typescript. <br>
 
 ### 2.1) Software Engineering
 
@@ -39,13 +39,15 @@ MIDI converter in Python using mido (MIT) to read MIDI tracks. Had to understand
 
 Empty Excel Add-in. 
 
+### 2.3/2 ) Previous Work
+
+Sibelius
+
 ### 2.2) Making Noise
 
 Done in ScriptLab (built in library support). Called a sound file. Made a beep with Tones. play(A1:A6)
 
 VSCode, Node and local host. Basic pipeline for making noise. 
-
-
 
 ### 2.3) Turtles and Excello language
 
@@ -71,6 +73,8 @@ Summative Evaluation.
 
 Reasons for making design decisions. Link to research. 
 
+Explain order in which I will talk about things (breadcrumbs) to ensure the examiner knows that actual implementation is coming. 
+
 ### 3.1) Initial Prototype
 
 Description of how turtles and notes will interact to create music. 
@@ -91,8 +95,6 @@ Defining turtles:
 - Dynamics in turtle
 - Multiturtle definition. 
 
-How it actually works. Secondary notation supported. Tones transport system. Conversion to the Tones system. 
-
 Highlighting. 
 
 Piano sample
@@ -102,6 +104,8 @@ Chord input. tonal library but made changes myself for octave.
 ### 3.2) Evaluation Sessions / Formative Evaluation
 
 ##### 3.2.1) Session format
+
+sentence that the issues of ethics and data handling are in evaluation. 
 
 ##### 3.2.2) Issues and suggestions that arose
 
@@ -131,13 +135,21 @@ See evaluation session document.
 - Green Button
 - -
 
-### 3.4) Converter
+### 3.4) How it works
 
-Requirements of the MIDI
+How it actually works. Secondary notation supported. Tones transport system. Conversion to the Tones system. 
+
+##### 3.4. ) Parenthesis
+
+Problems, solutions + tests, merged and published in open source. 
+
+### 3.5) Converter
+
+Requirements of the MIDI: constant tempo. Exact notes on and off? 
 
 How this works
 
-### 3.5) Repo Overview
+### 3.6) Repo Overview
 
 ## 4) Evaluation (+ Conclusion) - 20% (2790)
 
@@ -145,7 +157,7 @@ How this works
 
 *How many of the goals were achieved. Proved to have been achieved. Did it really work.* 
 
-### 4.1) Excello overview
+### 4.1) Excello overview (/ advantages / example showcase)
 
 Success Criteria: 
 
@@ -155,7 +167,11 @@ Success Criteria:
 - Define sequences of notes and chords and be able to call these for playback.
 - Define the tempo of playback.
 
-Piano Phase
+Advantages of Excello, example showcase e.g. Piano Phase
+
+##### 4.1. ) Midi conversion
+
+Corpus that was converted
 
 ### 4.2) Formative Evaluation
 
@@ -173,26 +189,30 @@ For each feature added:
 
 ### 4.4) CDNs
 
-##### 4.4.1) Matrix
+##### 4.4.1) Matrix for all but [CLOS, CONS, VISC, SECN, VIJU, HMOS]
 
 increment, modify, transcribe, exploratory design with respect to the CDNs (matrix). 
 
-##### 4.4.2) Comparisons
+Comparisons to other interfaces. 
+
+##### 4.4.2) Comparisons for [CLOS, CONS, VISC, SECN, VIJU, HMOS]
 
 For each question:
 
 - Look at all responses just for Excello (19).
 - Comparison with Sibelius (12).
 - Wilcoxon significance. 
-- Discuss Excello vs Excel contributing factors. 
+- Discuss Excello vs Excel contributing factors. Comparisons with other interfaces. 
 
-### 4.5) MIDI conversion
+### 4.5) Ethics and Data handling
 
-Shows that a corpus can be converted to Excello.
+Ethics review, consent form, storage of data (de-anonymisation), pilot sessions. 
 
 ## 5) Conclusion
 
 *Social and Ethical impact*
+
+Parenthesis reminder
 
 ## Bibliography
 
