@@ -219,3 +219,7 @@ Noble and Biddle 2002 - "programming as creativity, as performance, as striving 
 * Hartree 1950 - Calculating instruments and machines
 * McCarthney 2002 - Rethinking the computer music language
 * Power 2004 - Brief History of Spreadsheets
+
+## A user-entered approach to functions in Excel
+
+For many people, the programming language of choice is a spreadsheet. This is especially true of people who are not employed as programmers, but write programs for their own use — often defined as “end-user” programmers [Nar93]. 

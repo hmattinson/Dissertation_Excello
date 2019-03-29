@@ -4,16 +4,35 @@
 
 ## 1) Introduction
 
-*motivation, how it fits into compsci, previous/related work*
+"possible that more people program with spreadsheets than any other programming environment" [Manhattan - 5]
 
-Introduce Excel and music coding and the motivation for the task. Advait's Sheet Music. Manhattan (time bounded). Lead thoughts on what (live) programming is. 
+Hypothesis: affordances of the spreadsheet enable new ways to interact with musical notation. Spreadsheets allow incremental learning with a low threshold [Manhattan]. 
 
-Crossover with programming style of games? 
+Ubiquitous. 
+
+Introduce Excel and music coding and the motivation for the task.
+
+Introduce Excello to give context.
+
+end-user programmers vs professional programmers. [Nar93]
+
+Similar music systems: 
+
+- https://hackaday.com/2019/02/02/never-mind-the-sheet-music-heres-spreadsheet-music/
+-  Advait's Sheet Music - introduces the abstraction of time, formulae in cells are evaluated
+- Manhattan (time bounded). Like sequencing, columns are tracks and rows are times. 
+
+*Lead thoughts on what (live) programming is.*
+
+*Crossover with programming style of games?* 
+
+Notation vs instrument increasingly indistinct. [The Programming Language as a Musical Instrument]
 
 Outline of the work:
 
 1. Creation of prototype adhering to success criteria
 2. Participatory design sessions and formative evaluations with implementation extensions
+   1. Participants help identify difficulties and opportunities.
 3. Converter
 
 ## 2) Preparation (+ intro) - 26% (3620 words)
@@ -167,7 +186,7 @@ Success Criteria:
 - Define sequences of notes and chords and be able to call these for playback.
 - Define the tempo of playback.
 
-Advantages of Excello, example showcase e.g. Piano Phase
+Advantages of Excello, example showcase e.g. Piano Phase (Manhattan requires 23*3)
 
 ##### 4.1. ) Midi conversion
 
@@ -219,6 +238,7 @@ Parenthesis reminder
 ## Appendices
 
 Should be < 10 pages including some sample code. 
+
 
 
 
