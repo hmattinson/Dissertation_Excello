@@ -39,13 +39,31 @@ Outline of the work:
 
 *Work before code was written, refining the project proposal. Demonstrate professional approach / prep to development.*<br>*Requirements analysis*<br>*Cite new programming languages / systems.* Excel add-in in Typescript. <br>
 
-### 2.1) Software Engineering
+### 2.1) Making Noise
+
+Add-in
+
+Done in ScriptLab (built in library support). Called a sound file. Made a beep with Tones. play(A1:A6). Web audio API. 
+
+VSCode, Node and local host. Basic pipeline for making noise. 
+
+### 2.2) Turtles and Excello language
+
+Al-Jazzari. LoGo + graphics. 
+
+Cleanness of defining notes separately. If there was a way of adding the notes or a chord/arpeggio then best of both worlds. 
+
+Dual formalism tradeoffs. 
+
+### 2.3) Software Engineering
 
 ##### 2.1.1) Requirements
 
+Success criteria. 
+
 ##### 2.1.2) Tools and Technologies Used
 
-How Excel Add-ins work and using that API. NodeJS. Written in Typescript. 
+How Excel Add-ins work, Excel API. NodeJS. Written in Typescript. 
 
 - Tone.js (MIT) - Web Audio API, compare to tones. 
 - tonal.js (MIT) - Notes in chords. (remember that I extended this for octave). 
@@ -56,31 +74,23 @@ MIDI converter in Python using mido (MIT) to read MIDI tracks. Had to understand
 
 ##### 2.1.3) Starting Point
 
-Empty Excel Add-in. 
+Yeoman generator to create empty Excel add-in.
 
-### 2.3/2 ) Previous Work
+##### 2.1.4) Evaluation Practices
+
+Participatory Design / Formative Evaluation. How it fits with software development - Spiral model
+
+Summative Evaluation.
+
+### 2.4 ) Previous Work
 
 Sibelius
 
-### 2.2) Making Noise
+### 2.5) MIDI files
 
-Done in ScriptLab (built in library support). Called a sound file. Made a beep with Tones. play(A1:A6)
+structure of files
 
-VSCode, Node and local host. Basic pipeline for making noise. 
-
-### 2.3) Turtles and Excello language
-
-Al-Jazzari. LoGo + graphics. 
-
-Cleanness of defining notes separately. If there was a way of adding the notes or a chord/arpeggio then best of both worlds. 
-
-Dual formalism tradeoffs. 
-
-### 2.4) Evaluation Practices
-
-Participatory Design / Formative Evaluation. How it fits with software development 
-
-Summative Evaluation.
+evaluation corpus
 
 ## 3) Implementation - 40% (5580)
 
@@ -158,13 +168,21 @@ See evaluation session document.
 
 How it actually works. Secondary notation supported. Tones transport system. Conversion to the Tones system. 
 
+Transport, Part. 
+
+Not treated as a context free grammar so that extra gaps can be easily dealt with and because the format of the instruction is quite exact, CFG overkill. 
+
 ##### 3.4. ) Parenthesis
 
 Problems, solutions + tests, merged and published in open source. 
 
 ### 3.5) Converter
 
+How MIDI messages work a little more. 
+
 Requirements of the MIDI: constant tempo. Exact notes on and off? 
+
+Lossy converter. 
 
 How this works
 
@@ -208,6 +226,8 @@ For each feature added:
 
 ### 4.4) CDNs
 
+Cognitive Dimensions of Notations can be used to analyse musical notation \cite{blackwell:notation} in addition to software systems  \cite{green:cdn}, therefore it is a suitable tool for the discussion of live coding systems. The names of Cognitive Dimensions are written in italics. During a live coding performance, the activities of incrementation and modification shall be treated as the most important, and therefore most considered when discussing the dimensions. 
+
 ##### 4.4.1) Matrix for all but [CLOS, CONS, VISC, SECN, VIJU, HMOS]
 
 increment, modify, transcribe, exploratory design with respect to the CDNs (matrix). 
@@ -232,6 +252,12 @@ Ethics review, consent form, storage of data (de-anonymisation), pilot sessions.
 *Social and Ethical impact*
 
 Parenthesis reminder
+
+Extensions:
+
+- ixi lang
+- Live
+- tracking
 
 ## Bibliography
 

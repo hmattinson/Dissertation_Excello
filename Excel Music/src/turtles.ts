@@ -466,6 +466,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         playSequence(notes, speedFactor, repeats);
     }
     else {
+        // mutliple turtles
         var turtlesStarts = expandRange(instructionsArray[0].replace(/\s/g, "")); // list of starting notes
         var moves: string[] = processParsedBrackets(parseBrackets(instructionsArray[1])).trim().split(" ");
         if (instructionsArray.length > 2){

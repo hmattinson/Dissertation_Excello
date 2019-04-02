@@ -1,13 +1,18 @@
 # Introduction
 
+### Motivation
+
 There exist many programs for music notation and composition. Sibelius allows users to write scores using traditional western music notation, whilst the live programming interface Sonic Pi produces music from the real time editing of Ruby code. However, these require users to gain familiarity with a new interface, often with a large threshold to creating simple musical ideas. Spreadsheet users significantly outnumber programmers \cite{scaffidi:estimating} being the preferred programming language for many people \cite{blackwell:functions}. I believe that this ubiquitousness, along with the affordances of the spreadsheet, would enable new ways to interact with musical notation that capitalise on existing familiarities with spreadsheets and their data handling capabilities. 
 
-The use of grid structures is an established concept in music programs, with most sequencing software using one axis of the screen for time and the other for pitch or musical parts. Chris Nash's Manhattan \cite{Nash:Manhattan} Advait Sarkar's SheetMusic \cite{sardar:sheetmusic} investigated how formulae with sound output can be included within the spreadsheet paradigm. This also explored abstracting time away from the grid so both axes can be used interchangeably for the system's notation in addition to markup that the user wishes to include which is not interpreted musically. 
+The use of grid structures is an established concept in music programs, with most sequencing software using one axis of the screen for time and the other for pitch or musical parts. Chris Nash's Manhattan \cite{Nash:Manhattan} uses a grid structure where formulae can be defined in the cells to change the cell value, much like in a spreadsheet. However it is limited to columns defining tracks and rows being different times. Advait Sarkar's SheetMusic \cite{sarkar:sheetmusic} investigated how formulae with sound output can be included within the spreadsheet paradigm. This also introduced abstracting time away from the grid using an incrementing global tick variable. Both axes can be used interchangeably for SheetMusic notation or markup that the user wishes to include which is not interpreted musically, a concept idiomatic to Excel usage. Simple formulae such as "if(tick%2==0) p('snare') else p('kick')" allow musical structures to be defined without advanced programming knowledge but quickly become unwieldy for defining larger pieces, especially if they are not highly repetitive. Whilst other spreadsheet music projects exist \cite{lackaday:spreadsheet}, these simply use the spreadsheet as a medium for MIDI sequencing with rows or columns acting as time-interval steps. 
 
-Excello is a system for music production built out of Microsoft's Excel. 
+Excello is an Excel Add-in for end-user music programming. It maintains the abstraction of time from the grid to keep the flexibility spreadsheets offer but was designed so that the complexity of an individual cell was limited. Existing functionality within Excel can be used, both accelerating the learning curve and increasing the available functionality. 
 
-Motivation for using Excel
+### Outline of work
 
-Previous systems
+1. I design a system for musical expression and playback within Excel. An initial prototype is built satisfying the all the success criteria of the system itself: play individual notes and chords with defined durations, define multiple parts, play loops, define sequences of notes and chords and be able to call these for playback, and define the tempo of playback. 
+2. Participatory design commences using the initial prototype as a discussion point. Following formative evaluation sessions with 21 participants, issues and feature requests are identified. Users continue to use the system and give feedback following their introductory session. 
+3. A series of additional extensions are implemented to solve the problems identified by participants and add features that are requested to improve the system. 
+4. A converter from MIDI to the Excello format is built to aid in the translation of a large existing corpus of MIDI files to the Excello notation. 
+5. Summative evaluation is carried out with the participants. The success of the additional features that were implemented as part of the participatory design phase is evaluated. Excello is compared to existing musical interfaces, focusing on Sibelius. 
 
-Outline of work.
