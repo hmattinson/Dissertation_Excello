@@ -22,7 +22,7 @@ export function highlightSheet(sheet: Excel.Range): void {
                 sheet.getCell(row,col).format.fill.color = "#FFada5";
             }
             // Highlight sustains a lighter red
-            else if (value == "s" || value == "-"){
+            else if (value == "s" || value == "-" || value =="."){
                 sheet.getCell(row,col).format.fill.color = "#FFd6d6";
             }
             // Highlight turtles green
@@ -398,7 +398,7 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
                 }
                 console.log(arr);
                 // find last element that is a note
-                steps = arr.length - arr.slice().reverse().findIndex(x => isNote(x) || x == "s" || x == "-" || isMultiNote(x));
+                steps = arr.length - arr.slice().reverse().findIndex(x => isNote(x) || x == "s" || x == "-" || x=="." || isMultiNote(x));
             }
             else {
                 steps = +entry.substring(1); // integer part of the move

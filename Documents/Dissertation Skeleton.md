@@ -102,39 +102,35 @@ evaluation corpus
 
 Reasons for making design decisions. Link to research. 
 
-Explain order in which I will talk about things (breadcrumbs) to ensure the examiner knows that actual implementation is coming. 
+Explain order in which I will talk about things (breadcrumbs) to ensure the examiner knows that actual implementation is coming. Functionality of the initial prototype, Evaluation sessions and issues, Features and solutions implemented, how it all works. Converter. 
 
 ### 3.1) Initial Prototype
 
-Description of how turtles and notes will interact to create music. 
-
-Defining notes:
-
+- Turtle
+  - Start cell
+    - Multiple turtles
+  - Instructions for path
+    - Dynamics in instructions
+    - As above except that () hadn't been implemented in the initial prototype.
+  - Speed
+    - Relative
+    - Arbitrary maths (Javascript)
+  - Loops
+  - ! - activation
 - Notes in cells
-- Sustains
-- Multinotes
-
-Defining turtles:
-
-- Definition and launching of turtle
-  - Documentation and turtle instructions
-  - Can justify not using s4 because you loose track of where you're facing and idea of a turtle. 
-- Speed (relative) - also arbitrary maths can be given. 
-- Looping of entire turtle
-- Dynamics in turtle
-- Multiturtle definition. 
-
-Highlighting. 
-
-Piano sample
-
-Chord input. tonal library but made changes myself for octave. 
+  - sustains
+  - multinotes
+- Highlighting
+- Piano sample
+- Chord input
 
 ### 3.2) Evaluation Sessions / Formative Evaluation
 
 ##### 3.2.1) Session format
 
-sentence that the issues of ethics and data handling are in evaluation. 
+Ethics and data handling are discussed in evaluation chapter. 
+
+Tutorial, review, exercise, review. Things that are unintuitive, require mental effort. 
 
 ##### 3.2.2) Issues and suggestions that arose
 
@@ -142,35 +138,21 @@ See evaluation session document.
 
 ### 3.3) Solving Issues
 
-- Infer octave - tradeoff between two methods (could compare to chord input). 
-- Nested instructions with repeats
-  - Parenthesis parser based on npm module - contribution to open source. 
-- Toggle activation
-- Where active turtles are
-- Custom Excel functions
-  - Turtle
-  - Transposition - drag fill example
-  - How they actually are implemented. 
-  - Cite something to show that this is worthwhile because it wasn't tested.
-- Dynamics in cell
-  - Dynamics in first cell
-  - Debugging / making turtle movement clearer
-  - Same notes can't be different volume but same turtles can be different volume. 
-- Continuous dynamics
-- Proceed as far as there is music
-  - Not having explicit stopping symbol due to multi-directionality.
-  - Explicit rest - TODO?
-- Absolute tempo
-- Green Button
-- -
+See new features document.
 
 ### 3.4) How it works
+
+Overview. 
 
 How it actually works. Secondary notation supported. Tones transport system. Conversion to the Tones system. 
 
 Transport, Part. 
 
 Not treated as a context free grammar so that extra gaps can be easily dealt with and because the format of the instruction is quite exact, CFG overkill. 
+
+Chord input: tonal library but made changes myself for octave. 
+
+Custom Excel functions. Tonal library. 
 
 ##### 3.4. ) Parenthesis
 
@@ -227,6 +209,8 @@ For each feature added:
 ### 4.4) CDNs
 
 Cognitive Dimensions of Notations can be used to analyse musical notation \cite{blackwell:notation} in addition to software systems  \cite{green:cdn}, therefore it is a suitable tool for the discussion of live coding systems. The names of Cognitive Dimensions are written in italics. During a live coding performance, the activities of incrementation and modification shall be treated as the most important, and therefore most considered when discussing the dimensions. 
+
+Nesting and collapsing of rows. 
 
 ##### 4.4.1) Matrix for all but [CLOS, CONS, VISC, SECN, VIJU, HMOS]
 

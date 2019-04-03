@@ -24,6 +24,7 @@ export var piano: Tone.Sampler;
 async function run() {
     await Excel.run(async (context) => {
 
+        //  Colour button green
         document.getElementById("run").style.background='#A8FFD0';
 
         const selectedRange = context.workbook.getSelectedRange();
@@ -42,6 +43,7 @@ async function run() {
         Tone.context = new AudioContext();
         Tone.Transport.bpm.value = getBPM(sheet.values);
 
+        // Clear current live turtles
         var turtle_list_div = document.getElementById('live_turtles');
         while (turtle_list_div.firstChild) {
             turtle_list_div.removeChild(turtle_list_div.firstChild);

@@ -15,4 +15,19 @@
 \contentsline {subsubsection}{Starting Point}{17}{section*.8}
 \contentsline {subsubsection}{Evaluation Practices}{17}{section*.9}
 \contentsline {subsection}{\numberline {2.4.2}MIDI files}{17}{subsection.2.4.2}
-\contentsline {chapter}{Bibliography}{18}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}Implementation}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Initial Prototype}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Formative Evaluation}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Session Format}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Summary of Issues and Suggestions}{19}{subsection.3.2.2}
+\contentsline {subsubsection}{Turtle Definition}{19}{section*.10}
+\contentsline {section}{\numberline {3.3}Changes For Seciond Prototype}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Dynamics in Cell}{20}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}How it works}{20}{section.3.4}
+\contentsline {section}{\numberline {3.5}MIDI Converter}{20}{section.3.5}
+\contentsline {section}{\numberline {3.6}Repository Overview}{20}{section.3.6}
+\contentsline {section}{\numberline {3.7}Verbatim text}{20}{section.3.7}
+\contentsline {section}{\numberline {3.8}Tables}{21}{section.3.8}
+\contentsline {section}{\numberline {3.9}Simple diagrams}{21}{section.3.9}
+\contentsline {section}{\numberline {3.10}Adding more complicated graphics}{22}{section.3.10}
+\contentsline {chapter}{Bibliography}{22}{figure.3.5}

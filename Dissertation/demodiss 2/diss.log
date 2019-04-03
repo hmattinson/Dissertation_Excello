@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  2 APR 2019 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  3 APR 2019 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -365,7 +365,11 @@ Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
-(./diss.aux (./sections/introduction/content.aux))
+(./diss.aux (./sections/introduction/content.aux)
+
+LaTeX Warning: Label `xfig' multiply defined.
+
+)
 \openout1 = `diss.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -384,8 +388,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 23.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -506,7 +509,7 @@ Overfull \hbox (21.26901pt too wide) in paragraph at lines 53--66
 
 ]
 Chapter 1.
-[9] <figs/excello.png, id=141, 1284.8pt x 639.38875pt>
+[9] <figs/excello.png, id=213, 1284.8pt x 639.38875pt>
 File: figs/excello.png Graphic file (type png)
  <use figs/excello.png>
 Package pdftex.def Info: figs/excello.png used on input line 12.
@@ -546,32 +549,51 @@ L/cmm/m/it/12 ; \OT1/cmr/bx/n/12 C\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 D\OT1/cmr
 /m/n/12 )$, ter-mi-nal sym-bols $^^F =
  []
 
-[15] [16] [17]) (./diss.bbl [18]
+[15] [16] [17]) (./sections/implementation/content.tex [18]
+Chapter 3.
+[19
+
+] [20] [21] <figs/cuarms.pdf, id=328, 60.225pt x 72.27pt>
+File: figs/cuarms.pdf Graphic file (type pdf)
+
+<use figs/cuarms.pdf>
+Package pdftex.def Info: figs/cuarms.pdf used on input line 159.
+(pdftex.def)             Requested size: 60.22484pt x 72.2698pt.
+ <figs/diagram.pdf, id=329, 458.71375pt x 336.25626pt>
+File: figs/diagram.pdf Graphic file (type pdf)
+
+<use figs/diagram.pdf>
+Package pdftex.def Info: figs/diagram.pdf used on input line 172.
+(pdftex.def)             Requested size: 458.71263pt x 336.25543pt.
+) (./diss.bbl [22 <./figs/cuarms.pdf>] [23 <./figs/diagram.pdf>] [24
+
+]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
- [19
-
-]
+ [25]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
- (./diss.aux
-(./sections/introduction/content.aux))
+ (./diss.aux (./sections/introduction/content.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
 Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: 593AEAAAAE8A3922238417BE784158F6;957.
+(rerunfilecheck)             Checksum: 5C5005943FC16A02D458BD53A17215C4;1874.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 7433 strings out of 493014
- 114189 string characters out of 6133351
- 202217 words of memory out of 5000000
- 10758 multiletter control sequences out of 15000+600000
- 16252 words of font info for 62 fonts, out of 8000000 for 9000
+ 7501 strings out of 493014
+ 115104 string characters out of 6133351
+ 202555 words of memory out of 5000000
+ 10791 multiletter control sequences out of 15000+600000
+ 17647 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,11n,38p,1769b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,11n,38p,1930b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -585,13 +607,15 @@ xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (19 pages, 379905 bytes).
+e/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on diss.pdf (25 pages, 423576 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 267 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 440 PDF objects out of 1000 (max. 8388607)
+ 388 compressed objects within 4 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 

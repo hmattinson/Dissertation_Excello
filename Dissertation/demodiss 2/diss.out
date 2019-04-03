@@ -12,4 +12,18 @@
 \BOOKMARK [1][-]{section.2.4}{Software Engineering}{chapter.2}% 12
 \BOOKMARK [2][-]{subsection.2.4.1}{Requirements}{section.2.4}% 13
 \BOOKMARK [2][-]{subsection.2.4.2}{MIDI files}{section.2.4}% 14
-\BOOKMARK [0][-]{subsection.2.4.2}{Bibliography}{}% 15
+\BOOKMARK [0][-]{chapter.3}{Implementation}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Initial Prototype}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.2}{Formative Evaluation}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{Session Format}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.2}{Summary of Issues and Suggestions}{section.3.2}% 19
+\BOOKMARK [1][-]{section.3.3}{Changes For Seciond Prototype}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.3.1}{Dynamics in Cell}{section.3.3}% 21
+\BOOKMARK [1][-]{section.3.4}{How it works}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.7}{Verbatim text}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.8}{Tables}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.9}{Simple diagrams}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.10}{Adding more complicated graphics}{chapter.3}% 28
+\BOOKMARK [0][-]{figure.3.5}{Bibliography}{}% 29
