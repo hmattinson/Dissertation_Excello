@@ -1,0 +1,105 @@
+# Implementation
+
+In this chapter I shall first explain how the turtles, using the movement instructions defined previously, are defined and controlled. The remaining features in the initial prototype will be explained. The format and results of the formative evaluation using this initial prototype shall be summarised. I shall then cover the design decisions and changes that were made to the Excello prototype during the participatory design process. Then, how Excello has been implemented will be described followed by the MIDI to Excello converter. The chapter concludes with an overview of the project repository. 
+
+### Initial Prototype
+
+Notes and turtles can be defined in any cell in the spreadsheet. When the Excello add-in is opened, a window will open in the right side of Excel. This contains a play and stop button which can be used to launch all the turtles defined in the spreadsheet and initiate playback. Playback is a realistic piano sound.
+
+A summary of the musical elements that can be put in cells and that will be interpreted by turtles is shown in table \ref{tab:cells}
+
+| Interpretation                    | Format                                                       |
+| --------------------------------- | ------------------------------------------------------------ |
+| Note                              | Note name (A-G#) and octave number e.g. F#4                  |
+| Sustain                           | s                                                            |
+| Multiple notes subdivided in time | notes, rests or sustains separated by a comma. Within a multi-note cell, rests must be a space or an empty string e.g. E4,,C4,s |
+| Rest                              | Any cell not interpreted as a note or sustain will be interpreted as a rest. |
+
+##### Turtles
+
+Notes are played by defining and launching turtles to navigate the spreadsheet. Turtles are defined as follows:
+
+```
+!turtle(<Starting Cell>, <Movement>, <Speed>, <Number of Loops>)
+```
+
+###### Activation
+
+The "!" dictates that the turtle will be activated when the play button in the add-in window is pressed. Just like many digital audio workstations allow muting and soloing of tracks, this can be used to quickly modify which turtles will play without losing the definition of the turtle. 
+
+###### Starting Cell
+
+The starting cell of the turtle is given by the cell reference. As with conventional Excel formulae, columns are defined in base 26 using the letters of the alphabet and rows are numbered using the integers. A cell is defined by the concatenation of the column letters and row number. This cell will be played and is the first cell in the path of the turtle. 
+
+As each turtle only plays one note at a time, multiple turtles must be defined to play polyphonic music such as chords. It was believed that in these cases the turtles may follow identical paths but in adjacent rows or columns. Multiple turtles following identical paths but starting from adjacent cells can be defined using the existing Excel range notation to define the starting cells. "A2:A5" would define four turtles in the cells A2,A3,A4,A5. This prevents the writing of multiple turtle definitions differing in only the start cell row. 
+
+###### Movement
+
+The turtles start facing north. The design of the language used to define turtle movement has been discussed in the preparation chapter. Using brackets to repeat multiple instructions within the turtle's instructions was not implemented by the start of the participatory design process. 
+
+###### Speed
+
+An optional third argument can be provided to defined the speed at which the turtle moves through the grid. If the argument is not provided, the turtle moves at 160 cells per minute through the grid. The speed argument defines the speed relative to 160 cells per minute. Therefore if the argument "2" was provided, this would move through the grid at 320 cells per minute. This relative system was used so it would be easier to tell the speed relation between two turtles. Arbitrary maths can be provided for this argument and it will be evaluated. This can be used to define a turtle who's speed is an irrational multiple of another's. 
+
+###### Number of Loops
+
+An optional fourth argument defines the number of times the path of the turtle is played. If committed the turtle will loop infinitely. This was included so that repeating parts (e.g. the cello part of Pachabel's Canon in D) need only defining once but can be played repetitively. 
+
+##### Highlighting
+
+In order to assist in the recognition of notes and turtles, when the play button is pressed, cells are highlighted depending on their contents. Cells containing activated or deactivated definitions of turtles are highlighted green. Cells containing definitions of notes, or multiple notes, are highlighted red, with cells only containing a sustain highlighted a lighter red. 
+
+##### Chord input
+
+In order to maintain musical abstractions of chords and arpeggios \footnote{Where the notes of a chord are played in rising or descending order} whilst keeping to paradigm of a turtle being responsible for up to one note at any time, a tool to add chords and arpeggios is available. The note, type (over 100 available), inversion and starting octave of the chord are inputted in four drop-down selectors and the notes making up that chord are entered into the grid using the insert button. If a single cell or range taller than it is wide is highlighted in the spreadsheet, the notes will be inserted in adjacent vertical cells starting at the top-left of the range. Otherwise, the notes will be inserted horizontally. This means whether the turtles are moving horizontally or vertically both chords and arpeggios can be easily defined. As a result, helpful musical abstractions are still available whilst keeping the cleanness of the turtle system. 
+
+### Formative Evaluation
+
+In order to guide the development of the project to best suite the users, participants were involved in formative evaluation. 21 participants took place in the participatory design process. Initially, individual meetings were held with each participant. A tutorial of the initial prototype was given followed by the carrying out of a short exercise lasting 15-20 minutes in most cases. After both the tutorial and the exercise, users were asked to comment on how they found Excello. Particular attention was drawn to actions that they found particularly unintuitive or required notable mental effort. Comparisons were also made to the musical interfaces that participants were already familiar with. The sessions were audio recorded in order to prevent the jotting down of notes causing delays, and later notes were made from these recordings. The ethical and data handling procedures that were carried out shall be discussed in the evaluation chapter.
+
+In order to simulate the most likely ways in which Excello would be used, participants were given the freedom to carry out an exercise of their choice. In many cases this was transcribing an exiting piece from memory or from traditional western notation into the Excello notation. Two tasks were provided to choose from if participants had no immediate inspiration. These were to transcribe a piece of music from western notation or to make changes to an existing piece in the Excello notation. 
+
+These sessions were carried out at the beginning of Lent term 2019. Participants were asked if they would be willing to continue using Excello personally from their initial session until the end of the term, eight weeks later, when summative evaluation would be carried out. This gave time for additional feedback to be given as participants used Excello in their own time. It also ensured that the evaluation carried out would be done so by users with sufficient experience of the interface. Participants were encouraged to get in contact with any additional issues or suggestions they had during this time. 
+
+##### Issues and Suggestions
+
+The issues and suggestions that arose during the participatory design period have been categorised and summarised below.
+
+###### Turtle Notation
+
+Having dynamic instructions within the turtle was found to make it harder to extract the path that the turtle followed as not all instructions related to the way in which the turtle moves. As the dynamics weren't next to the notes they corresponded to, it was challenging to establish which volume a given note would be played at or where to place the dynamic instructions within the turtle to correspond to a certain note positioned elsewhere in the spreadsheet. In the initial prototype there was no way to assign a dynamic to the first note without having the starting cell being empty. The addition of this empty cell could be inconvenient for looping parts as this empty cell would be included in the loop. Users who were not familiar with the dynamic markings of western notation found them unintuitive. Furthermore, it was noted that these markings do not make available the continuous volume scale that would be possible with the interface. 
+
+When trying to transcribe a piece in an exact tempo, having to divide the speed by 160 in order to enter a relative speed caused unnecessary work. There was forgetfulness as to the whether relative speed referred to how long or how quickly the turtle moved. 
+
+Having completed the tutorial, users often has to check which arguments appeared where within the turtle definition or what the arguments were. 
+
+When parsing the instruction, as the number of dynamics and movement instructions grew and the instruction became long, it could become quite tough to establish how the turtle would behave. As "s" could be used to indicate sustain within cells, some users confused the "s" within the turtle instructions to mean sustain and not south. 
+
+###### Feedback
+
+Having clicked the play button it was often not clear if this had been registered. Especially if the Excel workbook was saving, and this caused a delay in Excello being able to access the spreadsheet. It was also requested if it would be possible to see a summary of where the active turtle were in addition to them being highlighted green. If a turtle had accidentally been left activated, the entire grid had to be searched in order to locate it. 
+
+###### MIDI conversions
+
+Many users, especially those who used production software such as GarageBand and Logic, said that it would be helpful to be able to interact with MIDI files. Being able to use Excello to create their chord sequences and bass lines before adding additional effects and recorded lines in their digital audio work stations would require a MIDI export. In addition, if working with an existing MIDI file, it would be convenient to be able to convert that into the Excello notation. 
+
+###### Sources of effort when writing
+
+Once notes had been inputted into the grid, often in a single straight line, the number of cells had to be counted so the turtle could be moved the correct number of cells. Whilst Excel allows users to highlight a selection of cells and have an immediate output of how many cells are highlighted without any formula being written, this is still an unproductive use of time. Some users would simply instruct the turtle to move forward significantly more steps than required to prevent this counting, but this is not feasible for looping parts. It was suggested that turtles could figure out how far they should move so that the instruction didn't need editing when more notes were added. This was particularly inconvenient when users were writing out a piece and periodically testing what they had written so far. 
+
+If instructions involved repeats such as repeatedly moving to the end of a line and jumping down a few cells and back to the beginning of the line, instructions within the turtles required a lot of repetition. 
+
+If writing out a melodic line consisting of small movements, many of the notes would take place in the same octave. As such, it was tiresome to have to repeatedly write out the octave number when this was barely changing. One user made a comparison to LilyPond \footnote{A program for music notation using text notation.} where if the length of a note is not defined, the last defined note length would be used. 
+
+Some users said they would find it more intuitive to think of a melodic line in terms of the intervals between notes as opposed to the name of each note. If a piece contained a melodic line that was transposed \footnote{Where every note has been moved up or down in pitch by the same amount.}, the transposed part had to be written out again and could not be derived quicker from the original version. 
+
+###### Chords
+
+Whilst the variety of available chord types was appreciated, most users used a very small subset of these but still had to scroll through the whole list to find these. Separating the more common chords for easier access was requested. In the initial prototype, the notes were inserted from low to high. This meant that notes inserted in a vertical line had the lowest note at the top with notes increasing in pitch proceeding down the column. In western staff notation, higher pitch notes appear higher up the staff. As a result, it was suggested that inverting the order would be more intuitive. In the initial interface it was also unclear what the different drop downs corresponded to, with some users selecting the "7" from the octave number in order to try and insert a Maj7 chord. 
+
+###### Activation of turtles
+
+When toggling the activation of a turtle, it was very tedious to have to enter the edit mode for each cell containing a turtle definition and add or remove the exclamation mark. This was particularly so if a piece had multiple turtle definitions. 
+
+### Second Prototype
+

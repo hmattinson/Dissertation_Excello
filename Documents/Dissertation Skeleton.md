@@ -170,6 +170,8 @@ How this works
 
 ### 3.6) Repo Overview
 
+Licenses and what I'm releasing under. 
+
 ## 4) Evaluation (+ Conclusion) - 20% (2790)
 
 *Photographs of workstation screens. Graphs should indicate confidence intervals.* 

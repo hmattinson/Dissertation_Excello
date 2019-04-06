@@ -26,7 +26,7 @@ Absolute cells per minute. Initially relative - phase composition. < 10 for back
 
 *Forgot which arguments go where in the turtle. Would forget what the different arguments (speed, loops) are. Wasn't sure where to put spaces within the turtle instructions.*
 
-Custom Excell.turtle instruction. Gives parameters. optional. Can reference other cells (global speed)
+Custom Excell.turtle instruction. Gives parameters. optional. Can reference other cells (global speed) - this makes relative speeds easier again, by reference to a global speed. 
 
 *User unfamiliar with actual note names and positions so had to count them manually ("Every good boy deserves food"). Have to rewrite out an entire section again if it's a modulation of an existing section. User thinks in terms of intervals not absolute notes when writing a melody.* 
 
