@@ -399,6 +399,7 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
                 console.log(arr);
                 // find last element that is a note
                 steps = arr.length - arr.slice().reverse().findIndex(x => isNote(x) || x == "s" || x == "-" || x=="." || isMultiNote(x));
+                // Potential change: Make sure that if there are explicit rests, they occur at the end. - actually if it end on a note or sustain this doesn't quite wrap things up
             }
             else {
                 steps = +entry.substring(1); // integer part of the move

@@ -39,7 +39,7 @@ The turtles start facing north. The design of the language used to define turtle
 
 ###### Speed
 
-An optional third argument can be provided to defined the speed at which the turtle moves through the grid. If the argument is not provided, the turtle moves at 160 cells per minute through the grid. The speed argument defines the speed relative to 160 cells per minute. Therefore if the argument "2" was provided, this would move through the grid at 320 cells per minute. This relative system was used so it would be easier to tell the speed relation between two turtles. Arbitrary maths can be provided for this argument and it will be evaluated. This can be used to define a turtle who's speed is an irrational multiple of another's. 
+An optional third argument can be provided to defined the speed at which the turtle moves through the grid. If the argument is not provided, the turtle moves at 160 cells per minute through the grid. The speed argument defines the speed relative to 160 cells per minute. Therefore if the argument "2" was provided, this would move through the grid at 320 cells per minute. This relative system was used so it would be easier to tell the speed relation between two turtles. This would be particularly beneficial for phase music. Arbitrary maths can be provided for this argument and it will be evaluated. This can be used to define a turtle  speed is an irrational multiple of another's. 
 
 ###### Number of Loops
 
@@ -67,7 +67,7 @@ The issues and suggestions that arose during the participatory design period hav
 
 ###### Turtle Notation
 
-Having dynamic instructions within the turtle was found to make it harder to extract the path that the turtle followed as not all instructions related to the way in which the turtle moves. As the dynamics weren't next to the notes they corresponded to, it was challenging to establish which volume a given note would be played at or where to place the dynamic instructions within the turtle to correspond to a certain note positioned elsewhere in the spreadsheet. In the initial prototype there was no way to assign a dynamic to the first note without having the starting cell being empty. The addition of this empty cell could be inconvenient for looping parts as this empty cell would be included in the loop. Users who were not familiar with the dynamic markings of western notation found them unintuitive. Furthermore, it was noted that these markings do not make available the continuous volume scale that would be possible with the interface. 
+Having dynamic instructions within the turtle was found to make it harder to extract the path that the turtle followed as not all instructions related to the way in which the turtle moves. As the dynamics weren't next to the notes they corresponded to, it was challenging to establish which volume a given note would be played at or where to place the dynamic instructions within the turtle to correspond to a certain note positioned elsewhere in the spreadsheet. In the initial prototype there was no way to assign a dynamic to the first note without having the starting cell being empty. The addition of this empty cell could be inconvenient for looping parts as this empty cell would be included in the loop. Users who were not familiar with the dynamic markings of western notation found them unintuitive. Furthermore, it was noted that these discrete markings do not make available the continuous volume scale that could be possible with the interface. 
 
 When trying to transcribe a piece in an exact tempo, having to divide the speed by 160 in order to enter a relative speed caused unnecessary work. There was forgetfulness as to the whether relative speed referred to how long or how quickly the turtle moved. 
 
@@ -89,9 +89,9 @@ Once notes had been inputted into the grid, often in a single straight line, the
 
 If instructions involved repeats such as repeatedly moving to the end of a line and jumping down a few cells and back to the beginning of the line, instructions within the turtles required a lot of repetition. 
 
-If writing out a melodic line consisting of small movements, many of the notes would take place in the same octave. As such, it was tiresome to have to repeatedly write out the octave number when this was barely changing. One user made a comparison to LilyPond \footnote{A program for music notation using text notation.} where if the length of a note is not defined, the last defined note length would be used. 
+If writing out a melodic line consisting of small movements, many of the notes would take place in the same octave. As such, it was tiresome to have to repeatedly write out the octave number when this was barely changing. One user made a comparison to LilyPond \footnote{A program for music notation using text notation.} \cite{sandberg:lily} where if the length of a note is not defined, the last defined note length would be used. 
 
-Some users said they would find it more intuitive to think of a melodic line in terms of the intervals between notes as opposed to the name of each note. If a piece contained a melodic line that was transposed \footnote{Where every note has been moved up or down in pitch by the same amount.}, the transposed part had to be written out again and could not be derived quicker from the original version. 
+Some users said they would find it more intuitive to think of a melodic line in terms of the intervals between notes as opposed to the name of each note. If a piece contained a melodic line that was modulated \footnote{Where every note has been moved up or down in pitch by the same amount.}, the modulated part had to be written out again and could not be derived quicker from the original version. 
 
 ###### Chords
 
@@ -103,3 +103,56 @@ When toggling the activation of a turtle, it was very tedious to have to enter t
 
 ### Second Prototype
 
+Following the formative evaluation sessions carried out with the participants and the feedback that was received, a series of additions and modifications were made to the prototype to solve the problems and opportunities brought up. 
+
+##### Dynamics
+
+In order to assist users in extracting the path that the turtles follow from the instructions and pairing notes with their volume, dynamics are instead inserted in the cells along with the notes. A dynamic instruction is added after the note, separated by a space as in Manhattan \cite{nash:manhattan}. As before, this will persist for all following notes until the volume is redefined. By moving the dynamics into the cell there is a tradeoff. A single turtle definition with multiple start cells can now play parts of different volume. However, notes in the grid are limited to only being played at the given volume. To play the same notes at a different volume would require a different path to be followed by the turtle where the cells defining the volume are missed and other cells are played. Overall, the new system was believed to be more preferable. 
+
+In order to be able to make use of a full continuous dynamic scale, in addition to the existing dynamic symbols available, a number between 0 and 1 can be provided where 0 will be silent and 1 is equivalent to fff. 
+
+##### Nested Instructions
+
+The initial language design included the use of nested instruction in order to allow for easy repetition of turtle movements. This was not implemented when the first formative evaluation sessions took place. However, this should help reduce the length of turtle instructions and allow for repeated sections or movements to be more easily incorporated. A series of instructions placed within parentheses with a number immediately following the closing parenthesis will be repeated that number of times. Whilst the fourth argument of the turtle will simply repeat the musical output of the turtle, repetitions within the turtle instruction allow paths to be defined more concisely. 
+
+##### Absolute Tempo
+
+The speed at which the turtle moves is now defined by cells per minute, rather than the relative value used initially. However, values less than 10 were interpreted in the original relative way to maintain backwards compatibility for the participant's existing work. To maintain consistency in a production version, this would be removed so speed must be defined absolutely. This also ensures that the values given for speed and dynamics will be of different orders of magnitude and hence reduce the confusion that can occur between them. 
+
+##### Custom Excel Functions
+
+Two custom Excel functions were implemented to aid in the composition of music within Excel. One to aid with inserting turtles into the grid and a second to transpose notes. 
+
+###### Excello.Turtle
+
+Many users had commented they forgot which arguments go where within the turtle. By adding custom Excel functions the existing formulae writing tools provided within Excel can be utilised. When using a built in formula, a prompt appears informing users which arguments go where and whether they are optional. The output of this function is text used to define a turtle if written manually. This also allows other cells to be referenced for the arguments of the turtle function. For example a cell could have speed defined that all other turtles reference. As a result, the speed of all turtles could be modified by changing this single value. This also allows relative tempos to be easily implemented again as the speed argument of the turtle could be defined as relative_speed * (globally defined absolute speed) . 
+
+###### Excello.Modulate
+
+The implementation of a function to modulate notes both allows for the easy modulation of existing sections of a piece and also the definition of a melodic line by the intervals between the notes. The function takes the contents of a cell where a note is defined and an interval and outputs the note transposed by that interval. A section can be modulated by calling this function on the first note with a provided interval and using the existing drag-fill functionality of Excel to modulate all notes. By using the previous note that has just been transposed and one of a series of intervals as the arguments, a melodic line can quickly be produced from a starting note and a series of intervals. 
+
+\ref{examples}
+
+##### Sustain
+
+In order to prevent confusion between the instruction for a turtle to face south and for a note to be sustained. The symbol "-" has been chosen to sustain a note. This was chosen because it is light and also has some similarity to a tie \footnote{A line to increase the length of a note by joining to another.}. The use of an "s" is still interpreted as a sustain to maintain backwards compatibility for the existing work of the participants. 
+
+##### Active Turtles
+
+In order to provide feedback that turtle definitions have been recognised, in addition to green highlighting, a list of the active turtles is given below the play button. This also assists in finding any spurious turtles that were not intended to be activated. 
+
+##### Automatic Movement
+
+To prevent the number of cells in a line needing counting, a turtle can be instructed to move as far as there are notes defined in the direction it is currently facing. This means that if more notes are added on this line, the turtle instructions do not need editing before pressing play. There may be cases where a part is meant to finish with a number of rests. As a rest is notated with a blank cell, a method of increasing the length of the path to include these rests is required. A rest can be given explicitly with a "." allowing the distance distance travelled by the turtle when moving automatically to be increased. This would be required if multiple turtles were defining a repeating section where one does not have the final cell of the section being a note, sustain or multi-note cell. Without an explicit rest the turtle would stop and repeat too soon and the parts would be out of phase. 
+
+##### Inferred Octave
+
+To prevent the octave number needing writing every time a note in defined, the octave number can be inferred by the program if it is omitted. There were two methods under consideration. Firstly, given that most intervals within music are small, the nearest note could be inferred. This means that a scale would only need the octave defining in the first note. Whilst this method would likely require the least explicit statement of octave number it would be non-trivial to figure out the octave a given note is played in. The last defined octave in the path would need finding and then the subsequent notes would have to be walked through keeping track of which octave is being played. The second consideration was to always use the last defined octave. Whilst this may require reasonable octave definition around the boundary between octaves, it is easier to find what octave a note is played at as it is simply the last defined octave in the path. 
+
+##### Chords
+
+In order to assist in the entering of common chords, common chord types are repeated in a separate group  at the top of the type selection drop-down. The layout of the chord drop-downs was improved with labels added to make it clearer what the different values would refer to. If the notes were entered vertically, the order was reversed to have a greater correspondence with traditional staff notation.  
+
+##### Activation of turtles
+
+A "Toggle Activation" button was added to the add-in window. When a cell or range is highlighted in the spreadsheet, the activation of any turtle definitions in this range will be toggled when the button is pressed.  This significantly increases the ease with which turtles can be deselected as only two clicks are required as opposed to having to enter the cell edit mode and add or remove an exclamation mark. 

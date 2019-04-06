@@ -14,16 +14,23 @@
 \BOOKMARK [2][-]{subsection.2.4.2}{MIDI files}{section.2.4}% 14
 \BOOKMARK [0][-]{chapter.3}{Implementation}{}% 15
 \BOOKMARK [1][-]{section.3.1}{Initial Prototype}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.2}{Formative Evaluation}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.2.1}{Session Format}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.2}{Summary of Issues and Suggestions}{section.3.2}% 19
-\BOOKMARK [1][-]{section.3.3}{Changes For Seciond Prototype}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.3.1}{Dynamics in Cell}{section.3.3}% 21
-\BOOKMARK [1][-]{section.3.4}{How it works}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.7}{Verbatim text}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.8}{Tables}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.9}{Simple diagrams}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.10}{Adding more complicated graphics}{chapter.3}% 28
-\BOOKMARK [0][-]{figure.3.5}{Bibliography}{}% 29
+\BOOKMARK [2][-]{subsection.3.1.1}{Turtles}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Highlighting}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.3}{Chord input}{section.3.1}% 19
+\BOOKMARK [1][-]{section.3.2}{Formative Evaluation}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{Issues and Suggestions}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{Second Prototype}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Dynamics}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.2}{Nested Instructions}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.3}{Absolute Tempo}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.4}{Custom Excel Functions}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.5}{Sustain}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.6}{Active Turtles}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.7}{Automatic Movement}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.8}{Inferred Octave}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.9}{Chords}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.10}{Activation of turtles}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{How it works}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 35
+\BOOKMARK [0][-]{section.3.6}{Bibliography}{}% 36

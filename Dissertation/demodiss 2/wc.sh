@@ -1,17 +1,17 @@
 if [ $# -eq 0 ]
 then
-    for section in {introduction,preparation}
+    for chapter in {introduction,preparation,implementation}
     do
-      output="$(texcount -0 sections/$section/content.tex)"
+      output="$(texcount -0 chapters/$chapter/content.tex)"
       for word in $output
       do
           output="$(echo $word+1| bc)"
-          echo $section: $output
+          echo $chapter: $output
           break
       done
     done
 
-    output="$(texcount -0 sections/preparation/content.tex sections/introduction/content.tex)"
+    output="$(texcount -0 chapters/introduction/content.tex chapters/preparation/content.tex chapters/implementation/content.tex)"
     for word in $output
     do
         calculate="$word+5"
@@ -22,7 +22,7 @@ then
     exit
 fi
 
-output="$(texcount -0 sections/$1/content.tex)"
+output="$(texcount -0 chapters/$1/content.tex)"
 for word in $output
 do
     calculate="$word"

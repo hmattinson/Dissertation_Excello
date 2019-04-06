@@ -64,6 +64,11 @@ Simon Peyton~Jones, Margaret Burnett, and Alan Blackwell.
 \newblock A user-centred approach to functions in excel.
 \newblock June 2003.
 
+\bibitem{sandberg:lily}
+Erik Sandberg, Examensarbete Nv, Reviewer~Arne Andersson, and Examiner~Anders
+  Jansson.
+\newblock Separating input language and formatter in gnu lilypond, 2006.
+
 \bibitem{sarkar:sheetmusic}
 Advait Sarkar.
 \newblock Towards spreadsheet tools for end-user music programming.

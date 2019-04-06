@@ -10,6 +10,10 @@ Same notes can't be different volume but same turtles can be different volume.
 
 Manhattan
 
+### Nested instructions with repeats
+
+*Can be hard to parse what's going on in the turtle instruction if there is lots of letters and numbers. Instruction can also get quite long. - also solved by removing dynamics from turtle instructions.* *Repeating subsections would require repetition.*
+
 ### Continuous dynamics
 
 *Dynamic marking less intuitive + more limiting for just thinking in terms of how loud / quiet.* 
@@ -33,10 +37,6 @@ Custom Excell.turtle instruction. Gives parameters. optional. Can reference othe
 Previous note and modulation. Drag fill. 
 
 Is there something citable here. 
-
-### Nested instructions with repeats
-
-*Can be hard to parse what's going on in the turtle instruction if there is lots of letters and numbers. Instruction can also get quite long. - also solved by removing dynamics from turtle instructions.* *Repeating subsections would require repetition.*
 
 ### - as sustain
 
@@ -73,3 +73,4 @@ m*. Proceed to the last note in that line, can be intermediate rests. Explicit r
 *Adding and removing the exclamation marks was time consuming and fiddly.  Turing off all turtles would be handy and is currently a slow process - Active turtle locations*
 
 highlight area in spreadsheet, button toggles the activation of any turtles in that area. More of a problem for tutorial. 
+
