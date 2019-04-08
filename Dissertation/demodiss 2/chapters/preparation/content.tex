@@ -1,6 +1,3 @@
-\documentclass{article}
-\begin{document}
-
 \chapter{Preparation}
 
 This chapter shall first address the refinements made to the project proposal. Then I shall explain the tests that were performed to establish Excel's suitability for musical development. Next, the design decisions for Excello itself shall be explained. The software engineering tools and techniques employed will then be introduced. Finally, the research that was conducted to decide to implement a converter from MIDI to Excello shall be summariesed.
@@ -109,7 +106,7 @@ The success criteria of the project are as follows:
 
 Initial tests were written in Javascript in the Script Lab add-in for Excel. Excello was written in Typescript as this is readily compiled into the Javascript required to run the add-in but provides static type-checking. It also allows the large collection of existing Javascript libraries to be utilised. Using the Yeoman generator I created a blank Excel add-in project. I used NodeJS to manage dependencies to other Javascript libraries. During development I ran the add-in on a localhost. To allow participants to run Excello on their own machines, I hosted a version of the add-in online using Surge. To run the add-in in Excel, a manifest.xml file is imported which instructs Excel where the add-in is hosted. The converter from MIDI to Excello was implemented in Python using Jupyter Notebooks.
 
-The tone.js library was used to synthesis and schedule sound production via the Web Audio API. The Javascript music theory library tonal was used to produce the notes that make up chords. This prevented the hardcoding of the intervals present in the 109 chords available. The Python library Mido was employed to read python files. All of these libraries have an MIT license.
+The tone.js library was used to synthesis and schedule sound production via the Web Audio API. The Javascript music theory library tonal was used to produce the notes that make up chords. This prevented the hardcoding of the intervals present in the 109 chords available. The Python library Mido was employed to read python files. All of these libraries have an MIT license. I used the Salamander Grand Piano V3\footnote{https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html} sample pack in order to sythesise realistic piano playback. This is under the creative commons liscence\footnote{http://creativecommons.org/licenses/by/3.0/}
 
 \subsubsection{Starting Point}
 
@@ -128,5 +125,3 @@ The users from the participatory design phase of the project were involved in su
 Musicical Instrument Digital Interface (MIDI) details a communications protocol to connect electronic musical instruments with devices for playing, editing and recording music. A MIDI file consists of event messages describing on/off triggerings for a device or program to control audio \cite{huber:midimanual}. MIDI files were designed to be produced by MIDI controllers such as an electric keyboard. As such, a MIDI file contains a lot of controller specific information that is not necessary for the creation of an Excello file. There exist musical formats such as MusicXML that specify the musical notation and as such may be more suitable for conversion to Excello.
 
 Many musical programs support the importing and exporting of MIDI files. By allowing MIDI files to be converted to the Excello notation, Excello is more integrated into the environment of computer programs for playing, editing and composing music. Furthermore, there exist many datasets available for MIDI \cite{huang:deep} which can immediately be played back for comparison.
-
-\end{document}

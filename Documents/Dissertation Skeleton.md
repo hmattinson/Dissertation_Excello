@@ -144,11 +144,13 @@ See new features document.
 
 Overview. 
 
-How it actually works. Secondary notation supported. Tones transport system. Conversion to the Tones system. 
-
-Transport, Part. 
+##### Turtles
 
 Not treated as a context free grammar so that extra gaps can be easily dealt with and because the format of the instruction is quite exact, CFG overkill. 
+
+###### Parenthesis
+
+##### Chord input
 
 Chord input: tonal library but made changes myself for octave. 
 
@@ -244,6 +246,8 @@ Extensions:
 - ixi lang
 - Live
 - tracking
+
+Release
 
 ## Bibliography
 

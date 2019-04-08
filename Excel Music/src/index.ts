@@ -27,9 +27,6 @@ async function run() {
         //  Colour button green
         document.getElementById("run").style.background='#A8FFD0';
 
-        const selectedRange = context.workbook.getSelectedRange();
-        selectedRange.load("values");
-
         var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
         var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
         const sheet: Excel.Range = context.workbook.worksheets.getItem(sheetChoice).getUsedRange();

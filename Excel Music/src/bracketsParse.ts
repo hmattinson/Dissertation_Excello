@@ -13,23 +13,19 @@ export function parseBrackets(str: string) {
 
 	var deepestLevelBracketsRE = new RegExp('\\([^\\(\\)]*\\)'); // finds bracket with no brackets inside
 
-	function replaceDeepestBracket(bracketedExpression){
-		// save token to res
-		unnestedStr.push(bracketedExpression.substring(1, bracketedExpression.length-1)); // add the token without the brackets
-		var replacementID = unnestedStr.length - 1;
-		return idPadding + replacementID + idPadding;
-	}
-
 	// store contents of bracket it unnestedStr and replace contents in str with ID
 	while (deepestLevelBracketsRE.test(str)) {
-		str = str.replace(deepestLevelBracketsRE,replaceDeepestBracket);
+		str = str.replace(deepestLevelBracketsRE,function(x) {
+			unnestedStr.push(x.substring(1, x.length-1)); // add the token without the brackets
+			return idPadding + (unnestedStr.length - 1) + idPadding;
+		});
 	}
 	unnestedStr[0] = str; // make first element in array the highest level of the string
 
 	var replacementIDRE = new RegExp('\\' + idPadding + '([0-9]+)' + idPadding);
 
 	// transform references to tree
-	function reNest (outestStr: string, unnestedStrArray: string[]) {
+	function reNest (outestStr: string) {
 		var renestingStr = [];
 		var match;
 
@@ -44,17 +40,15 @@ export function parseBrackets(str: string) {
 				renestingStr.push(outestStr.substring(0, matchIndex))
 			}
 			//perform recursively
-			renestingStr.push(reNest(unnestedStrArray[firstMatchID], unnestedStrArray))
+			renestingStr.push(reNest(unnestedStr[firstMatchID]))
 			// remove the string that has been processed
 			outestStr = outestStr.substring(matchIndex + fullStringMatched.length)
 		}
-
 		renestingStr.push(outestStr)
-
 		return renestingStr
 	}
 
-	return reNest(unnestedStr[0], unnestedStr)
+	return reNest(unnestedStr[0])
 }
 
 export function processParsedBrackets(arr) {

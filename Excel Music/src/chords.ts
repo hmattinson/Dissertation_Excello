@@ -48,7 +48,7 @@ export async function insertChord() {
             var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
             selectedSheet.getRange(inputRange).values = [chordNotes];
         }
-
+        
     }).catch(errorHandlerFunction);
 }
 

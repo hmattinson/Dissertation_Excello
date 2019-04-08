@@ -14,7 +14,7 @@
 \contentsline {subsubsection}{Tools and Technologies Used}{16}{section*.7}
 \contentsline {subsubsection}{Starting Point}{17}{section*.8}
 \contentsline {subsubsection}{Evaluation Practices}{17}{section*.9}
-\contentsline {subsection}{\numberline {2.4.2}MIDI files}{17}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}MIDI files}{18}{subsection.2.4.2}
 \contentsline {chapter}{\numberline {3}Implementation}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Initial Prototype}{19}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Turtles}{20}{subsection.3.1.1}
@@ -49,4 +49,6 @@
 \contentsline {section}{\numberline {3.4}How it works}{28}{section.3.4}
 \contentsline {section}{\numberline {3.5}MIDI Converter}{28}{section.3.5}
 \contentsline {section}{\numberline {3.6}Repository Overview}{28}{section.3.6}
-\contentsline {chapter}{Bibliography}{28}{section.3.6}
+\contentsline {section}{\numberline {3.7}Simple diagrams}{28}{section.3.7}
+\contentsline {section}{\numberline {3.8}Adding more complicated graphics}{31}{section.3.8}
+\contentsline {chapter}{Bibliography}{31}{figure.3.5}

@@ -18,7 +18,7 @@ Note& Note name (A-G), optional accidentals and octave \\
 &number e.g. \texttt{F\#4}\\ \hline
 Sustain& \texttt{s}\\ \hline
 Multiple notes& Notes, rests or sustains separated by a comma. Rests \\
-subdivided in time& must be a space or an empty string e.g. E4,,C4,s\\ \hline
+subdivided in time& must be a space or an empty string e.g. \texttt{E4,,C4,s}\\ \hline
 Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 \end{tabular}
 \label{tab:cells}
@@ -138,7 +138,7 @@ Many users had commented they forgot which arguments go where within the turtle.
 
 The implementation of a function to modulate notes both allows for the easy modulation of existing sections of a piece and also the definition of a melodic line by the intervals between the notes. The function takes the contents of a cell where a note is defined and an interval and outputs the note transposed by that interval. A section can be modulated by calling this function on the first note with a provided interval and using the existing drag-fill functionality of Excel to modulate all notes. By using the previous note that has just been transposed and one of a series of intervals as the arguments, a melodic line can quickly be produced from a starting note and a series of intervals.
 
-\ref{examples}
+%  \ref{examples}
 
 \subsection{Sustain}
 
@@ -178,126 +178,193 @@ A "Toggle Activation" button was added to the add-in window. When a cell or rang
 %
 % {\renewcommand{\baselinestretch}{0.8}\small
 % \begin{verbatim}
-% GET "libhdr"
+%   export function parseBrackets(str: string) {
 %
-% GLOBAL { count:200; all  }
+%   	var unnestedStr = ['will become highest level'];
+%   	var idPadding = '__';
+%   	var deepestLevelBracketsRE = new RegExp('\\([^\\(\\)]*\\)');
 %
-% LET try(ld, row, rd) BE TEST row=all
-%                         THEN count := count + 1
-%                         ELSE { LET poss = all & ~(ld | row | rd)
-%                                UNTIL poss=0 DO
-%                                { LET p = poss & -poss
-%                                  poss := poss - p
-%                                  try(ld+p << 1, row+p, rd+p >> 1)
-%                                }
-%                              }
-% LET start() = VALOF
-% { all := 1
-%   FOR i = 1 TO 12 DO
-%   { count := 0
-%     try(0, 0, 0)
-%     writef("Number of solutions to %i2-queens is %i5*n", i, count)
-%     all := 2*all + 1
+%   	while (deepestLevelBracketsRE.test(str)) {
+%   		str = str.replace(deepestLevelBracketsRE,function(x) {
+%   			unnestedStr.push(x.substring(1, x.length-1));
+%   			return idPadding + (unnestedStr.length - 1) + idPadding;
+%   		});
+%   	}
+%   	unnestedStr[0] = str;
+%
+%   	var replacementIDRE = new RegExp('\\' + idPadding + '([0-9]+)' + idPadding);
+%
+%   	// transform references to tree
+%   	function reNest (outestStr: string) {
+%   		var renestingStr = [];
+%   		var match;
+%
+%   		while (match = replacementIDRE.exec(outestStr)) {
+%
+%   			var matchIndex = match.index;
+%   			var firstMatchID = match[1];
+%   			var fullStringMatched = match[0];
+%
+%   			// push what was before
+%   			if (matchIndex > 0) {
+%   				renestingStr.push(outestStr.substring(0, matchIndex))
+%   			}
+%   			//perform recursively
+%   			renestingStr.push(reNest(unnestedStr[firstMatchID]))
+%   			// remove the string that has been processed
+%   			outestStr = outestStr.substring(matchIndex + fullStringMatched.length)
+%   		}
+%   		renestingStr.push(outestStr)
+%   		return renestingStr
+%   	}
+%
+%   	return reNest(unnestedStr[0])
 %   }
-%   RESULTIS 0
-% }
 % \end{verbatim}
 % }
-%
-% \section{Simple diagrams}
-%
-% Simple diagrams can be written directly in \LaTeX.  For example, see
-% figure~\ref{latexpic1} on page~\pageref{latexpic1} and see
-% figure~\ref{latexpic2} on page~\pageref{latexpic2}.
-%
-% \begin{figure}
-% \setlength{\unitlength}{1mm}
-% \begin{center}
-% \begin{picture}(125,100)
-% \put(0,80){\framebox(50,10){AAA}}
-% \put(0,60){\framebox(50,10){BBB}}
-% \put(0,40){\framebox(50,10){CCC}}
-% \put(0,20){\framebox(50,10){DDD}}
-% \put(0,00){\framebox(50,10){EEE}}
-%
-% \put(75,80){\framebox(50,10){XXX}}
-% \put(75,60){\framebox(50,10){YYY}}
-% \put(75,40){\framebox(50,10){ZZZ}}
-%
-% \put(25,80){\vector(0,-1){10}}
-% \put(25,60){\vector(0,-1){10}}
-% \put(25,50){\vector(0,1){10}}
-% \put(25,40){\vector(0,-1){10}}
-% \put(25,20){\vector(0,-1){10}}
-%
-% \put(100,80){\vector(0,-1){10}}
-% \put(100,70){\vector(0,1){10}}
-% \put(100,60){\vector(0,-1){10}}
-% \put(100,50){\vector(0,1){10}}
-%
-% \put(50,65){\vector(1,0){25}}
-% \put(75,65){\vector(-1,0){25}}
-% \end{picture}
-% \end{center}
-% \caption{A picture composed of boxes and vectors.}
-% \label{latexpic1}
-% \end{figure}
-%
-% \begin{figure}
-% \setlength{\unitlength}{1mm}
-% \begin{center}
-%
-% \begin{picture}(100,70)
-% \put(47,65){\circle{10}}
-% \put(45,64){abc}
-%
-% \put(37,45){\circle{10}}
-% \put(37,51){\line(1,1){7}}
-% \put(35,44){def}
-%
-% \put(57,25){\circle{10}}
-% \put(57,31){\line(-1,3){9}}
-% \put(57,31){\line(-3,2){15}}
-% \put(55,24){ghi}
-%
-% \put(32,0){\framebox(10,10){A}}
-% \put(52,0){\framebox(10,10){B}}
-% \put(37,12){\line(0,1){26}}
-% \put(37,12){\line(2,1){15}}
-% \put(57,12){\line(0,2){6}}
-% \end{picture}
-%
-% \end{center}
-% \caption{A diagram composed of circles, lines and boxes.}
-% \label{latexpic2}
-% \end{figure}
-%
-%
-%
-% \section{Adding more complicated graphics}
-%
-% The use of \LaTeX\ format can be tedious and it is often better to use
-% encapsulated postscript (EPS) or PDF to represent complicated graphics.
-% Figure~\ref{epsfig} and~\ref{xfig} on page \pageref{xfig} are
-% examples. The second figure was drawn using \texttt{xfig} and exported in
-% {\tt.eps} format. This is my recommended way of drawing all diagrams.
-%
-%
-% \begin{figure}[tbh]
-% \centerline{\includegraphics{figs/cuarms.pdf}}
-% \caption{Example figure using encapsulated postscript}
-% \label{epsfig}
-% \end{figure}
-%
-% \begin{figure}[tbh]
-% \vspace{4in}
-% \caption{Example figure where a picture can be pasted in}
-% \label{pastedfig}
-% \end{figure}
-%
-%
-% \begin{figure}[tbh]
-% \centerline{\includegraphics{figs/diagram.pdf}}
-% \caption{Example diagram drawn using \texttt{xfig}}
-% \label{xfig}
-% \end{figure}
+
+\begin{center}
+\input{chapters/implementation/overview}
+\end{center}
+
+\begin{algorithm}[!htbp]
+\caption{Parsing bracketed expression}\label{alg:parenthesis}
+\begin{algorithmic}[1]
+\Procedure{parseBrackets}{$str$}
+
+   \State $idPadding\gets \texttt{\upquote{\_\_\_}}$
+   \State $unnestedStr\gets []$
+   \State $deepestLevelBracketsRE\gets \texttt{RegExp(\upquote{\textbackslash\textbackslash([\^{}\textbackslash\textbackslash(\textbackslash\textbackslash)]*\textbackslash\textbackslash)})}$
+   \State $replacementIDRE\gets \texttt{RegExp(\upquote{\textbackslash\textbackslash} + }idPadding\texttt{ + \upquote{([0-9]+)} + }idPadding\texttt{)}$\\
+
+   \Procedure{replaceDeepestBracket}{$x$}
+     \State \texttt{unnestedStr.push(x.substring(1, x.length-1))}
+     \State \texttt{\textbf{return} idPadding + (unnestedStr.length - 1) + idPadding}
+   \EndProcedure \\
+
+   \While{\texttt{deepestLevelBracketsRE.test(str)}}
+     \State \texttt{str = str.replace(deepestLevelBracketsRE,replaceDeepestBracket)}
+   \EndWhile
+
+   \State \texttt{unnestedStr[0] = str}\\
+
+   \Procedure{reNest}{$outerStr$}
+     \State $renestingStr\gets []$
+     \While{There is a match of $replacementIDRE$ in $outerStr$}
+       \State $matchIndex\gets$ index of the match in $outerStr$
+       \State $matchID\gets$ ID of the match (number between padding)
+       \State $matchString\gets$ matched string\\
+
+       \If{$matchIndex >$ 0}
+				\State $renestingStr$.push($outestStr$.substring(0, $matchIndex$))
+			\EndIf
+			\State $renestingStr$.push(reNest($unnestedStr$[$firstMatchID$]))
+			\State $outestStr$ = $outestStr$.substring($matchIndex$ + $matchString$.length)
+     \EndWhile
+     \State $renestingStr$.push($outestStr$)
+     \State \textbf{return} $renestingStr$
+   \EndProcedure \\
+
+   \State \textbf{return} reNest($unnestedStr$[0])
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\section{Simple diagrams}
+
+Simple diagrams can be written directly in \LaTeX.  For example, see
+figure~\ref{latexpic1} on page~\pageref{latexpic1} and see
+figure~\ref{latexpic2} on page~\pageref{latexpic2}.
+
+\begin{figure}
+\setlength{\unitlength}{1mm}
+\begin{center}
+\begin{picture}(125,100)
+\put(0,80){\framebox(50,10){AAA}}
+\put(0,60){\framebox(50,10){BBB}}
+\put(0,40){\framebox(50,10){CCC}}
+\put(0,20){\framebox(50,10){DDD}}
+\put(0,00){\framebox(50,10){EEE}}
+
+\put(75,80){\framebox(50,10){XXX}}
+\put(75,60){\framebox(50,10){YYY}}
+\put(75,40){\framebox(50,10){ZZZ}}
+
+\put(25,80){\vector(0,-1){10}}
+\put(25,60){\vector(0,-1){10}}
+\put(25,50){\vector(0,1){10}}
+\put(25,40){\vector(0,-1){10}}
+\put(25,20){\vector(0,-1){10}}
+
+\put(100,80){\vector(0,-1){10}}
+\put(100,70){\vector(0,1){10}}
+\put(100,60){\vector(0,-1){10}}
+\put(100,50){\vector(0,1){10}}
+
+\put(50,65){\vector(1,0){25}}
+\put(75,65){\vector(-1,0){25}}
+\end{picture}
+\end{center}
+\caption{A picture composed of boxes and vectors.}
+\label{latexpic1}
+\end{figure}
+
+\begin{figure}
+\setlength{\unitlength}{1mm}
+\begin{center}
+
+\begin{picture}(100,70)
+\put(47,65){\circle{10}}
+\put(45,64){abc}
+
+\put(37,45){\circle{10}}
+\put(37,51){\line(1,1){7}}
+\put(35,44){def}
+
+\put(57,25){\circle{10}}
+\put(57,31){\line(-1,3){9}}
+\put(57,31){\line(-3,2){15}}
+\put(55,24){ghi}
+
+\put(32,0){\framebox(10,10){A}}
+\put(52,0){\framebox(10,10){B}}
+\put(37,12){\line(0,1){26}}
+\put(37,12){\line(2,1){15}}
+\put(57,12){\line(0,2){6}}
+\end{picture}
+
+\end{center}
+\caption{A diagram composed of circles, lines and boxes.}
+\label{latexpic2}
+\end{figure}
+
+
+
+\section{Adding more complicated graphics}
+
+The use of \LaTeX\ format can be tedious and it is often better to use
+encapsulated postscript (EPS) or PDF to represent complicated graphics.
+Figure~\ref{epsfig} and~\ref{xfig} on page \pageref{xfig} are
+examples. The second figure was drawn using \texttt{xfig} and exported in
+{\tt.eps} format. This is my recommended way of drawing all diagrams.
+
+
+\begin{figure}[tbh]
+\centerline{\includegraphics{figs/cuarms.pdf}}
+\caption{Example figure using encapsulated postscript}
+\label{epsfig}
+\end{figure}
+
+\begin{figure}[tbh]
+\vspace{4in}
+\caption{Example figure where a picture can be pasted in}
+\label{pastedfig}
+\end{figure}
+
+
+\begin{figure}[tbh]
+\centerline{\includegraphics{figs/diagram.pdf}}
+\caption{Example diagram drawn using \texttt{xfig}}
+\label{xfig}
+\end{figure}

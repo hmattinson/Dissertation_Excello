@@ -4,6 +4,8 @@ import {parseBrackets, processParsedBrackets} from './bracketsParse';
 import * as Tone from 'tone';
 import {piano} from './index';
 
+const defaultSpeed = 160;
+
 
 /**
  * Checks selected sheet for cells that can be highlighted
@@ -38,12 +40,11 @@ export function highlightSheet(sheet: Excel.Range): void {
 }
 
 /**
- * INCOMPLETE, find bpm as defined in spreadsheet
  * @param sheetVals the values in the used spreadsheet range
  * @return the beats per minute
  */
 export function getBPM(sheetVals: any[][]): number {
-    return 160;
+    return defaultSpeed;
 }
 
 /**
@@ -96,9 +97,9 @@ export function countMultiNote(s: string): number {
 
 /**
  * Takes a list of cell values and creates a list of time and note pairs for Tone Part playback
- * @param values List of notes as strings e.g. ['A4','A5']
+ * @param values List of notes cell contents
  * @param speedFactor Multipication factor for playback speed
- * @return If val is a definition of a note
+ * @return list of time and note pairs for Tone Part playback
  */
 export function createNoteTimes(values: [string, number][]): [[string, [string, string, number]][],number] {
     var len = values.length;
@@ -437,6 +438,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
 
     if (isCell(instructionsArray[0])) {
         var notes: [string, number][];
+        // Instead of instructions, end cell given. No longer advertised as a feature
         if (isCell(instructionsArray[1])){
             // TODO: Better regex
             var rangeStart = getCellCoords(instructionsArray[0]);
@@ -457,7 +459,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         if (instructionsArray.length > 2){
             speedFactor = eval(instructionsArray[2]);
             if (speedFactor > 10) {
-                speedFactor = speedFactor / 160;
+                speedFactor = speedFactor / defaultSpeed;
             }
             if (instructionsArray.length > 3){
                 repeats = +instructionsArray[3].replace(/\s/g, "");
@@ -473,7 +475,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         if (instructionsArray.length > 2){
             speedFactor = +instructionsArray[2].replace(/\s/g, "");
             if (speedFactor > 10) {
-                speedFactor = speedFactor / 160;
+                speedFactor = speedFactor / defaultSpeed;
             }
             if (instructionsArray.length > 3){
                 repeats = +instructionsArray[3].replace(/\s/g, "");
@@ -492,6 +494,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
 export function runTurtles(sheetVals: any[][]): void {
     var rows: number = sheetVals.length;
     var cols: number = sheetVals[0].length;
+    // Make list of active turtles
     var live_turtles = document.createElement('ul');
     live_turtles.setAttribute('class','ms-List');
 
