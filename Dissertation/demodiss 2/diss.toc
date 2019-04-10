@@ -34,21 +34,21 @@
 \contentsline {subsubsection}{Chords}{24}{section*.19}
 \contentsline {subsubsection}{Activation of turtles}{24}{section*.20}
 \contentsline {section}{\numberline {3.3}Second Prototype}{24}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Dynamics}{24}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Dynamics}{25}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Nested Instructions}{25}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Absolute Tempo}{25}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Custom Excel Functions}{25}{subsection.3.3.4}
-\contentsline {subsubsection}{Excello.Turtle}{25}{section*.21}
+\contentsline {subsubsection}{Excello.Turtle}{26}{section*.21}
 \contentsline {subsubsection}{Excello.Modulate}{26}{section*.22}
 \contentsline {subsection}{\numberline {3.3.5}Sustain}{26}{subsection.3.3.5}
 \contentsline {subsection}{\numberline {3.3.6}Active Turtles}{26}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Automatic Movement}{26}{subsection.3.3.7}
+\contentsline {subsection}{\numberline {3.3.7}Automatic Movement}{27}{subsection.3.3.7}
 \contentsline {subsection}{\numberline {3.3.8}Inferred Octave}{27}{subsection.3.3.8}
 \contentsline {subsection}{\numberline {3.3.9}Chords}{27}{subsection.3.3.9}
 \contentsline {subsection}{\numberline {3.3.10}Activation of turtles}{27}{subsection.3.3.10}
 \contentsline {section}{\numberline {3.4}How it works}{28}{section.3.4}
 \contentsline {section}{\numberline {3.5}MIDI Converter}{28}{section.3.5}
 \contentsline {section}{\numberline {3.6}Repository Overview}{28}{section.3.6}
-\contentsline {section}{\numberline {3.7}Simple diagrams}{28}{section.3.7}
-\contentsline {section}{\numberline {3.8}Adding more complicated graphics}{31}{section.3.8}
-\contentsline {chapter}{Bibliography}{31}{figure.3.5}
+\contentsline {section}{\numberline {3.7}Simple diagrams}{30}{section.3.7}
+\contentsline {section}{\numberline {3.8}Adding more complicated graphics}{30}{section.3.8}
+\contentsline {chapter}{Bibliography}{30}{figure.3.5}

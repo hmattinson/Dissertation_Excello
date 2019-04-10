@@ -100,6 +100,8 @@ async function stop() {
     await Excel.run(async (context) => {
         document.getElementById("run").style.removeProperty("background-color");
         Tone.context.close();
+        // Tone.Transport.cancel();
+        // console.log(Tone.Transport);
     });
 }
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  8 APR 2019 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  10 APR 2019 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,7 +895,7 @@ as been already used, duplicate ignored
                                                   \fi \fi 
 l.31 ..., <Movement>, <Speed>, <Number of Loops>)}
                                                   ] [20] [21] [22] [23]
-[24] [25] [26] (./chapters/implementation/overview.tex) [27]
+[24] [25] [26] [27] (./chapters/implementation/overview.tex)
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 231.
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 237
@@ -915,32 +915,32 @@ dding[]idPadding[]$
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 242.
-[28] [29] [30pdfTeX warning (ext4): destination with the same identifier (name{
-figure.3.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.351 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-3.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.351 
-      ] <figs/cuarms.pdf, id=446, 60.225pt x 72.27pt>
+[28] [29] <figs/cuarms.pdf, id=438, 60.225pt x 72.27pt>
 File: figs/cuarms.pdf Graphic file (type pdf)
  <use figs/cuarms.pdf>
 Package pdftex.def Info: figs/cuarms.pdf used on input line 354.
 (pdftex.def)             Requested size: 60.22484pt x 72.2698pt.
 
-<figs/diagram.pdf, id=447, 458.71375pt x 336.25626pt>
+<figs/diagram.pdf, id=439, 458.71375pt x 336.25626pt>
 File: figs/diagram.pdf Graphic file (type pdf)
  <use figs/diagram.pdf>
 Package pdftex.def Info: figs/diagram.pdf used on input line 367.
 (pdftex.def)             Requested size: 458.71263pt x 336.25543pt.
 )
-(./diss.bbl [31pdfTeX warning (ext4): destination with the same identifier (nam
-e{figure.3.3}) has been already used, duplicate ignored
+(./diss.bbl [30pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \begin{thebibliography}{10}
+                               ] [31pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \begin{thebibliography}{10}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.3.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -982,7 +982,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
 Here is how much of TeX's memory you used:
  18050 strings out of 493014
  336884 string characters out of 6133351
- 407695 words of memory out of 5000000
+ 405695 words of memory out of 5000000
  21069 multiletter control sequences out of 15000+600000
  17480 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1006,7 +1006,7 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (34 pages, 473710 bytes).
+Output written on diss.pdf (34 pages, 473691 bytes).
 PDF statistics:
  569 PDF objects out of 1000 (max. 8388607)
  505 compressed objects within 6 object streams

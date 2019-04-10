@@ -20,7 +20,7 @@ export function highlightSheet(sheet: Excel.Range): void {
         for (var col = 0; col < cols; col++){
             var value = sheetVals[row][col];
             // Highlight notes red
-            if (isNote(value) || isMultiNote(value)) {
+            if (isNote(value) || isMultiNote(value) && value.split(",").some(isNote)) {
                 sheet.getCell(row,col).format.fill.color = "#FFada5";
             }
             // Highlight sustains a lighter red

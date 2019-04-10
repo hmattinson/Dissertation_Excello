@@ -47,13 +47,14 @@ export function isMultiNote(s: string): boolean {
         return false;
     }
     var arr = s.split(',');
+    var isANote = false;
     for (let val of arr) {
         val = val.trim();
-        if (!isNote(val) && !(val=="") && !(val=='s') && !(val=='-')){
+        if (!isNote(val) && !(val=="") && !(val=='s') && !(val=='-') && !(val=='.')){
             return false
         }
     }
-    return true;
+    return arr.some(isNote);
 }
 
 /**
