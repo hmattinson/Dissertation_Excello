@@ -124,6 +124,7 @@ export function createNoteTimes(values: [string, number][]): [[string, [string, 
     var currentNote: string; // note currently being played
     // var currentVolume: number = values[0][1];
     var currentVolume: number = dynamicToVolume('mf');
+    // per cell variables
     var volume: number;
     var value: string;
     var octave: number = 4;
@@ -249,18 +250,18 @@ export function playSequence(values: [string, number][], speedFactor: number =1,
 
     console.log(noteTimes);
 
-    var synthPart = new Tone.Part(function(time: string, note: [string, string, number]){
+    var turtlePart = new Tone.Part(function(time: string, note: [string, string, number]){
         piano.triggerAttackRelease(note[0], note[1], time, note[2]);
     }, noteTimes).start();
 
     if (repeats>0){
-        synthPart = synthPart.stop("0:" + (repeats*beatsLength/speedFactor) + ":0");
+        turtlePart = turtlePart.stop("0:" + (repeats*beatsLength/speedFactor) + ":0");
     }
 
-    synthPart.loop = true;
-    synthPart.loopEnd = "0:" + beatsLength + ":0";
-    synthPart.humanize = false;
-    synthPart.playbackRate = speedFactor;
+    turtlePart.loop = true;
+    turtlePart.loopEnd = "0:" + beatsLength + ":0";
+    turtlePart.humanize = false;
+    turtlePart.playbackRate = speedFactor;
 }
 
 /**

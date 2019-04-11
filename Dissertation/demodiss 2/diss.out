@@ -30,9 +30,13 @@
 \BOOKMARK [2][-]{subsection.3.3.8}{Inferred Octave}{section.3.3}% 30
 \BOOKMARK [2][-]{subsection.3.3.9}{Chords}{section.3.3}% 31
 \BOOKMARK [2][-]{subsection.3.3.10}{Activation of turtles}{section.3.3}% 32
-\BOOKMARK [1][-]{section.3.4}{How it works}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.7}{Simple diagrams}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.8}{Adding more complicated graphics}{chapter.3}% 37
-\BOOKMARK [0][-]{figure.3.5}{Bibliography}{}% 38
+\BOOKMARK [1][-]{section.3.4}{Final Prototype Implementation}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.4.1}{Identifying Cells}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.2}{Parsing Movement Instructions}{section.3.4}% 35
+\BOOKMARK [2][-]{subsection.3.4.3}{Getting Cells in Turtle's path}{section.3.4}% 36
+\BOOKMARK [2][-]{subsection.3.4.4}{Creating Note Times}{section.3.4}% 37
+\BOOKMARK [2][-]{subsection.3.4.5}{Chord Input}{section.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.4.6}{Custom Excel Functions}{section.3.4}% 39
+\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 41
+\BOOKMARK [0][-]{section.3.6}{Bibliography}{}% 42

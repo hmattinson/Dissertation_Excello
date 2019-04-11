@@ -46,9 +46,6 @@
 \contentsline {subsection}{\numberline {3.3.8}Inferred Octave}{27}{subsection.3.3.8}
 \contentsline {subsection}{\numberline {3.3.9}Chords}{27}{subsection.3.3.9}
 \contentsline {subsection}{\numberline {3.3.10}Activation of turtles}{27}{subsection.3.3.10}
-\contentsline {section}{\numberline {3.4}How it works}{28}{section.3.4}
+\contentsline {section}{\numberline {3.4}Final Prototype Implementation}{28}{section.3.4}
 \contentsline {section}{\numberline {3.5}MIDI Converter}{28}{section.3.5}
 \contentsline {section}{\numberline {3.6}Repository Overview}{28}{section.3.6}
-\contentsline {section}{\numberline {3.7}Simple diagrams}{30}{section.3.7}
-\contentsline {section}{\numberline {3.8}Adding more complicated graphics}{30}{section.3.8}
-\contentsline {chapter}{Bibliography}{30}{figure.3.5}

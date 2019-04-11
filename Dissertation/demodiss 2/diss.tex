@@ -14,6 +14,7 @@
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
 % \usepackage[latin1]{inputenc}
 \usepackage{tikz}
+\usepackage{multirow}
 
 \raggedbottom                           % try to avoid widows and orphans
 \sloppy
@@ -32,78 +33,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title
 
-
-\pagestyle{empty}
-
-\rightline{\LARGE \textbf{Henry Mattinson}}
-
-\vspace*{60mm}
-\begin{center}
-\Huge
-\textbf{Excello: End-user music programming in Excel} \\[5mm]
-Computer Science Tripos -- Part II \\[5mm]
-Christ's College \\[5mm]
-\today  % today's date
-\end{center}
+% \include{chapters/title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Proforma, table of contents and list of figures
 
-\pagestyle{plain}
-
-\chapter*{Proforma}
-
-{\large
-\begin{tabular}{ll}
-Name:               & \bf Henry Mattinson                      \\
-College:            & \bf Christ's College                     \\
-Project Title:      & \bf Excello: End-user music programming in Excel \\
-Examination:        & \bf Computer Science Tripos -- Part II, June 2019  \\
-Word Count:         & \bf ????\footnotemark[1]  \\
-Project Originator: & Alan Blackwell                    \\
-Supervisor:         & Dr Advait Sarkar                    \\
-\end{tabular}
-}
-\footnotetext[1]{This word count was computed by summing \texttt{texcount chapters/section/content.tex} for each of the five chapters.
-}
-\stepcounter{footnote}
-
-
-\section*{Original Aims of the Project}
-
-The main aim of the project was to create a system for music expression and playback allowing users to play individual notes and chords and define their durations, define multiple parts, play loops, define sequences of notes and chords and be able to call these for playback and define the tempo of playback. Followed by the implementation of a converter from an existing musical notation to the Excel system (with compression as an extension) and usability testing of the Excel system.
-
-\section*{Work Completed}
-
-I designed a notation for music expression in Excel and built a prototype (Excello) satisfying the success criteria above. Participatory design sessions with 21 users served as formative evaluation leading to the implementation of many additional features as extensions. I contributed part of my implementation to an open-source library, this has been merged and published. I built a converter from MIDI to the Excello notation which can convert exactly or perform lossy compression. This was used to translate a corpus of music to the Excello notation. I performed summative evaluation with the users from the participatory design.
-
-\section*{Special Difficulties}
-
-None.
-
-\newpage
-\section*{Declaration}
-
-I, Henry Mattinson of Christ's College, being a candidate for Part II of the Computer
-Science Tripos, hereby declare
-that this dissertation and the work described in it are my own work,
-unaided except as may be specified below, and that the dissertation
-does not contain material that has already been used to any substantial
-extent for a comparable purpose.
-
-\bigskip
-\leftline{Signed [signature]}
-
-\medskip
-\leftline{Date [date]}
-
-\tableofcontents
-
-% \listoffigures
-
-% \newpage
-% \section*{Acknowledgements}
-
+% \include{chapers/initialStuff}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % now for the chapters
@@ -148,6 +83,6 @@ extent for a comparable purpose.
 %
 % \chapter{Project Proposal}
 %
-% \input{proposal}
+% \input{chapters/proposal}
 
 \end{document}
