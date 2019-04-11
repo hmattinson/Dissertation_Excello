@@ -292,29 +292,32 @@ For each turtle, for each starting cell, the cells moved through are calculated.
 
 The Tone library has many different ways in which time can be represented. I opted to use Transport Time for all time measurements - start times and durations. This is in the form \texttt{\upquote{BARS:QUARTERS:SIXTEENTHS}} where the numbers used do not have to be integer values. This allowed me to simply use the quarters value to represent number of cells and not have to worry about exact times, ticks or what musical note a length corresponded to (tricky for arbitrary subdivisions).
 
-The note sequence array is initiated by counting the number of notes that are defined in the cells passed to the method. This is done using the regular expressions for identifying notes and multi-note cells. The cells are iterated through in one scan keeping track of the active note and adding it to a sequence of notes when it ends.  Outside of this loop, Variables are defined to keep count of how many cells and notes through the process the algorithm is and whether the current value is a rest or note. Variables keep track of the note currently being played - when it started, the pitch and volume. As they are defined within the cells but can also be omitted, variables are also required to keep track the current volume and octave number.
+The note sequence array is initiated by counting the number of notes that are defined in the cells passed to the method. This is done using the regular expressions for identifying notes and multi-note cells. The cells are iterated through in one scan keeping track of the active note and adding it to a sequence of notes when it ends. Outside of this loop, Variables are defined to keep count of how many cells and notes through the process the algorithm is and whether the current value is a rest or note. Variables keep track of the note currently being played - when it started (\texttt{currentStart}), the pitch (\texttt{currentNote}) and volume (\texttt{currentVolume}). As volume and octave number, variables are also required to keep track of these.
 
-Table \ref{tab:times} outlines the actions carried out when a cell is read:
+Table \ref{tab:times} outlines the actions carried out when a cell is read. When a note is added to the note sequence, it is added in the form \texttt{[currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]]}.
 
 \begin{table}[ht]
-\caption{XXXXXX}
-\begin{tabular}{lllll}
+\caption{The actions taken when processing each cell to create note times per turtle}
+\begin{tabular}{l|l|lll}
   Cell&State&\multicolumn{3}{c}{Action}\\
   \hline
-  \multirow{4}{*}{Note}&Note&Note, octave and &y&currentStart = \upquote{0:}+beatCount+\upquote{:0}\\
-  &Rest&volume established&&currentNote = value\\
+  \multirow{4}{*}{Note}&\multirow{2}{*}{Note}&Note, octave and &Previous note added&currentStart = \upquote{0:}+beatCount+\upquote{:0}\\
+  &&volume established&to note sequence&currentNote = value\\
   \cline{2-2}
   \cline{4-4}
-  &Rest&from cell contents&inRest = false;&noteLength = 1\\
-  &Rest&and previous values&&currentVolume = volume\\
+  &\multirow{2}{*}{Rest}&from cell contents&inRest = false&noteLength = 1\\
+  &&and previous values&&currentVolume = volume\\
   \hline
-  \multirow{2}{*}{Sustain}&Note&X&y&y\\
+  \multirow{3}{*}{Sustain}&\multirow{2}{*}{Row}&\multicolumn{3}{l}{noteLength++}\\
+  &&\multicolumn{3}{l}{currentVolume = volume}\\
   \cline{2-5}
-  &Rest&X&y&y\\
+  &Rest&\multicolumn{3}{c}{Nothing (has no semantic value)}\\
   \hline
-  \multirow{2}{*}{Rest}&Note&X&y&y\\
+  \multirow{4}{*}{Rest}&\multirow{3}{*}{Note}&\multicolumn{3}{l}{Previous note added to note sequence}\\
+  &&\multicolumn{3}{l}{inRest = true}\\
+  &&\multicolumn{3}{l}{currentVolume = volume}\\
   \cline{2-5}
-  &Rest&X&y&y\\
+  &Rest&\multicolumn{3}{c}{Nothing}\\
   \hline
 \end{tabular}
 \label{tab:times}
@@ -331,11 +334,9 @@ The notes definitions in the note sequence are sufficient to play a note using t
 var turtlePart = new Tone.Part(function(time: string, note: [string, string, number]){
   piano.triggerAttackRelease(note[0], note[1], time, note[2]);
 }, noteTimes).start();
-
 if (repeats>0){
   turtlePart = turtlePart.stop("0:" + (repeats*beatsLength/speedFactor) + ":0");
 }
-
 turtlePart.loop = true;
 turtlePart.loopEnd = "0:" + beatsLength + ":0";
 turtlePart.playbackRate = speedFactor;

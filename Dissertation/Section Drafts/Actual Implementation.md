@@ -110,3 +110,4 @@ I built another Excel add-in in order to implement custom functions. As opposed 
 The turtle argument simply concatenates the given arguments into the correct format for Excello to recognise as a turtle. This allows other cells to be referenced, for example the speed variable can reference a global tempo variable as shown in figure \ref{fig:functionTurtle}.
 
 The modulate function first establishes if the cell if a note or multi-note. For a note, if there is a volume defined, the note is separated, modulated using the tonal transpose function and then combined back with the volume. This is performed for every element in the multi-note that is a note definition. This allows the drag fill feature of Excel to be employed by the user for transposing sections or to define melodic lines using the interval between notes as shown in figure \ref{fig:functionModulate}.
+
