@@ -165,13 +165,13 @@ export function createNoteTimes(values: [string, number][]): [[string, [string, 
                 // end current note
                 noteSequence[noteCount++] = [currentStart, [currentNote, "0:" + noteLength + ":0", currentVolume]];
                 inRest = true;
-                currentVolume = volume;
+                // currentVolume = volume;
             }
         }
         else if(value == 's' || value == '-'){
             // x -> x
             noteLength++;
-            currentVolume = volume;
+            // currentVolume = volume;
         }
         else if(isMultiNote(value)){
             var noteList = value.split(',').map(x => x.trim());

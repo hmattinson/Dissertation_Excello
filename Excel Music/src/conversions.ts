@@ -70,5 +70,12 @@ export function expandRange(range: string): string[] {
             cells.push(col + i);
         }
     }
+    else if (colChange != 0) {
+        var row: string = startSplit[1];
+        var cells : string[] = [];
+        for (var i=lettersToNumber(startSplit[0])-1; i<=lettersToNumber(endSplit[0])-1; i++) {
+            cells.push(numberToLetter(i) + row);
+        }
+    }
     return cells;
 }

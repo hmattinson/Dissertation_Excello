@@ -192,9 +192,21 @@ Success Criteria:
 
 Advantages of Excello, example showcase e.g. Piano Phase (Manhattan requires 23*3)
 
+Wanting to export to MIDI so it could be used. 
+
 ##### 4.1. ) Midi conversion
 
 Corpus that was converted
+
+https://musescore.com/dashboard
+
+List of tracks used for testing / development
+
+Conditions:
+
+- triplets
+- ornaments
+- constant tempo
 
 ### 4.2) Formative Evaluation
 
@@ -215,6 +227,8 @@ For each feature added:
 Cognitive Dimensions of Notations can be used to analyse musical notation \cite{blackwell:notation} in addition to software systems  \cite{green:cdn}, therefore it is a suitable tool for the discussion of live coding systems. The names of Cognitive Dimensions are written in italics. During a live coding performance, the activities of incrementation and modification shall be treated as the most important, and therefore most considered when discussing the dimensions. 
 
 Nesting and collapsing of rows. 
+
+drag fill.
 
 ##### 4.4.1) Matrix for all but [CLOS, CONS, VISC, SECN, VIJU, HMOS]
 

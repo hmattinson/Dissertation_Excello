@@ -2,16 +2,19 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: diss.aux
 The style file: plain.bst
+A level-1 auxiliary file: chapters/title.aux
 A level-1 auxiliary file: chapters/introduction/content.aux
 Database file #1: refs.bib
 Warning--entry type for "hackaday:spreadsheet" isn't style-file defined
 --line 37 of file refs.bib
+Warning--I didn't find a database entry for "midiSpec"
+Warning--I didn't find a database entry for "midoSpec"
 Warning--empty journal in mclean:visualisation
 Warning--empty journal in mclean:texture
 Warning--empty booktitle in blackwell:functions
 You've used 15 entries,
             2118 wiz_defined-function locations,
-            579 strings with 5969 characters,
+            584 strings with 6019 characters,
 and the built_in function-call counts, 4287 in all, are:
 = -- 390
 > -- 215
@@ -50,4 +53,4 @@ warning$ -- 3
 while$ -- 35
 width$ -- 17
 write$ -- 153
-(There were 4 warnings)
+(There were 6 warnings)

@@ -62,17 +62,23 @@ export function processParsedBrackets(arr) {
 		}
 		else {
 			var singleInstructions = val.trim().split(" ");
-			if (wasPrevArray && !isNaN(singleInstructions[0])) {
-				for (var i=0; i<singleInstructions[0]; i++) {
-					s = s + prevArray;
+			if (wasPrevArray) {
+				s = s + prevArray;
+				if (!isNaN(singleInstructions[0])) {
+					for (var i=1; i<singleInstructions[0]; i++) {
+						s = s + prevArray;
+					}
+					singleInstructions = singleInstructions.slice(1);
 				}
-				singleInstructions = singleInstructions.slice(1);
 			}
 			for (let instruction of singleInstructions) {
 				s = s + instruction + " ";
 			}
 			wasPrevArray = false;
 		}
+	}
+	if (wasPrevArray) {
+		s = s + prevArray;
 	}
 	return s;
 }
