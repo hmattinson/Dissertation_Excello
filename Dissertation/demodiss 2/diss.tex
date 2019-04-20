@@ -22,6 +22,7 @@
 \clubpenalty1000%
 \widowpenalty1000%
 
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle}
 \renewcommand{\baselinestretch}{1.1}    % adjust line spacing to make
                                         % more readable
 
@@ -46,9 +47,9 @@
 
 \pagestyle{headings}
 
-\include{chapters/introduction/content}
-
-\input{chapters/preparation/content}
+% \include{chapters/introduction/content}
+%
+% \input{chapters/preparation/content}
 
 \input{chapters/implementation/content}
 %
@@ -63,12 +64,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the appendices
-% \appendix
-%
-% \chapter{Latex source}
-%
-% \section{diss.tex}
-% {\scriptsize\verbatiminput{diss.tex}}
+\appendix
+
+\chapter{Excello Implementation}
+
+\section{bracketsParse.ts}
+\label{appendix:parenthesis}
+{\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
+
 %
 % \section{proposal.tex}
 % {\scriptsize\verbatiminput{proposal.tex}}

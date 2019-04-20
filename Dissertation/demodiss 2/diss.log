@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  18 APR 2019 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  19 APR 2019 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,32 +748,32 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 ) (./diss.aux
-(./chapters/title.aux) (./chapters/introduction/content.aux))
+(./chapters/title.aux))
 \openout1 = `diss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -783,9 +783,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./diss.out) (./diss.out)
 \@outlinefile=\write4
@@ -858,212 +858,170 @@ ABD: EveryShipout initializing macros
 \docmute@nestinglevel=\count153
 \openout2 = `chapters/title.aux'.
 
- (./chapters/title.tex) [1
+ (./chapters/title.tex
+<figs/cam.jpg, id=126, 570.90883pt x 118.67749pt>
+File: figs/cam.jpg Graphic file (type jpg)
+ <use figs/cam.jpg>
+Package pdftex.def Info: figs/cam.jpg used on input line 18.
+(pdftex.def)             Requested size: 113.81102pt x 23.6572pt.
+
+<figs/microsoft.png, id=127, 3459.92625pt x 739.76375pt>
+File: figs/microsoft.png Graphic file (type png)
+
+<use figs/microsoft.png>
+Package pdftex.def Info: figs/microsoft.png used on input line 23.
+(pdftex.def)             Requested size: 113.81102pt x 24.32535pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<figs/excelloLogoRing.png, id=129, 225.84375pt x 225.84375pt>
+File: figs/excelloLogoRing.png Graphic file (type png)
+
+<use figs/excelloLogoRing.png>
+Package pdftex.def Info: figs/excelloLogoRing.png used on input line 40.
+(pdftex.def)             Requested size: 170.71652pt x 170.72636pt.
+ [1
 
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-\openout2 = `chapters/introduction/content.aux'.
-
-
-(./chapters/introduction/content.tex [2
-
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/
+cam.jpg> <./figs/microsoft.png> <./figs/excelloLogoRing.png>]) (./chapters/impl
+ementation/content.tex [2
 
 
 ]
 Chapter 1.
-<figs/excello.png, id=192, 1284.8pt x 639.38875pt>
-File: figs/excello.png Graphic file (type png)
- <use figs/excello.png>
-Package pdftex.def Info: figs/excello.png used on input line 12.
-(pdftex.def)             Requested size: 426.79134pt x 212.39407pt.
-
-[3]) [4pdfTeX warning (ext4): destination with the same identifier (name{figure
-.1.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.49 \include{chapters/introduction/content}
-                                             <./figs/excello.png>]
-(./chapters/preparation/content.tex
-Chapter 2.
-[5
-
-
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 23.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 23.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [6]
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 42.
-
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-[]\OT1/cmr/m/n/12 The lan-guage for tur-tle move-ment in-struc-tions can be sum
--marised
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-\OT1/cmr/m/n/12 by the foll-wo-ing context-free gram-mar, $(\OML/cmm/m/it/12 N;
- \OT1/cmr/m/n/12 ^^F\OML/cmm/m/it/12 ; S; \OMS/cmsy/m/n/12 P\OT1/cmr/m/n/12 )$.
- Where the non-
- []
-
-
-Underfull \hbox (badness 6808) in paragraph at lines 54--55
-\OT1/cmr/m/n/12 terminal sym-bols $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = (\OT1/c
-mr/bx/n/12 S\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 Y\OML/cmm/m/it/12 ; \OT1/cmr/bx
-/n/12 X\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 I\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12
- R\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 A\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 P\OM
-L/cmm/m/it/12 ; \OT1/cmr/bx/n/12 C\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 D\OT1/cmr
-/m/n/12 )$, ter-mi-nal sym-bols $^^F =
- []
-
-[9pdfTeX warning (ext4): destination with the same identifier (name{table.2.1})
+[3pdfTeX warning (ext4): destination with the same identifier (name{table.1.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.84   \item I
-              mplementation of an API for music playback within a spreadshee...
-] [10]) (./chapters/implementation/content.tex [11] [12
-
-]
-Chapter 3.
-[13pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
 l.35 
-     ] [14] [15] [16] [17] [18] [19] (./chapters/implementation/overview.tex)
-[20] [21pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.3.1}) has been already used, duplicate ignored
+     ] [4] [5] [6] [7] [8]
+<figs/turtleFunction.png, id=231, 599.23875pt x 188.705pt>
+File: figs/turtleFunction.png Graphic file (type png)
+
+<use figs/turtleFunction.png>
+Package pdftex.def Info: figs/turtleFunction.png used on input line 136.
+(pdftex.def)             Requested size: 426.79134pt x 134.40187pt.
+
+<figs/modulateFunction.png, id=233, 687.56876pt x 68.255pt>
+File: figs/modulateFunction.png Graphic file (type png)
+
+<use figs/modulateFunction.png>
+Package pdftex.def Info: figs/modulateFunction.png used on input line 146.
+(pdftex.def)             Requested size: 426.79134pt x 42.36765pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.192 
+l.164 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.164 
+       <./figs/turtleFunction.png> <./figs/modulateFunction.png>] [10]
+(./chapters/implementation/overview.tex) [11pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.1.3}) has been already used, duplicate ig
+nored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.194 
       ]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 201
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 211
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 201.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 211
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 211.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 201.
+(Font)              for symbol `textbraceleft' on input line 211.
 
-
-LaTeX Warning: Reference `appendix:parenthesis' on page 22 undefined on input l
-ine 205.
-
+[12]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 208.
+put line 218.
 
-Overfull \hbox (0.6767pt too wide) in paragraph at lines 216--217
+Overfull \hbox (0.6767pt too wide) in paragraph at lines 226--227
 [] $\OML/cmm/m/it/12 replacementIDRE \OMS/cmtt/m/n/12   []\OML/cmm/m/it/12 idPa
 dding[]idPadding[]$ 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 220.
-[22] [23]
-
-LaTeX Warning: Reference `appendix:unnest' on page 24 undefined on input line 2
-55.
-
-[24]
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 230.
+[13] [14]
 Missing character: There is no â in font cmtt12!
 Missing character: There is no € in font cmtt12!
 Missing character: There is no ¦ in font cmtt12!
-
-Overfull \hbox (58.85092pt too wide) in paragraph at lines 303--324
+ [15]
+Overfull \hbox (4.0171pt too wide) in paragraph at lines 312--334
 [][]
  []
 
-[25]
-Overfull \hbox (75.80615pt too wide) in paragraph at lines 334--334
-[]\OT1/cmtt/m/n/12 var turtlePart = new Tone.Part(function(time: string, note: 
-[string, string, number]){ 
- []
 
-
-Overfull \hbox (38.75613pt too wide) in paragraph at lines 338--338
+Overfull \hbox (38.75613pt too wide) in paragraph at lines 346--346
 []  \OT1/cmtt/m/n/12 turtlePart = turtlePart.stop("0:" + (repeats*beatsLength/s
 peedFactor) + ":0");[] 
  []
 
-
-Overfull \hbox (26.40613pt too wide) in paragraph at lines 350--350
-[]\OT1/cmtt/m/n/12 var chordNotes = Chord.notes(chordNote, chordType).map(x => 
-Note.simplify(x)); 
- []
-
-[26pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}
+[16pdfTeX warning (ext4): destination with the same identifier (name{table.1.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.355 \paragraph
-                {} Octave numbers are added by iterating through the notes p...
-]
+l.356 
+      ]
+Overfull \hbox (26.40613pt too wide) in paragraph at lines 358--358
+[]\OT1/cmtt/m/n/12 var chordNotes = Chord.notes(chordNote, chordType).map(x => 
+Note.simplify(x)); 
+ []
 
-LaTeX Warning: Reference `fig:functionTurtle' on page 27 undefined on input lin
-e 363.
-
-
-LaTeX Warning: Reference `fig:functionModulate' on page 27 undefined on input l
-ine 365.
-
-
-LaTeX Warning: Citation `midiSpec' on page 27 undefined on input line 369.
-
-
-LaTeX Warning: Citation `midiSpec' on page 27 undefined on input line 369.
-
-
-LaTeX Warning: Citation `midoSpec' on page 27 undefined on input line 369.
-
-[27] [28]) (./diss.bbl [29] [30
+[17] [18]) (./diss.bbl [19] [20
 
 ]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
- [31]) [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
- (./diss.aux (./chapters/title.aux)
-(./chapters/introduction/content.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+) [21] [22
+
+]
+Appendix A.
+File: chapters/implementation/parenthesis.ts  (verbatim)
+[23] [24]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
+ (./diss.aux (./chapters/title.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: D9856297DD6DADFCB592897A1B48300C;2805.
+(rerunfilecheck)             Checksum: DB01800D4E71448D6C20868B0C2B10A7;2017.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
  ) 
 Here is how much of TeX's memory you used:
- 18716 strings out of 493014
- 344571 string characters out of 6133351
- 413773 words of memory out of 5000000
- 21645 multiletter control sequences out of 15000+600000
- 16995 words of font info for 64 fonts, out of 8000000 for 9000
+ 18637 strings out of 493014
+ 343565 string characters out of 6133351
+ 415927 words of memory out of 5000000
+ 21626 multiletter control sequences out of 15000+600000
+ 15142 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,12n,59p,2099b,732s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,10n,59p,1051b,732s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1071,20 +1029,19 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (32 pages, 462099 bytes).
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on diss.pdf (24 pages, 580432 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 546 compressed objects within 6 object streams
- 210 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 414 compressed objects within 5 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 278 words of extra memory for PDF output out of 10000 (max. 10000000)
 

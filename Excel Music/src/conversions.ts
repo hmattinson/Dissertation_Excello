@@ -51,7 +51,7 @@ export function dynamicToVolume(dynamic: string): number {
 }
 
 /**
- * INCOMPLETE, takes a start and end cell and gives addresses of cells between (currently only does a column)
+ * takes a start and end cell and gives addresses of cells between
  * @param range e.g. B1:B10
  * @return list of addresses in range (inclusive)
  */

@@ -3,54 +3,45 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: diss.aux
 The style file: plain.bst
 A level-1 auxiliary file: chapters/title.aux
-A level-1 auxiliary file: chapters/introduction/content.aux
 Database file #1: refs.bib
-Warning--entry type for "hackaday:spreadsheet" isn't style-file defined
---line 37 of file refs.bib
-Warning--I didn't find a database entry for "midiSpec"
-Warning--I didn't find a database entry for "midoSpec"
-Warning--empty journal in mclean:visualisation
-Warning--empty journal in mclean:texture
-Warning--empty booktitle in blackwell:functions
-You've used 15 entries,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            584 strings with 6019 characters,
-and the built_in function-call counts, 4287 in all, are:
-= -- 390
-> -- 215
-< -- 2
-+ -- 88
-- -- 70
-* -- 259
-:= -- 738
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 79
+            520 strings with 4468 characters,
+and the built_in function-call counts, 958 in all, are:
+= -- 83
+> -- 44
+< -- 0
++ -- 19
+- -- 14
+* -- 44
+:= -- 168
+add.period$ -- 11
+call.type$ -- 4
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 169
-empty$ -- 354
-format.name$ -- 70
-if$ -- 891
+cite$ -- 4
+duplicate$ -- 37
+empty$ -- 91
+format.name$ -- 14
+if$ -- 199
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 12
-newline$ -- 77
-num.names$ -- 30
-pop$ -- 109
+int.to.str$ -- 4
+missing$ -- 1
+newline$ -- 22
+num.names$ -- 8
+pop$ -- 33
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 15
 quote$ -- 0
-skip$ -- 120
+skip$ -- 28
 stack$ -- 0
-substring$ -- 163
-swap$ -- 25
-text.length$ -- 2
+substring$ -- 21
+swap$ -- 6
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
-warning$ -- 3
-while$ -- 35
-width$ -- 17
-write$ -- 153
-(There were 6 warnings)
+type$ -- 16
+warning$ -- 0
+while$ -- 8
+width$ -- 5
+write$ -- 40

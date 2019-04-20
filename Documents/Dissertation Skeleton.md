@@ -208,7 +208,7 @@ Conditions:
 - ornaments
 - constant tempo
 
-### 4.2) Formative Evaluation
+### 4.2) Summative Evaluation
 
 How evaluation worked. 
 
