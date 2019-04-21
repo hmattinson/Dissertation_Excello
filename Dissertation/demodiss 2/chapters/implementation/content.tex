@@ -380,7 +380,7 @@ var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
 
 \paragraph{} As each turtle can only define one note at a time, the notes are split into lists so no list contains two notes which are playing at the same time. Provided the main list of notes is non-empty, a new list is created. The first remaining note is moved to the new list. The next remaining note starting after the previous note ends is moved to this new list. All remaining notes are iterated over. The number of iterations required is the number of turtles required, $n$.
 
-\paragraph{} If every tick corresponded to a cell, any combination of note onsets and offsets in a MIDI file could be accurately represented in Excello. To achieve smaller representations, the start and end times are converted to the cell number within the path of the turtle. For many MIDI files, the duration of a note, is different to the time it is notated to occupy. For example, a note immediately followed by another note in notation may have an end time significantly less than the start time of the next note in MIDI. A method is required to account for this. For all notes, before separation into the streams for different turtles, the length of the notes in ticks and differences between consecutive start times are found. The minimum or modal values for these times are calculated depending on the level of compression giving the $lengthStat$ and $differenceStat$.
+\paragraph{} If every tick corresponded to a cell, any combination of note onsets and offsets in a MIDI file could be accurately represented in Excello. To achieve smaller representations, the start and end times are converted to the cell number within the path of the turtle. For many MIDI files, the duration of a note, is different to the time it is notated to occupy. For example, a note immediately followed by another note in notation may have an end time significantly less than the start time of the next note in MIDI. A method is required to account for this. For all notes, before separation into the streams for different turtles, the length of the notes in ticks and differences between consecutive start times are found. The minimum value greater than 1 or modal value for these times are calculated depending on the compression level giving the $lengthStat$ and $differenceStat$.
 
   $$ratio_{int} = \lfloor\max(lengthStat, differenceStat)/\min(lengthStat, differenceStat)\rfloor$$
   % $$ratio_{int} = \lfloor ratio \rfloor$$
@@ -400,6 +400,8 @@ Using one as the number of repeats, the turtle definition is placed in cell A1 a
 \section{Repository Overview}
 
 TODO
+
+Review of liscences and what license I'll be releasing it under.
 
 % \section{Simple diagrams}
 %

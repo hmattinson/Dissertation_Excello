@@ -196,9 +196,24 @@ Wanting to export to MIDI so it could be used.
 
 ##### 4.1. ) Midi conversion
 
+The converter is used to show that the language is expressive enough to represent a corpus given certain conditions. Ties Excello into the music ecosystem. Talk about how it works in the implementation and in the evaluation talk about the corpus that was converted
+
 Corpus that was converted
 
+<https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi>
+497
+
+<http://www.bachcentral.com/midiindex.html>
+228
+
+<http://piano-midi.de/midis.htm>
+277
+Name: Bernd Krueger 
+Source: [http://www.piano-midi.de](http://www.piano-midi.de/)
+
 https://musescore.com/dashboard
+7
+Inside out - creative commons waiver, all others all rights reserved. 
 
 List of tracks used for testing / development
 
@@ -210,7 +225,14 @@ Conditions:
 
 ### 4.2) Summative Evaluation
 
-How evaluation worked. 
+Review of features that have been added
+
+Questionaire:
+
+1. Comparison of interface before and after a feature had been added. 7-point Lichard scale. Questions to test if issues had been solved and if overall it was preferable. 
+2. Use of Excello and preferred interface
+3. CDN 5-point Lichard scale questions. Same question asked about preferred interface. 
+4. Additional points
 
 ### 4.3) Success of New Features
 
@@ -224,7 +246,7 @@ For each feature added:
 
 ### 4.4) CDNs
 
-Cognitive Dimensions of Notations can be used to analyse musical notation \cite{blackwell:notation} in addition to software systems  \cite{green:cdn}, therefore it is a suitable tool for the discussion of live coding systems. The names of Cognitive Dimensions are written in italics. During a live coding performance, the activities of incrementation and modification shall be treated as the most important, and therefore most considered when discussing the dimensions. 
+The names of Cognitive Dimensions are written in italics. During a live coding performance, the activities of incrementation and modification shall be treated as the most important, and therefore most considered when discussing the dimensions. 
 
 Nesting and collapsing of rows. 
 
@@ -249,15 +271,13 @@ For each question:
 
 Ethics review, consent form, storage of data (de-anonymisation), pilot sessions. 
 
-
-
 Regex unit tests
 
 ## 5) Conclusion
 
 *Social and Ethical impact*
 
-Parenthesis reminder
+remind examiners that there has been an open source contribution.
 
 Extensions:
 

@@ -1,51 +1,19 @@
-\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{9}{section.1.1}
-\contentsline {section}{\numberline {1.2}Outline of work}{10}{section.1.2}
-\contentsline {chapter}{\numberline {2}Preparation}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Proposal Refinements}{11}{section.2.1}
-\contentsline {section}{\numberline {2.2}Initial Tests}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Note Synthesis Library}{12}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Office Javascript API}{13}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Excello Design and Language}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Abstracting Time}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Initial Prototype Design}{14}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Software Engineering}{16}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Requirements}{16}{subsection.2.4.1}
-\contentsline {subsubsection}{Tools and Technologies Used}{16}{section*.7}
-\contentsline {subsubsection}{Starting Point}{17}{section*.8}
-\contentsline {subsubsection}{Evaluation Practices}{17}{section*.9}
-\contentsline {subsection}{\numberline {2.4.2}MIDI files}{18}{subsection.2.4.2}
-\contentsline {chapter}{\numberline {3}Implementation}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Initial Prototype}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Turtles}{20}{subsection.3.1.1}
-\contentsline {subsubsection}{Activation}{20}{section*.10}
-\contentsline {subsubsection}{Starting Cell}{20}{section*.11}
-\contentsline {subsubsection}{Movement}{20}{section*.12}
-\contentsline {subsubsection}{Speed}{20}{section*.13}
-\contentsline {subsubsection}{Number of Loops}{21}{section*.14}
-\contentsline {subsection}{\numberline {3.1.2}Highlighting}{21}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Chord input}{21}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Formative Evaluation}{21}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Issues and Suggestions}{22}{subsection.3.2.1}
-\contentsline {subsubsection}{Turtle Notation}{22}{section*.15}
-\contentsline {subsubsection}{Feedback}{23}{section*.16}
-\contentsline {subsubsection}{MIDI conversions}{23}{section*.17}
-\contentsline {subsubsection}{Sources of effort when writing}{23}{section*.18}
-\contentsline {subsubsection}{Chords}{24}{section*.19}
-\contentsline {subsubsection}{Activation of turtles}{24}{section*.20}
-\contentsline {section}{\numberline {3.3}Second Prototype}{24}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Dynamics}{25}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Nested Instructions}{25}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Absolute Tempo}{25}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Custom Excel Functions}{25}{subsection.3.3.4}
-\contentsline {subsubsection}{Excello.Turtle}{26}{section*.21}
-\contentsline {subsubsection}{Excello.Modulate}{26}{section*.22}
-\contentsline {subsection}{\numberline {3.3.5}Sustain}{26}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Active Turtles}{26}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Automatic Movement}{27}{subsection.3.3.7}
-\contentsline {subsection}{\numberline {3.3.8}Inferred Octave}{27}{subsection.3.3.8}
-\contentsline {subsection}{\numberline {3.3.9}Chords}{27}{subsection.3.3.9}
-\contentsline {subsection}{\numberline {3.3.10}Activation of turtles}{27}{subsection.3.3.10}
-\contentsline {section}{\numberline {3.4}Final Prototype Implementation}{28}{section.3.4}
-\contentsline {section}{\numberline {3.5}MIDI Converter}{28}{section.3.5}
-\contentsline {section}{\numberline {3.6}Repository Overview}{28}{section.3.6}
+\contentsline {paragraph}{}{8}{section*.8}
+\contentsline {paragraph}{}{8}{section*.9}
+\contentsline {paragraph}{}{8}{section*.10}
+\contentsline {chapter}{\numberline {1}Evaluation}{9}{chapter.1}
+\contentsline {paragraph}{}{9}{section*.11}
+\contentsline {section}{\numberline {1.1}Excello Success}{9}{section.1.1}
+\contentsline {paragraph}{}{9}{section*.12}
+\contentsline {paragraph}{}{9}{section*.13}
+\contentsline {section}{\numberline {1.2}MIDI Corpus Conversion}{10}{section.1.2}
+\contentsline {paragraph}{}{10}{section*.14}
+\contentsline {paragraph}{}{11}{section*.15}
+\contentsline {paragraph}{}{11}{section*.16}
+\contentsline {section}{\numberline {1.3}Summative Evaluation Sessions}{11}{section.1.3}
+\contentsline {paragraph}{}{11}{section*.17}
+\contentsline {paragraph}{}{12}{section*.18}
+\contentsline {section}{\numberline {1.4}Success of Participatory Design}{13}{section.1.4}
+\contentsline {chapter}{Bibliography}{13}{section.1.4}
+\contentsline {chapter}{\numberline {A}Excello Implementation}{17}{appendix.A}
+\contentsline {section}{\numberline {A.1}bracketsParse.ts}{17}{section.A.1}
