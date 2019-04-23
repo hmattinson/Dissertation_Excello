@@ -1,6 +1,6 @@
 if [ $# -eq 0 ]
 then
-    for chapter in {introduction,preparation,implementation,evaluation}
+    for chapter in {introduction,preparation,implementation,evaluation,conclusion}
     do
       output="$(texcount -0 chapters/$chapter/content.tex)"
       for word in $output
@@ -11,7 +11,7 @@ then
       done
     done
 
-    output="$(texcount -0 chapters/introduction/content.tex chapters/preparation/content.tex chapters/implementation/content.tex chapters/evaluation/content.tex)"
+    output="$(texcount -0 chapters/introduction/content.tex chapters/preparation/content.tex chapters/implementation/content.tex chapters/evaluation/content.tex chapters/conclusion/content.tex)"
     for word in $output
     do
         calculate="$word+5"

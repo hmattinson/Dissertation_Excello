@@ -1,8 +1,18 @@
 \begin{thebibliography}{10}
 
+\bibitem{aaron:pi}
+Samuel Aaron, Alan F.~Blackwell, and Pamela Burnard.
+\newblock The development of sonic pi and its use in educational partnerships:
+  Co-creating pedagogies for learning computer programming.
+\newblock {\em Journal of Music, Technology and Education}, 9:75--94, 05 2016.
+
 \bibitem{midiSpec}
 MIDI~Manufacturers Association.
 \newblock {\em The complete MIDI 1.0 detailed specification}, 1997.
+
+\bibitem{barry:likert}
+Dwight Barry.
+\newblock Do not use averages with likert scale data, 01 2017.
 
 \bibitem{midoSpec}
 Ole~Martin Bjørndalen.
@@ -10,10 +20,41 @@ Ole~Martin Bjørndalen.
 \newblock \url{https://mido.readthedocs.io/en/latest/midi_files.html}, 2016.
 \newblock Accessed: 2019-04-18).
 
+\bibitem{blackwell:questionnaire}
+Alan~F. Blackwell and Thomas R.~G. Green.
+\newblock A cognitive dimensions questionnaire optimised for users.
+\newblock In {\em PPIG}, 2000.
+
+\bibitem{dawes:points}
+Dr.~John Dawes.
+\newblock Do data characteristics change according to the number of scale
+  points used? an experiment using 5-point, 7-point and 10-point scales.
+\newblock {\em International Journal of Market Research}, 50(1):61--104, 2008.
+
+\bibitem{blackwell:notation}
+Alan F.~Blackwell, Thomas Green, and Dje Nunn.
+\newblock Cognitive dimensions and musical notation systems.
+\newblock {\em Workshop on Notation and Music Information Retrieval}, 11 2000.
+
 \bibitem{goldman:turtle}
 Ron Goldman, Scott Schaefer, and Tao Ju.
 \newblock Turtle geometry in computer graphics and computer-aided design.
 \newblock {\em Computer-Aided Design}, 36:1471--1482, 2004.
+
+\bibitem{blackwell:tutorial}
+Thomas Green and Alan Blackwell.
+\newblock {Cognitive dimensions of information artefacts: a tutorial}.
+\newblock Technical Report Version 1.2, BCS HCI Conference, 1998.
+
+\bibitem{green:cdn}
+Thomas Green and Marian Petre.
+\newblock Usability analysis of visual programming environments: A 'cognitive
+  dimensions' framework.
+\newblock {\em Journal of Visual Languages}, 7:131--, 06 1996.
+
+\bibitem{hackaday:spreadsheet}
+Sven Gregori.
+\newblock Never mind the sheet music, here’s spreadsheet music, 2019.
 
 \bibitem{huang:deep}
 Allen Huang and Raymond Wu.
@@ -54,9 +95,30 @@ Chris Nash.
 \newblock Manhattan: End-user programming for music.
 \newblock In {\em NIME}, 2014.
 
+\bibitem{blackwell:functions}
+Simon Peyton~Jones, Margaret Burnett, and Alan Blackwell.
+\newblock A user-centred approach to functions in excel.
+\newblock June 2003.
+
+\bibitem{ross:introductory}
+S.M. Ross.
+\newblock {\em Introductory Statistics}.
+\newblock Elsevier Science, 2010.
+
 \bibitem{sandberg:lily}
 Erik Sandberg, Examensarbete Nv, Reviewer~Arne Andersson, and Examiner~Anders
   Jansson.
 \newblock Separating input language and formatter in gnu lilypond, 2006.
+
+\bibitem{sarkar:sheetmusic}
+Advait Sarkar.
+\newblock Towards spreadsheet tools for end-user music programming.
+\newblock In {\em PPIG}, 2016.
+
+\bibitem{scaffidi:estimating}
+C.~{Scaffidi}, M.~{Shaw}, and B.~{Myers}.
+\newblock Estimating the numbers of end users and end user programmers.
+\newblock In {\em 2005 IEEE Symposium on Visual Languages and Human-Centric
+  Computing (VL/HCC'05)}, pages 207--214, Sep. 2005.
 
 \end{thebibliography}

@@ -21,6 +21,8 @@
 % \usepackage[demo]{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
 \pgfplotsset{compat=1.13}
 \usepgfplotslibrary{statistics}
 \usetikzlibrary{trees}
@@ -56,15 +58,15 @@
 
 \pagestyle{headings}
 
-% \include{chapters/introduction/content}
-%
+\include{chapters/introduction/content}
+
 \input{chapters/preparation/content}
 %
 \input{chapters/implementation/content}
 
-% \input{chapters/evaluation/content}
-%
-% \input{chapters/conclusion/content}
+\input{chapters/evaluation/content}
+
+\input{chapters/conclusion/content}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the bibliography
@@ -81,21 +83,10 @@
 \label{appendix:parenthesis}
 {\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
 
+\chapter{Project Proposal}
 
-\section{proposal.tex}
-{\scriptsize\verbatiminput{proposal.tex}}
+\includepdf[pages=-]{chapters/proposal}
 
-\chapter{Makefile}
-
-\section{makefile}\label{makefile}
-{\scriptsize\verbatiminput{makefile.txt}}
-
-\section{refs.bib}
-{\scriptsize\verbatiminput{refs.bib}}
-
-%
-% \chapter{Project Proposal}
-%
 % \input{chapters/proposal}
 
 \end{document}

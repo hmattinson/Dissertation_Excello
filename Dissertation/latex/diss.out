@@ -1,45 +1,66 @@
-\BOOKMARK [0][-]{chapter.1}{Preparation}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Proposal Refinements}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Initial Tests}{chapter.1}% 3
-\BOOKMARK [2][-]{subsection.1.2.1}{Note Synthesis Library}{section.1.2}% 4
-\BOOKMARK [2][-]{subsection.1.2.2}{Office Javascript API}{section.1.2}% 5
-\BOOKMARK [1][-]{section.1.3}{Excello Design and Language}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.3.1}{Abstracting Time}{section.1.3}% 7
-\BOOKMARK [2][-]{subsection.1.3.2}{Initial Prototype Design}{section.1.3}% 8
-\BOOKMARK [1][-]{section.1.4}{Software Engineering}{chapter.1}% 9
-\BOOKMARK [2][-]{subsection.1.4.1}{Requirements}{section.1.4}% 10
-\BOOKMARK [2][-]{subsection.1.4.2}{MIDI files}{section.1.4}% 11
-\BOOKMARK [0][-]{chapter.2}{Implementation}{}% 12
-\BOOKMARK [1][-]{section.2.1}{Initial Prototype}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.1.1}{Turtles}{section.2.1}% 14
-\BOOKMARK [2][-]{subsection.2.1.2}{Highlighting}{section.2.1}% 15
-\BOOKMARK [2][-]{subsection.2.1.3}{Chord input}{section.2.1}% 16
-\BOOKMARK [1][-]{section.2.2}{Formative Evaluation}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.2.1}{Issues and Suggestions}{section.2.2}% 18
-\BOOKMARK [1][-]{section.2.3}{Second Prototype}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.3.1}{Dynamics}{section.2.3}% 20
-\BOOKMARK [2][-]{subsection.2.3.2}{Nested Instructions}{section.2.3}% 21
-\BOOKMARK [2][-]{subsection.2.3.3}{Absolute Tempo}{section.2.3}% 22
-\BOOKMARK [2][-]{subsection.2.3.4}{Custom Excel Functions}{section.2.3}% 23
-\BOOKMARK [2][-]{subsection.2.3.5}{Sustain}{section.2.3}% 24
-\BOOKMARK [2][-]{subsection.2.3.6}{Active Turtles}{section.2.3}% 25
-\BOOKMARK [2][-]{subsection.2.3.7}{Automatic Movement}{section.2.3}% 26
-\BOOKMARK [2][-]{subsection.2.3.8}{Inferred Octave}{section.2.3}% 27
-\BOOKMARK [2][-]{subsection.2.3.9}{Chords}{section.2.3}% 28
-\BOOKMARK [2][-]{subsection.2.3.10}{Activation of turtles}{section.2.3}% 29
-\BOOKMARK [1][-]{section.2.4}{Final Prototype Implementation}{chapter.2}% 30
-\BOOKMARK [2][-]{subsection.2.4.1}{Identifying Cells}{section.2.4}% 31
-\BOOKMARK [2][-]{subsection.2.4.2}{Parsing Movement Instructions}{section.2.4}% 32
-\BOOKMARK [2][-]{subsection.2.4.3}{Getting Cells in Turtle's path}{section.2.4}% 33
-\BOOKMARK [2][-]{subsection.2.4.4}{Creating Note Times}{section.2.4}% 34
-\BOOKMARK [2][-]{subsection.2.4.5}{Chord Input}{section.2.4}% 35
-\BOOKMARK [2][-]{subsection.2.4.6}{Custom Excel Functions}{section.2.4}% 36
-\BOOKMARK [1][-]{section.2.5}{MIDI Converter}{chapter.2}% 37
-\BOOKMARK [1][-]{section.2.6}{Repository Overview}{chapter.2}% 38
-\BOOKMARK [0][-]{section*.128}{Bibliography}{}% 39
-\BOOKMARK [0][-]{appendix.A}{Excello Implementation}{}% 40
-\BOOKMARK [1][-]{section.A.1}{bracketsParse.ts}{appendix.A}% 41
-\BOOKMARK [1][-]{section.A.2}{proposal.tex}{appendix.A}% 42
-\BOOKMARK [0][-]{appendix.B}{Makefile}{}% 43
-\BOOKMARK [1][-]{section.B.1}{makefile}{appendix.B}% 44
-\BOOKMARK [1][-]{section.B.2}{refs.bib}{appendix.B}% 45
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Outline of work}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Preparation}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Proposal Refinements}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{Initial Tests}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.1}{Note Synthesis Library}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.2}{Office Javascript API}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Excello Design and Language}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.3.1}{Abstracting Time}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.2}{Initial Prototype Design}{section.2.3}% 11
+\BOOKMARK [1][-]{section.2.4}{Software Engineering}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{Requirements}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.2}{MIDI files}{section.2.4}% 14
+\BOOKMARK [0][-]{chapter.3}{Implementation}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Initial Prototype}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Turtles}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Highlighting}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.3}{Chord input}{section.3.1}% 19
+\BOOKMARK [1][-]{section.3.2}{Formative Evaluation}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{Issues and Suggestions}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{Second Prototype}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Dynamics}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.2}{Nested Instructions}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.3}{Absolute Tempo}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.4}{Custom Excel Functions}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.5}{Sustain}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.6}{Active Turtles}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.7}{Automatic Movement}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.8}{Inferred Octave}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.9}{Chords}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.10}{Activation of turtles}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Final Prototype Implementation}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.4.1}{Identifying Cells}{section.3.4}% 34
+\BOOKMARK [2][-]{subsection.3.4.2}{Parsing Movement Instructions}{section.3.4}% 35
+\BOOKMARK [2][-]{subsection.3.4.3}{Getting Cells in Turtle's path}{section.3.4}% 36
+\BOOKMARK [2][-]{subsection.3.4.4}{Creating Note Times}{section.3.4}% 37
+\BOOKMARK [2][-]{subsection.3.4.5}{Chord Input}{section.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.4.6}{Custom Excel Functions}{section.3.4}% 39
+\BOOKMARK [1][-]{section.3.5}{MIDI Converter}{chapter.3}% 40
+\BOOKMARK [1][-]{section.3.6}{Repository Overview}{chapter.3}% 41
+\BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 42
+\BOOKMARK [1][-]{section.4.1}{Excello Success}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.2}{MIDI Corpus Conversion}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.3}{Summative Evaluation Sessions}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.4}{Success of Participatory Design}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.1}{Dynamics in the Cell}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.2}{Inferred Octave}{section.4.4}% 48
+\BOOKMARK [2][-]{subsection.4.4.3}{Nested Instructions}{section.4.4}% 49
+\BOOKMARK [2][-]{subsection.4.4.4}{Active Turtles List}{section.4.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.5}{Continuous Volume}{section.4.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.6}{Automatic Stepping}{section.4.4}% 52
+\BOOKMARK [2][-]{subsection.4.4.7}{Absolute Tempo}{section.4.4}% 53
+\BOOKMARK [1][-]{section.4.5}{Cognitive Dimensions of Notation}{chapter.4}% 54
+\BOOKMARK [2][-]{subsection.4.5.1}{Closeness of Mapping}{section.4.5}% 55
+\BOOKMARK [2][-]{subsection.4.5.2}{Consistency}{section.4.5}% 56
+\BOOKMARK [2][-]{subsection.4.5.3}{Secondary Notation}{section.4.5}% 57
+\BOOKMARK [2][-]{subsection.4.5.4}{Viscosity}{section.4.5}% 58
+\BOOKMARK [2][-]{subsection.4.5.5}{Visability / Juxtaposition}{section.4.5}% 59
+\BOOKMARK [2][-]{subsection.4.5.6}{Other Dimensions}{section.4.5}% 60
+\BOOKMARK [1][-]{section.4.6}{Ethics and Data Handling}{chapter.4}% 61
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 62
+\BOOKMARK [0][-]{section*.182}{Bibliography}{}% 63
+\BOOKMARK [0][-]{appendix.A}{Excello Implementation}{}% 64
+\BOOKMARK [1][-]{section.A.1}{bracketsParse.ts}{appendix.A}% 65
+\BOOKMARK [0][-]{appendix.B}{Project Proposal}{}% 66
