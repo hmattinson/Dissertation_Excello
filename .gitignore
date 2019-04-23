@@ -2,3 +2,9 @@
 npm-debug.log
 *.aac
 /Resources/PD\ Recording
+/MIDI/bach
+/MIDI/bach_chorales
+/MIDI/piano-midi
+/Resources
+/Presentations
+/FunctionsTest
