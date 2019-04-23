@@ -1,0 +1,73 @@
+\newpage
+\section{Repository Overview}
+
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{src}=[fill=red!30]
+\tikzstyle{optional}=[dashed,fill=gray!50]
+\tikzstyle{file}=[draw=none]
+\begin{figure}[tbh]
+\begin{tikzpicture}[%
+  grow via three points={one child at (0.5,-0.7) and
+  two children at (0.5,-0.7) and (0.5,-1.4)},
+  edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+  \node {Excello}
+    child { node {Excel Music}
+      child { node {assets}}
+      child { node {node\_modules}}
+      child { node [src] {src}
+        child { node [file] {index.ts}}
+        child { node [file] {turtle.ts}}
+        child { node [file] {chords.ts}}
+        child { node [file] {regex.ts}}
+        child { node [file] {conversions.ts}}
+        child { node [file] {bracketsParse.ts}}
+      }
+      child [missing] {}
+      child [missing] {}
+      child [missing] {}
+      child [missing] {}
+      child [missing] {}
+      child [missing] {}
+      child { node [file] {index.html}}
+      child { node [file] {manifest.xml}}
+    }
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child { node {CustomFunctions}
+      child { node [src] {src}
+        child { node [file] {customFunctions.ts}}
+      }
+      child [missing] {}
+      child { node {node\_modules}}
+      child { node [file] {manifest.xml}}
+    }
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child [missing] {}
+    child { node {MIDI}
+      child { node [file] {MIDI\_Conversion.ipynb}}
+    };
+\end{tikzpicture}
+\caption{File structure overview showing original files}
+\label{fig:repo}
+\end{figure}
+
+\paragraph{} Figure \ref{fig:repo} shows a reduced version of the project file structure including all orginal source code. The directory Excel Music contains all the code for the add-in that parses the spreadsheet notation to create musical output. Both this an CustomFunctions were generator using the Yeomann generator. The manifest.xml files are added to Excel and point to where the resources to run the add-in are. node\_modelues contains all libraries required to run the add-ins and is managed using npm.
+
+\paragraph{} In Excel Music, the index.html file defines the window that appears on the right of the spreadsheet. "assets" contains the Excello logo and piano samples. index.ts defines what happens when the different buttons of the window are pressed and imports from the remaining Typescript files. turtle.ts contains all the code required to produce musical output from the spreadsheet of turtle definitions and notes in cells, with helper functions in regex.ts, conversions.ts and bracketsParse.ts. chords.ts is for inserting the notes of chords into the grid when the chord input tool is used.
+
+\paragraph{} customFunctions.ts contains the implementation of the EXCELLO.TURTLE and EXCELLO.MODULATE functions. The index.html file created in the generation of this add-in is not seen by the user so was not re-written.
+
+\paragraph{} MIDI\_Conversion.ipynb is a Python notebook for converting MIDI files to the Excello notation. This includes method to automate the conversion of the MIDI corpuses which are also included in the MIDI directory.
+
+\paragraph{} Licensing.

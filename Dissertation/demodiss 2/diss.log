@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  23 APR 2019 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  22 APR 2019 21:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,7 +185,7 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks17
 \verbatim@in@stream=\read1
 )
-(./docmute.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/docmute/docmute.sty
 Package: docmute 2012/03/22 v1.4 Input stand-alone documents
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/standalone/standalone.sty
@@ -894,36 +894,32 @@ Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 \c@subtable=\count156
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
-ts.statistics.code.tex)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytrees.code.tex
-File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-) (./diss.aux)
+ts.statistics.code.tex) (./diss.aux)
 \openout1 = `diss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    ... okay on input line 37.
 \AtBeginShipoutBox=\box45
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -933,11 +929,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
-
-(./diss.out) (./diss.out)
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 \@outlinefile=\write4
 \openout4 = `diss.out'.
 
@@ -1011,205 +1005,27 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.13}).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \docmute@nestinglevel=\count164
-(./chapters/preparation/content.tex
-Chapter 1.
-[1
 
+! LaTeX Error: File `chapters/evaluation/content.tex' not found.
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 23.
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 23.
+Enter file name: 
+./diss.tex:64: Emergency stop.
+<read *> 
+         
+l.64 \input{chapters/evaluation/content}
+                                        ^^M
+*** (cannot \read from terminal in nonstop modes)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2]
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 41.
-
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
- [][] \OT1/cmr/m/n/12 The lan-guage for tur-tle move-ment in-struc-tions can be
- sum-marised
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-\OT1/cmr/m/n/12 by the foll-wo-ing context-free gram-mar, $(\OML/cmm/m/it/12 N;
- \OT1/cmr/m/n/12 ^^F\OML/cmm/m/it/12 ; S; \OMS/cmsy/m/n/12 P\OT1/cmr/m/n/12 )$.
- Where the non-
- []
-
-
-Underfull \hbox (badness 6808) in paragraph at lines 53--54
-\OT1/cmr/m/n/12 terminal sym-bols $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = (\OT1/c
-mr/bx/n/12 S\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 Y\OML/cmm/m/it/12 ; \OT1/cmr/bx
-/n/12 X\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 I\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12
- R\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 A\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 P\OM
-L/cmm/m/it/12 ; \OT1/cmr/bx/n/12 C\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 D\OT1/cmr
-/m/n/12 )$, ter-mi-nal sym-bols $^^F =
- []
-
-[5] [6]) (./chapters/implementation/content.tex [7] [8]
-Chapter 2.
-[9
-
-] [10] [11] [12] [13] [14]
-<figs/turtleFunction.png, id=384, 599.23875pt x 188.705pt>
-File: figs/turtleFunction.png Graphic file (type png)
-
-<use figs/turtleFunction.png>
-Package pdftex.def Info: figs/turtleFunction.png used on input line 136.
-(pdftex.def)             Requested size: 426.79134pt x 134.40187pt.
-
-<figs/modulateFunction.png, id=387, 687.56876pt x 68.255pt>
-File: figs/modulateFunction.png Graphic file (type png)
-
-<use figs/modulateFunction.png>
-Package pdftex.def Info: figs/modulateFunction.png used on input line 146.
-(pdftex.def)             Requested size: 426.79134pt x 42.36765pt.
- [15 <./figs/turtleFunction.png> <./figs/modulateFunction.png>] [16] (./chapter
-s/implementation/overview.tex) [17]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 211
-.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 211.
-
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 211.
-
-[18]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 218.
-
-Overfull \hbox (0.6767pt too wide) in paragraph at lines 226--227
-[] $\OML/cmm/m/it/12 replacementIDRE \OMS/cmtt/m/n/12   []\OML/cmm/m/it/12 idPa
-dding[]idPadding[]$ 
- []
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 230.
-Missing character: There is no â in font cmtt12!
-Missing character: There is no € in font cmtt12!
-Missing character: There is no ¦ in font cmtt12!
-[19] [20] [21]
-Overfull \hbox (4.0171pt too wide) in paragraph at lines 312--334
-[][]
- []
-
-
-Overfull \hbox (38.75613pt too wide) in paragraph at lines 346--346
-[]  \OT1/cmtt/m/n/12 turtlePart = turtlePart.stop("0:" + (repeats*beatsLength/s
-peedFactor) + ":0");[] 
- []
-
-[22]
-Overfull \hbox (26.40613pt too wide) in paragraph at lines 358--358
-[]\OT1/cmtt/m/n/12 var chordNotes = Chord.notes(chordNote, chordType).map(x => 
-Note.simplify(x)); 
- []
-
-[23] [24] (./chapters/implementation/repo.tex [25] [26])) (./diss.bbl [27]
-[28
-
-]
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
-) [29] [30
-
-]
-Appendix A.
-File: chapters/implementation/parenthesis.ts  (verbatim)
-[31]
-No file proposal.tex.
-[32]
-Appendix B.
-No file makefile.txt.
-File: refs.bib  (verbatim)
-
-Overfull \hbox (917.5256pt too wide) in paragraph at lines 94--94
-[]  \OT1/cmtt/m/n/8 keywords={user centred design;software engineering;end user
- programming;United States;judgment-based factors;Bureau of Labor Statistics;sp
-readsheets;databases;Programming profession;Computer science;Statistics;Employm
-ent;Databases;Prediction methods;Software performance;Computer industry;Costs;P
-rogramming environments},[] 
- []
-
-
-Overfull \hbox (8.01254pt too wide) in paragraph at lines 94--94
-[]  \OT1/cmtt/m/n/8 url = {https://www.microsoft.com/en-us/research/publication
-/a-user-centred-approach-to-functions-in-excel/}[] 
- []
-
-Missing character: There is no â in font cmtt8!
-Missing character: There is no € in font cmtt8!
-Missing character: There is no ™ in font cmtt8!
-[33
-
-]
-Overfull \hbox (25.01279pt too wide) in paragraph at lines 94--94
-[]\OT1/cmtt/m/n/8 author = {Mclean, Alex and Griffiths, Dave and Vzw, Foam and 
-Am, Dave@fo and Collins, Nick and Wiggins, Geraint},[] 
- []
-
-[34]
-Overfull \hbox (139.76443pt too wide) in paragraph at lines 94--94
-[]    \OT1/cmtt/m/n/8 title = {The development of Sonic Pi and its use in educa
-tional partnerships: Co-creating pedagogies for learning computer programming},
-[] 
- []
-
-Missing character: There is no Ã in font cmtt8!
-Missing character: There is no ¸ in font cmtt8!
-[35] [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
- (./diss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
-Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: 7192624A6FBDD79804E283B318284FA5;2979.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 29504 strings out of 493014
- 690646 string characters out of 6133351
- 875768 words of memory out of 5000000
- 32254 multiletter control sequences out of 15000+600000
- 16389 words of font info for 62 fonts, out of 8000000 for 9000
+ 28761 strings out of 493014
+ 677991 string characters out of 6133351
+ 860768 words of memory out of 5000000
+ 31828 multiletter control sequences out of 15000+600000
+ 3938 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,14n,96p,2112b,1334s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (36 pages, 357303 bytes).
-PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 608 compressed objects within 7 object streams
- 242 named destinations out of 1000 (max. 500000)
- 383 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 66i,1n,96p,720b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+./diss.tex:64:  ==> Fatal error occurred, no output PDF file produced!

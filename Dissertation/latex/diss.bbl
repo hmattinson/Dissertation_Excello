@@ -1,38 +1,62 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{barry:likert}
-Dwight Barry.
-\newblock Do not use averages with likert scale data, 01 2017.
+\bibitem{midiSpec}
+MIDI~Manufacturers Association.
+\newblock {\em The complete MIDI 1.0 detailed specification}, 1997.
 
-\bibitem{blackwell:questionnaire}
-Alan~F. Blackwell and Thomas R.~G. Green.
-\newblock A cognitive dimensions questionnaire optimised for users.
-\newblock In {\em PPIG}, 2000.
+\bibitem{midoSpec}
+Ole~Martin Bjørndalen.
+\newblock Midi files.
+\newblock \url{https://mido.readthedocs.io/en/latest/midi_files.html}, 2016.
+\newblock Accessed: 2019-04-18).
 
-\bibitem{blackwell:notation}
-Alan F.~Blackwell, Thomas Green, and Dje Nunn.
-\newblock Cognitive dimensions and musical notation systems.
-\newblock {\em Workshop on Notation and Music Information Retrieval}, 11 2000.
+\bibitem{goldman:turtle}
+Ron Goldman, Scott Schaefer, and Tao Ju.
+\newblock Turtle geometry in computer graphics and computer-aided design.
+\newblock {\em Computer-Aided Design}, 36:1471--1482, 2004.
 
-\bibitem{blackwell:tutorial}
-Thomas Green and Alan Blackwell.
-\newblock {Cognitive dimensions of information artefacts: a tutorial}.
-\newblock Technical Report Version 1.2, BCS HCI Conference, 1998.
+\bibitem{huang:deep}
+Allen Huang and Raymond Wu.
+\newblock Deep learning for music.
+\newblock {\em CoRR}, abs/1606.04930, 2016.
 
-\bibitem{green:cdn}
-Thomas Green and Marian Petre.
-\newblock Usability analysis of visual programming environments: A 'cognitive
-  dimensions' framework.
-\newblock {\em Journal of Visual Languages}, 7:131--, 06 1996.
+\bibitem{huber:midimanual}
+D.M. Huber.
+\newblock {\em The MIDI Manual: A Practical Guide to MIDI in the Project
+  Studio}.
+\newblock Taylor \& Francis, 2012.
+
+\bibitem{mclean:visualisation}
+Alex Mclean, Dave Griffiths, Foam Vzw, Dave@fo Am, Nick Collins, and Geraint
+  Wiggins.
+\newblock Visualisation of live code.
+\newblock 01 2010.
+
+\bibitem{mclean:texture}
+Alex Mclean and Geraint Wiggins.
+\newblock Texture: Visual notation for live coding of pattern.
+\newblock 01 2011.
+
+\bibitem{mozilla:webaudioapi}
+Mozilla.
+\newblock Web audio api.
+\newblock \url{https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API},
+  03 2019.
+\newblock Accessed: 2019-04-02).
+
+\bibitem{muller:pd}
+Michael Muller and Sarah Kuhn.
+\newblock Participatory design.
+\newblock {\em Communications of the ACM}, 36:24--28, 06 1993.
 
 \bibitem{nash:manhattan}
 Chris Nash.
 \newblock Manhattan: End-user programming for music.
 \newblock In {\em NIME}, 2014.
 
-\bibitem{ross:introductory}
-S.M. Ross.
-\newblock {\em Introductory Statistics}.
-\newblock Elsevier Science, 2010.
+\bibitem{sandberg:lily}
+Erik Sandberg, Examensarbete Nv, Reviewer~Arne Andersson, and Examiner~Anders
+  Jansson.
+\newblock Separating input language and formatter in gnu lilypond, 2006.
 
 \end{thebibliography}

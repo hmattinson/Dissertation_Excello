@@ -23,7 +23,6 @@
 \usepackage{subcaption}
 \pgfplotsset{compat=1.13}
 \usepgfplotslibrary{statistics}
-\usetikzlibrary{trees}
 
 \raggedbottom                           % try to avoid widows and orphans
 \sloppy
@@ -58,11 +57,11 @@
 
 % \include{chapters/introduction/content}
 %
-\input{chapters/preparation/content}
+% \input{chapters/preparation/content}
 %
-\input{chapters/implementation/content}
+% \input{chapters/implementation/content}
 
-% \input{chapters/evaluation/content}
+\input{chapters/evaluation/content}
 %
 % \input{chapters/conclusion/content}
 
@@ -72,30 +71,30 @@
 \bibliography{refs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% the appendices
-\appendix
-
-\chapter{Excello Implementation}
-
-\section{bracketsParse.ts}
-\label{appendix:parenthesis}
-{\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
-
-
-\section{proposal.tex}
-{\scriptsize\verbatiminput{proposal.tex}}
-
-\chapter{Makefile}
-
-\section{makefile}\label{makefile}
-{\scriptsize\verbatiminput{makefile.txt}}
-
-\section{refs.bib}
-{\scriptsize\verbatiminput{refs.bib}}
-
+% % the appendices
+% \appendix
 %
-% \chapter{Project Proposal}
+% \chapter{Excello Implementation}
 %
-% \input{chapters/proposal}
+% \section{bracketsParse.ts}
+% \label{appendix:parenthesis}
+% {\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
+%
+%
+% \section{proposal.tex}
+% {\scriptsize\verbatiminput{proposal.tex}}
+%
+% \chapter{Makefile}
+%
+% \section{makefile}\label{makefile}
+% {\scriptsize\verbatiminput{makefile.txt}}
+%
+% \section{refs.bib}
+% {\scriptsize\verbatiminput{refs.bib}}
+%
+% %
+% % \chapter{Project Proposal}
+% %
+% % \input{chapters/proposal}
 
 \end{document}

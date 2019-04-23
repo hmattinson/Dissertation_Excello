@@ -390,113 +390,11 @@ For each note, the times are adjusted as follows:
   $$start \gets start / differenceStat \times ratio_{int} \text{ (rounded to the nearest 0.1)}$$
   $$end \gets start +length$$
 
-\paragraph{} Next the streams, with note start and end times corresponding to cells, are converted to a CSV file to be run with Excello. The path for each turtle is initialised as an array of empty strings. The length of these arrays is the maximum end time for a note in any turtle, $L$.  Each note the turtle plays is entered into the array. MIDI defines pitch using the integers. I used the library audiolazy\footnote{https://pythonhosted.org/audiolazy/} to convert MIDI number to SPN. If the note velocity is different to the previous note played by the turtle (or the note is the first note played), the eight-bit velocity as defined by MIDI is mapped to the range [0,1] as used by Excello. If the note length is greater than one, sustains are placed in the following cells. These paths go right starting in column A, with the first in row 2.
+\paragraph{} Next the streams, with note start and end times corresponding to cells, are converted to a CSV file to be run with Excello. The path for each turtle is initialised as an array of empty strings. The length of these arrays is the maximum end time for a note in any turtle, $L$.  Each note the turtle plays is entered into the array. MIDI defines pitch using the integers. As there are 12 notes in an octave, taking the modulus and dividing by 12 gives the note name and octave for SPN. If the note velocity is different to the previous note played by the turtle (or the note is the first note played), the eight-bit velocity as defined by MIDI is mapped to the range [0,1] as used by Excello. If the note length is greater than one, sustains are placed in the following cells. These paths go right starting in column A, with the first in row 2.
 
 \paragraph{} Finally the definition of the turtle must be placed in the spreadsheet. The start cell range is 'A2:A$(n+1)$'. The movement instruction is "r m$L$". The MIDI file contains meta data for the \texttt{tempo} (milliseconds per beat) and \texttt{ticks\_per\_beat}. Cells per minute is calculated as follows:
   $$cells\ per\ tick \times ticks\ per\ beat \times beat\ per\ minute$$
   $$= \frac{ratio_{int}}{mode\ difference} \times \texttt{ticks\_per\_beat} \times \frac{60 \times 10^6}{\texttt{tempo}}$$
 Using one as the number of repeats, the turtle definition is placed in cell A1 and the CSV exported.
 
-\section{Repository Overview}
-
-TODO
-
-Review of liscences and what license I'll be releasing it under.
-
-% \section{Simple diagrams}
-%
-% Simple diagrams can be written directly in \LaTeX.  For example, see
-% figure~\ref{latexpic1} on page~\pageref{latexpic1} and see
-% figure~\ref{latexpic2} on page~\pageref{latexpic2}.
-%
-% \begin{figure}
-% \setlength{\unitlength}{1mm}
-% \begin{center}
-% \begin{picture}(125,100)
-% \put(0,80){\framebox(50,10){AAA}}
-% \put(0,60){\framebox(50,10){BBB}}
-% \put(0,40){\framebox(50,10){CCC}}
-% \put(0,20){\framebox(50,10){DDD}}
-% \put(0,00){\framebox(50,10){EEE}}
-%
-% \put(75,80){\framebox(50,10){XXX}}
-% \put(75,60){\framebox(50,10){YYY}}
-% \put(75,40){\framebox(50,10){ZZZ}}
-%
-% \put(25,80){\vector(0,-1){10}}
-% \put(25,60){\vector(0,-1){10}}
-% \put(25,50){\vector(0,1){10}}
-% \put(25,40){\vector(0,-1){10}}
-% \put(25,20){\vector(0,-1){10}}
-%
-% \put(100,80){\vector(0,-1){10}}
-% \put(100,70){\vector(0,1){10}}
-% \put(100,60){\vector(0,-1){10}}
-% \put(100,50){\vector(0,1){10}}
-%
-% \put(50,65){\vector(1,0){25}}
-% \put(75,65){\vector(-1,0){25}}
-% \end{picture}
-% \end{center}
-% \caption{A picture composed of boxes and vectors.}
-% \label{latexpic1}
-% \end{figure}
-%
-% \begin{figure}
-% \setlength{\unitlength}{1mm}
-% \begin{center}
-%
-% \begin{picture}(100,70)
-% \put(47,65){\circle{10}}
-% \put(45,64){abc}
-%
-% \put(37,45){\circle{10}}
-% \put(37,51){\line(1,1){7}}
-% \put(35,44){def}
-%
-% \put(57,25){\circle{10}}
-% \put(57,31){\line(-1,3){9}}
-% \put(57,31){\line(-3,2){15}}
-% \put(55,24){ghi}
-%
-% \put(32,0){\framebox(10,10){A}}
-% \put(52,0){\framebox(10,10){B}}
-% \put(37,12){\line(0,1){26}}
-% \put(37,12){\line(2,1){15}}
-% \put(57,12){\line(0,2){6}}
-% \end{picture}
-%
-% \end{center}
-% \caption{A diagram composed of circles, lines and boxes.}
-% \label{latexpic2}
-% \end{figure}
-%
-%
-%
-% \section{Adding more complicated graphics}
-%
-% The use of \LaTeX\ format can be tedious and it is often better to use
-% encapsulated postscript (EPS) or PDF to represent complicated graphics.
-% Figure~\ref{epsfig} and~\ref{xfig} on page \pageref{xfig} are
-% examples. The second figure was drawn using \texttt{xfig} and exported in
-% {\tt.eps} format. This is my recommended way of drawing all diagrams.
-%
-%
-% \begin{figure}[tbh]
-% \centerline{\includegraphics{figs/cuarms.pdf}}
-% \caption{Example figure using encapsulated postscript}
-% \label{epsfig}
-% \end{figure}
-%
-% \begin{figure}[tbh]
-% \vspace{4in}
-% \caption{Example figure where a picture can be pasted in}
-% \label{pastedfig}
-% \end{figure}
-%
-%
-% \begin{figure}[tbh]
-% \centerline{\includegraphics{figs/diagram.pdf}}
-% \caption{Example diagram drawn using \texttt{xfig}}
-% \label{xfig}
-% \end{figure}
+\input{chapters/implementation/repo}
