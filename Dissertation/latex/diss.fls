@@ -49,8 +49,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
-INPUT docmute.sty
-INPUT docmute.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/standalone/standalone.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/standalone/standalone.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/xkeyval/xkeyval.sty

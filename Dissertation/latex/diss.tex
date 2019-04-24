@@ -4,7 +4,7 @@
 \usepackage[margin=25mm]{geometry}  % adjusts page layout
 \usepackage{graphicx}  % allows inclusion of PDF, PNG and JPG images
 \usepackage{verbatim}
-\usepackage{docmute}   % only needed to allow inclusion of proposal.tex
+% \usepackage{docmute}   % only needed to allow inclusion of proposal.tex
 \usepackage{standalone}
 \usepackage{amsfonts}
 \usepackage{upquote,textcomp}
@@ -39,6 +39,10 @@
 
 \begin{document}
 
+% TC:group tabular 1 1
+% TC:group table 1 1
+% TC:ignore
+
 \bibliographystyle{plain}
 
 
@@ -58,6 +62,10 @@
 
 \pagestyle{headings}
 
+% TC:endignore
+% TC:group tabular 1 1
+% TC:group table 1 1
+
 \include{chapters/introduction/content}
 
 \input{chapters/preparation/content}
@@ -67,6 +75,8 @@
 \input{chapters/evaluation/content}
 
 \input{chapters/conclusion/content}
+
+% TC:ignore
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the bibliography

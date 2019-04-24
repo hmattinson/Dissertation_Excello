@@ -190,7 +190,7 @@ Whilst this method would likely require the least explicit statement of octave n
 \label{fig:overview}
 \end{figure}
 
-\paragraph{} An extension of the Tone instrument class is a Sampler. This interpolates between a set of pitched samples to create notes of arbitrary pitch and length. A sampler is loaded using the Salamander grand piano samples which includes four pitches (out of a possible 12) per octave. This accurately interpolates notes whilst reducing loading times and storage requirements.
+\paragraph{} An extension of the \texttt{Tone.Instrument} class is a \texttt{Sampler}. This interpolates between a set of pitched samples to create notes of arbitrary pitch and length. A sampler is loaded using the Salamander grand piano samples which includes four pitches (out of a possible 12) per octave. This accurately interpolates notes whilst reducing loading times and storage requirements.
 
 \subsection{Identifying Cells}
 
@@ -358,7 +358,7 @@ turtlePart.playbackRate = speedFactor;
 var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
 \end{verbatim}
 
-\paragraph{} The tonal simplify function reduces note definition involving multiple accidentals to contain at most one, as required by Excello. This provides a list of notes in ascending order without octaves or taking into account the inversion. In order to reach the correct inversion of the chord, the array of notes is rotated by the inversion number.
+\paragraph{} The tonal \texttt{simplify} function reduces note definition involving multiple accidentals to contain at most one, as required by Excello. This provides a list of notes in ascending order without octaves or taking into account the inversion. In order to reach the correct inversion of the chord, the array of notes is rotated by the inversion number.
 
 \paragraph{} Octave numbers are added by iterating through the notes. A dictionary matches note names to position in the chromatic scale starting at C (the first note of the octave in SPN). This is also accounts for enharmonic notes\footnote{Notes that are the same pitch but different names, such as Ab and G\#}. The given octave number is appended to the first note in the chord. For each preceding note, if it appears in an equal or lower position in the scale than its predecessor, the octave number is incremented before appending. Otherwise, it is in the same octave so the octave number is appended without modification.
 

@@ -127,7 +127,7 @@ notes are played at.&&\\ \hline
 \subsection{Inferred Octave}
 \ %This is here to put the section heading and table in the right order
 
-\begin{table}[!h]
+\begin{table}[!ht]
 \centering
 % \caption{Grammar rules for turtle movement instructions. $z \in \mathbb{Z}, n \in \mathbb{N}, c \in \texttt{[A-Za-z]}^{+}$.}
 \vspace{1pt}
@@ -462,7 +462,7 @@ music) is easier.&& \\ \hline
 
 \section{Cognitive Dimensions of Notation}
 
-\paragraph{} Figure \ref{fig:usage} shows the percentage of time users identified carrying out the different cognitive activities \cite{blackwell:tutorial} in Excello and in Sibelius. The Excello results are for 19 users with 12 users for Sibelius. Translation is a very important activity for both interfaces. Comparing the Excello results to Sibelius, there is more exploratory design but as users become more familiar with the system and the amount of existing Excello notation increases, modification and incrementation may become more important. Little time is spent searching for information in the notaiton in either.
+\paragraph{} Figure \ref{fig:usage} shows the time users identified carrying out the different cognitive activities \cite{blackwell:tutorial} in Excello and in Sibelius. There are 19 users for Excello and 12 for Sibelius. This shows Translation is a very important activity for both interfaces. There is more exploratory design for Excello but as users become more familiar with the system and the amount of existing Excello notation increases, modification and incrementation may become more important. Little time is spent searching for information in the notaiton in either.
 
 \begin{figure}[ht]
 \centering
@@ -592,15 +592,15 @@ music) is easier.&& \\ \hline
 \label{fig:usage}
 \end{figure}
 
-\paragraph{} A series of statements assessing the CDN of the interface were selected \cite{blackwell:questionnaire}, these were assessed using a five-point (Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree) Likert scale. To veryify the significance of the results, the data was combined into negative and non-negative categories and a chi-squared test performed. The questions asked, dimension being assessed, p-value from the chi-squared test and modal repsonse are shown in table \ref{evaluation:cdnTable}. The distribution of responses is shown in figure \ref{evaluation:cdnQuestions}.
+\paragraph{} A series of statements from \cite{blackwell:questionnaire} were selected to assess the CDN of Excello. Users responded with a five-point (Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree) Likert scale. The significance of the results was verified with a chi-squared test. First the data was combined into negative and non-negative categories. The dimension being assessed, p-value from the chi-squared test and modal repsonse for each statement are shown in table \ref{evaluation:cdnTable}. The distribution of responses is shown in figure \ref{evaluation:cdnQuestions}.
 
 \begin{table}[!htbp]
 \centering
 \vspace{1pt}
 \begin{tabular}{|l|l|l|l|} \hline
 \textbf{Statement}&\textbf{CDN}&\textbf{Mode}&\textbf{p-value}\\ \hline
-\mycbox{bblue} (a) The notation used (In Excello: notes &Closeness&Agree&0.0004\\
-/dynamics in cells and the definition of turtles)&of&& \\
+\mycbox{bblue} (a) The notation used (In Excello: notes/ &Closeness&Agree&0.0004\\
+dynamics in cells and the definition of turtles)&of&& \\
 is related to the result you are describing (In &Mapping&& \\
 Excello: Musical output)&&& \\ \hline
 \mycbox{rred} (b) Where there are different parts of the&Consistency&Agree&0.0087\\
@@ -662,13 +662,13 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 \end{tikzpicture}
 \label{evaluation:cdnQuestions}
 
-\paragraph{} As these questions were also answered for the user's interface of choice, a comparison to Sibelius can be made. As the data does not meet the assumptions of the t-test \cite{barry:likert}, I perofrmed a Wilcoxon matchd pairs signed-ranked test on the 12 pairs by encoding the five possible responses as -2,-1,0,1,2. For all six questions, there is no indication that the answers for the two interfaces come from populations with different means.
+\paragraph{} As these questions were also answered for the user's interface of choice, a comparison to Sibelius is made. As the data does not meet the assumptions of the t-test \cite{barry:likert}, I perofrmed a Wilcoxon matchd pairs signed-ranked test on the 12 pairs by encoding the five possible responses as -2,-1,0,1,2. For all six questions, there is no indication that the answers for the two interfaces come from populations with different means.
 
 \subsection{Closeness of Mapping}
 
-\paragraph{} Sibelius uses an established music notation as part of large professional software. As there is no significant evidence that the population means for Excello and Sibelius were different, this suggests Excello notation in spreadsheets has not compromised that closeness of mapping. This is helped by using an existing notation for defining the individual notes, the turtle instructions mapping to a movement through the grid, and by adjusting the speed argument to be an absolute, not relative, parameter. Being less familiar with staff notation, user 4 found the Sibelius's unintuitive.
+\paragraph{} As there is no significant evidence that the population means for Excello and Sibelius were different, this suggests Excello's notation with spreadsheets has not compromised that closeness of mapping of traditional notation. This is helped by using an existing notation (SPN) for defining the individual notes, the turtle instructions mapping to a movement through the grid, and by adjusting the speed argument to be an absolute, not relative, parameter. Being less familiar with staff notation, user 4 found Sibelius's notation unintuitive.
 
-\begin{figure}[tbh]
+\begin{figure}[htb]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -704,15 +704,15 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for closeness of mapping for Excello and Sibelius from (a)}
+\caption{User responses for \textit{closeness of mapping} for Excello and Sibelius from (a)}
 \label{evaluation:clos}
 \end{figure}
 
 \subsection{Consistency}
 
-\paragraph{} As each cell and turtle can only cause one note to play at a time, consistency is maintained by building up from these building blocks. Excello keeps consistency with the existing Excel interface by sharing notations (e.g. A1:A5 for ranges) and using the existing formula editor. Within the turtle instructions the ability to use a number after instructions for repeats holds for both individual instructions and sequences. This all helps contribute to there being no significant result from the Wilcoxon test.
+\paragraph{} As each cell and turtle only causes one note to play at a time, consistency is maintained by building pieces from these elements. Excello keeps consistency with Excel by sharing notations (e.g. A1:A5 for ranges) and using the existing formula editor. Within the turtle instructions, using a number after instructions to repeat holds for both individual instructions and sequences. This all contributes to no significant result from the Wilcoxon test.
 
-\begin{figure}[tbh]
+\begin{figure}[htb]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -749,13 +749,13 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for consistency for Excello and Sibelius from (b)}
+\caption{User responses for \textit{consistency} for Excello and Sibelius from (b)}
 \label{evaluation:cons}
 \end{figure}
 
 \subsection{Secondary Notation}
 
-\paragraph{} Given the time spent performing translation, secondary notation is particularly important \cite{blackwell:notation}. Given that Excello abstracts time from the axes of the grid the distribution of parts is up to the user and cells can be used for arbitrary marks. As a result the existing features of Excel to format and group cells is already available. This is alredy utilised by the highlighting of notes and turtles. That there is no significant difference in population means, this suggests that the spreadsheet paradigm can provide an equal secondary notaion abilities to Sibelius, software already equipped with numerous ways to customise a score.
+\paragraph{} Given the translation time, secondary notation is particularly important \cite{blackwell:notation}. Given that Excello abstracts time from the axes of the grid the distribution of parts is up to the user and cells can be used for arbitrary marks. Therefore, existing Excel features for formatting and grouping cells remain available. This is utilised by the automatic highlighting of notes and turtles. That there is no significant difference in population means, this suggests that the spreadsheet paradigm can provide equal secondary notaion abilities to Sibelius, software already equipped with numerous ways to customise a score.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
@@ -794,13 +794,13 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for secondary notation for Excello and Sibelius from (c)}
+\caption{User responses for \textit{secondary notation} for Excello and Sibelius from (c)}
 \label{evaluation:secn}
 \end{figure}
 
 \subsection{Viscosity}
 
-\paragraph{} By allowing dynamics and octave marking to be ommitted and the ability for turtles to step forward automatically, there is low resistance to making additions and changes to the music. The button to toggle turtle activations dramatically reduces the actions required to turn turtles on and off. Furthermore Excel allows for the easy editing and movement of cells. No significant result in the Wilcoxon test suggests the interfaces have comparable viscosity.
+\paragraph{} By allowing dynamics and octave marking to be ommitted and the ability for turtles to step forward automatically, there is low resistance to making additions and changes to the music. The toggling of turtle activations dramatically reduces the actions required to turn turtles on and off. Furthermore Excel allows for the easy editing and movement of cells. No significant result in the Wilcoxon test suggests the interfaces have comparable viscosity.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
@@ -839,13 +839,13 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for viscosity for Excello and Sibelius from (d)}
+\caption{User responses for \textit{viscosity} for Excello and Sibelius from (d)}
 \label{evaluation:visc}
 \end{figure}
 
 \subsection{Visability / Juxtaposition}
 
-\paragraph{} For both questions there was no significant difference in population mean. This suggests that the This suggests that the speadsheet interface can provide a similar abilty to view components than Sibelius.
+\paragraph{} For both questions there was no significant difference in population mean. This suggests that the speadsheet interface can provide a similar abilty to view components than Sibelius.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
@@ -884,7 +884,7 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for visibility/juxtaposition for Excello and Sibelius from (e)}
+\caption{User responses for \textit{visibility/juxtaposition} for Excello and Sibelius from (e)}
 \label{evaluation:viju1}
 \end{figure}
 
@@ -925,20 +925,20 @@ parts, you cansee them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
-\caption{User responses for visibility/juxtaposition for Excello and Sibelius from (f)}
+\caption{User responses for \textit{visibility/juxtaposition} for Excello and Sibelius from (f)}
 \label{evaluation:viju2}
 \end{figure}
 
-\paragraph{} Whilst there was no significant evidence to suggest Excello outperformed Sibelius across these CDN, that it achieved similar results to Sibelius, an established music notation editing package, suggests that despite being built for a genereal purpose spreadsheet environment, Excello is successful interface for writing music.
+\paragraph{} Sibelius uses established music notation as part of large professional software. However, there was no significant evidence to suggest Sibelius outperformed Excello across these CDN. This suggests that despite being built for a genereal purpose spreadsheet environment, Excello is successful interface for writing music.
 
 \subsection{Other Dimensions}
 
-\paragraph{} If users are unfamiliar with the turtle paradigm, this may reduce the \textit{role-expressiveness}. Turtles and notes are the only components of the spreadsheet and these are identified by highlighting.Whilst the Excel is very flexible and notes and turtles can be added in any order, adding an additional part may required many line insertions which increases the \textit{premature committment}. The dual-formalism of the turtles and notes could create high \textit{diffuseness} but the freedom of the user to lay these out allows this to be minimized as in figure \ref{evaluation:excelloFranzRedacted}. This also shows how representations can have goot \textit{synopsie}, as the notes or turtles don't need to be examined to understand what is happening. However, this may come at the expense of \textit{hidden dependencies} where it is not immediately clear which notes are triggered by which turtles. Volume is also dependent on the notes turtles play before it. But as a single cell could be played at multiple volumes, this is a tradeoff of this design decission.
+\paragraph{} If users are unfamiliar with the turtle paradigm, this may reduce the \textit{role-expressiveness}. Turtles and notes are the only musical spreadsheet components and are identified by highlighting. Whilst notes and turtles can be added in any order, adding an additional part may require many line insertions which would increase the \textit{premature committment}. The dual-formalism of the turtles and notes could create high \textit{diffuseness} but the user's freedom to lay these out allows this to be minimized as in figure \ref{evaluation:excelloFranzRedacted}. This also shows how representations can have strong \textit{synopsie}, as the notes or turtles don't need to be examined to understand what is happening. This may come at the expense of \textit{hidden dependencies} if it is not immediately clear which notes are triggered by which turtles. Volume is also dependent on the notes turtles play before it. But as a single cell could be played at multiple volumes, this is a tradeoff of this design decission.
 
-\paragraph{} As well as the \texttt{m*} notation decreasing \textit{viscosity}, it also improves the \textit{progressive evaluation} as turtles can be played before a whole part has been transcribed. The highlighting of cells also helps users receive more feedback. The ability to define a turtle and fill in the notes later also improves the \textit{provisionality}. The use of \texttt{m*} also reduce the \textit{hard mental operations} required. The chord input tool also removes the need to calculate the notes of a chord.
+\paragraph{} As well as the ``\texttt{m*}"" notation decreasing \textit{viscosity}, it also improves the \textit{progressive evaluation} as turtles can be played before a whole part has been transcribed. The highlighting of cells also helps users receive more feedback. The ability to define a turtle and fill in the notes later also improves the \textit{provisionality}. ``\texttt{m*}" also reduces \textit{hard mental operations} and the chord input tool removes manual calculation of the notes of chords.
 
-\paragraph{} Spreadsheets are "an abstraction-hating system" \cite{blackwell:tutorial}, therefore little \textit{abstraction} is provided by Excel, but the grouping of turtles in one definition and nested bracketing in turtle movement instructions improve this. These features also provide good \textit{legibility}.
+\paragraph{} Spreadsheets are ``an abstraction-hating system" \cite{blackwell:tutorial}, therefore little \textit{abstraction} is provided by Excel, but the grouping of turtles in one definition and nested bracketing in turtle movement instructions improve this. These features also provide good \textit{legibility}.
 
 \section{Ethics and Data Handling}
 
-\paragraph{} After ethics approval, the pilot session for the formative evaluation session was designed. Participants were provided with a consent form explaining the project and the format of the session. Participants had the choice to remain annonymous so they would not appear in acknowledgements, if so, all their data was labelled with a unique ID for participants to be able to use to request removal or anonymising of their data. All participant data was only seen by myself. Sessions were audio recorded with recordings types up after the session and then deleted. All participant data was also backed up on GitHub with the rest of the project but in an encrypted folder. After the pilot session (also performed for summative evaluation), the session was revised before continuing with the remaining sessions.
+\paragraph{} After ethics approval, the pilot session for the formative evaluation session was designed. After the pilot session (also performed for summative evaluation), the session was revised before continuing with the remaining sessions. Participants were provided with a consent form explaining the project and the format of the session. Participants had the choice to remain annonymous so they would not appear in acknowledgements. All participants' data was labelled with a unique ID for participants to be able to use to request removal or anonymising of their data. All participant data was only seen by myself. Formative evaluation sessions were audio recorded, typed up after the session, and then deleted. All participant data was also backed up on GitHub with the rest of the project but in an encrypted folder. All physical backups were also encrypted.

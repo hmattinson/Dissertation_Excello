@@ -61,15 +61,16 @@
 \end{tikzpicture}
 \caption{File structure overview showing original files}
 \label{fig:repo}
+\vspace{-30pt}
 % \end{figure}
 \end{wrapfigure}
 
-\paragraph{} Figure \ref{fig:repo} shows a reduced version of the project file structure including all orginal source code. The directory Excel Music contains all the code for the add-in that parses the spreadsheet notation to create musical output. Both this an CustomFunctions were generator using the Yeomann generator. The manifest.xml files are added to Excel and point to where the resources to run the add-in are. node\_modelues contains all libraries required to run the add-ins and is managed using npm.
+\paragraph{} Figure \ref{fig:repo} shows a reduced project file structure including all orginal source code. The directory Excel Music contains all the code for the add-in that parses the notation and produces music. Both this and CustomFunctions were generator using the Yeomann generator. The manifest.xml files are added to Excel and point to the resources to run the add-in. node\_modelues contains all libraries required to run the add-ins and are managed using npm.
 
-\paragraph{} In Excel Music, the index.html file defines the window that appears on the right of the spreadsheet. "assets" contains the Excello logo and piano samples. index.ts defines what happens when the different buttons of the window are pressed and imports from the remaining Typescript files. turtle.ts contains all the code required to produce musical output from the spreadsheet of turtle definitions and notes in cells, with helper functions in regex.ts, conversions.ts and bracketsParse.ts. bracketsParse.ts was based on Parenthesis which was initially incompatible for Excello's needs. chords.ts is for inserting the notes of chords into the grid when the chord input tool is used.
+\paragraph{} The index.html file defines the window that appears on the right of the spreadsheet. assets contains the piano samples. index.ts defines what happens when the different buttons of the window are pressed and imports from the remaining Typescript files. turtle.ts contains all the code required to produce musical output from the spreadsheet of turtle definitions and notes in cells, with helper functions in regex.ts, conversions.ts and bracketsParse.ts. bracketsParse.ts was based on Parenthesis which was initially incompatible for Excello's needs. chords.ts is for inserting chord notes into the grid with the chord input tool.
 
-\paragraph{} customFunctions.ts contains the implementation of the EXCELLO.TURTLE and EXCELLO.MODULATE functions. The index.html file created in the generation of this add-in is not seen by the user so was not re-written.
+\paragraph{} customFunctions.ts contains the implementation of the EXCELLO.TURTLE and EXCELLO.MODULATE functions. The index.html file created when generating this add-in is not seen by the user so was not re-written.
 
-\paragraph{} MIDI\_Conversion.ipynb is a Python notebook for converting MIDI files to the Excello notation. This includes method to automate the conversion of the MIDI corpuses which are also included in the MIDI directory.
+\paragraph{} MIDI\_Conversion.ipynb is a Python notebook for converting MIDI files to the Excello notation. This includes methods to automate the conversion of the MIDI corpora which are also included in the MIDI directory.
 
-\paragraph{} I shall release Excello as an open source project under the MIT license. This is compatable with the MIT licenses of tone.js and tonal. The Salamander piano samples come under a creative commons license so credit shall be given in the Excel add-in window.
+\paragraph{} I shall release Excel Music and CustomFunctions components as an open source project under the MIT license. This is compatable with the MIT licenses of Tone.js and tonal. The Salamander piano samples come under a creative commons license so credit shall be given in the Excel add-in window.
