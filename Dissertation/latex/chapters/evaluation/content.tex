@@ -1,3 +1,6 @@
+% TC:group tabular 1 1
+% TC:group table 1 1
+
 \definecolor{bblue}{HTML}{4F81BD}
 \definecolor{rred}{HTML}{C0504D}
 \definecolor{ggreen}{HTML}{9BBB59}
@@ -45,7 +48,7 @@
 
 \paragraph{} Whilst being able concisely notate music western notation and other end-user programming systems can not, Excello can exactly express piece defined in MIDI. If tempo is redefined within a track, this is not be accounted for. If instead the time between messages is adjusted, the uncompressed file will account for this but the compressing algorithms will produce erroneous results as the difference between notes deviate too far from non-integer multiples of the minimum. Instrument specific effects such as piano pedals are not supported. Provided the difference between any two notes is a multiple of the minimum difference, the compression method that divides by this amount accurately reproduces the music, whilst resulting in spreadsheets orders of magnitude smaller. This method would not accurately convert quavers against triplets (three notes played in the same time as two) provided these notes were not multiples of a smaller note. Given the lengths of MIDI notes can be different to the space the note occupies in standard notation, an assumption on the ratio of note lengths was required for a more compressive conversion. The modal compressive conversion is lossy if the minimum note distance is not the modal distance. This is useful if there are ornaments or notes within a piece that dramatically decrease the minimum distance but occur infrequently. Therefore this loss may be useful for more efficient representations.
 
-\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm} held by Bernd Krueger under a creative commons license, and 194 Bach pieces made available from "A Johann Sebastian Bach Midi Page"\footnote{http://www.bachcentral.com/midiindex.html}. This is not all the files available from this site as some were not readable by the python MIDI reader. All 971 MIDI files were converted using all three methods.
+\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm} held by Bernd Krueger under a creative commons license, and 194 Bach pieces made available from ``A Johann Sebastian Bach Midi Page"\footnote{http://www.bachcentral.com/midiindex.html}. This is not all the files available from this site as some were not readable by the python MIDI reader. All 971 MIDI files were converted using all three methods.
 
 \paragraph{} The language of Excello is expressive enough to represent MIDI files and can do so concisely provided the condition of minimum note onset differences is maintained.
 
