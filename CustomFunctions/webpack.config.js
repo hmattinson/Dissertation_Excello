@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/customfunctions.ts',
+    entry: './src/excello.ts',
     output: {
         path: path.resolve(__dirname, 'dist/win32/ship'),
         filename: 'index.win32.bundle'

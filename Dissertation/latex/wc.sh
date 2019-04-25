@@ -2,7 +2,8 @@ if [ $# -eq 0 ]
 then
     for chapter in {introduction,preparation,implementation,evaluation,conclusion}
     do
-      output="$(texcount -0 chapters/$chapter/content.tex)"
+      # output="$(texcount -0 chapters/$chapter/content.tex)"
+      output="$(texcount -1 -utf8 -sum -inc chapters/$chapter/content.tex)"
       for word in $output
       do
           output="$(echo $word+1| bc)"

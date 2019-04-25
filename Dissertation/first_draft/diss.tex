@@ -4,7 +4,7 @@
 \usepackage[margin=25mm]{geometry}  % adjusts page layout
 \usepackage{graphicx}  % allows inclusion of PDF, PNG and JPG images
 \usepackage{verbatim}
-\usepackage{docmute}   % only needed to allow inclusion of proposal.tex
+% \usepackage{docmute}   % only needed to allow inclusion of proposal.tex
 \usepackage{standalone}
 \usepackage{amsfonts}
 \usepackage{upquote,textcomp}
@@ -21,8 +21,11 @@
 % \usepackage[demo]{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
 \pgfplotsset{compat=1.13}
 \usepgfplotslibrary{statistics}
+\usetikzlibrary{trees}
 
 \raggedbottom                           % try to avoid widows and orphans
 \sloppy
@@ -33,8 +36,12 @@
 \renewcommand{\baselinestretch}{1.1}    % adjust line spacing to make
                                         % more readable
 
+% TC:group tabular 1 1
+% TC:group table 1 1
 
 \begin{document}
+
+% TC:ignore
 
 \bibliographystyle{plain}
 
@@ -55,15 +62,19 @@
 
 \pagestyle{headings}
 
-% \include{chapters/introduction/content}
-%
-% \input{chapters/preparation/content}
+% TC:endignore
+
+\input{chapters/introduction/content}
+
+\input{chapters/preparation/content}
 %
 % \input{chapters/implementation/content}
-
-\input{chapters/evaluation/content}
+%
+% \input{chapters/evaluation/content}
 %
 % \input{chapters/conclusion/content}
+
+% TC:ignore
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the bibliography
@@ -71,7 +82,7 @@
 \bibliography{refs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % the appendices
+% the appendices
 % \appendix
 %
 % \chapter{Excello Implementation}
@@ -80,21 +91,10 @@
 % \label{appendix:parenthesis}
 % {\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
 %
+% \chapter{Project Proposal}
 %
-% \section{proposal.tex}
-% {\scriptsize\verbatiminput{proposal.tex}}
-%
-% \chapter{Makefile}
-%
-% \section{makefile}\label{makefile}
-% {\scriptsize\verbatiminput{makefile.txt}}
-%
-% \section{refs.bib}
-% {\scriptsize\verbatiminput{refs.bib}}
-%
-% %
-% % \chapter{Project Proposal}
-% %
-% % \input{chapters/proposal}
+% \includepdf[pages=-]{chapters/proposal}
+
+% TC:endignore
 
 \end{document}

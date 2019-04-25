@@ -8,9 +8,9 @@
  * @param val Contents of a cell as a string
  * @return If val is a definition of a note
  */
-var re_isNote = new RegExp('^[A-G](#|b|)?[1-9]?( (0(\.\[0-9]+)?|1(\.0)?|ppp|pp|p|mp|mf|f|ff|fff))?$');
+// Note with optional accidental and optional octave followed by optional space a volume
 export function isNote(val: string): boolean {
-    // var re = new RegExp('^[A-G](#|b|)[1-9]$');
+    var re_isNote = new RegExp('^[A-G](#|b|)?[1-9]?( (0(\.\[0-9]+)?|1(\.0)?|ppp|pp|p|mp|mf|f|ff|fff))?$');
     return re_isNote.test(val);
 }
 
@@ -47,13 +47,14 @@ export function isMultiNote(s: string): boolean {
         return false;
     }
     var arr = s.split(',');
-    var isANote = false;
     for (let val of arr) {
         val = val.trim();
+        // If any of the values aren't note,rest,sustain return false
         if (!isNote(val) && !(val=="") && !(val=='s') && !(val=='-') && !(val=='.')){
             return false
         }
     }
+    // at least one has to be a note (not just sustains and rests)
     return arr.some(isNote);
 }
 

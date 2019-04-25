@@ -12,7 +12,6 @@ $("#run").show(); // may want to use this to let sounds load first
 $("#refresh").click(() => tryCatch(refresh));
 $("#run").click(() => tryCatch(run));
 $("#stop").click(() => tryCatch(stop));
-$("#test").click(() => tryCatch(test));
 $("#toggle").click(() => tryCatch(toggle));
 $("#insertChord").click(() => tryCatch(insertChord));
 
@@ -27,6 +26,7 @@ async function run() {
         //  Colour button green
         document.getElementById("run").style.background='#A8FFD0';
 
+        // Get values from the sheet selected in the drop down
         var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
         var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
         const sheet: Excel.Range = context.workbook.worksheets.getItem(sheetChoice).getUsedRange();
@@ -36,9 +36,10 @@ async function run() {
 
         highlightSheet(sheet);
 
+        // In order to remove the notes from the previous play from the transport, new audio context
         Tone.context.close();
         Tone.context = new AudioContext();
-        Tone.Transport.bpm.value = getBPM(sheet.values);
+        Tone.Transport.bpm.value = getBPM();
 
         // Clear current live turtles
         var turtle_list_div = document.getElementById('live_turtles');
@@ -46,6 +47,7 @@ async function run() {
             turtle_list_div.removeChild(turtle_list_div.firstChild);
         }
 
+        // Load piano samples and build sampler
         piano = new Tone.Sampler({
             'A0' : 'A0.[mp3|ogg]',
             'C1' : 'C1.[mp3|ogg]',
@@ -86,10 +88,9 @@ async function run() {
             }
         }).toMaster();
 
+        // // If using synth not piano samples
         // runTurtles(sheet.values);
         // Tone.Transport.start("+0.2");
-        
-        /// console.log(`The range values "${selectedRange.values}".`);
     });
 }
 
@@ -99,34 +100,7 @@ async function run() {
 async function stop() {
     await Excel.run(async (context) => {
         document.getElementById("run").style.removeProperty("background-color");
-        Tone.context.close();
-        // Tone.Transport.cancel();
-        // console.log(Tone.Transport);
-    });
-}
-
-// Won't be in final version but useful for development
-async function test() {
-    await Excel.run(async (context) => {
-        var sheetSelectHTMLElement = (document.getElementById("sheet_select")) as HTMLSelectElement;
-        var sheetChoice = sheetSelectHTMLElement.options[sheetSelectHTMLElement.selectedIndex].value;
-        const sheet: Excel.Range = context.workbook.worksheets.getItem(sheetChoice).getUsedRange();
-        sheet.load('values');
-
-        await context.sync();
-
-        var sheetValues = sheet.values;
-
-        Tone.context = new AudioContext();
-        Tone.Transport.bpm.value = getBPM(sheet.values);
-
-        var seq = new Tone.Sequence(function(time, note){
-            //play the note
-        }, ["C3", [null, "Eb3"], ["F4", "Bb4", "C5"]], "4n");
-
-        console.log(seq);
-
-        //Tone.Transport.start("+0.1");
+        Tone.context.close(); // close audio context
     });
 }
 
@@ -136,13 +110,13 @@ async function test() {
 async function refresh() {
     await Excel.run(async (context) => {
         var sheets = context.workbook.worksheets;
-        // var sheet = context.workbook.worksheets.getActiveWorksheet();
         sheets.load("items/name");
-        // sheet.load("name");
         await context.sync();
+        // Empty and rebuild the current options in dropdown
         $("#sheet_select").empty()
         for (var i in sheets.items) {
             var name = sheets.items[i].name
+            // Add option to select
             $('#sheet_select').append($('<option>', {
                 value: name,
                 text: name
@@ -165,15 +139,18 @@ async function toggle() {
         for (var row=0; row<newValues.length; row++) {
             for (var col=0; col<newValues[0].length; col++) {
                 var val = newValues[row][col]
+                // Current Turtle definition includes the !
                 if (isTurtle(val)) {
+                    // Remove !
                     newValues[row][col] = val.substring(1);
                 }
+                // Add ! if that makes it a turtle
                 else if (isTurtle("!" + val)) {
                     newValues[row][col] = "!" + val;
                 }
             }
         }
-        // propogate changes to grid
+        // Propogate changes to grid
         const selectedSheet = context.workbook.worksheets.getActiveWorksheet();
         selectedSheet.getRange(selectedRange.address.split('!')[1]).values = newValues;
     });

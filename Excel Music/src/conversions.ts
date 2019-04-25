@@ -1,10 +1,17 @@
 /**
  * Gives the column heading of a number e.g. 1->A, 27->AA
- * @param x number
+ * @param x number assuming integer
  * @return x base 26 using the letters of the alphabet
  */
 export function numberToLetter(x: number): string {
-    return (x >= 26 ? numberToLetter((x / 26 >> 0) - 1) : '') +  'abcdefghijklmnopqrstuvwxyz'[x % 26 >> 0];
+    var leastSignificantColumn = 'abcdefghijklmnopqrstuvwxyz'[x % 26];
+    if (x >= 26) {
+        return numberToLetter((x/26) - 1) +  leastSignificantColumn;
+    }
+    else {
+        return leastSignificantColumn;
+    }
+    // return (x >= 26 ? numberToLetter((x / 26 >> 0) - 1) : '') +  'abcdefghijklmnopqrstuvwxyz'[x % 26 >> 0];
 }
 
 /**
@@ -16,6 +23,7 @@ export function lettersToNumber(letters: string): number {
     var num: number = 0;
     const len: number = letters.length;
     letters = letters.toUpperCase();
+    // sum(num(c[i]) * 26^i)
     for (var i = 0; i < len; i++) {
         num += (letters.charCodeAt(i) - 64) * Math.pow(26, len - i - 1);
     }
@@ -28,8 +36,9 @@ export function lettersToNumber(letters: string): number {
  * @return coordinates with 0 indexing
  */
 export function getCellCoords(battleship: string): [number, number] {
+    // split into column and row
     var x = battleship.match(/[a-zA-Z]+|[0-9]+/g);
-    return [lettersToNumber(x[0]) - 1, +x[1] - 1];
+    return [lettersToNumber(x[0]) - 1, +x[1] - 1]; // minuses becuase of different indexings
 }
 
 /**

@@ -4,7 +4,7 @@
 /**
  * Given a turtle instruction sequence this unwraps any brackets to create exact instrutions
  * @param str Turtle movement instructions e.g. "(r m3)4"
- * @return explicit unwrapped instructions e.g. "r m3 r m3 r m3 r m3" 
+ * @return array representing the string but with the brackets matching the array e.g. [['r m3'], '4']
  */
 export function parseBrackets(str: string) {
 
@@ -51,11 +51,19 @@ export function parseBrackets(str: string) {
 	return reNest(unnestedStr[0])
 }
 
+/**
+ * Given a turtle instruction sequence this unwraps any brackets to create exact instrutions
+ * @param arr Nested array representation of the string (from parseBrackets)
+ * @return explicit unwrapped instructions e.g. "r m3 r m3 r m3 r m3" 
+ */
 export function processParsedBrackets(arr) {
 	var s = "";
+	// need to cache previous value if it was an array so it can be repeated
 	var wasPrevArray = false;
 	var prevArray = "";
+
 	for (let val of arr) {
+		// If a value is an array, recursively parse it and cache it incase it needs repeating
 		if (val.constructor === Array) {
 			prevArray = processParsedBrackets(val)
 			wasPrevArray = true;
@@ -65,18 +73,22 @@ export function processParsedBrackets(arr) {
 			if (wasPrevArray) {
 				s = s + prevArray;
 				if (!isNaN(singleInstructions[0])) {
+					// If previous value array and value after a number, repeat the array that number of times
 					for (var i=1; i<singleInstructions[0]; i++) {
 						s = s + prevArray;
 					}
+					// Add number of times array is repeated from remaining instructions 
 					singleInstructions = singleInstructions.slice(1);
 				}
 			}
+			// Add remaining single instructions to all instructions
 			for (let instruction of singleInstructions) {
 				s = s + instruction + " ";
 			}
 			wasPrevArray = false;
 		}
 	}
+	// If the last item was an array, it won't have been added yet
 	if (wasPrevArray) {
 		s = s + prevArray;
 	}

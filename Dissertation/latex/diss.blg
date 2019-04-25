@@ -2,54 +2,51 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: diss.aux
 The style file: plain.bst
-A level-1 auxiliary file: chapters/introduction/content.aux
 Database file #1: refs.bib
 Warning--entry type for "hackaday:spreadsheet" isn't style-file defined
 --line 37 of file refs.bib
-Warning--entry type for "barry:likert" isn't style-file defined
---line 192 of file refs.bib
 Warning--empty journal in mclean:visualisation
 Warning--empty journal in mclean:texture
 Warning--empty booktitle in blackwell:functions
-You've used 23 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            622 strings with 7002 characters,
-and the built_in function-call counts, 6226 in all, are:
-= -- 570
-> -- 294
+            583 strings with 5905 characters,
+and the built_in function-call counts, 4275 in all, are:
+= -- 396
+> -- 199
 < -- 2
-+ -- 122
-- -- 94
-* -- 362
-:= -- 1072
-add.period$ -- 67
-call.type$ -- 23
-change.case$ -- 113
++ -- 83
+- -- 64
+* -- 262
+:= -- 735
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 250
-empty$ -- 532
-format.name$ -- 94
-if$ -- 1298
+cite$ -- 18
+duplicate$ -- 173
+empty$ -- 357
+format.name$ -- 64
+if$ -- 888
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 18
-newline$ -- 116
-num.names$ -- 46
-pop$ -- 159
+int.to.str$ -- 15
+missing$ -- 13
+newline$ -- 78
+num.names$ -- 30
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 62
 quote$ -- 0
-skip$ -- 177
+skip$ -- 119
 stack$ -- 0
-substring$ -- 235
-swap$ -- 35
+substring$ -- 183
+swap$ -- 25
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 58
 warning$ -- 3
-while$ -- 53
-width$ -- 25
-write$ -- 233
-(There were 5 warnings)
+while$ -- 37
+width$ -- 17
+write$ -- 156
+(There were 4 warnings)

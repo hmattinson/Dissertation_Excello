@@ -14,12 +14,16 @@ export async function insertChord() {
         selectedRange.load("columnCount");
 
         // get info from the selects
+        // Note
         var chordNoteHTMLElement = (document.getElementById("chord_note")) as HTMLSelectElement;
         var chordNote = chordNoteHTMLElement.options[chordNoteHTMLElement.selectedIndex].value;
+        // Type
         var chordTypeHTMLElement = (document.getElementById("chord_type")) as HTMLSelectElement;
         var chordType = chordTypeHTMLElement.options[chordTypeHTMLElement.selectedIndex].value;
+        // Octave
         var chordOctaveHTMLElement = (document.getElementById("octave")) as HTMLSelectElement;
         var chordOctave = chordOctaveHTMLElement.options[chordOctaveHTMLElement.selectedIndex].value;
+        // Inversion
         var chordInversionHTMLElement = (document.getElementById("inversion")) as HTMLSelectElement;
         var chordInversion:number = +chordInversionHTMLElement.options[chordInversionHTMLElement.selectedIndex].value;
 
@@ -42,6 +46,7 @@ export async function insertChord() {
             // find the end cell for where the chord will be inputted
             var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0]) + (selectedRangeStartCoords[1]+chordNotes.length);
             var inputRange = selectedRangeStart + ':' + inputRangeEndCell;
+            // Reverse so the order is higher pitch on top
             selectedSheet.getRange(inputRange).values = chordNotes.reverse().map(x => [x]);
         }else {
             var inputRangeEndCell = numberToLetter(selectedRangeStartCoords[0] + chordNotes.length-1) + (selectedRangeStartCoords[1]+1);
@@ -78,12 +83,13 @@ export function addChordOctave(chordNotes: string[], startingOctave: string): st
         'Bb': 11,
         'B': 12
       }; // used to check when an octave boundary has been passed
-    var octave: number = +startingOctave;
-    var octavedNotes: string[] = new Array(chordNotes.length);
+    var octave: number = +startingOctave; // octave won't have changed for first note
+    var octavedNotes: string[] = new Array(chordNotes.length); // array that will be returned
     octavedNotes[0] = chordNotes[0] + startingOctave;
     var previousNote = chordNotes[0]
     for (var i=1; i<chordNotes.length; i++) {
         var note = chordNotes[i];
+        // Check if we have looped around the octave
         if (noteOrder[note] <= noteOrder[previousNote]) {
             // new octave
             octave++;
