@@ -23,6 +23,9 @@
 \usepackage{subcaption}
 \usepackage{wrapfig}
 \usepackage{pdfpages}
+\usepackage{syntax}
+\usepackage{setspace}
+\usepackage{backnaur}
 \pgfplotsset{compat=1.13}
 \usepgfplotslibrary{statistics}
 \usetikzlibrary{trees}
@@ -49,13 +52,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title
 
-% \include{chapters/title}
+\include{chapters/title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Proforma, table of contents and list of figures
-% \pagestyle{plain}
-%
-% \include{chapters/initialStuff}
+\pagestyle{plain}
+
+\include{chapters/initialStuff}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % now for the chapters
@@ -67,12 +70,12 @@
 \input{chapters/introduction/content}
 
 \input{chapters/preparation/content}
-%
-% \input{chapters/implementation/content}
-%
-% \input{chapters/evaluation/content}
-%
-% \input{chapters/conclusion/content}
+
+\input{chapters/implementation/content}
+
+\input{chapters/evaluation/content}
+
+\input{chapters/conclusion/content}
 
 % TC:ignore
 
@@ -83,18 +86,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the appendices
-% \appendix
-%
-% \chapter{Excello Implementation}
-%
-% \section{bracketsParse.ts}
-% \label{appendix:parenthesis}
-% {\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
-%
-% \chapter{Project Proposal}
-%
-% \includepdf[pages=-]{chapters/proposal}
+\appendix
 
-% TC:endignore
+\chapter{Excello Implementation}
+
+\section{bracketsParse.ts}
+\label{appendix:parenthesis}
+{\scriptsize\verbatiminput{chapters/implementation/parenthesis.ts}}
+
+\chapter{Project Proposal}
+
+\includepdf[pages=-]{chapters/proposal}
+
+TC:endignore
 
 \end{document}

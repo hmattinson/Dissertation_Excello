@@ -6,10 +6,40 @@ Samuel Aaron, Alan F.~Blackwell, and Pamela Burnard.
   Co-creating pedagogies for learning computer programming.
 \newblock {\em Journal of Music, Technology and Education}, 9:75--94, 05 2016.
 
+\bibitem{midiSpec}
+MIDI~Manufacturers Association.
+\newblock {\em The complete MIDI 1.0 detailed specification}, 1997.
+
+\bibitem{barry:likert}
+Dwight Barry.
+\newblock Do not use averages with likert scale data, 01 2017.
+
+\bibitem{midoSpec}
+Ole~Martin Bjørndalen.
+\newblock Midi files.
+\newblock \url{https://mido.readthedocs.io/en/latest/midi_files.html}, 2016.
+\newblock Accessed: 2019-04-18).
+
+\bibitem{blackwell:questionnaire}
+Alan~F. Blackwell and Thomas R.~G. Green.
+\newblock A cognitive dimensions questionnaire optimised for users.
+\newblock In {\em PPIG}, 2000.
+
 \bibitem{boehm:spiral}
 B~Boehm.
 \newblock A spiral model of software development and enhancement.
 \newblock {\em SIGSOFT Softw. Eng. Notes}, 11(4):14--24, August 1986.
+
+\bibitem{dawes:points}
+Dr.~John Dawes.
+\newblock Do data characteristics change according to the number of scale
+  points used? an experiment using 5-point, 7-point and 10-point scales.
+\newblock {\em International Journal of Market Research}, 50(1):61--104, 2008.
+
+\bibitem{blackwell:notation}
+Alan F.~Blackwell, Thomas Green, and Dje Nunn.
+\newblock Cognitive dimensions and musical notation systems.
+\newblock {\em Workshop on Notation and Music Information Retrieval}, 11 2000.
 
 \bibitem{goldman:turtle}
 Ron Goldman, Scott Schaefer, and Tao Ju.
@@ -20,6 +50,12 @@ Ron Goldman, Scott Schaefer, and Tao Ju.
 Thomas Green and Alan Blackwell.
 \newblock {Cognitive dimensions of information artefacts: a tutorial}.
 \newblock Technical Report Version 1.2, BCS HCI Conference, 1998.
+
+\bibitem{green:cdn}
+Thomas Green and Marian Petre.
+\newblock Usability analysis of visual programming environments: A 'cognitive
+  dimensions' framework.
+\newblock {\em Journal of Visual Languages}, 7:131--, 06 1996.
 
 \bibitem{hackaday:spreadsheet}
 Sven Gregori.
@@ -68,6 +104,16 @@ Chris Nash.
 Simon Peyton~Jones, Margaret Burnett, and Alan Blackwell.
 \newblock A user-centred approach to functions in excel.
 \newblock June 2003.
+
+\bibitem{ross:introductory}
+S.M. Ross.
+\newblock {\em Introductory Statistics}.
+\newblock Elsevier Science, 2010.
+
+\bibitem{sandberg:lily}
+Erik Sandberg, Examensarbete Nv, Reviewer~Arne Andersson, and Examiner~Anders
+  Jansson.
+\newblock Separating input language and formatter in gnu lilypond, 2006.
 
 \bibitem{sarkar:sheetmusic}
 Advait Sarkar.

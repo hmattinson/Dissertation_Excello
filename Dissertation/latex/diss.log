@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  25 APR 2019 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  29 APR 2019 17:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -929,37 +929,58 @@ File: pppdftex.def 2016/04/19 v0.5f Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count161
 \AM@templatesizebox=\box47
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mdwtools/syntax.sty
+Package: syntax 1996/05/17 1.07 Syntax typesetting (MDW)
+\grammarparsep=\skip53
+\grammarindent=\dimen266
+\sdstartspace=\skip54
+\sdendspace=\skip55
+\sdmidskip=\skip56
+\sdtokskip=\skip57
+\sdfinalskip=\skip58
+\sdrulewidth=\dimen267
+\sdcirclediam=\dimen268
+\sdindent=\dimen269
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/backnaur/backnaur.sty
+Package: backnaur 2012/12/12 1.1 Typesetting for Backus-Naur Form (BNF) definit
+ions
+)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
 ts.statistics.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-) (./diss.aux)
+) (./diss.aux (./chapters/title.aux)
+(./chapters/initialStuff.aux))
 \openout1 = `diss.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    ... okay on input line 45.
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 45.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -969,9 +990,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count162
 )
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (./diss.out) (./diss.out)
 \@outlinefile=\write4
@@ -1015,13 +1036,13 @@ LaTeX Info: Redefining \nameref on input line 42.
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count163
-\scratchdimen=\dimen266
+\scratchdimen=\dimen270
 \scratchbox=\box49
 \nofMPsegments=\count164
 \nofMParguments=\count165
 \everyMPshowfont=\toks48
 \MPscratchCnt=\count166
-\MPscratchDim=\dimen267
+\MPscratchDim=\dimen271
 \MPnumerator=\count167
 \makeMPintoPDFobject=\count168
 \everyMPtoPDFconversion=\toks49
@@ -1055,41 +1076,83 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-(./chapters/introduction/content.tex
-Chapter 1.
-[1
+\openout2 = `chapters/title.aux'.
 
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 15.
+(./chapters/title.tex <figs/cam.jpg, id=284, 570.90883pt x 118.67749pt>
+File: figs/cam.jpg Graphic file (type jpg)
+
+<use figs/cam.jpg>
+Package pdftex.def Info: figs/cam.jpg used on input line 18.
+(pdftex.def)             Requested size: 113.81102pt x 23.6572pt.
+ <figs/microsoft.png, id=285, 3459.92625pt x 739.76375pt>
+File: figs/microsoft.png Graphic file (type png)
+
+<use figs/microsoft.png>
+Package pdftex.def Info: figs/microsoft.png used on input line 23.
+(pdftex.def)             Requested size: 113.81102pt x 24.32535pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 15.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figs/sib.jpg, id=107, 1006.76125pt x 547.04375pt>
+<figs/excelloLogoRing.png, id=287, 225.84375pt x 225.84375pt>
+File: figs/excelloLogoRing.png Graphic file (type png)
+
+<use figs/excelloLogoRing.png>
+Package pdftex.def Info: figs/excelloLogoRing.png used on input line 40.
+(pdftex.def)             Requested size: 142.26378pt x 142.27196pt.
+ [1
+
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/
+cam.jpg> <./figs/microsoft.png> <./figs/excelloLogoRing.png>])
+\openout2 = `chapters/initialStuff.aux'.
+
+ (./chapters/initialStuff.tex [2
+
+
+
+]
+Overfull \hbox (24.98735pt too wide) in paragraph at lines 4--19
+[]
+ []
+
+[3] [4] [5] [6
+
+] (./diss.toc [7])
+\tf@toc=\write5
+\openout5 = `diss.toc'.
+
+) [8] (./chapters/introduction/content.tex
+Chapter 1.
+[9
+
+
+] <figs/sib.jpg, id=431, 1006.76125pt x 547.04375pt>
 File: figs/sib.jpg Graphic file (type jpg)
  <use figs/sib.jpg>
 Package pdftex.def Info: figs/sib.jpg used on input line 16.
 (pdftex.def)             Requested size: 213.39566pt x 115.95102pt.
 
-<figs/sonicPi.png, id=108, 1284.8pt x 700.6175pt>
+<figs/sonicPi.png, id=432, 1284.8pt x 700.6175pt>
 File: figs/sonicPi.png Graphic file (type png)
  <use figs/sonicPi.png>
 Package pdftex.def Info: figs/sonicPi.png used on input line 16.
 (pdftex.def)             Requested size: 213.39566pt x 116.36661pt.
 
-<figs/manhattan.png, id=110, 886.31125pt x 639.38875pt>
+<figs/manhattan.png, id=434, 886.31125pt x 639.38875pt>
 File: figs/manhattan.png Graphic file (type png)
 
 <use figs/manhattan.png>
 Package pdftex.def Info: figs/manhattan.png used on input line 20.
 (pdftex.def)             Requested size: 213.39566pt x 153.94424pt.
- <figs/excelloFull.png, id=111, 1284.8pt x 803.0pt>
+ <figs/excelloFull.png, id=435, 1284.8pt x 803.0pt>
 File: figs/excelloFull.png Graphic file (type png)
 
 <use figs/excelloFull.png>
@@ -1100,72 +1163,520 @@ Overfull \hbox (13.26305pt too wide) in paragraph at lines 15--24
 [][] 
  []
 
-) (./chapters/preparation/content.tex [2 <./figs/sib.jpg> <./figs/sonicPi.png> 
-<./figs/manhattan.png> <./figs/excelloFull.png>]
+) (./chapters/preparation/content.tex [10 <./figs/sib.jpg> <./figs/sonicPi.png>
+ <./figs/manhattan.png> <./figs/excelloFull.png>]
 Chapter 2.
-[3
+[11
 
-] [4] <figs/alJazari.jpg, id=168, 390.45876pt x 293.095pt>
+] [12] <figs/alJazari.jpg, id=493, 390.45876pt x 293.095pt>
 File: figs/alJazari.jpg Graphic file (type jpg)
 
 <use figs/alJazari.jpg>
 Package pdftex.def Info: figs/alJazari.jpg used on input line 43.
 (pdftex.def)             Requested size: 284.52756pt x 213.58636pt.
- [5 <./figs/alJazari.jpg>]
+ [13 <./figs/alJazari.jpg>]
 LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 50.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [6]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+) [14]
+<figs/diss1.png, id=521, 342.27875pt x 107.40125pt>
+File: figs/diss1.png Graphic file (type png)
+ <use figs/diss1.png>
+Package pdftex.def Info: figs/diss1.png used on input line 61.
+(pdftex.def)             Requested size: 284.52756pt x 89.28557pt.
+
+<figs/diss2.png, id=523, 348.30125pt x 104.39pt>
+File: figs/diss2.png Graphic file (type png)
+ <use figs/diss2.png>
+Package pdftex.def Info: figs/diss2.png used on input line 70.
+(pdftex.def)             Requested size: 284.52756pt x 85.28017pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
  [][] \OT1/cmr/m/n/12 The lan-guage for tur-tle move-ment in-struc-tions can be
  sum-marised
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 \OT1/cmr/m/n/12 by the fol-low-ing context-free gram-mar, $(\OML/cmm/m/it/12 N;
  \OT1/cmr/m/n/12 ^^F\OML/cmm/m/it/12 ; S; \OMS/cmsy/m/n/12 P\OT1/cmr/m/n/12 )$.
- Where the non-
+ Non-terminal
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 62--63
-\OT1/cmr/m/n/12 terminal sym-bols $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = (\OT1/c
-mr/bx/n/12 S\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 Y\OML/cmm/m/it/12 ; \OT1/cmr/bx
-/n/12 X\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 I\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12
- R\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 A\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 P\OM
-L/cmm/m/it/12 ; \OT1/cmr/bx/n/12 C\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 D\OT1/cmr
-/m/n/12 )$, ter-mi-nal sym-bols $^^F =
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\OT1/cmr/m/n/12 sym-bols $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = (\OT1/cmr/bx/n/1
+2 S\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 Y\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 X\O
+ML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 I\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 R\OML/cm
+m/m/it/12 ; \OT1/cmr/bx/n/12 A\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 P\OML/cmm/m/i
+t/12 ; \OT1/cmr/bx/n/12 C\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 D\OT1/cmr/m/n/12 )
+$, ter-mi-nal sym-bols $^^F =
  []
 
-[7] [8] [9]) (./diss.bbl [10]
+[15 <./figs/diss1.png> <./figs/diss2.png>]
+
+LaTeX Warning: Reference `prep:sustainMulti' on page 16 undefined on input line
+ 197.
+
+
+LaTeX Warning: Reference `prep:sustainMulti' on page 16 undefined on input line
+ 197.
+
+<figs/withoutMulti.png, id=534, 552.0625pt x 46.1725pt>
+File: figs/withoutMulti.png Graphic file (type png)
+
+<use figs/withoutMulti.png>
+Package pdftex.def Info: figs/withoutMulti.png used on input line 201.
+(pdftex.def)             Requested size: 272.15562pt x 22.76219pt.
+
+<figs/withMulti.png, id=535, 296.10625pt x 43.16125pt>
+File: figs/withMulti.png Graphic file (type png)
+
+<use figs/withMulti.png>
+Package pdftex.def Info: figs/withMulti.png used on input line 202.
+(pdftex.def)             Requested size: 156.15842pt x 22.76219pt.
+ [16 <./figs/withoutMulti.png> <./figs/withMulti.png>]
+[17]) (./chapters/implementation/content.tex [18]
+Chapter 3.
+[19
+
+] [20] [21] [22] [23]
+<figs/turtleFunction.png, id=654, 599.23875pt x 188.705pt>
+File: figs/turtleFunction.png Graphic file (type png)
+
+<use figs/turtleFunction.png>
+Package pdftex.def Info: figs/turtleFunction.png used on input line 139.
+(pdftex.def)             Requested size: 426.79134pt x 134.40187pt.
+ [24]
+<figs/modulateFunction.png, id=669, 687.56876pt x 68.255pt>
+File: figs/modulateFunction.png Graphic file (type png)
+
+<use figs/modulateFunction.png>
+Package pdftex.def Info: figs/modulateFunction.png used on input line 149.
+(pdftex.def)             Requested size: 426.79134pt x 42.36765pt.
+ [25 <./figs/turtleFunction.png> <./figs/modulateFunction.png>] [26] (./chapter
+s/implementation/overview.tex) [27]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 214
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 214.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 214.
+
+[28]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 221.
+
+Overfull \hbox (0.6767pt too wide) in paragraph at lines 229--230
+[] $\OML/cmm/m/it/12 replacementIDRE \OMS/cmtt/m/n/12   []\OML/cmm/m/it/12 idPa
+dding[]idPadding[]$ 
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 233.
+[29] [30]
+Overfull \hbox (7.97571pt too wide) in paragraph at lines 314--337
+[][]
+ []
+
+[31]
+Overfull \hbox (38.75613pt too wide) in paragraph at lines 349--349
+[]  \OT1/cmtt/m/n/12 turtlePart = turtlePart.stop("0:" + (repeats*beatsLength/s
+peedFactor) + ":0");[] 
+ []
+
+
+Overfull \hbox (26.40613pt too wide) in paragraph at lines 361--361
+[]\OT1/cmtt/m/n/12 var chordNotes = Chord.notes(chordNote, chordType).map(x => 
+Note.simplify(x)); 
+ []
+
+[32] [33] [34] (./chapters/implementation/repo.tex [35]
+Underfull \hbox (badness 1178) in paragraph at lines 77--78
+\OT1/cmr/m/n/12 Type-script files. tur-tle.ts con-tains all
+ []
+
+)) (./chapters/evaluation/content.tex [36]
+Chapter 4.
+<figs/excelloFranzRedacted.png, id=798, 1251.67625pt x 672.5125pt>
+File: figs/excelloFranzRedacted.png Graphic file (type png)
+
+<use figs/excelloFranzRedacted.png>
+Package pdftex.def Info: figs/excelloFranzRedacted.png used on input line 24.
+(pdftex.def)             Requested size: 426.79134pt x 229.30797pt.
+
+<figs/manhattanPhase.png, id=801, 546.04pt x 426.59375pt>
+File: figs/manhattanPhase.png Graphic file (type png)
+
+<use figs/manhattanPhase.png>
+Package pdftex.def Info: figs/manhattanPhase.png used on input line 33.
+(pdftex.def)             Requested size: 184.9429pt x 144.48666pt.
+
+Overfull \vbox (105.33675pt too high) detected at line 33
+ []
+
+<figs/sonicPiPhase.png, id=802, 637.38126pt x 307.1475pt>
+File: figs/sonicPiPhase.png Graphic file (type png)
+
+<use figs/sonicPiPhase.png>
+Package pdftex.def Info: figs/sonicPiPhase.png used on input line 33.
+(pdftex.def)             Requested size: 184.9429pt x 89.12204pt.
+
+<figs/excelloPhase.png, id=803, 411.5375pt x 90.3375pt>
+File: figs/excelloPhase.png Graphic file (type png)
+
+<use figs/excelloPhase.png>
+Package pdftex.def Info: figs/excelloPhase.png used on input line 37.
+(pdftex.def)             Requested size: 184.9429pt x 40.59634pt.
+
+Overfull \vbox (15.94641pt too high) detected at line 37
+ []
+
+[37
+
+] [38 <./figs/excelloFranzRedacted.png>] [39 <./figs/manhattanPhase.png> <./fig
+s/sonicPiPhase.png> <./figs/excelloPhase.png>]
+Overfull \hbox (15.07674pt too wide) in paragraph at lines 71--81
+ [][] 
+ []
+
+Package pgfplots info on input line 108: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 126--127
+[][] 
+ []
+
+Package pgfplots info on input line 172: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 181--182
+[][] 
+ []
+
+[40]
+Package pgfplots info on input line 227: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 237--238
+[][] 
+ []
+
+
+Overfull \hbox (7.96153pt too wide) in paragraph at lines 247--255
+ [][] 
+ []
+
+[41]
+Package pgfplots info on input line 282: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 294--295
+[][] 
+ []
+
+Package pgfplots info on input line 339: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (5.29836pt too wide) in paragraph at lines 349--350
+[][] 
+ []
+
+[42]
+Overfull \hbox (7.21294pt too wide) in paragraph at lines 359--367
+ [][] 
+ []
+
+Package pgfplots info on input line 394: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 404--405
+[][] 
+ []
+
+Package pgfplots info on input line 450: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.1733pt too wide) in paragraph at lines 460--461
+[][] 
+ []
+
+[43]
+Package pgfplots info on input line 650: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+Overfull \hbox (11.16963pt too wide) in paragraph at lines 665--667
+[][]
+ []
+
+[44]
+Overfull \vbox (37.65384pt too high) has occurred while \output is active []
+
+
+[45]
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 709--710
+[][] 
+ []
+
+
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 754--755
+[][] 
+ []
+
+
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 799--800
+[][] 
+ []
+
+[46]
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 844--845
+[][] 
+ []
+
+
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 889--890
+[][] 
+ []
+
+
+Overfull \hbox (10.63525pt too wide) in paragraph at lines 930--931
+[][] 
+ []
+
+[47] [48]) (./chapters/conclusion/content.tex [49] [50
+
+]
+Chapter 5.
+) (./diss.bbl [51] [52
+
+]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [11
+ [53]) [54]
+Appendix A.
+File: chapters/implementation/parenthesis.ts  (verbatim)
+[55
 
-]) [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
- (./diss.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+] [56]
+Appendix B.
+<chapters/proposal.pdf, id=978, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf>
+Package pdftex.def Info: chapters/proposal.pdf used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf>
+Package pdftex.def Info: chapters/proposal.pdf used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+<chapters/proposal.pdf, id=981, page=1, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 1>
+Package pdftex.def Info: chapters/proposal.pdf, page1 used on input line 99.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 1>
+Package pdftex.def Info: chapters/proposal.pdf, page1 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+
+[57
+
+]
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 1>
+Package pdftex.def Info: chapters/proposal.pdf, page1 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 1>
+Package pdftex.def Info: chapters/proposal.pdf, page1 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 1>
+Package pdftex.def Info: chapters/proposal.pdf, page1 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [58 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1001, page=2, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 2>
+Package pdftex.def Info: chapters/proposal.pdf, page2 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 2>
+Package pdftex.def Info: chapters/proposal.pdf, page2 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 2>
+Package pdftex.def Info: chapters/proposal.pdf, page2 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [59 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1006, page=3, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 3>
+Package pdftex.def Info: chapters/proposal.pdf, page3 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 3>
+Package pdftex.def Info: chapters/proposal.pdf, page3 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 3>
+Package pdftex.def Info: chapters/proposal.pdf, page3 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [60 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1011, page=4, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 4>
+Package pdftex.def Info: chapters/proposal.pdf, page4 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 4>
+Package pdftex.def Info: chapters/proposal.pdf, page4 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 4>
+Package pdftex.def Info: chapters/proposal.pdf, page4 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [61 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1017, page=5, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 5>
+Package pdftex.def Info: chapters/proposal.pdf, page5 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 5>
+Package pdftex.def Info: chapters/proposal.pdf, page5 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 5>
+Package pdftex.def Info: chapters/proposal.pdf, page5 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [62 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1022, page=6, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 6>
+Package pdftex.def Info: chapters/proposal.pdf, page6 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 6>
+Package pdftex.def Info: chapters/proposal.pdf, page6 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 6>
+Package pdftex.def Info: chapters/proposal.pdf, page6 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [63 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1027, page=7, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 7>
+Package pdftex.def Info: chapters/proposal.pdf, page7 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 7>
+Package pdftex.def Info: chapters/proposal.pdf, page7 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 7>
+Package pdftex.def Info: chapters/proposal.pdf, page7 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [64 <./chapters/proposal.pdf>]
+<chapters/proposal.pdf, id=1032, page=8, 597.23125pt x 845.1575pt>
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 8>
+Package pdftex.def Info: chapters/proposal.pdf, page8 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+ <use chapters/proposal.pdf, page 8>
+Package pdftex.def Info: chapters/proposal.pdf, page8 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: chapters/proposal.pdf Graphic file (type pdf)
+
+<use chapters/proposal.pdf, page 8>
+Package pdftex.def Info: chapters/proposal.pdf, page8 used on input line 99.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [65 <./chapters/proposal.pdf>] [66]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+
+(./diss.aux (./chapters/title.aux) (./chapters/initialStuff.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `diss.out' has not changed.
-(rerunfilecheck)             Checksum: A5B6413B594F2B5BA595C61C029E4FED;1175.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+(rerunfilecheck)             Checksum: 6EE584BEA958BA9C833A93427CBAEA90;4656.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 29805 strings out of 493014
- 694936 string characters out of 6133351
- 872734 words of memory out of 5000000
- 32687 multiletter control sequences out of 15000+600000
- 15494 words of font info for 59 fonts, out of 8000000 for 9000
+ 31529 strings out of 493014
+ 730829 string characters out of 6133351
+ 929400 words of memory out of 5000000
+ 34065 multiletter control sequences out of 15000+600000
+ 18105 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,16n,96p,2088b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+ 66i,19n,111p,1951b,2498s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.22} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.21} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1173,24 +1684,52 @@ t, replaced by a fixed one
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
 , replaced by a fixed one
 
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (12 pages, 1376674 bytes).
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on diss.pdf (66 pages, 2373142 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 101 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1185 PDF objects out of 1200 (max. 8388607)
+ 1041 compressed objects within 11 object streams
+ 382 named destinations out of 1000 (max. 500000)
+ 710 words of extra memory for PDF output out of 10000 (max. 10000000)
 
