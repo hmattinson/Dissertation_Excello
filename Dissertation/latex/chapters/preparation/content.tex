@@ -3,41 +3,41 @@
 
 \chapter{Preparation}
 
-\paragraph{} This chapter shall first address the refinements made to the project proposal. Then I shall explain the tests that were performed to establish Excel's suitability for musical development. Next, the design decisions for Excello shall be explained. The software engineering tools and techniques employed will then be introduced. Finally, the research that was conducted to decide to implement a converter from MIDI to Excello shall be summarised.
+\paragraph{} This chapter shall first address the refinements made to the project proposal. Then I shall explain the tests that established Excel's suitability for musical development. Next, the initial design decisions for Excello shall be explained. The software engineering tools and techniques employed will then be introduced. Finally, the research conducted to decide to implement the converter from MIDI to Excello shall be summarised.
 
 \section{Proposal Refinements}
 
-\paragraph{} The project designed a notation by which music can be defined within a spreadsheet along with a system for interpreting the notation in the spreadsheet to produce audio output. This continued to explore ways in which time can be abstracted away from the grid.
+\paragraph{} The project designed a notation for defining music within a spreadsheet, along with a system for interpreting this to produce audio output. This continued to explore abstracting time away from the grid.
 
-\paragraph{} The aim was to implement an Excel add-in subject to successful initial testing. An add-in is a web application displayed within Excel that can read and write to the spreadsheet using the Office Javascript API \footnote{https://docs.microsoft.com/en-us/javascript/api/excel?view=office-js}. Arbitrary additional data and markup can be included in the spreadsheet. Only information in the spreadsheet is required for playback with the add-in. Tests shall be carried out to verify that suitable audio output can be produced for music end-user music programming within Excel to be possible.
+\paragraph{} This would be implemented as an Excel add-in subject to successful initial testing. An add-in is a web application displayed within Excel that can read and write to the spreadsheet using the Office Javascript API\footnote{https://docs.microsoft.com/en-us/javascript/api/excel?view=office-js}. Arbitrary additional data and markup can be included in the spreadsheet. Tests verified that audio output can be produced for music end-user music programming within Excel.
 
-\paragraph{} A sizeable addition to the project beyond the initial proposal was to perform participatory design \cite{muller:pd} to advise on improvements that can be made beyond the initial prototype. Participants would be able to identify aspects of the current design that (don't) work well or add cognitive difficulty. The prototype was introduced to users and from this, new features and improvements implemented. A subset of these participants who gain sufficient familiarity with the project were used for more informed summative evaluation. As a result, the proposed extension of incorporating live-coding would only be implemented if deemed high priority by the participants.
+\paragraph{} A sizeable addition to the project beyond the initial proposal was to perform participatory design \cite{muller:pd} to advise on improvements beyond the initial prototype. Participants would be able to identify aspects of the current design that (don't) work well or add cognitive difficulty. This lead to the implementation of new features and improvements. As a result, the proposed extension of live-coding would only be implemented if deemed high priority by the participants. Participants who gained sufficient familiarity with the project were used for more informed summative evaluation.
 
-\paragraph{} MIDI was the file type for which a converter was implemented to translate to a CSV file for use in Excel. Additional explanation on the choice of MIDI is provided below. It was also motivated by participants who wished to be able to integrate Excello with their use of digital audio workstations such as Logic Pro, Ableton Live, and GarageBand.
+\paragraph{} The converter translated MIDI to a CSV file for use with Excello. Explanation on the choice of MIDI is provided below. It was also motivated by participants who wished to integrate Excello with their use of digital audio workstations such as Logic Pro, Ableton Live, and GarageBand.
 
 \section{Feasibility Analysis}
 
-\paragraph{} The following section outlines the libraries I explored and the tests carried out to assess the feasibility of synthesising notes given data in a spreadsheet using an Excel add-in. All tests were carried out in Excel Online\footnote{https://office.live.com/start/Excel.aspx} using Script Lab\footnote{https://www.microsoft.com/en-us/garage/profiles/script-lab/}, an add-in that allows users to create and test simple add-ins experimenting with the Office Javascript API. These add-ins have an HTML front end and can access libraries and data elsewhere online.
+\paragraph{} The following section outlines the tests carried out to assess the feasibility of synthesising notes with data in a spreadsheet using an Excel add-in. All tests were carried out in Excel Online\footnote{https://office.live.com/start/Excel.aspx} using Script Lab\footnote{https://www.microsoft.com/en-us/garage/profiles/script-lab/}, an add-in that allows users to create and test simple add-ins experimenting with the Office Javascript API. These add-ins can access libraries and data elsewhere online.
 
-\paragraph{} If add-ins were run in an older version of Internet Explorer, playing sound or using of the Web Audio API would be possible.An add-in that played a wav file verified that an add-in could create sound. \cite{mozilla:webaudioapi}.
+\paragraph{} If add-ins were run in an older version of Internet Explorer, playing sound or using the Web Audio API would be possible.An add-in that played a WAV file verified that sound could be created. \cite{mozilla:webaudioapi}.
 
 \subsection{Note Synthesis Library}
 
-\paragraph{} The Web Audio API allows audio to be synthesised from the browser using Javascript \cite{mozilla:webaudioapi}. Creating a program for users to define and play musical structures requires synthesising arbitrary length, pitch and volume notes. To avoid the lower-level audio components (e.g. oscillators), I researched libraries that would allow me to deal with higher level musical abstractions of the synthesised notes. Sarkar's SheetMusic used the library tones\footnote{https://github.com/bit101/tones}, a simple API where only the pitch and volume envelope\footnote{How the note's volume changes over its duration} of all notes. Other limitations included no definition of volume and only including simple waveform synthesisers.
+\paragraph{} The Web Audio API allows audio to be synthesised from the browser using Javascript \cite{mozilla:webaudioapi}. Creating a program for users to define and play musical structures requires synthesising arbitrary length, pitch and volume notes. To avoid the lower-level audio components (e.g. oscillators), I researched libraries that would allow me to deal with higher level musical abstractions of the synthesised notes. Sarkar's SheetMusic used the library tones\footnote{https://github.com/bit101/tones}, an API where only the pitch and volume envelope\footnote{How the note's volume changes over its duration} of the notes. This also only included simple waveform synthesisers.
 
-\paragraph{} Tone.js\footnote{https://tonejs.github.io/} is a library built on top of the Web Audio API providing greater functionality than tones. An \texttt{Instrument} such as a \texttt{Synth} or \texttt{Sampler} is defined. The \texttt{triggerattackrelease} release method of these instruments allows a note of a given pitch, volume and duration to be triggered at a particular time. Notes are defined using scientific pitch notation (SPN) (e.g. \texttt{F\#4}), name (with accidental\footnote{Sharp or flat symbol used to define a black note on a piano keyboard.} if required) (\texttt{F\#}) combined with octave (\texttt{4}). As Script Lab can reference libraries from the Node Package Manager (NPM), I tested playing notes with pitch defined in the add-in Javascript.
+\paragraph{} Tone.js\footnote{https://tonejs.github.io/} is a library built on top of the Web Audio API that provides greater functionality. An \texttt{Instrument} such as a \texttt{Synth} or \texttt{Sampler} is defined. The \texttt{triggerattackrelease} release method of these instruments allows a note of a given pitch, volume and duration to be triggered at a particular time. Notes are defined using scientific pitch notation (SPN) (e.g. \texttt{e.g. F\#4}), name (with accidental\footnote{Sharp or flat symbol used for black notes on a piano.} if required) (e.g. \texttt{F\#}) combined with octave (\texttt{4}). As Script Lab can reference libraries from the Node Package Manager (NPM), I tested playing notes with pitch defined in the add-in Javascript.
 
 \subsection{Office Javascript API}
 
-\paragraph{} For users to produce music within Excel, the musical output must be informed by the data in the spreadsheet. Previous tests created notes defined in the add-in Javascript. To test the Excel API, I played a note with the Tone.js library, the pitch of which was defined in the spreadsheet. This was extended so note playing, not just the pitch, was defined within a cell, detected and executed.
+\paragraph{} To produce music within Excel, the musical output must be informed by the data in the spreadsheet. Previous tests defined notes in the add-in Javascript. To test the Excel API, I played a note with the pitch defined in the spreadsheet. This was extended so note playing, not just the pitch, was defined within a cell (\texttt{play(F\#4)}), detected and executed.
 
-\paragraph{} Next, I was able to play a sequence of constant length notes defined in consecutive cells. The range of cells was accessed using the Excel API and the values were played using the \texttt{Tone.Sequence} object. Having performed these tests, I confirmed Tone.js combined with the Excel API had the functionality required to assist in the implementation of the project.
+\paragraph{} Next, I was able to play a sequence of constant length notes defined in consecutive cells (\texttt{play(H1:K1)}). The range of cells was accessed using the Excel API and the values were played using the \texttt{Tone.Sequence} object. These tests confirmed Tone.js combined with the Excel API provided adequate functionality to implement the project as an add-in.
 
 \section{Excello Design and Language}
 
 \subsection{Abstracting Time}
 
-\paragraph{} Dave Griffith's Al-Jazari \cite{mclean:visualisation} takes place in a three-dimensional world where robotic agents navigate around a two-dimensional grid. The height and colour of the blocks over which the agents traverse determines the sound that they produce. The characteristics of the blocks are modified manually by users at run-time whilst the agents are moving. Whilst there are more complex conditional instructions, the basic instructions have the agents rotate and move forwards and backwards in the direction that they are facing. There exists a dual formalism in both the agent's instructions and the block state. This design is intended to make live coding more accessible, both when viewing performances and becoming a live coder.
+\paragraph{} Dave Griffith's Al-Jazari \cite{mclean:visualisation} takes place in a three-dimensional world where robotic agents navigate around a two-dimensional grid. The height and colour of the blocks over which the agents traverse determines the sound they produce. The characteristics of the blocks are modified manually by users at run-time whilst the agents are moving. The basic instructions have the agents rotate and move forwards and backwards in the direction that they are facing. There exists a dual formalism in both the agent's instructions and the block state. This design is intended to improve live coding accessibility, both when viewing performances and becoming a live coder.
 
 \begin{figure}[ht]
   \centerline{\includegraphics[width=100mm]{figs/alJazari.jpg}}
@@ -45,26 +45,26 @@
 \label{prep:alJazari}
 \end{figure}
 
-\paragraph{} In Al-Jazari, the agents are programmed by placing symbols corresponding to different movements in thought bubbles that appear above them. This is not suitable for programming within spreadsheets where all data must exist alphanumerically within cells. If an agent was to continue moving forwards many times in a row, it would become tiresome to keep adding the move forward symbol. This is less of an issue in Al-Jazari where the grid within which the agents navigate only measures ten cells wide and long.
+\vspace{-20pt}
+\paragraph{} In Al-Jazari, the agents are programmed with symbols corresponding to different movements in thought bubbles above them. This is not suitable for programming within spreadsheets where all data must exist alphanumerically within cells. If an agent was to continue moving forwards many times in a row, it would become tiresome to keep adding this symbol. This is less of an issue in Al-Jazari where the grid only measures ten cells wide and long.
 
-\paragraph{} The concept of having a cursor navigate around a cartesian plane is the method used by turtle graphics. Just as this concept is used in Al-Jazari to play the cell the agents occupy rather than colour it, it is suitable for spreadsheets. The turtle abstraction is employed by Excello by having notes defined in cells and defining agents, known as turtles, to move through the spreadsheet activating them. To play a chord, multiple turtles must be defined to pass through multiple cells corresponding to the note of the chord. This method maintains high notational consistency but sacrifices the abstractions for musical structures that are available in languages like Sonic Pi - \texttt{chord(\upquote{F\#}, \upquote{maj7})}. By implementing methods in the add-in to add the notes of chords to the grid, the use of the abstractions is maintained whilst preserving consistency and cleanness in the spreadsheet itself.
+\paragraph{} Having a cursor navigate around a cartesian plane is the method used by turtle graphics. Just as this concept is used in Al-Jazari for agents to play the cell they occupy rather than colour it, it is suitable for spreadsheets. The turtle abstraction is employed by Excello by defining notes in cells and agents, known as turtles, to move through the spreadsheet activating them. To play a chord, multiple turtles must simultaneously pass through multiple cells corresponding to the notes of the chord. This maintains high notational consistency but sacrifices the abstractions for musical structures that are available in languages like Sonic Pi - \texttt{chord(\upquote{F\#}, \upquote{maj7})}. By implementing methods in the add-in to add the notes of chords to the grid, abstractions can be maintained whilst preserving consistency and cleanness in the spreadsheet itself.
 
-\paragraph{} The turtle is the crux of the Logo programming language \cite{goldman:turtle}. In Logo, turtles are programmed entirely by text. for example, \texttt{repeat 4 [forward 5 right 90]} has a turtle move forwards 50 units and turn 90 degrees to the right. This is repeated four times to draw a square. A similar method is employed in Excello but the language is designed to be less verbose.
+\paragraph{} Turtle are the crux of the Logo programming language \cite{goldman:turtle} where turtles are programmed entirely by text to produce graphical output. For example, \texttt{repeat 4 [forward 5 right 90]} has a turtle move forwards 50 units and turn 90 degrees to the right four times to draw a square. A similar method is employed in Excello but the language is designed to be less verbose.
 
 \subsection{Initial Prototype Design}
 
-\paragraph{} Notes are placed in the cells of the spreadsheet and turtles are defined to move through the grid using a language based on Logo. The notes in the cells will be played when a turtle moves through that cell. When the play button is pressed, the melodic lines produced by all turtles defined in the grid are played concurrently. Turtles are defined with a start cell, movement instructions, the speed with which they move through the grid (cells per minute) and the number of times they repeat their path. As in Al-Jazari, distance in space maps to time \cite{mclean:texture}. Excello extends upon this as turtles can move at different speeds. This allows parts with longer notes to be defined more concisely and for phase music\footnote{Music where identical parts are played at different speeds} to be easily defined. The Excello turtle movement instructions with examples are shown below.
+\paragraph{} Notes are placed in the cells of the spreadsheet and turtles are defined to move through the grid using a language based on Logo. The notes in cells are played when turtles move through those cell. When the play button is pressed, the melodic lines produced by all turtles defined in the grid are played concurrently. Turtles are defined with a start cell, movement instructions, the speed they move through the grid at (cells per minute) and the number of times they repeat their path. As in Al-Jazari, distance in space maps to time \cite{mclean:texture}. Excello extends upon this as turtles can move at different speeds. Therefore parts with longer notes can be defined more concisely and phase music\footnote{Music where identical parts are played at different speeds} can be easily defined. The Excello turtle movement instructions are explained below with examples.
 
-\paragraph{} Turtles begin facing north. The move command \texttt{m} moves the turtle forward one cell in the direction that it is facing. Like Logo, the turtle always moves in the direction it is facing. The commands \texttt{l} and \texttt{r} turn the turtle 90 degrees to the left and right respectively. Logo commands are repeated with \texttt{repeat} followed by the number of repeats and the commands \cite{goldman:turtle}. To create more concise instructions, single commands can be repeated by placing a number immediately after it. For example, \texttt{m4} has the turtle move forwards four cells in the direction that it is facing. The direction a turtle is facing can be defined absolutely using the commands \texttt{n}, \texttt{e}, \texttt{s} and \texttt{w} to face the turtle north, east, south and west. These rotate the turtles rather than moving them to maintain the consistency that turtles always move in the direction they face. To change notes' volume, dynamics (\texttt{ppp}, \texttt{pp}, \texttt{p}, \texttt{mp}, \texttt{mf}, \texttt{f}, \texttt{ff}, \texttt{fff}) can be placed within the turtle instructions. Any notes played after this will be played at that dynamic. Just as dynamics in western notation are a property of the staff, not individual notes, dynamics were originally a property of the turtle. To repeat a sequence of instructions, this is placed in brackets and the number of repeats put immediately after the bracket. For example, \texttt{(r m5)4}  defines a path going clockwise around a five by five square. This seven character example is equivalent to the above Logo example which requires 29 characters. The repetition of series of instruction is why relative movements \texttt{l} and \texttt{r} are included in the language despite being less explicit than the compass based directions. This is demonstrated in figure \ref{prep:language1}.
+\paragraph{} Turtles begin facing north. The move command, \texttt{m}, moves the turtle one cell forward. Like Logo, turtles always move in the direction they are facing. The commands \texttt{l} and \texttt{r} turn the turtle 90 degrees left and right respectively. Logo commands are repeated with \texttt{repeat} followed by the number of repeats and the commands \cite{goldman:turtle}. To reduce verbosity, single commands are repeated by placing a number immediately after it. For example, \texttt{m4} has the turtle move forwards four cells in the direction that it is facing. The direction a turtle is facing can be defined absolutely with \texttt{n}, \texttt{e}, \texttt{s} and \texttt{w} to face the turtle north, east, south and west. These rotate the turtles rather than moving them to maintain the consistency that turtles always move in the direction they face. To change notes' volume, dynamics (\texttt{ppp}, \texttt{pp}, \texttt{p}, \texttt{mp}, \texttt{mf}, \texttt{f}, \texttt{ff}, \texttt{fff}) can be placed within the turtle instructions. Any notes played after are played at that dynamic. Just as dynamics in western notation are a property of the staff, not individual notes, dynamics were originally defined in the turtle not notes. To repeat multiple instructions, they are placed in brackets followed by the number of repeats. For example, \texttt{(r m5)4}  defines a clockwise path around a five by five square. This seven character example is equivalent to the above Logo example which requires 29 characters. This repetition of instruction is why relative movements \texttt{l} and \texttt{r} are included in the language despite being less explicit than the compass based directions. This is demonstrated in figure \ref{prep:language1}.
 
 \begin{figure}[ht]
   \centerline{\includegraphics[width=100mm]{figs/diss1.png}}
 \caption{The instructions for a turtle following the path of notes from A2 to A4}
 \label{prep:language1}
 \end{figure}
-\vspace{-20pt}
 
-\paragraph{} It may not be convenient for each melodic line to be defined by a single path of adjacent cells. Just as conventional score notation often spans across multiple lines, the splitting of parts is a useful form of secondary notation. This requires the turtle to navigate to non-adjacent cells and then proceed playing. For graphic drawing in Logo, the pen can be lifted, allowing the turtle to navigate without colouring the space beneath it. This is suitable for a graphical output where the number of steps the turtle takes has no effect on the output, only the cells it colours. However, the musical output is dependent on the turtle's spacio-temporal information, so this would introduce large rests. Analogous to lifting the pen for graphical turtles, one could set the turtle in a mode where it doesn't play the cells it navigates through and passes through them immediately until it is placed back in a playing mode. Here the actual path that the turtle takes is insignificant only the cell it ends up in. I have therefore added jumps to the language. This can be defined in absolute terms where the destination cell is given (e.g. \texttt{jA5}), or relatively (e.g. \texttt{j-7+1}), where the number of rows and columns jumped is given instead. An absolute jump may be more explicit to the human reader but defining jumps relatively allows repeats, jumping to different cells each time. for example, \texttt{r (m7 j-7+1)9 m7} plays 10 rows of 8 cells from top to bottom playing each row left to right. This is demonstrated in figure \ref{prep:language2}.
+\paragraph{} It may not be convenient to constrain each melodic line to a single path of adjacent cells. Just as conventional score notation often spans across multiple lines, splitting up parts is a useful form of secondary notation. This requires the turtle to move to non-adjacent cells. For graphic drawing in Logo, lifting the pen allows the turtle to move without colouring the space beneath it. However, here the number of steps the turtle takes doesn't affect the output, only the cells it colours does. However, the musical output of Excello is dependent on the turtle's spacio-temporal information, so this would introduce large rests. Analogous to lifting the pen for graphical turtles, the turtle could enter a mode where it passes through cells immediately without playing them until it is placed back in playing mode. Here the actual path of the turtle is insignificant, only the cell it ends up in. I have therefore added jumps to the language. This can be defined with \texttt{j} in absolute terms with a destination cell (e.g. \texttt{jA5}), or relatively (e.g. \texttt{j-7+1}), with the number of rows and columns jumped. An absolute jump may be more explicit for human readers, but relative jumps facilitate repeats jumping to different cells each time. For example, \texttt{r (m7 j-7+1)9 m7} plays 10 rows of 8 cells from top to bottom playing each row left to right. A jump is demonstrated in figure \ref{prep:language2}.
 
 \begin{figure}[ht]
   \centerline{\includegraphics[width=100mm]{figs/diss2.png}}
@@ -73,7 +73,7 @@
 \end{figure}
 \vspace{-20pt}
 
-\paragraph{} The language for turtle movement instructions can be summarised by the following context-free grammar, $(N,\Sigma,S,\mathcal{P})$. Non-terminal symbols $N=(\mathbf{S}, \mathbf{Y}, \mathbf{X}, \mathbf{I}, \mathbf{R}, \mathbf{A}, \mathbf{P}, \mathbf{C}, \mathbf{D})$, terminal symbols $\Sigma=(z{\in}\mathbb{Z}, n{\in}\mathbb{N}, c{\in}\texttt{[A-Za-z]}^{+}, \texttt{m}, \texttt{j}, \texttt{l}, \texttt{r}, \texttt{n}, \texttt{e}, \texttt{s}, \texttt{w}, \texttt{+}, \texttt{-}, \texttt{ppp}, \texttt{pp}, \texttt{p}, \texttt{mp}, \texttt{mf}, \texttt{f}, \texttt{ff}, \texttt{fff})$ and starting symbol $S = \mathbf{S}$. The set of grammar rules $\mathcal{P}$ are shown in figure \ref{fig:grammar}:
+\paragraph{} The language for turtle movement instructions is summarised by the following context-free grammar, $(N,\Sigma,S,\mathcal{P})$. Non-terminal symbols $N=(\langle$Full Instructions$\rangle, \langle$Instruction Series$\rangle, \langle$Single Block$\rangle, \langle$Command$\rangle, \langle$Relative$\rangle, \langle$Absolute$\rangle, \langle$Sign$\rangle, \langle$Cell$\rangle, \langle$Dynamic $\rangle)$, terminal symbols $\Sigma=(z{\in}\mathbb{Z}, n{\in}\mathbb{N}, c{\in}\texttt{[A-Za-z]}^{+}, \texttt{m}, \texttt{j}, \texttt{l}, \texttt{r}, \texttt{n}, \texttt{e}, \texttt{s}, \texttt{w}, \texttt{+}, \texttt{-}, \texttt{ppp}, \texttt{pp}, \texttt{p}, \texttt{mp}, \texttt{mf}, \texttt{f}, \texttt{ff}, \texttt{fff})$ and starting symbol $S = \langle \text{Full Instructions} \rangle$. The set of grammar rules $\mathcal{P}$ are shown in figure \ref{fig:grammar}:
 
 % \begin{table}
 % \centering
@@ -156,12 +156,12 @@
     \bnfor \texttt{j}\bnfpn{Sign}n\bnfpn{Sign}n
     \end{bnfsplit}
      }\\
-   \bnfprod{Absolute}
+   \bnfprod{Relative}
      {
      \texttt{l}
      \bnfor \texttt{r}
       }\\
-  \bnfprod{Relative}
+  \bnfprod{Movement}
     {
     \texttt{n}
     \bnfor \texttt{e}
@@ -190,11 +190,11 @@
     }\\
 \end{bnf*}
 \vspace{-35pt}
-\caption{The grammar of the turtle movement instructions in Backus-Nour form}
+\caption{The grammar rules, $\mathcal{P}$, for turtle movement instructions in Backus-Nour form}
 \label{fig:grammar}
 \end{figure}
 
-\paragraph{} Notes are defined in the cells using SPN. Empty cells are interpreted as rests. To create notes longer than a single cell, the character \texttt{s} sustains the note that came before it as in figure \ref{prep:sustainMulti} (a). A cell can be sub-divided time-wise into multiple notes with multiple comma separated notes as in figure \ref{prep:sustainMulti} (b). The motivation for this design decision was so the length each cell corresponds to is not bound by the length of the smallest note in the piece. For example, a piece defined primarily with crotchets (one unit) but with occasional quavers does not necessitate double the number of cells and introducing many additional \texttt{s} cells in the entire piece.
+\paragraph{} Notes are defined in the cells using SPN. Empty cells are interpreted as rests. To create notes longer than a single cell, the character \texttt{s} sustains the note that came before it as in figure \ref{prep:sustainMulti} (a). A cell can be subdivided time-wise into multiple notes with multiple comma separated notes as in figure \ref{prep:sustainMulti} (b). This was designed so the length a cell corresponds to is not bound by the length of the smallest note in the piece. For example, a piece defined primarily with crotchets (one unit) but with occasional quavers (half a unit) does not necessitate double the number of cells and introduce many additional \texttt{s} cells in the entire piece.
 
 \begin{figure}[ht]
 \begin{tabular}{cc}
@@ -203,28 +203,28 @@
   (a) Using sustain cells&(b) Using a multi-note cell\\
 \end{tabular}
 \caption{Two identical motifs defined by using sustains or with multi-note cells}
-\label{intro:sustainMulti}
+\label{prep:sustainMulti}
 \end{figure}
 
 \section{Software Engineering}
 
 \subsection{Requirements}
 
-\paragraph{} The success criteria of the project are as follows:
+\paragraph{} The success criteria of the project are:
 
 \begin{enumerate}
-  \item Implementation of an API for music playback within a spreadsheet where users can:
+  \item Implementation of an system for music playback within a spreadsheet where users can:
   \begin{itemize}
-     \item Play individual notes and chords and define their durations.
+     \item Play individual notes and chords with defind durations.
      \item Define multiple parts.
      \item Play loops.
      \item Define sequences of notes and chords and be able to call these for playback.
      \item Define the tempo of playback.
    \end{itemize}
-  \item Performance of participatory design sessions.
-  \item Usability testing using participants who have gained familiarity with the system.
+  \item Participatory design with formative evaluation sessions.
+  \item Summative evaluation with participants who have gained familiarity with the system.
   \item Implementation of a converter from MIDI to the spreadsheet representation.
-  \item In addition to these, the following extension work was completed::
+  \item In addition to these, the following extension work was completed:
   \begin{itemize}
      \item Implement additional features that arise from participatory design.
      \item Explore a compressive conversion from MIDI to the Excel system.
@@ -237,23 +237,23 @@ Table \ref{intro:tools} outlines the tools, languages and libraries used.
 
 \begin{table}[ht]
 \centering
-\caption{Tools used during the project}
 \vspace{1pt}
 \begin{tabular}{|l|l|l|} \hline
 \textbf{Software}&\textbf{Type}&\textbf{Usage}\\ \hline
 Scriptlab&Add-in&Writing initial Excel add-in tests. \\ \hline
 Typescript&Language&Writing Excello. Used for static type\\
 &&checking and Javascript libraries. \\ \hline
-Yeoman\footnote{A generator for scaffolding Node.js web applications, https://github.com/OfficeDev/generator-office}&Add-in Generator&Creating the blank Excel add-in project.\\ \hline
+Yeoman\tablefootnote{A generator for scaffolding Node.js web applications, https://github.com/OfficeDev/generator-office}&Add-in Generator&Creating the blank Excel add-in project.\\ \hline
 NodeJS&Javascript&Manage library dependecies and run local web\\
-&Notebook&servers. \\ \hline
-Surge\footnote{Static webpage publishing tool and hosting https://surge.sh/}&CDN&Hosting Excello online for participants' use.\\ \hline
+&Environment&servers. \\ \hline
+Surge\tablefootnote{Static webpage publishing tool and hosting https://surge.sh/}&CDN&Hosting Excello online for participants' use.\\ \hline
 Jupyter&Python&Implementing the MIDI to Excello converter.\\ Notebook&Environment& \\ \hline
 Tone.js&Library&Synthesising and scheduling sound via the Web\\
 &&Audio API.\\ \hline
 tonal&Library&Generating the notes of chords.\\ \hline
-Mido\footnote{https://mido.readthedocs.io/en/latest/}&Library&Reading MIDI files in Python.\\ \hline
+Mido\tablefootnote{https://mido.readthedocs.io/en/latest/}&Library&Reading MIDI files in Python.\\ \hline
 \end{tabular}
+\caption{Tools used during the project}
 \label{intro:tools}
 \end{table}
 
@@ -263,18 +263,18 @@ Mido\footnote{https://mido.readthedocs.io/en/latest/}&Library&Reading MIDI files
 %
 \subsection{Starting Point}
 
-\paragraph{} Having used the Yeoman generator to create an empty Excel add-in, all of the code used to produce Excello and the MIDI converter is produced from scratch using the tools and technologies described above.
+\paragraph{} Having used the Yeoman generator to create an empty Excel add-in, all the code to produce Excello and the MIDI converter was produced from scratch using the libraries described above.
 
-\paragraph{} I had written simple Javascript for small web pages, but no experience using Node, libraries or building a larger project. I had never used any of the libraries before, therefore, reviewing the documentation was required before and during development. I had gained significant experience with Python and Jupyter Notebooks from a summer internship.
+\paragraph{} I had written simple Javascript for small websites, but had no experience using Node, libraries or building a larger project. Having never used any of the libraries before, reviewing the documentation was required before and during development. I had gained experience with Python and Jupyter Notebooks from a summer internship.
 
 \subsection{Evaluation Practices}
 
-\paragraph{} To best tune the design of Excello to the needs of potential users, formative evaluation sessions were carried out with participants. A spiral development methodology \cite{boehm:spiral} was used. The following steps were iterated: determining objectives, identify problems and solutions, develop and test, deploy and prepare next iteration. This was more suitable than the sequential document-driven process methods such as the waterfall method. Due to the number of participants and timeframe of the project, there were only two major development iterations with additional incremental updates. The first prototype following the design described above, and the second fixing issues and implementing requests brought up by the participants.
+\paragraph{} To best tune Excello's to the needs of potential users, formative evaluation sessions were carried out with participants. A spiral development methodology \cite{boehm:spiral} was used. This iterates the following steps: determining objectives, identify problems and solutions, develop and test, deploy and prepare next iteration. This was more suitable than sequential document-driven process methods such as the waterfall method. Due to the number of participants and the project timeframe, there were only two major development iterations with additional incremental updates. The first prototype, and the second fixing issues and implementing requests from participants.
 
 \paragraph{} Summative evaluation was carried out with users involved in participatory design. Therefore, experienced users of Excello could be used for evaluation despite the product not yet being released in the public domain.
 
 \section{MIDI files}
 
-\paragraph{} Musical Instrument Digital Interface (MIDI) details a communications protocol to connect electronic musical instruments with devices for playing, editing and recording music. A MIDI file consists of event messages describing on/off triggerings for a device or program to control audio \cite{huber:midimanual}. MIDI files were designed to be produced by MIDI controllers such as an electric keyboard. As such, a MIDI file contains a lot of controller specific information that is not necessary for the creation of an Excello file. There exist musical formats such as MusicXML that specify the musical notation and as such may be more suitable for conversion to Excello.
+\paragraph{} MIDI is a communications protocol to connect electronic musical instruments with devices for playing, editing and recording music. A MIDI file consists of event messages describing on/off triggerings to control audio \cite{huber:midimanual}. MIDI files were designed to be produced by MIDI controllers such as electric keyboards. As such, MIDI files contain controller specific information that is not necessary for the creation of an Excello file. Musical formats such as MusicXML specify the musical notation and could be suitable for conversion to Excello.
 
-\paragraph{} Many musical programs support the importing and exporting of MIDI files. By allowing MIDI files to be converted to the Excello notation, Excello is more integrated into the environment of computer programs for playing, editing and composing music. Furthermore, there exist many datasets available for MIDI \cite{huang:deep} which can immediately be played back for comparison.
+\paragraph{} Many programs support importing and exporting MIDI files. By converting MIDI files to the Excello notation, Excello is more integrated into the environment of programs for playing, editing and composing music. Furthermore, there exist many datasets available for MIDI \cite{huang:deep} which can immediately be played back for comparison.
