@@ -14,11 +14,11 @@
 
 \chapter{Evaluation}
 
-\paragraph{} This chapter discusses the Excello implementation effectiveness with regards to the success criteria and by showcasing examples. The conversion of MIDI corpora to the Excello notation using the converter demonstrates the expressiveness of the notation. Next, the summative evaluation is explained and its data used to assess the features implemented in the participatory design process and to reason about Excello using the CDN framework \cite{blackwell:tutorial}. Finally, ethics and data handling procedures shall be covered.
+\paragraph{} This chapter Evaluates Excello against the success criteria and by showcasing examples. Converting of MIDI corpora to Excello using the converter demonstrates the notation's expressivity. Next, the summative evaluation is explained and its data used to assess the features implemented in the participatory design process and to reason about Excello using the CDN framework \cite{blackwell:tutorial}. Finally, ethics and data handling procedures are covered.
 
 \section{Excello Success}
 
-\paragraph{} Both a musical notation and corresponding program integrated into Excel for playback have been implemented. As required by the success criteria, users can play multiple notes and chords of different durations. These can be combined into looped sequences and have defined tempo. In the participatory design process, additional features were added as extensions; defining multiple successive notes in a cell, turtles calculating how far they should move and nested instructions with repeats are additional features facilitating more efficient notation. Custom Excel functions, a chord adding tool and faster turtle toggling allows users to work more efficiently. Figure \ref{evaluation:excelloFranzRedacted} shows Excello in use with a participant's arrangement.
+\paragraph{} A musical notation and program integrated into Excel for playback have been implemented. As in the success criteria, users can play multiple notes and chords of different durations. These can be combined into looped sequences and have defined tempo. Additional features were added as extensions; multiple successive notes in a cell, turtles automatically moving forward and nested instructions with repeats all facilitate more efficient notation. Custom Excel functions, a chord adding tool and faster turtle toggling allows users to work more efficiently. Figure \ref{evaluation:excelloFranzRedacted} shows Excello in use with a participant's arrangement.
 
 \begin{figure}[tbh]
 \centerline{\includegraphics[width=150mm]{figs/excelloFranzRedacted.png}}
@@ -26,41 +26,41 @@
 \label{evaluation:excelloFranzRedacted}
 \end{figure}
 
-\paragraph{} The first section of Reich's Piano Phase is two equal piano melodies, one played slightly faster than the other. The two parts move out of phase periodically aligning at different offsets. This is included as an example for many end-user programming tools. This is implemented in Manhattan using three rows of 24 columns \cite{nash:manhattan}. Sonic Pi requires one line for the notes and eight for playback. Piano Phase cannot be concisely notated by western staff notation. Excello only requires two cells to define two turtles of different speeds in addition to the notes. All three implementations are shown in figure \ref{evaluation:phase}.
+\paragraph{} The first section of Reich's Piano Phase is two identical piano melodies, one played slightly faster than the other. The parts move out of phas, periodically aligning at different offsets. This is included as an example for many end-user programming tools, perhaps as it cannot be concisely notated by western staff notation. Manhattan implements it using three rows of 24 columns \cite{nash:manhattan}. Sonic Pi requires one line for the notes and eight for playback. Excello only requires two cells to define two turtles with different speeds in addition to the notes. All three implementations are shown in figure \ref{evaluation:phase}.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \begin{tabular}{cc}
   \multirow{3}{*}[2.72cm]{\includegraphics[width=65mm]{figs/manhattanPhase.png}} & \includegraphics[width=65mm]{figs/sonicPiPhase.png} \\
   & (b) The defined notes are played\\
   & by two concurrent loops with\\
   & different gaps between each note.\\[6pt]
-  (a) Column 01 keeps track of the phase,& \multirow{2}{*}{\includegraphics[width=65mm]{figs/excelloPhase.png}} \\
+  & \multirow{2}{*}{\includegraphics[width=65mm]{figs/excelloPhase.png}} \\
+  (a) Column 01 keeps track of the phase,&\\
   02 defines the notes and 03 is the &\\
-  phased notes - defined with formulae &\\
-  that update depending on the phase and& (c) Two turtles play the same\\
-  defined notes.& notes at different speeds.\\
+  phased notes - defined with formulae & (c) Two turtles play the same\\
+  taking the phase and defined notes& notes at different speeds.\\
 \end{tabular}
-\caption{Implementations of Steve Reich's Piano Phase in a) Manhattan, b) Sonic Pi, c) Excello}
+\caption{Implementations of Steve Reich's Piano Phase in (a) Manhattan, (b) Sonic Pi, (c) Excello}
 \label{evaluation:phase}
 \end{figure}
 
 \section{MIDI Corpus Conversion}
 
-\paragraph{} Whilst being able to concisely notate music western notation and other end-user programming systems cannot, Excello can exactly express piece defined in MIDI. If tempo is redefined within a track, this is not be accounted for. If instead the time between messages is adjusted, the uncompressed file will account for this but the compressing algorithms will produce erroneous results as the difference between notes deviate too far from non-integer multiples of the minimum. Instrument-specific effects such as piano pedals are not supported. Provided the difference between any two notes is a multiple of the minimum difference, the compression method that divides by this amount accurately reproduces the music, whilst resulting in spreadsheets orders of magnitude smaller. This method would not accurately convert quavers against triplets (three notes played in the same time as two) provided these notes were not multiples of a smaller note. Given the lengths of MIDI notes can be different from the space the note occupies in standard notation, an assumption on the ratio of note lengths was required for a more compressive conversion. The modal compressive conversion is lossy if the minimum note distance is not the modal distance. This is useful if there are ornaments or notes within a piece that dramatically decrease the minimum distance but occur infrequently. Therefore this loss may be useful for more efficient representations.
+\paragraph{} Whilst concisely notating some music western notation cannot, Excello can exactly express pieces defined in MIDI. Tempo being redefined within a track is not be accounted for. If instead the time between messages is adjusted, the uncompressed conversion accounts for this but the compressing algorithms will produce erroneous results as the difference between notes deviates too far from non-integer multiples of the minimum. Control messages like piano pedalling are not supported. Provided the difference between any two notes is a multiple of the minimum difference, the compression method that divides times by this accurately reproduces the MIDI, resulting in spreadsheets orders of magnitude smaller. This method would not accurately convert quavers against triplets (three notes played in the same time as two) provided these notes were not integer multiples of a smaller note. Given the lengths of MIDI notes can differ from the note's time in standard notation, an assumption on the ratio of note lengths was required for compression. The modal compressive conversion is lossy if the minimum note distance is not the modal distance. This is useful pieces with infrequently occuring ornaments or notes that dramatically decrease the minimum distance. Therefore this loss may be useful for more efficient representations.
 
-\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm} held by Bernd Krueger under a creative commons license, and 194 Bach pieces made available from ``A Johann Sebastian Bach Midi Page"\footnote{http://www.bachcentral.com/midiindex.html}. This is not all the files available from this site as some were not readable by the python MIDI reader. All 971 MIDI files were converted using all three methods.
+\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm} held by Bernd Krueger under a creative commons license\footnote{https://creativecommons.org/licenses/by-sa/3.0/de/deed.en}, and 194 Bach pieces from ``A Johann Sebastian Bach Midi Page"\footnote{http://www.bachcentral.com/midiindex.html}. This is not all the files from this site as some were not readable using Mido. All 971 MIDI files were converted using all three methods.
 
-\paragraph{} The language of Excello is expressive enough to represent MIDI files and can do so concisely provided the condition of minimum note onset differences is maintained.
+\paragraph{} The Excello language is sufficiently expressive to represent MIDI files and can do so concisely provided the condition of minimum note onset differences is maintained.
 
 \section{Summative Evaluation Sessions}
 
-\paragraph{} 19 Of the 21 users who participated in formative evaluation continued using Excello so could answer a summative evaluation questionnaire. First, the features that had been added since the initial sessions were recapped. To ensure users had a sufficient understanding of the interface before giving feedback, a short transcription task also requiring some authoring was given.
+\paragraph{} 19 of the 21 participants continued using Excello after formative evaluation session and answered a summative evaluation questionnaire. First, the features added after the initial sessions were recapped. To ensure users sufficiently understood the interface before giving feedback, a short transcription task also requiring some authoring was given.
 
-\paragraph{} The questionnaire first evaluated the features added during the participatory design process by comparing the interface before and after a feature had been added. Questions tested if the issues had been solved and if overall the change rendered the system more preferable. These were answered using a seven-point Likert scale. The remaining questions were based on Blackwell and Green's CDN questionnaire \cite{blackwell:questionnaire}. CDN can be used to analyse musical notation \cite{blackwell:notation} in addition to software systems \cite{green:cdn}, therefore it is suitable for the discussion of the Excello notation and interface. Dimensions significance for different activities varies \cite{blackwell:tutorial}, so users identified the percentage of time they spent carrying out these activities (searching for information, translating, incrementation, modification and exploratory design). Likert scale questions focusing on closeness of mapping, consistency, secondary notation, viscosity and visibility were used as planned in the proposal. It was suspected that reasoning about cognitive dimensions would be more challenging for participants, so to reduce the expected variance, only a five-point Likert scale was used. In addition, the two have been shown to produce similar results \cite{dawes:points}. CDN results were also collected for the user's preferred music composition interface. 12 users chose Sibelius, which shall be used for comparison.
+\paragraph{} The questionnaire first evaluated the participatory design process by comparing the interface before and after each feature. Seven-point Likert scale questions assessed if the issues had been solved and if overall the system was more preferable. The remaining questions were based on Blackwell and Green's CDN questionnaire \cite{blackwell:questionnaire}. CDN can be used to analyse musical notation \cite{blackwell:notation} and software systems \cite{green:cdn}, therefore it is suitable to discuss Excello's notation and interface. Dimensions significance for different activities varies \cite{blackwell:tutorial}, so users identified the percentage of time they spent carrying out these activities (searching for information, translating, incrementation, modification and exploratory design). Likert scale questions focusing on closeness of mapping, consistency, secondary notation, viscosity and visibility were used as planned in the proposal. It was suspected that reasoning about cognitive dimensions would be more challenging for participants, so to reduce the expected variance, only a five-point Likert scale was used. The two have been shown to produce similar results \cite{dawes:points}. CDN results were also collected for the user's preferred music composition interface. 12 users chose Sibelius, which shall be used for comparison.
 
 \section{Success of Participatory Design}
 
-\paragraph{} For each feature added, Excello with (system 2) and without this feature were compared. The following charts show the frequency of likert scale responses for each question. I considered the mode of the Likert scale \cite{barry:likert}. Chi-squared goodness-of-fit tests confirm the distributions are significantly different to uniform. As all expected values must be greater than 1 and 80\% greater than or equal to five \cite{ross:introductory} and the expected frequency for one result is $19/7 \approx 2.7$, I combine Strongly Disagree with Disagree, Strongly Agree with Agree and the remaining three options into a third group. The p-value from a chi-squared test with these three categories is given.
+\paragraph{} For each feature added, Excello with (system 2) and without this feature were compared. The following charts show the Likert scale responses for each question. I considered the mode of the Likert scale \cite{barry:likert}. Chi-squared goodness-of-fit tests confirm the distributions are significantly different to uniform. All expected values must be greater than 1 and 80\% greater than or equal to five \cite{ross:introductory}. As the expected frequency for one result is $19/7 \approx 2.7$, I combine Strongly Disagree with Disagree, Strongly Agree with Agree and the remaining three options into a third group. The p-value from a chi-squared test with these categories is given.
 
 \subsection{Dynamics in the Cell}
 
@@ -70,7 +70,7 @@
 \vspace{1pt}
 \begin{tabular}{|l|l|l|} \hline
 \textbf{Statement}&\textbf{Mode}&\textbf{p-value}\\ \hline
-\mycbox{bblue} It is easier to figure out the turtles path.&Strongly Agree&0.0000\\ \hline
+\mycbox{bblue} It is easier to figure out the turtle's path.&Strongly Agree&0.0000\\ \hline
 \mycbox{rred} It is easier to figure out what dynamics different&Strongly Agree&0.0146\\
 notes are played at.&&\\ \hline
 \mycbox{ggreen} It is easier to tell the order in which dynamics are applied.&Strongly Agree&0.0000\\ \hline
@@ -125,7 +125,7 @@ notes are played at.&&\\ \hline
     \end{axis}
 \end{tikzpicture}
 
-\paragraph{} There is strong evidence to suggest this change improved some of the issues identified during participatory design, resulting in an improved system.
+\paragraph{} There is strong evidence suggesting this change improved some of the issues identified during participatory design, resulting in an improved system.
 
 \subsection{Inferred Octave}
 \ %This is here to put the section heading and table in the right order
@@ -148,7 +148,7 @@ played in.&& \\ \hline
 \begin{tikzpicture}
     \begin{axis}[
       width  = 16cm,
-      height = 6cm,
+      height = 5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -181,7 +181,7 @@ played in.&& \\ \hline
 \end{tikzpicture}
 
 % \vspace{-20pt}
-\paragraph{} Depending on its use, the inferred octave notation makes octaves harder to infer. However, distribution of responses for this question is not significantly different to uniform. Overall this addition was significantly preferable.
+\paragraph{} The inferred octave notation makes octaves harder to infer. However, the response distribution is not significantly different to uniform at the 5\% level. Overall this addition was significantly preferable.
 
 \subsection{Nested Instructions}
 
@@ -203,7 +203,7 @@ what it will do.&& \\ \hline
     \begin{axis}[
       % width  = \textwidth,
       width = 16cm,
-      height = 6cm,
+      height = 5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -258,7 +258,7 @@ what it will do.&& \\ \hline
     \begin{axis}[
       % width  = \textwidth,
       width = 16cm,
-      height = 6cm,
+      height = 5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -293,7 +293,7 @@ what it will do.&& \\ \hline
     \end{axis}
 \end{tikzpicture}
 
-\paragraph{} The addition of a list of active turtles was found by all users to have a neutral or positive effect on Excello.
+\paragraph{} A list of active turtles had a neutral or positive effect for all users.
 
 \subsection{Continuous Volume}
 
@@ -315,7 +315,7 @@ what it will do.&& \\ \hline
     \begin{axis}[
       % width  = \textwidth,
       width = 16cm,
-      height = 6cm,
+      height = 5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -348,7 +348,7 @@ what it will do.&& \\ \hline
     \end{axis}
 \end{tikzpicture}
 
-\paragraph{} There is no significant result for whether the ability to define volume in the range [0,1] is more intuitive. All users agreed that the volumes were less confined. However, only one user did not find this change preferable. Given that, it can be omitted and the previous conventional dynamic markings used, this supports the addition being successful.
+\paragraph{} There is no significant result for whether the ability to define volume in the range [0,1] is more intuitive. All users agreed that the volumes were less confined. However, only one user did not find this change preferable. Given the previous conventional dynamic markings can still be used, this supports the addition being successful.
 
 \subsection{Automatic Stepping}
 
@@ -380,7 +380,7 @@ instructions.&& \\ \hline
       symbolic x coords= {-3,-2,-1,0,1,2,3},
       xticklabels = {Strongly Disagree,Disagree,Slightly Disagree,Neutral,Slightly Agree,Agree,Strongly Agree},
       xtick = data,
-      ytick = {0,3,6,9,12,15},
+      ytick = {0,2,4,6,8,10,12,14,16},
       x tick label style  = {text width=2cm,align=center},
       scaled y ticks = false,
       % enlarge x limits=0.25,
@@ -403,7 +403,7 @@ instructions.&& \\ \hline
     \end{axis}
 \end{tikzpicture}
 
-\paragraph{} The addition of this feature was particularly successful with 16 of the 19 users strongly agreeing the system was more preferable with automatic stepping available in the turtle instructions.
+\paragraph{} This feature was particularly successful with 16 of the 19 users strongly agreeing the system was more preferable with automatic stepping available in the turtle instructions.
 
 \subsection{Absolute Tempo}
 
@@ -461,11 +461,11 @@ music) is easier.&& \\ \hline
 
 \paragraph{} The initial design was changed so that turtle speed was defined in absolute cells per minute. All users found this to be an improvement.
 
-\paragraph{} Overall, the participatory design process was very successful. Multiple features were added to Excello to solve problems identified through formative evaluation sessions and longer-term feedback from users. There is significant evidence to suggest all added features were found to improve Excello.
+\paragraph{} Overall, the participatory design process was very successful. Multiple features were added to Excello to solve problems identified through formative evaluation sessions and longer-term user feedback. There is significant evidence that all added features improved Excello.
 
 \section{Cognitive Dimensions of Notation}
 
-\paragraph{} Figure \ref{fig:usage} shows the time users identified carrying out the different cognitive activities \cite{blackwell:tutorial} in Excello and in Sibelius. There are 19 users for Excello and 12 for Sibelius. This shows Translation is a very important activity for both interfaces. There is more exploratory design for Excello but as users become more familiar with the system and the amount of existing Excello notation increases, modification and incrementation may become more important. Little time is spent searching for information in the notation in either.
+\paragraph{} Figure \ref{fig:usage} shows the time users identified carrying out the different cognitive activities \cite{blackwell:tutorial} in Excello and in Sibelius. There are 19 Excello users and 12 for Sibelius. This shows translation is very important for both interfaces. There is more exploratory design for Excello but as users become more familiar with the system and more Excello notation exists, modification and incrementation may become more important. Little time is spent searching for information in the notation in either.
 
 \begin{figure}[ht]
 \centering
@@ -474,7 +474,7 @@ music) is easier.&& \\ \hline
     \begin{tikzpicture}
       \begin{axis}
         [
-        height = 8cm,
+        height = 6cm,
         width = 7cm,
         ytick={1,2,3,4,5},
         yticklabels={Searching, Translation, Incrementation, Modification, Exploratory Design},
@@ -535,7 +535,7 @@ music) is easier.&& \\ \hline
     \begin{tikzpicture}
       \begin{axis}
         [
-        height = 8cm,
+        height = 6cm,
         width = 6.5cm,
         ytick={1,2,3,4,5},
         yticklabels={},
@@ -595,7 +595,8 @@ music) is easier.&& \\ \hline
 \label{fig:usage}
 \end{figure}
 
-\paragraph{} A series of statements from \cite{blackwell:questionnaire} were selected to assess the CDN of Excello. Users responded with a five-point (Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree) Likert scale. The significance of the results was verified with a chi-squared test. First, the data was combined into negative and non-negative categories. The dimension being assessed, p-value from the chi-squared test and modal response for each statement are shown in table \ref{evaluation:cdnTable}. The distribution of responses is shown in figure \ref{evaluation:cdnQuestions}.
+\vspace{-20pt}
+\paragraph{} A series of statements from \cite{blackwell:questionnaire} were selected to assess the CDN of Excello. Users responded with a five-point (Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree) Likert scale. The significance of the results was verified with a chi-squared test. First, the data was combined into negative and non-negative categories. For each statement, the chi-squared test p-value and modal response are shown in table \ref{evaluation:cdnTable}. The distribution of responses is shown in figure \ref{evaluation:cdnQuestions}.
 
 \begin{table}[!htbp]
 \centering
@@ -622,6 +623,7 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 \caption{Questions and results for testing the CDN of Excello \label{evaluation:cdnTable}}
 \end{table}
 
+\begin{figure} [!htbp]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -663,20 +665,22 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 
     \end{axis}
 \end{tikzpicture}
+\caption{The responses to the questions in table \ref{evaluation:cdnTable}}
 \label{evaluation:cdnQuestions}
+\end{figure}
 
-\paragraph{} As these questions were also answered for the user's interface of choice, a comparison to Sibelius is made. As the data does not meet the assumptions of the t-test \cite{barry:likert}, I performed a Wilcoxon matched pairs signed-ranked test on the 12 pairs by encoding the five possible responses as -2,-1,0,1,2. For all six questions, there is no indication that the answers for the two interfaces come from populations with different means.
+\paragraph{} As these questions were also answered for the user's preferred interface, a comparison to Sibelius is made. As the data does not meet the assumptions of the t-test \cite{barry:likert}, I performed a Wilcoxon matched pairs signed-ranked test on the 12 pairs by encoding the five responses as -2,-1,0,1,2. For all six questions, there is no indication that the answers for the two interfaces come from populations with different means.
 
 \subsection{Closeness of Mapping}
 
-\paragraph{} As there is no significant evidence that the population means for Excello and Sibelius were different, this suggests Excello's notation with spreadsheets has not compromised that closeness of mapping of traditional notation. This is helped by using an existing notation (SPN) for defining the individual notes, the turtle instructions mapping to a movement through the grid, and by adjusting the speed argument to be an absolute, not relative, parameter. Being less familiar with staff notation, user 4 found Sibelius's notation unintuitive.
+\paragraph{} A test value of 5 for 5 changed pairs provides no significant evidence that the population means for Excello and Sibelius were different, suggesting Excello's notation with spreadsheets has not compromised the closeness of mapping of traditional notation. This is helped by using existing SPN for defining notes, the turtle instructions mapping to movement through the grid, and by the speed argument being an absolute, not relative, parameter. Being less familiar with staff notation, user 4 had found Sibelius's notation unintuitive.
 
 \begin{figure}[htb]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -713,14 +717,14 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 
 \subsection{Consistency}
 
-\paragraph{} As each cell and turtle only causes one note to play at a time, consistency is maintained by building pieces from these elements. Excello keeps consistency with Excel by sharing notations (e.g. A1:A5 for ranges) and using the existing formula editor. Within the turtle instructions, using a number after instructions to repeat holds for both individual instructions and sequences. This all contributes to no significant result from the Wilcoxon test.
+\paragraph{} Each cell and turtle only causes one note at a time. Consistency is maintained by building pieces from these elements. Excello keeps consistency with Excel by sharing notations (e.g. A1:A5 for ranges) and using the existing formula editor. Using a number after instructions to repeat movements holds for both individual instructions and sequences. A test value of 12 for 7 changed pairs is not a significant result for the Wilcoxon test.
 
 \begin{figure}[htb]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -758,14 +762,14 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 
 \subsection{Secondary Notation}
 
-\paragraph{} Given the translation time, secondary notation is particularly important \cite{blackwell:notation}. Given that Excello abstracts time from the axes of the grid the distribution of parts is up to the user and cells can be used for arbitrary marks. Therefore, existing Excel features for formatting and grouping cells remain available. This is utilised by the automatic highlighting of notes and turtles. That there is no significant difference in population means, this suggests that the spreadsheet paradigm can provide equal secondary notation abilities to Sibelius, software already equipped with numerous ways to customise a score.
+\paragraph{} Given the time spent translating, secondary notation is particularly important \cite{blackwell:notation}. As Excello abstracts time from the grid axes, the parts distribution is up to the user and cells can be used for arbitrary marks. Therefore, existing Excel features for formatting and grouping cells remain available. This is utilised by the automatic highlighting of notes and turtles. A test value of 15.5 for 8 changed pairs suggests no significant difference in population means. This suggests that the spreadsheet paradigm can provide equal secondary notation abilities to Sibelius, software already equipped with numerous ways to customise a score.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -803,14 +807,14 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 
 \subsection{Viscosity}
 
-\paragraph{} By allowing dynamics and octave marking to be omitted and the ability for turtles to step forward automatically, there is low resistance to making additions and changes to the music. The toggling of turtle activations dramatically reduces the actions required to turn turtles on and off. Furthermore, Excel allows for the easy editing and movement of cells. No significant result in the Wilcoxon test suggests the interfaces have comparable viscosity.
+\paragraph{} Letting dynamics and octave marking be omitted and turtles stepping forward automatically, provides low resistance to making additions and changes to the music. The toggle activation button dramatically reduces the actions to turn turtles on and off. Furthermore, Excel provides easy editing and movement of cells. A test value of 10.5 for 9 changed pairs is not a significant result. This suggests the interfaces have comparable viscosity.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -848,14 +852,14 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 
 \subsection{Visibility / Juxtaposition}
 
-\paragraph{} For both questions, there was no significant difference in population mean. This suggests that the spreadsheet interface can provide a similar ability to view components than Sibelius.
+\paragraph{} For both questions, there was no significant difference in population mean with test values of 6 and 7 for 6 and 7 changed pairs. This suggests that the spreadsheet interface can provide a similar ability to view components to Sibelius.
 
 \begin{figure}[tbh]
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -896,7 +900,7 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
     \begin{axis}[
       % width  = \textwidth,
       width = 12cm,
-      height = 5cm,
+      height = 4.5cm,
       major x tick style = transparent,
       ybar=2*\pgflinewidth,
       bar width=6pt,
@@ -932,16 +936,16 @@ parts, you can see them at the same time.&Juxtaposition&& \\ \hline
 \label{evaluation:viju2}
 \end{figure}
 
-\paragraph{} Sibelius uses established music notation as part of large professional software. However, there was no significant evidence to suggest Sibelius outperformed Excello across these CDN. This suggests that despite being built for a general purpose spreadsheet environment, Excello is a successful interface for writing music.
+\paragraph{} Sibelius uses established music notation as part of professional software. However, there was no significant evidence to suggest Sibelius outperformed Excello across the CDN. This suggests that despite being a general purpose spreadsheet environment, Excello is a successful interface for writing music.
 
 \subsection{Other Dimensions}
 
-\paragraph{} If users are unfamiliar with the turtle paradigm, this may reduce the \textit{role-expressiveness}. Turtles and notes are the only musical spreadsheet components and are identified by highlighting. Whilst notes and turtles can be added in any order, adding an additional part may require many line insertions which would increase the \textit{premature commitment}. The dual-formalism of the turtles and notes could create high \textit{diffuseness} but the user's freedom to lay these out allows this to be minimized as in figure \ref{evaluation:excelloFranzRedacted}. This also shows how representations can have strong \textit{synopsie}, as the notes or turtles don't need to be examined to understand what is happening. This may come at the expense of \textit{hidden dependencies} if it is not immediately clear which notes are triggered by which turtles. Volume is also dependent on the notes turtles play before it. But as a single cell could be played at multiple volumes, this is a tradeoff of this design decision.
+\paragraph{} If users are unfamiliar with the turtle paradigm, this may reduce the \textit{role-expressiveness}. But turtles and notes are the only musical spreadsheet components and are identified by highlighting. Whilst notes and turtles can be added in any order, adding parts may require many line insertions, increasing the \textit{premature commitment}. The dual-formalism of turtles and notes could create high \textit{diffuseness} but the layout flexibility allows this to be minimized as in figure \ref{evaluation:excelloFranzRedacted}. This also shows how representations can have strong \textit{synopsie}, as the notes or turtles don't need to be examined to understand what is happening. This may come at the expense of \textit{hidden dependencies} if it is not immediately clear which notes are triggered by which turtles. Volume is also dependent on the notes turtles play before it. But as a single cell could be played at multiple volumes, this is a tradeoff of this design decision.
 
-\paragraph{} As well as the ``\texttt{m*}" notation decreasing \textit{viscosity}, it also improves the \textit{progressive evaluation} as turtles can be played before a whole part has been transcribed. The highlighting of cells also helps users receive more feedback. The ability to define a turtle and fill in the notes later also improves the \textit{provisionality}. ``\texttt{m*}" also reduces \textit{hard mental operations} and the chord input tool removes manual calculation of the notes of chords.
+\paragraph{} As well as the ``\texttt{m*}" notation decreasing \textit{viscosity}, it also improves the \textit{progressive evaluation} as turtles can be played before a whole part has been transcribed. The ability to define a turtle and fill in the notes later also improves the \textit{provisionality}. ``\texttt{m*}" also reduces \textit{hard mental operations} and the chord input tool removes manual calculation of the notes of chords.
 
-\paragraph{} Spreadsheets are ``an abstraction-hating system" \cite{blackwell:tutorial}, therefore little \textit{abstraction} is provided by Excel, but the grouping of turtles in one definition and nested bracketing in turtle movement instructions improve this. These features also provide good \textit{legibility}.
+\paragraph{} Spreadsheets are ``an abstraction-hating system" \cite{blackwell:tutorial}, therefore little \textit{abstraction} is provided by Excel, grouping turtles in one definition and nested bracketing of movement instructions improve this. These features also provide good \textit{legibility}.
 
 \section{Ethics and Data Handling}
 
-\paragraph{} After ethics approval, the pilot session for the formative evaluation session was designed. After the pilot session (also performed for summative evaluation), the session was revised before continuing with the remaining sessions. Participants were provided with a consent form explaining the project and the format of the session. Participants had the choice to remain anonymous so they would not appear in acknowledgements. All participants' data was labelled with a unique ID for participants to be able to use to request removal or anonymising of their data. All participant data was only seen by myself. Formative evaluation sessions were audio recorded, typed up after the session, and then deleted. All participant data was also backed up on GitHub with the rest of the project but in an encrypted folder. All physical backups were also encrypted.
+\paragraph{} After ethics approval, the pilot formative evaluation session was designed. After the pilot (also performed for summative evaluation), the session was revised before continuing with the remaining sessions. Participants filled in a consent form explaining the project and the session format. Participants had the choice to remain anonymous and not appear in acknowledgements. All participants' data included a unique ID to use to request removal or anonymising of their data. All participant data was only seen by myself. Formative evaluation sessions were audio recorded, typed up after the session, and then the audio was deleted. All participant data was also backed up on GitHub with the rest of the project but in an encrypted folder. Physical backups were also encrypted.

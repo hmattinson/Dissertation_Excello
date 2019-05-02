@@ -2,6 +2,8 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: diss.aux
 The style file: plain.bst
+A level-1 auxiliary file: chapters/title.aux
+A level-1 auxiliary file: chapters/initialStuff.aux
 Database file #1: refs.bib
 Warning--entry type for "hackaday:spreadsheet" isn't style-file defined
 --line 37 of file refs.bib
@@ -12,7 +14,7 @@ Warning--empty journal in mclean:texture
 Warning--empty booktitle in blackwell:functions
 You've used 24 entries,
             2118 wiz_defined-function locations,
-            629 strings with 7098 characters,
+            631 strings with 7141 characters,
 and the built_in function-call counts, 6509 in all, are:
 = -- 600
 > -- 301
