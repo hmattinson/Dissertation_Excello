@@ -1,220 +1,221 @@
+\contentsline {paragraph}{}{3}{section*.6}
+\contentsline {paragraph}{}{3}{section*.7}
 \contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{6}{section.1.1}
-\contentsline {paragraph}{}{6}{section*.7}
-\contentsline {paragraph}{}{6}{section*.8}
 \contentsline {paragraph}{}{6}{section*.9}
+\contentsline {paragraph}{}{6}{section*.10}
+\contentsline {paragraph}{}{6}{section*.11}
 \contentsline {section}{\numberline {1.2}Outline of work}{7}{section.1.2}
 \contentsline {chapter}{\numberline {2}Preparation}{8}{chapter.2}
-\contentsline {paragraph}{}{8}{section*.11}
-\contentsline {section}{\numberline {2.1}Proposal Refinements}{8}{section.2.1}
-\contentsline {paragraph}{}{8}{section*.12}
 \contentsline {paragraph}{}{8}{section*.13}
+\contentsline {section}{\numberline {2.1}Proposal Refinements}{8}{section.2.1}
 \contentsline {paragraph}{}{8}{section*.14}
 \contentsline {paragraph}{}{8}{section*.15}
+\contentsline {paragraph}{}{8}{section*.16}
+\contentsline {paragraph}{}{8}{section*.17}
 \contentsline {section}{\numberline {2.2}Feasibility Analysis}{9}{section.2.2}
-\contentsline {paragraph}{}{9}{section*.16}
-\contentsline {paragraph}{}{9}{section*.17}
-\contentsline {subsection}{\numberline {2.2.1}Note Synthesis Library}{9}{subsection.2.2.1}
 \contentsline {paragraph}{}{9}{section*.18}
 \contentsline {paragraph}{}{9}{section*.19}
-\contentsline {subsection}{\numberline {2.2.2}Office Javascript API}{9}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Note Synthesis Library}{9}{subsection.2.2.1}
 \contentsline {paragraph}{}{9}{section*.20}
 \contentsline {paragraph}{}{9}{section*.21}
+\contentsline {subsection}{\numberline {2.2.2}Office Javascript API}{9}{subsection.2.2.2}
+\contentsline {paragraph}{}{9}{section*.22}
+\contentsline {paragraph}{}{9}{section*.23}
 \contentsline {section}{\numberline {2.3}Excello Design and Language}{10}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Abstracting Time}{10}{subsection.2.3.1}
-\contentsline {paragraph}{}{10}{section*.22}
 \contentsline {paragraph}{}{10}{section*.24}
-\contentsline {paragraph}{}{10}{section*.25}
-\contentsline {paragraph}{}{11}{section*.26}
-\contentsline {subsection}{\numberline {2.3.2}Initial Prototype Design}{11}{subsection.2.3.2}
-\contentsline {paragraph}{}{11}{section*.27}
+\contentsline {paragraph}{}{10}{section*.26}
+\contentsline {paragraph}{}{10}{section*.27}
 \contentsline {paragraph}{}{11}{section*.28}
-\contentsline {paragraph}{}{12}{section*.30}
+\contentsline {subsection}{\numberline {2.3.2}Initial Prototype Design}{11}{subsection.2.3.2}
+\contentsline {paragraph}{}{11}{section*.29}
+\contentsline {paragraph}{}{11}{section*.30}
 \contentsline {paragraph}{}{12}{section*.32}
 \contentsline {paragraph}{}{12}{section*.34}
+\contentsline {paragraph}{}{12}{section*.36}
 \contentsline {section}{\numberline {2.4}Software Engineering}{13}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Requirements}{13}{subsection.2.4.1}
-\contentsline {paragraph}{}{13}{section*.36}
+\contentsline {paragraph}{}{13}{section*.38}
 \contentsline {subsection}{\numberline {2.4.2}Tools and Technologies Used}{14}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Starting Point}{14}{subsection.2.4.3}
-\contentsline {paragraph}{}{14}{section*.38}
-\contentsline {paragraph}{}{14}{section*.39}
+\contentsline {paragraph}{}{14}{section*.40}
+\contentsline {paragraph}{}{14}{section*.41}
 \contentsline {subsection}{\numberline {2.4.4}Evaluation Practices}{15}{subsection.2.4.4}
-\contentsline {paragraph}{}{15}{section*.40}
-\contentsline {paragraph}{}{15}{section*.41}
-\contentsline {section}{\numberline {2.5}MIDI files}{15}{section.2.5}
 \contentsline {paragraph}{}{15}{section*.42}
 \contentsline {paragraph}{}{15}{section*.43}
+\contentsline {section}{\numberline {2.5}MIDI files}{15}{section.2.5}
+\contentsline {paragraph}{}{15}{section*.44}
+\contentsline {paragraph}{}{15}{section*.45}
 \contentsline {chapter}{\numberline {3}Implementation}{16}{chapter.3}
-\contentsline {paragraph}{}{16}{section*.44}
+\contentsline {paragraph}{}{16}{section*.46}
 \contentsline {section}{\numberline {3.1}Initial Prototype}{16}{section.3.1}
-\contentsline {paragraph}{}{16}{section*.45}
-\contentsline {subsection}{\numberline {3.1.1}Turtles}{16}{subsection.3.1.1}
 \contentsline {paragraph}{}{16}{section*.47}
-\contentsline {subsubsection}{Activation}{16}{section*.48}
+\contentsline {subsection}{\numberline {3.1.1}Turtles}{16}{subsection.3.1.1}
 \contentsline {paragraph}{}{16}{section*.49}
-\contentsline {subsubsection}{Starting Cell}{17}{section*.50}
-\contentsline {paragraph}{}{17}{section*.51}
-\contentsline {paragraph}{}{17}{section*.52}
-\contentsline {subsubsection}{Movement}{17}{section*.53}
+\contentsline {subsubsection}{Activation}{16}{section*.50}
+\contentsline {paragraph}{}{16}{section*.51}
+\contentsline {subsubsection}{Starting Cell}{17}{section*.52}
+\contentsline {paragraph}{}{17}{section*.53}
 \contentsline {paragraph}{}{17}{section*.54}
-\contentsline {subsubsection}{Speed}{17}{section*.55}
+\contentsline {subsubsection}{Movement}{17}{section*.55}
 \contentsline {paragraph}{}{17}{section*.56}
-\contentsline {subsubsection}{Number of Loops}{17}{section*.57}
+\contentsline {subsubsection}{Speed}{17}{section*.57}
 \contentsline {paragraph}{}{17}{section*.58}
-\contentsline {subsection}{\numberline {3.1.2}Highlighting}{17}{subsection.3.1.2}
-\contentsline {paragraph}{}{17}{section*.59}
-\contentsline {subsection}{\numberline {3.1.3}Chord input}{17}{subsection.3.1.3}
+\contentsline {subsubsection}{Number of Loops}{17}{section*.59}
 \contentsline {paragraph}{}{17}{section*.60}
+\contentsline {subsection}{\numberline {3.1.2}Highlighting}{17}{subsection.3.1.2}
+\contentsline {paragraph}{}{17}{section*.61}
+\contentsline {subsection}{\numberline {3.1.3}Chord input}{17}{subsection.3.1.3}
+\contentsline {paragraph}{}{17}{section*.62}
 \contentsline {section}{\numberline {3.2}Formative Evaluation}{18}{section.3.2}
-\contentsline {paragraph}{}{18}{section*.61}
-\contentsline {paragraph}{}{18}{section*.62}
 \contentsline {paragraph}{}{18}{section*.63}
-\contentsline {subsection}{\numberline {3.2.1}Issues and Suggestions}{18}{subsection.3.2.1}
 \contentsline {paragraph}{}{18}{section*.64}
-\contentsline {subsubsection}{Turtle Notation}{18}{section*.65}
+\contentsline {paragraph}{}{18}{section*.65}
+\contentsline {subsection}{\numberline {3.2.1}Issues and Suggestions}{18}{subsection.3.2.1}
 \contentsline {paragraph}{}{18}{section*.66}
-\contentsline {paragraph}{}{19}{section*.67}
-\contentsline {paragraph}{}{19}{section*.68}
-\contentsline {subsubsection}{Feedback}{19}{section*.69}
+\contentsline {subsubsection}{Turtle Notation}{18}{section*.67}
+\contentsline {paragraph}{}{18}{section*.68}
+\contentsline {paragraph}{}{19}{section*.69}
 \contentsline {paragraph}{}{19}{section*.70}
-\contentsline {subsubsection}{MIDI conversions}{19}{section*.71}
+\contentsline {subsubsection}{Feedback}{19}{section*.71}
 \contentsline {paragraph}{}{19}{section*.72}
-\contentsline {subsubsection}{Sources of effort when writing}{19}{section*.73}
+\contentsline {subsubsection}{MIDI conversions}{19}{section*.73}
 \contentsline {paragraph}{}{19}{section*.74}
-\contentsline {paragraph}{}{19}{section*.75}
+\contentsline {subsubsection}{Sources of effort when writing}{19}{section*.75}
 \contentsline {paragraph}{}{19}{section*.76}
 \contentsline {paragraph}{}{19}{section*.77}
-\contentsline {subsubsection}{Chords}{20}{section*.78}
-\contentsline {paragraph}{}{20}{section*.79}
-\contentsline {subsubsection}{Activation of turtles}{20}{section*.80}
+\contentsline {paragraph}{}{19}{section*.78}
+\contentsline {paragraph}{}{19}{section*.79}
+\contentsline {subsubsection}{Chords}{20}{section*.80}
 \contentsline {paragraph}{}{20}{section*.81}
-\contentsline {section}{\numberline {3.3}Second Prototype}{20}{section.3.3}
-\contentsline {paragraph}{}{20}{section*.82}
-\contentsline {subsection}{\numberline {3.3.1}Dynamics}{20}{subsection.3.3.1}
+\contentsline {subsubsection}{Activation of turtles}{20}{section*.82}
 \contentsline {paragraph}{}{20}{section*.83}
+\contentsline {section}{\numberline {3.3}Second Prototype}{20}{section.3.3}
 \contentsline {paragraph}{}{20}{section*.84}
-\contentsline {subsection}{\numberline {3.3.2}Nested Instructions}{20}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.1}Dynamics}{20}{subsection.3.3.1}
 \contentsline {paragraph}{}{20}{section*.85}
-\contentsline {subsection}{\numberline {3.3.3}Absolute Tempo}{20}{subsection.3.3.3}
 \contentsline {paragraph}{}{20}{section*.86}
+\contentsline {subsection}{\numberline {3.3.2}Nested Instructions}{20}{subsection.3.3.2}
+\contentsline {paragraph}{}{20}{section*.87}
+\contentsline {subsection}{\numberline {3.3.3}Absolute Tempo}{20}{subsection.3.3.3}
+\contentsline {paragraph}{}{20}{section*.88}
 \contentsline {subsection}{\numberline {3.3.4}Custom Excel Functions}{21}{subsection.3.3.4}
-\contentsline {paragraph}{}{21}{section*.87}
-\contentsline {subsubsection}{Excello.Turtle}{21}{section*.88}
 \contentsline {paragraph}{}{21}{section*.89}
-\contentsline {subsubsection}{Excello.Modulate}{21}{section*.91}
-\contentsline {paragraph}{}{21}{section*.92}
+\contentsline {subsubsection}{Excello.Turtle}{21}{section*.90}
+\contentsline {paragraph}{}{21}{section*.91}
+\contentsline {subsubsection}{Excello.Modulate}{21}{section*.93}
+\contentsline {paragraph}{}{21}{section*.94}
 \contentsline {subsection}{\numberline {3.3.5}Sustain}{22}{subsection.3.3.5}
-\contentsline {paragraph}{}{22}{section*.94}
-\contentsline {subsection}{\numberline {3.3.6}Active Turtles}{22}{subsection.3.3.6}
-\contentsline {paragraph}{}{22}{section*.95}
-\contentsline {subsection}{\numberline {3.3.7}Automatic Movement}{22}{subsection.3.3.7}
 \contentsline {paragraph}{}{22}{section*.96}
-\contentsline {subsection}{\numberline {3.3.8}Inferred Octave}{22}{subsection.3.3.8}
+\contentsline {subsection}{\numberline {3.3.6}Active Turtles}{22}{subsection.3.3.6}
 \contentsline {paragraph}{}{22}{section*.97}
-\contentsline {subsection}{\numberline {3.3.9}Chords}{22}{subsection.3.3.9}
+\contentsline {subsection}{\numberline {3.3.7}Automatic Movement}{22}{subsection.3.3.7}
 \contentsline {paragraph}{}{22}{section*.98}
+\contentsline {subsection}{\numberline {3.3.8}Inferred Octave}{22}{subsection.3.3.8}
+\contentsline {paragraph}{}{22}{section*.99}
+\contentsline {subsection}{\numberline {3.3.9}Chords}{22}{subsection.3.3.9}
+\contentsline {paragraph}{}{22}{section*.100}
 \contentsline {subsection}{\numberline {3.3.10}Activation of turtles}{23}{subsection.3.3.10}
-\contentsline {paragraph}{}{23}{section*.99}
-\contentsline {section}{\numberline {3.4}Final Prototype Implementation}{23}{section.3.4}
-\contentsline {paragraph}{}{23}{section*.100}
 \contentsline {paragraph}{}{23}{section*.101}
+\contentsline {section}{\numberline {3.4}Final Prototype Implementation}{23}{section.3.4}
+\contentsline {paragraph}{}{23}{section*.102}
 \contentsline {paragraph}{}{23}{section*.103}
-\contentsline {subsection}{\numberline {3.4.1}Identifying Cells}{23}{subsection.3.4.1}
-\contentsline {paragraph}{}{23}{section*.104}
 \contentsline {paragraph}{}{23}{section*.105}
+\contentsline {subsection}{\numberline {3.4.1}Identifying Cells}{23}{subsection.3.4.1}
+\contentsline {paragraph}{}{23}{section*.106}
+\contentsline {paragraph}{}{23}{section*.107}
 \contentsline {subsection}{\numberline {3.4.2}Parsing Movement Instructions}{24}{subsection.3.4.2}
-\contentsline {paragraph}{}{24}{section*.106}
-\contentsline {paragraph}{}{24}{section*.107}
-\contentsline {paragraph}{}{25}{section*.108}
-\contentsline {paragraph}{}{25}{section*.109}
+\contentsline {paragraph}{}{24}{section*.108}
+\contentsline {paragraph}{}{24}{section*.109}
 \contentsline {paragraph}{}{25}{section*.110}
-\contentsline {subsection}{\numberline {3.4.3}Getting Cells in Turtles' paths}{25}{subsection.3.4.3}
 \contentsline {paragraph}{}{25}{section*.111}
 \contentsline {paragraph}{}{25}{section*.112}
+\contentsline {subsection}{\numberline {3.4.3}Getting Cells in Turtles' paths}{25}{subsection.3.4.3}
+\contentsline {paragraph}{}{25}{section*.113}
+\contentsline {paragraph}{}{25}{section*.114}
 \contentsline {subsection}{\numberline {3.4.4}Creating Note Times}{27}{subsection.3.4.4}
-\contentsline {paragraph}{}{27}{section*.113}
-\contentsline {paragraph}{}{27}{section*.114}
 \contentsline {paragraph}{}{27}{section*.115}
-\contentsline {paragraph}{}{28}{section*.117}
-\contentsline {paragraph}{}{28}{section*.118}
-\contentsline {subsection}{\numberline {3.4.5}Chord Input}{28}{subsection.3.4.5}
+\contentsline {paragraph}{}{27}{section*.116}
+\contentsline {paragraph}{}{27}{section*.117}
 \contentsline {paragraph}{}{28}{section*.119}
-\contentsline {paragraph}{}{29}{section*.120}
-\contentsline {paragraph}{}{29}{section*.121}
+\contentsline {paragraph}{}{28}{section*.120}
+\contentsline {subsection}{\numberline {3.4.5}Chord Input}{28}{subsection.3.4.5}
+\contentsline {paragraph}{}{28}{section*.121}
 \contentsline {paragraph}{}{29}{section*.122}
-\contentsline {subsection}{\numberline {3.4.6}Custom Excel Functions}{29}{subsection.3.4.6}
 \contentsline {paragraph}{}{29}{section*.123}
 \contentsline {paragraph}{}{29}{section*.124}
+\contentsline {subsection}{\numberline {3.4.6}Custom Excel Functions}{29}{subsection.3.4.6}
 \contentsline {paragraph}{}{29}{section*.125}
-\contentsline {section}{\numberline {3.5}MIDI Converter}{29}{section.3.5}
 \contentsline {paragraph}{}{29}{section*.126}
-\contentsline {paragraph}{}{30}{section*.127}
-\contentsline {paragraph}{}{30}{section*.128}
+\contentsline {paragraph}{}{29}{section*.127}
+\contentsline {section}{\numberline {3.5}MIDI Converter}{29}{section.3.5}
+\contentsline {paragraph}{}{29}{section*.128}
 \contentsline {paragraph}{}{30}{section*.129}
 \contentsline {paragraph}{}{30}{section*.130}
-\contentsline {paragraph}{}{31}{section*.131}
+\contentsline {paragraph}{}{30}{section*.131}
+\contentsline {paragraph}{}{30}{section*.132}
+\contentsline {paragraph}{}{31}{section*.133}
 \contentsline {section}{\numberline {3.6}Repository Overview}{32}{section.3.6}
-\contentsline {paragraph}{}{32}{section*.133}
-\contentsline {paragraph}{}{32}{section*.134}
 \contentsline {paragraph}{}{32}{section*.135}
 \contentsline {paragraph}{}{32}{section*.136}
 \contentsline {paragraph}{}{32}{section*.137}
+\contentsline {paragraph}{}{32}{section*.138}
+\contentsline {paragraph}{}{32}{section*.139}
 \contentsline {chapter}{\numberline {4}Evaluation}{33}{chapter.4}
-\contentsline {paragraph}{}{33}{section*.138}
+\contentsline {paragraph}{}{33}{section*.140}
 \contentsline {section}{\numberline {4.1}Excello Success}{33}{section.4.1}
-\contentsline {paragraph}{}{33}{section*.139}
 \contentsline {paragraph}{}{33}{section*.141}
-\contentsline {section}{\numberline {4.2}MIDI Corpus Conversion}{33}{section.4.2}
 \contentsline {paragraph}{}{33}{section*.143}
-\contentsline {paragraph}{}{35}{section*.144}
-\contentsline {paragraph}{}{35}{section*.145}
-\contentsline {section}{\numberline {4.3}Summative Evaluation Sessions}{35}{section.4.3}
+\contentsline {section}{\numberline {4.2}MIDI Corpus Conversion}{33}{section.4.2}
+\contentsline {paragraph}{}{33}{section*.145}
 \contentsline {paragraph}{}{35}{section*.146}
 \contentsline {paragraph}{}{35}{section*.147}
-\contentsline {section}{\numberline {4.4}Success of Participatory Design}{35}{section.4.4}
+\contentsline {section}{\numberline {4.3}Summative Evaluation Sessions}{35}{section.4.3}
 \contentsline {paragraph}{}{35}{section*.148}
+\contentsline {paragraph}{}{35}{section*.149}
+\contentsline {section}{\numberline {4.4}Success of Participatory Design}{35}{section.4.4}
+\contentsline {paragraph}{}{35}{section*.150}
 \contentsline {subsection}{\numberline {4.4.1}Dynamics in the Cell}{36}{subsection.4.4.1}
-\contentsline {paragraph}{}{36}{section*.150}
+\contentsline {paragraph}{}{36}{section*.152}
 \contentsline {subsection}{\numberline {4.4.2}Inferred Octave}{36}{subsection.4.4.2}
-\contentsline {paragraph}{}{37}{section*.152}
-\contentsline {subsection}{\numberline {4.4.3}Nested Instructions}{37}{subsection.4.4.3}
 \contentsline {paragraph}{}{37}{section*.154}
+\contentsline {subsection}{\numberline {4.4.3}Nested Instructions}{37}{subsection.4.4.3}
+\contentsline {paragraph}{}{37}{section*.156}
 \contentsline {subsection}{\numberline {4.4.4}Active Turtles List}{37}{subsection.4.4.4}
-\contentsline {paragraph}{}{38}{section*.156}
-\contentsline {subsection}{\numberline {4.4.5}Continuous Volume}{38}{subsection.4.4.5}
 \contentsline {paragraph}{}{38}{section*.158}
+\contentsline {subsection}{\numberline {4.4.5}Continuous Volume}{38}{subsection.4.4.5}
+\contentsline {paragraph}{}{38}{section*.160}
 \contentsline {subsection}{\numberline {4.4.6}Automatic Stepping}{38}{subsection.4.4.6}
-\contentsline {paragraph}{}{39}{section*.160}
-\contentsline {subsection}{\numberline {4.4.7}Absolute Tempo}{39}{subsection.4.4.7}
 \contentsline {paragraph}{}{39}{section*.162}
-\contentsline {paragraph}{}{39}{section*.163}
+\contentsline {subsection}{\numberline {4.4.7}Absolute Tempo}{39}{subsection.4.4.7}
+\contentsline {paragraph}{}{39}{section*.164}
+\contentsline {paragraph}{}{39}{section*.165}
 \contentsline {section}{\numberline {4.5}Cognitive Dimensions of Notation}{40}{section.4.5}
-\contentsline {paragraph}{}{40}{section*.164}
 \contentsline {paragraph}{}{40}{section*.166}
-\contentsline {paragraph}{}{40}{section*.169}
+\contentsline {paragraph}{}{40}{section*.168}
+\contentsline {paragraph}{}{40}{section*.171}
 \contentsline {subsection}{\numberline {4.5.1}Closeness of Mapping}{41}{subsection.4.5.1}
-\contentsline {paragraph}{}{41}{section*.170}
+\contentsline {paragraph}{}{41}{section*.172}
 \contentsline {subsection}{\numberline {4.5.2}Consistency}{42}{subsection.4.5.2}
-\contentsline {paragraph}{}{42}{section*.172}
-\contentsline {subsection}{\numberline {4.5.3}Secondary Notation}{42}{subsection.4.5.3}
 \contentsline {paragraph}{}{42}{section*.174}
-\contentsline {subsection}{\numberline {4.5.4}Viscosity}{42}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.3}Secondary Notation}{42}{subsection.4.5.3}
 \contentsline {paragraph}{}{42}{section*.176}
+\contentsline {subsection}{\numberline {4.5.4}Viscosity}{42}{subsection.4.5.4}
+\contentsline {paragraph}{}{42}{section*.178}
 \contentsline {subsection}{\numberline {4.5.5}Visibility / Juxtaposition}{43}{subsection.4.5.5}
-\contentsline {paragraph}{}{43}{section*.178}
-\contentsline {paragraph}{}{43}{section*.181}
+\contentsline {paragraph}{}{43}{section*.180}
+\contentsline {paragraph}{}{43}{section*.183}
 \contentsline {subsection}{\numberline {4.5.6}Other Dimensions}{44}{subsection.4.5.6}
-\contentsline {paragraph}{}{44}{section*.182}
-\contentsline {paragraph}{}{44}{section*.183}
 \contentsline {paragraph}{}{44}{section*.184}
-\contentsline {section}{\numberline {4.6}Ethics and Data Handling}{44}{section.4.6}
 \contentsline {paragraph}{}{44}{section*.185}
+\contentsline {paragraph}{}{44}{section*.186}
+\contentsline {section}{\numberline {4.6}Ethics and Data Handling}{44}{section.4.6}
+\contentsline {paragraph}{}{44}{section*.187}
 \contentsline {chapter}{\numberline {5}Conclusion}{45}{chapter.5}
-\contentsline {paragraph}{}{45}{section*.186}
-\contentsline {paragraph}{}{45}{section*.187}
 \contentsline {paragraph}{}{45}{section*.188}
-\contentsline {chapter}{Bibliography}{45}{section*.188}
+\contentsline {paragraph}{}{45}{section*.189}
+\contentsline {paragraph}{}{45}{section*.190}
+\contentsline {chapter}{Bibliography}{45}{section*.190}
 \contentsline {chapter}{\numberline {A}Excello Implementation}{48}{appendix.A}
 \contentsline {section}{\numberline {A.1}bracketsParse.ts}{48}{section.A.1}
-\contentsline {chapter}{\numberline {B}Project Proposal}{50}{appendix.B}

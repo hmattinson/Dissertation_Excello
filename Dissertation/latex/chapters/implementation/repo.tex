@@ -72,7 +72,7 @@
 % \end{figure}
 \end{wrapfigure}
 
-\paragraph{} Figure \ref{fig:repo} shows a reduced project file structure including all original source code. Excel Music is the add-in that parses the notation and produces music. Both this and CustomFunctions were generated using the Yeomann generator. The manifest.xml files are added to Excel and point to the resources to run the add-in. node\_modules contains all libraries required to run the add-ins and is managed using npm.
+\paragraph{} Figure \ref{fig:repo} shows a reduced project file structure including all original source code. Excel Music is the add-in that parses the notation and produces music. Both this and CustomFunctions were generated using the Yeomann generator. The manifest.xml files are added to Excel and point to the resources to run the add-in. Users were given a different manifest pointing to a distribution hosted online with Surge. node\_modules contains all libraries required to run the add-ins and is managed using npm.
 
 \paragraph{} The index.html file defines the window that appears on the right of the spreadsheet. assets contains the piano samples. index.ts defines what happens when the buttons of the window are pressed and imports from the remaining Typescript files. turtle.ts contains all the code to produce musical output from the spreadsheet, with helper functions in regex.ts, conversions.ts and bracketsParse.ts. bracketsParse.ts was based on Parenthesis which was initially incompatible for Excello's needs. chords.ts is for inserting chord notes into the grid.
 
