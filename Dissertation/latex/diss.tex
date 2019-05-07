@@ -27,6 +27,55 @@
 \usepackage{setspace}
 \usepackage{backnaur}
 \usepackage{tablefootnote}
+\usepackage{listings}
+
+\definecolor{lstlightgray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{lstdarkgray}{rgb}{0.4, 0.4, 0.4}
+%\definecolor{lstpurple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{lsteditorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{lsteditorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{lsteditorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{lstorange}{rgb}{1,0.45,0.13}
+\definecolor{lstolive}{rgb}{0.17,0.59,0.20}
+\definecolor{lstbrown}{rgb}{0.69,0.31,0.31}
+\definecolor{lstpurple}{rgb}{0.38,0.18,0.81}
+\definecolor{lstlightblue}{rgb}{0.1,0.57,0.7}
+\definecolor{lstlightred}{rgb}{1,0.4,0.5}
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+\lstdefinestyle{js} {%
+  % General design
+%  backgroundcolor=\color{lsteditorGray},
+  basicstyle={\footnotesize\ttfamily},
+  frame=b,
+  % line-numbers
+  % xleftmargin={0.75cm},
+  % numbers=left,
+  % stepnumber=1,
+  % firstnumber=1,
+  % numberfirstline=true,
+  % Code design
+  identifierstyle=\color{black},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{lsteditorGreen}\bfseries,
+  stringstyle=\color{lsteditorOcher}\ttfamily,
+  commentstyle=\color{lstbrown}\ttfamily,
+  % Code
+  language=JavaScript,
+  alsodigit={.:;},
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  extendedchars=true,
+  breaklines=true,
+}
+
 \pgfplotsset{compat=1.13}
 \usepgfplotslibrary{statistics}
 \usetikzlibrary{trees}
@@ -53,7 +102,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title
 
-% \include{chapters/title}
+\include{chapters/title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Proforma, table of contents and list of figures
@@ -97,8 +146,8 @@
 
 % \chapter{Project Proposal}
 
-\includepdf[pages=-]{chapters/proposal}
+\includepdf[pages=-]{chapters/proposalAnon}
 
-TC:endignore
+% TC:endignore
 
 \end{document}

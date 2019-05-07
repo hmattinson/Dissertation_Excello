@@ -2,54 +2,56 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: diss.aux
 The style file: plain.bst
+A level-1 auxiliary file: chapters/title.aux
 A level-1 auxiliary file: chapters/initialStuff.aux
 Database file #1: refs.bib
 Warning--entry type for "hackaday:spreadsheet" isn't style-file defined
 --line 37 of file refs.bib
 Warning--entry type for "barry:likert" isn't style-file defined
---line 192 of file refs.bib
+--line 188 of file refs.bib
+Warning--empty year in bnf
 Warning--empty journal in mclean:visualisation
 Warning--empty journal in mclean:texture
 Warning--empty booktitle in blackwell:functions
-You've used 24 entries,
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            630 strings with 7123 characters,
-and the built_in function-call counts, 6509 in all, are:
-= -- 600
-> -- 301
-< -- 2
-+ -- 126
-- -- 96
-* -- 384
-:= -- 1119
-add.period$ -- 70
-call.type$ -- 24
-change.case$ -- 117
+            638 strings with 7439 characters,
+and the built_in function-call counts, 6980 in all, are:
+= -- 652
+> -- 314
+< -- 3
++ -- 131
+- -- 100
+* -- 412
+:= -- 1184
+add.period$ -- 74
+call.type$ -- 25
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 261
-empty$ -- 557
-format.name$ -- 96
-if$ -- 1355
+cite$ -- 29
+duplicate$ -- 285
+empty$ -- 598
+format.name$ -- 100
+if$ -- 1466
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 19
-newline$ -- 121
-num.names$ -- 48
-pop$ -- 161
+int.to.str$ -- 25
+missing$ -- 20
+newline$ -- 126
+num.names$ -- 50
+pop$ -- 170
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 100
 quote$ -- 0
-skip$ -- 184
+skip$ -- 202
 stack$ -- 0
-substring$ -- 260
-swap$ -- 36
-text.length$ -- 2
+substring$ -- 297
+swap$ -- 46
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 92
-warning$ -- 3
-while$ -- 57
-width$ -- 26
-write$ -- 244
-(There were 5 warnings)
+type$ -- 96
+warning$ -- 4
+while$ -- 62
+width$ -- 27
+write$ -- 256
+(There were 6 warnings)

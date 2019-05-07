@@ -1,11 +1,11 @@
-\contentsline {paragraph}{}{3}{section*.6}
-\contentsline {paragraph}{}{3}{section*.7}
+\contentsline {paragraph}{}{1}{section*.2}
+\contentsline {paragraph}{}{1}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{6}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{6}{section.1.1}
 \contentsline {paragraph}{}{6}{section*.9}
 \contentsline {paragraph}{}{6}{section*.10}
 \contentsline {paragraph}{}{6}{section*.11}
-\contentsline {section}{\numberline {1.2}Outline of work}{7}{section.1.2}
+\contentsline {section}{\numberline {1.2}Outline of Work}{7}{section.1.2}
 \contentsline {chapter}{\numberline {2}Preparation}{8}{chapter.2}
 \contentsline {paragraph}{}{8}{section*.13}
 \contentsline {section}{\numberline {2.1}Proposal Refinements}{8}{section.2.1}
@@ -33,7 +33,7 @@
 \contentsline {paragraph}{}{11}{section*.30}
 \contentsline {paragraph}{}{12}{section*.32}
 \contentsline {paragraph}{}{12}{section*.34}
-\contentsline {paragraph}{}{12}{section*.36}
+\contentsline {paragraph}{}{13}{section*.36}
 \contentsline {section}{\numberline {2.4}Software Engineering}{13}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Requirements}{13}{subsection.2.4.1}
 \contentsline {paragraph}{}{13}{section*.38}
@@ -102,9 +102,9 @@
 \contentsline {paragraph}{}{20}{section*.88}
 \contentsline {subsection}{\numberline {3.3.4}Custom Excel Functions}{21}{subsection.3.3.4}
 \contentsline {paragraph}{}{21}{section*.89}
-\contentsline {subsubsection}{Excello.Turtle}{21}{section*.90}
+\contentsline {subsubsection}{EXCELLO.TURTLE}{21}{section*.90}
 \contentsline {paragraph}{}{21}{section*.91}
-\contentsline {subsubsection}{Excello.Modulate}{21}{section*.93}
+\contentsline {subsubsection}{EXCELLO.MODULATE}{21}{section*.93}
 \contentsline {paragraph}{}{21}{section*.94}
 \contentsline {subsection}{\numberline {3.3.5}Sustain}{22}{subsection.3.3.5}
 \contentsline {paragraph}{}{22}{section*.96}
@@ -142,7 +142,7 @@
 \contentsline {paragraph}{}{28}{section*.120}
 \contentsline {subsection}{\numberline {3.4.5}Chord Input}{28}{subsection.3.4.5}
 \contentsline {paragraph}{}{28}{section*.121}
-\contentsline {paragraph}{}{29}{section*.122}
+\contentsline {paragraph}{}{28}{section*.122}
 \contentsline {paragraph}{}{29}{section*.123}
 \contentsline {paragraph}{}{29}{section*.124}
 \contentsline {subsection}{\numberline {3.4.6}Custom Excel Functions}{29}{subsection.3.4.6}
@@ -164,7 +164,7 @@
 \contentsline {paragraph}{}{32}{section*.139}
 \contentsline {chapter}{\numberline {4}Evaluation}{33}{chapter.4}
 \contentsline {paragraph}{}{33}{section*.140}
-\contentsline {section}{\numberline {4.1}Excello Success}{33}{section.4.1}
+\contentsline {section}{\numberline {4.1}Excello Successes}{33}{section.4.1}
 \contentsline {paragraph}{}{33}{section*.141}
 \contentsline {paragraph}{}{33}{section*.143}
 \contentsline {section}{\numberline {4.2}MIDI Corpus Conversion}{33}{section.4.2}
