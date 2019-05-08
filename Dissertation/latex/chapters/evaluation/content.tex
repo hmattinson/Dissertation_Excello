@@ -14,7 +14,7 @@
 
 \chapter{Evaluation}
 
-\paragraph{} This chapter Evaluates Excello against the success criteria and by showcasing examples. Converting of MIDI corpora to Excello using the converter demonstrates the notation's expressivity. Next, the summative evaluation is explained and its data used to assess the features implemented in the participatory design process and to reason about Excello using the CDN framework~\cite{blackwell:tutorial}. Finally, ethics and data handling procedures are covered.
+\paragraph{} This chapter Evaluates Excello against the success criteria and by showcasing examples. Converting of MIDI corpora to Excello using the converter demonstrates the notation's expressivity. Next, the summative evaluation user study involving 19 participants is explained and its data used to assess the features implemented in the participatory design process and to reason about Excello using the CDN framework~\cite{blackwell:tutorial}. Finally, ethics and data handling procedures are covered.
 
 \section{Excello Successes}
 
@@ -26,7 +26,7 @@
 \label{evaluation:excelloFranzRedacted}
 \end{figure}
 
-\paragraph{} The first section of Reich's Piano Phase is two identical piano melodies, one played slightly faster than the other. The parts move out of phase, periodically aligning at different offsets. This is included as an example for many end-user programming tools, perhaps as it cannot be concisely notated by western staff notation. Manhattan implements it using three rows of 24 columns~\cite{nash:manhattan}. Sonic Pi requires one line for the notes and eight for playback. Excello only requires two cells to define two turtles with different speeds in addition to the notes. All three implementations are shown in Figure \ref{evaluation:phase}.
+\paragraph{} The first section of Reich's Piano Phase is two identical piano melodies, one played slightly faster than the other~\cite{epstein:pianoPhase}. The parts move out of phase, periodically aligning at different offsets. This is included as an example for many end-user programming tools, perhaps as it cannot be concisely notated by western staff notation. Manhattan implements it using three rows of 24 columns~\cite{nash:manhattan}. Sonic Pi requires one line for the notes and eight for playback. Excello only requires two cells to define two turtles with different speeds in addition to the notes. All three implementations are shown in Figure \ref{evaluation:phase}.
 
 \begin{figure}[!ht]
 \begin{tabular}{cc}
@@ -40,7 +40,7 @@
   phased notes - defined with formulae & (c) Two turtles play the same\\
   taking the phase and defined notes& notes at different speeds.\\
 \end{tabular}
-\caption{Implementations of Steve Reich's Piano Phase in (a) Manhattan, (b) Sonic Pi, (c) Excello}
+\caption{Reich's Piano Phase in (a) Manhattan, (b) Sonic Pi, (c) Excello}
 \label{evaluation:phase}
 \end{figure}
 
@@ -48,15 +48,14 @@
 
 \paragraph{} Whilst concisely notating some music western notation cannot, Excello can exactly express pieces defined in MIDI. Tempo being redefined within a track is not be accounted for. If instead the time between messages is adjusted, the uncompressed conversion accounts for this but the compressing algorithms will produce erroneous results as the difference between notes deviates too far from non-integer multiples of the minimum. Control messages like piano pedalling are not supported. Provided the difference between any two notes is a multiple of the minimum difference, the compression method that divides times by this accurately reproduces the MIDI, resulting in spreadsheets orders of magnitude smaller. This method would not accurately convert quavers against triplets (three notes played in the same time as two) provided these notes were not integer multiples of a smaller note. Given the lengths of MIDI notes can differ from the note's time in standard notation, an assumption on the ratio of note lengths was required for compression. The modal compressive conversion is lossy if the minimum note distance is not the modal distance. This is useful pieces with infrequently occuring ornaments or notes that dramatically decrease the minimum distance. Therefore this loss may be useful for more efficient representations.
 
-\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi.} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm.} held by Bernd Krueger under a creative commons license,\footnote{https://creativecommons.org/licenses/by-sa/3.0/de/deed.en.} and 194 Bach pieces from ``A Johann Sebastian Bach Midi Page".\footnote{http://www.bachcentral.com/midiindex.html.} This is not all the files from this site as some were not readable using Mido. All 971 MIDI files were converted using all three methods.
-
-\paragraph{} The Excello language is sufficiently expressive to represent MIDI files and can do so concisely provided the condition of minimum note onset differences is maintained.
+\paragraph{} I have converted three MIDI corpora. A collection of 497 Bach chorales\footnote{Accessed from https://github.com/jamesrobertlloyd/infinite-bach/tree/master/data/chorales/midi.} made by Margaret Greentree, 280 piano pieces\footnote{http://piano-midi.de/midis.htm.} held by Bernd Krueger under a creative commons license,\footnote{https://creativecommons.org/licenses/by-sa/3.0/de/deed.en.} and 194 Bach pieces from ``A Johann Sebastian Bach Midi Page".\footnote{http://www.bachcentral.com/midiindex.html.} This is not all the files from this site as some were not readable using the Python library Mido. All 971 MIDI files were converted using all three methods. The Excello language is sufficiently expressive to represent MIDI files and can do so concisely provided the condition of minimum note onset differences is maintained.
 
 \section{Summative Evaluation Sessions}
 
 \paragraph{} 19 of the 21 participants continued using Excello after formative evaluation session and answered a summative evaluation questionnaire. First, the features added after the initial sessions were recapped. To ensure users sufficiently understood the interface before giving feedback, a short transcription task also requiring some authoring was given.
 
-\paragraph{} The questionnaire first evaluated the participatory design process by comparing the interface before and after each feature. Seven-point Likert scale questions assessed if the issues had been solved and if overall the system was more preferable. The remaining questions were based on Blackwell and Greens' CDN questionnaire~\cite{blackwell:questionnaire}. CDN can be used to analyse musical notation~\cite{blackwell:notation} and software systems~\cite{green:cdn}, therefore it is suitable to discuss Excello's notation and interface. Dimensions' significance for different activities varies~\cite{blackwell:tutorial}, so users identified the percentage of time they spent carrying out these activities (searching for information, translating, incrementation, modification and exploratory design). Likert scale questions focusing on closeness of mapping, consistency, secondary notation, viscosity and visibility were used as planned in the proposal. It was suspected that reasoning about cognitive dimensions would be more challenging for participants, so to reduce the expected variance, only a five-point Likert scale was used. The two have been shown to produce similar results~\cite{dawes:points}. CDN results were also collected for the user's preferred music composition interface. 12 users chose Sibelius, which shall be used for comparison.
+\paragraph{} The questionnaire first evaluated the participatory design process by comparing the interface before and after each feature. Seven-point Likert scale questions assessed if the issues had been solved and if overall the system was more preferable. The remaining questions were based on Blackwell and Greens' questionnaire~\cite{blackwell:questionnaire} - a tool for evaluating information devices' usability using the
+CDN framework. For example, the dimension \textit{Role Expresiveness} - how much an element suggests its purpose - is assessed by: ``\textit{Are there some parts that are particularly difficult to interpret?}". The questions used are shown in Table \ref{evaluation:cdnQuestions}. CDN can be used to analyse musical notation~\cite{blackwell:notation} and software systems~\cite{green:cdn} so is suitable to discuss Excello's notation and interface. Dimensions' significance for different activities varies~\cite{blackwell:tutorial}, so users identified the percentage of time they spent carrying out these activities (searching for information, translating, incrementation, modification and exploratory design). Likert scale questions focusing on closeness of mapping, consistency, secondary notation, viscosity and visibility were used as planned in the proposal. It was suspected that reasoning about cognitive dimensions would be more challenging for participants, so to reduce the expected variance, only a five-point scale was used. The two have been shown to produce similar results~\cite{dawes:points}. CDN results were also collected for the user's preferred music composition interface. 12 users chose Sibelius, which was used for comparison.
 
 \section{Success of Participatory Design}
 
@@ -80,6 +79,7 @@ notes are played at.&&\\ \hline
 \label{evaluation:cellDynamics}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -125,7 +125,8 @@ notes are played at.&&\\ \hline
     \end{axis}
 \end{tikzpicture}
 
-\paragraph{} There is strong evidence suggesting this change improved some of the issues identified during participatory design, resulting in an improved system.
+\vspace{-10pt}
+\paragraph{} Volume instructions are defined in cells with notes rather than in turtles with movement instructions. There is strong evidence suggesting this change improved some of the issues identified during participatory design, resulting in an improved system.
 
 \subsection{Inferred Octave}
 \ %This is here to put the section heading and table in the right order
@@ -144,7 +145,7 @@ played in.&& \\ \hline
 \label{evaluation:inferredOctave}
 \end{table}
 
-\vspace{10pt}
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       width  = 16cm,
@@ -199,6 +200,7 @@ what it will do.&& \\ \hline
 \label{evaluation:nestedInstructions}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -254,6 +256,7 @@ what it will do.&& \\ \hline
 \label{evaluation:activeTurtles}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -311,6 +314,7 @@ what it will do.&& \\ \hline
 \label{evaluation:continuousVolume}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -366,6 +370,7 @@ instructions.&& \\ \hline
 \label{evaluation:automaticStepping}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -422,6 +427,7 @@ music) is easier.&& \\ \hline
 \label{evaluation:absoluteTempo}
 \end{table}
 
+\vspace{-10pt}
 \begin{tikzpicture}
     \begin{axis}[
       % width  = \textwidth,
@@ -461,7 +467,7 @@ music) is easier.&& \\ \hline
 
 \paragraph{} The initial design was changed so that turtle speed was defined in absolute cells per minute. All users found this to be an improvement.
 
-\paragraph{} Overall, the participatory design process was very successful. Multiple features were added to Excello to solve problems identified through formative evaluation sessions and longer-term user feedback. There is significant evidence that all added features improved Excello.
+\paragraph{} Overall, the participatory design process was successful. Multiple features were added to Excello to solve problems identified through formative evaluation sessions and longer-term user feedback. There is evidence that all added features improved Excello.
 
 \section{Cognitive Dimensions of Notation}
 
@@ -474,6 +480,7 @@ music) is easier.&& \\ \hline
     \begin{tikzpicture}
       \begin{axis}
         [
+        title=Sibelius,
         height = 6cm,
         width = 7cm,
         ytick={1,2,3,4,5},
@@ -535,10 +542,14 @@ music) is easier.&& \\ \hline
     \begin{tikzpicture}
       \begin{axis}
         [
+        title=Excello,
         height = 6cm,
-        width = 6.5cm,
+        width = 7cm,
         ytick={1,2,3,4,5},
+        xticklabels={0,20,40,60,80,100},
+        xtick={0,20,40,60,80,100},
         yticklabels={},
+        xmax=100,
         xlabel = {Percentage of Time}
         ]
         \addplot+[
@@ -591,7 +602,7 @@ music) is easier.&& \\ \hline
   % \caption{A subfigure}
   \label{fig:sub2}
 \end{subfigure}
-\caption{The percentage of time spent performing the different cognitive activities in Excello (left) and Sibelius (right).}
+\caption{The percentage of time spent performing the different cognitive activities.}
 \label{fig:usage}
 \end{figure}
 

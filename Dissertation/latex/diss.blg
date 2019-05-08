@@ -13,45 +13,46 @@ Warning--empty year in bnf
 Warning--empty journal in mclean:visualisation
 Warning--empty journal in mclean:texture
 Warning--empty booktitle in blackwell:functions
-You've used 25 entries,
+Warning--empty journal in papert:turtleGraphics
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            638 strings with 7439 characters,
-and the built_in function-call counts, 6980 in all, are:
-= -- 652
-> -- 314
+            651 strings with 7758 characters,
+and the built_in function-call counts, 7518 in all, are:
+= -- 706
+> -- 334
 < -- 3
-+ -- 131
-- -- 100
-* -- 412
-:= -- 1184
-add.period$ -- 74
-call.type$ -- 25
-change.case$ -- 122
++ -- 140
+- -- 106
+* -- 446
+:= -- 1277
+add.period$ -- 80
+call.type$ -- 27
+change.case$ -- 131
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 285
-empty$ -- 598
-format.name$ -- 100
-if$ -- 1466
+cite$ -- 32
+duplicate$ -- 306
+empty$ -- 642
+format.name$ -- 106
+if$ -- 1574
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 20
-newline$ -- 126
-num.names$ -- 50
-pop$ -- 170
+int.to.str$ -- 27
+missing$ -- 22
+newline$ -- 136
+num.names$ -- 54
+pop$ -- 179
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 107
 quote$ -- 0
-skip$ -- 202
+skip$ -- 217
 stack$ -- 0
-substring$ -- 297
-swap$ -- 46
+substring$ -- 333
+swap$ -- 47
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
-warning$ -- 4
-while$ -- 62
-width$ -- 27
-write$ -- 256
-(There were 6 warnings)
+type$ -- 104
+warning$ -- 5
+while$ -- 68
+width$ -- 29
+write$ -- 276
+(There were 7 warnings)

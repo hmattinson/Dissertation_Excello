@@ -37,6 +37,12 @@ Dr.~John Dawes.
   10-{Point} {Scales}.
 \newblock {\em International Journal of Market Research}, 50(1):61--104, 2008.
 
+\bibitem{epstein:pianoPhase}
+Paul Epstein.
+\newblock Pattern {Structure} and {Process} in {Steve} {Reich's} "{Piano}
+  {Phase}".
+\newblock {\em The Musical Quarterly}, 72(4):494--502, 1986.
+
 \bibitem{blackwell:notation}
 Alan F.~Blackwell, Thomas Green, and Dje Nunn.
 \newblock Cognitive {Dimensions} and {Musical} {Notation} {Systems}.
@@ -133,5 +139,10 @@ C.~{Scaffidi}, M.~{Shaw}, and B.~{Myers}.
 \newblock Estimating the numbers of end users and end user programmers.
 \newblock In {\em 2005 IEEE Symposium on Visual Languages and Human-Centric
   Computing (VL/HCC'05)}, pages 207--214, Sep. 2005.
+
+\bibitem{papert:turtleGraphics}
+Cynthia~J Solomon and Seymour~A Papert.
+\newblock A case study of a young child doing turtle graphics in logo.
+\newblock 1976.
 
 \end{thebibliography}
