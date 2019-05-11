@@ -3,7 +3,7 @@
 
 \chapter{Implementation}
 
-\paragraph{} This chapter shall explain how turtles are defined and cover the remaining features of the initial prototype. The format and results of formative evaluation using this initial prototype shall be summarised, and the design decisions and changes that were made to Excello during the participatory design process will be discussed. Then, the technical details of Excello and the MIDI to Excello converter will be explained. Concluding with an overview of the project repository.
+\paragraph{} This chapter shall explain how turtles are defined, and covers the remaining features of the initial prototype. The format and results of formative evaluation using this initial prototype shall be summarised, and the design decisions and changes that were made to Excello during the participatory design process will be discussed. Then, the technical details of Excello and the MIDI to Excello converter will be explained. It concludes with an overview of the project repository.
 
 \section{Initial Prototype}
 
@@ -27,7 +27,7 @@
 \vspace{1pt}
 \begin{tabular}{|l|l|} \hline
 \textbf{Interpretation}&\textbf{Format}\\ \hline
-Note& Name (A-G), optional accidental and octave number e.g.~\texttt{F\#4}\\ \hline
+Note& Name (A-G), optional accidental and octave number e.g.~\texttt{F$\sharp$4}\\ \hline
 Sustain& \texttt{s}\\ \hline
 Multiple notes& Notes, rests or sustains separated by a comma. Rests \\
 subdivided in time& must be a space or an empty string e.g.~\texttt{E4,,C4,s}\\ \hline
@@ -44,7 +44,7 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 \vspace{-5pt}
 \subsubsection{Activation}
 
-\paragraph{} The prefix ``\texttt{!}" indicates the turtle will be activated when the play button is pressed. Just as digital audio workstations allow track muting and soloing, this can be used to modify which turtles play without losing their definitions.
+\paragraph{} The prefix ``\texttt{!}" indicates the turtle will be activated when the play button is pressed. Just as digital audio workstations allow track muting and soloing, this can be used to modify which turtles play, without losing their definitions.
 
 \vspace{-5pt}
 \subsubsection{Starting Cell}
@@ -56,7 +56,7 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 \vspace{-5pt}
 \subsubsection{Movement}
 
-\paragraph{} Turtles start facing north. The language for programming turtle movement is discussed in the Preparation chapter. The instrutions are \texttt{r m7 ff j-7+1 m7} in Figure \ref{implementation:initialPrototype}. Using brackets to repeat movements was not implemented by the start of the participatory design process.
+\paragraph{} Turtles start facing north. The language for programming turtle movement is discussed in the Preparation chapter. The instructions are \texttt{r m7 ff j-7+1 m7} in Figure \ref{implementation:initialPrototype}. Using brackets to repeat movements had not been implemented by the start of the participatory design process.
 
 \vspace{-5pt}
 \subsubsection{Speed}
@@ -66,23 +66,23 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 \vspace{-5pt}
 \subsubsection{Number of Loops}
 
-\paragraph{} An optional fourth argument defines the number of repetitions of the turtle's entire path (\texttt{1} in Figure \ref{implementation:initialPrototype}). By default, the turtle loops infinitely. Repeating parts (e.g.~the cello  of Pachelbel's Canon in D) therefore only need defining once.
+\paragraph{} An optional fourth argument defines the number of repetitions of the turtle's entire path (\texttt{1} in Figure \ref{implementation:initialPrototype}). By default, the turtle loops infinitely. Repeating parts (e.g.~the cello in Pachelbel's Canon in D) therefore only need defining once.
 
 \subsection{Highlighting}
 
 \paragraph{} To assist recognising notes and turtles, when the play button is pressed, cells are highlighted. Activated or deactivated turtle definitions are highlighted green. Cells containing definitions of notes, or multiple notes, are highlighted red. Sustain cells are highlighted a lighter red, showing correspondence to notes whilst maintaining differentiation.
 
-\subsection{Chord input}
+\subsection{Chord Input}
 
-\paragraph{} To use the musical abstractions of chords whilst keeping the paradigm that a turtle is responsible for up to one note at any time, a tool to add chords is included. The note, type, inversion\footnote{Which note of the chord comes first, the other notes ascend from this. This is much like list rotations.} and starting octave of the chord are input in four drop-downs. The insert button enters the notes of the chord into the grid. If a single cell or range taller than it is wide is highlighted in the spreadsheet, the notes are inserted vertically starting at the top-left of the range. Otherwise, the notes will be inserted horizontally. Whether the turtles are moving horizontally or vertically both chords and arpeggios\footnote{Where the notes of a chord are played in rising or descending order.} can be easily defined. Thus, helpful musical abstractions are still available whilst keeping the cleanness of the turtle system.
+\paragraph{} To use the musical abstractions of chords whilst keeping the paradigm that a turtle is responsible for up to one note at any time, a tool to add chords is included. The note, type, inversion\footnote{Which note of the chord comes first, the other notes ascend from this. This is much like list rotations.} and starting octave of the chord are input into four drop-downs. The insert button enters the notes of the chord into the grid. If a single cell or a range taller than it is wide is highlighted in the spreadsheet, the notes are inserted vertically starting at the top-left of the range. Otherwise, the notes will be inserted horizontally. Whether the turtles are moving horizontally or vertically both chords and arpeggios\footnote{Where the notes of a chord are played individually in rising or descending order.} can be easily defined. Thus, helpful musical abstractions are still available whilst keeping the cleanness of the turtle system.
 
 \section{Formative Evaluation}
 
-\paragraph{} To guide development to best suit users, participants were involved in formative evaluation. Twenty-one University of Cambridge students, across a range of subjects, took part in the participatory design process. Initially, one-on-one tutorials with the initial prototype were given followed by a short exercise. After these, users were interviewed on how they found Excello, drawing particular attention to actions that they found particularly unintuitive or requiring notable mental effort. Comparisons were made to musical interfaces that participants were already familiar with. The ethical and data handling procedures are discussed in the evaluation chapter.
+\paragraph{} To guide development to best suit users, participants were involved in formative evaluation. Twenty-one University of Cambridge students, across a range of subjects, took part in the participatory design process. Initially, one-on-one tutorials on the initial prototype were given, followed by a short exercise. After these, users were interviewed on how they found Excello, drawing particular attention to actions that they found particularly unintuitive or requiring notable mental effort. Comparisons were made to musical interfaces with which participants were already familiar. The ethical and data handling procedures are discussed in the evaluation chapter.
 
-\paragraph{} To realistically simulate how Excello would be used, participants carried out an exercise of their choice. Often this was transcribing a piece from memory or traditional notation into the Excello notation. Two exercises were provided if participants had no immediate inspiration; transcribing a piece from western notation or changing existing Excello notation.
+\paragraph{} To realistically simulate how Excello would be used, participants carried out an exercise of their choice. Often this was transcribing a piece from memory or from traditional notation into the Excello notation. Two exercises were provided if participants had no immediate inspiration; transcribing a piece from western notation or changing existing Excello notation.
 
-\paragraph{} These sessions were carried out at in January 2019. Participants were asked to continue using Excello until the summative evaluation sessions in March. Additional feedback was collected as participants used Excello in their own time. This also ensured the summative evaluation was done with users with sufficient experience of the interface.
+\paragraph{} These sessions were carried out in January 2019. Participants were asked to continue using Excello until the summative evaluation sessions in March. Additional feedback was collected as participants used Excello in their own time. This also ensured the summative evaluation was done with users that had sufficient experience of the interface.
 % Participants were encouraged to get in contact with any additional issues or suggestions they had during this time.
 
 \subsection{Issues and Suggestions}
@@ -91,15 +91,15 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsubsection{Turtle Notation}
 
-\paragraph{} Dynamics in the turtle instructions (e.g. \texttt{ppp m p m mf m ff m}) made establishing the turtle's path harder as not all commands related to movement (``\texttt{m4}"). As the dynamics weren't next to the notes they corresponded to, knowing the volume of a note or where to place the dynamics within the turtle to apply to notes in the spreadsheet was challenging. The initial prototype had no way to assign a dynamic to notes in the first cell. The starting cell could be empty but this was inconvenient for looping parts as it would be included in the loop. Users not familiar with western notation dynamics found them unintuitive. Furthermore, these discrete markings do not make available a continuous volume scale.
+\paragraph{} Dynamics in the turtle instructions (e.g. \texttt{ppp m p m mf m ff m}) made establishing the turtle's path harder, as not all commands related to movement (``\texttt{m4}"). As the dynamics weren't next to the notes to which they corresponded, knowing the volume of a note or where to place the dynamics within the turtle to apply to notes in the spreadsheet was challenging. The initial prototype had no way to assign a dynamic to notes in the first cell. The starting cell could be empty, but this was inconvenient for looping parts, as this empty cell would be included in the loop. Users not familiar with western notation dynamics found them unintuitive. Furthermore, these discrete markings do not enable a continuous volume scale.
 
-\paragraph{} When transcribing a piece, dividing its tempo by 160 for the relative speed caused unnecessary work. Users also forgot whether relative speed referred to time spent in each cell or how quickly the turtle moved. Following the tutorial, users often had to check the position and meaning of turtle arguments.
+\paragraph{} When transcribing a piece, dividing its tempo by 160 for the relative speed caused unnecessary work. Users also forgot whether relative speed referred to the time spent in each cell or how quickly the turtle moved. Following the tutorial, users often had to check the position and meaning of turtle arguments.
 
 \paragraph{} As the number of dynamics and movement commands grew, instructions became long and establishing turtle behaviour became cognitively challenging. Some users confused the ``\texttt{s}" within the turtle instructions to mean sustain (as it does in cells) and not south.
 
 \subsubsection{Feedback}
 
-\paragraph{} It was often unknown if pressing play registered, especially if the workbook saving delayed Excello's access to the spreadsheet. If a turtle had accidentally been left activated (with ``\texttt{!}"), the entire grid required searching to locate it. Users requested a summary of active turtle locations in addition to the highlighting.
+\paragraph{} It was often unknown if pressing play actually registered, especially if the workbook saving delayed Excello's access to the spreadsheet. If a turtle had accidentally been left activated (with ``\texttt{!}"), the entire grid required searching to locate it. Users requested a summary of active turtle locations in addition to the highlighting.
 
 \subsubsection{MIDI conversions}
 
@@ -107,21 +107,21 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsubsection{Sources of effort when writing}
 
-\paragraph{} After inputting notes in the grid, the number of cells the turtle had to move required counting. As these were often in a straight line, the Excel status bar allowed users select cells and immediately see how many there are. However, this is still not productive, and particularly inconvenient when users were writing notes and periodically testing what they had written so far. Some users instructed turtles to move forward significantly more steps than required to prevent counting. This is not feasible for looping parts. It was suggested that turtles could figure out how far they should move.
+\paragraph{} After inputting notes into the grid, the number of cells the turtle had to move required counting. As these were often in a straight line, the Excel status bar allowed users to select cells and immediately see how many there were. However, this was still not efficient, and was particularly inconvenient when users were writing notes and periodically testing what they had written so far. Some users instructed turtles to move forward significantly more steps than required to prevent counting. This is not feasible for looping parts. It was suggested that turtles could determine independently how far they should move.
 
 \paragraph{} Instructions with repeated movements such as moving to the end of a line and jumping down to the beginning of a line below, required a lot of repetition.
 
-\paragraph{} Many of the notes in melodic lines are in the same octave. As such, repeatedly writing out the octave number was tiresome. One user made a comparison to LilyPond~\cite{sandberg:lily} where if the note length is not defined, the previous length would be used.
+\paragraph{} Many of the notes in melodic lines are frequently in the same octave. As such, repeatedly writing out the octave number was tiresome. One user made a comparison to LilyPond~\cite{sandberg:lily} where if the note length is not defined, the previous length would be used.
 
-\paragraph{} Some users find it more intuitive to consider a melodic line by the intervals between notes rather than note names. A modulated\footnote{Where the pitch of every note has moved by the same amount.} melody line required writing out again and could not be derived quicker from the original version.
+\paragraph{} Some users find it more intuitive to consider a melodic line by the intervals between notes rather than by the note names. A modulated\footnote{Where the pitch of every note in the sequence has moved by the same amount.} melody line required it to be written out again and could not be derived quicker any from the original version.
 
 \subsubsection{Chords}
 
-\paragraph{} Most users used a small subset of the available chord types but had to find these in a large list. Separation of the more common chords was requested. Initially, notes inserted vertically  had the lowest note at the top with pitch increasing down the column. Because higher pitch notes appear higher up the staff, it was suggested that inverting the order would be more intuitive. Initially, it was unclear what the different drop-downs corresponded to, with some users selecting the 7 from the octave number to try and insert a Maj7\footnote{A type of chord where the seventh note in the scale is added.} chord.
+\paragraph{} Most users used a small subset of the available chord types, but had to find these within a large list. Separation of the more common chords was requested. Initially, notes inserted vertically had the lowest note at the top with pitch increasing down the column. Because higher pitch notes appear higher up the staff, it was suggested that inverting the order would be more intuitive. Initially, it was unclear what the different drop-downs corresponded to, with some users selecting the 7 from the octave number to try and insert a Maj7\footnote{A type of chord where the seventh note in the scale is added.} chord.
 
-\subsubsection{Activation of turtles}
+\subsubsection{Activation of Turtles}
 
-\paragraph{} When toggling turtles' activations, entering the edit mode for each to add or remove the exclamation mark was very tedious.
+\paragraph{} When toggling turtles' activations, entering the edit mode for each cell to add or remove the exclamation mark was very tedious.
 
 \section{Second Prototype}
 
@@ -129,7 +129,7 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsection{Dynamics}
 
-\paragraph{} To help extract a turtle's path and establish notes' volumes, dynamics are instead inserted in the cells after the note, separated by a space as in Manhattan~\cite{nash:manhattan}. As before, this will persist for all following notes until the volume is redefined. A single turtle definition with multiple start cells can now play parts of different volume. However, notes in the grid can be limited to only playing at their given volume. To play the same notes at a different volume, a new path must be made. Overall, the new system was believed to be preferable.
+\paragraph{} To help extract a turtle's path and establish notes' volumes, dynamics are instead now inserted in the cells after the note, separated by a space as in Manhattan~\cite{nash:manhattan}. As before, this will apply to all following notes, until the volume is redefined. A single turtle definition with multiple start cells can now play parts of different volume. However, notes in the grid can be limited to only playing at their given volume. To play the same notes at a different volume, a new path must be made. Overall, the new system was believed to be preferable.
 
 \paragraph{} To use a continuous volume scale, in addition to existing dynamic symbols, a number between 0 and 1 can instead be provided where 0 is silent and 1 is equivalent to \texttt{fff}.
 
@@ -139,16 +139,16 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsection{Absolute Tempo}
 
-\paragraph{} The turtle's speed is defined by cells per minute, rather than the relative value used initially. However, values less than 10 are interpreted in the original relative way for backwards compatibility for participants' existing work. To maintain consistency in a production version, this will be removed so speed must be defined absolutely. As speed and dynamics are different orders of magnitude, confusion between them is reduced.
+\paragraph{} The turtle's speed is now defined by cells per minute, rather than the relative value used initially. However, values less than 10 are interpreted in the original relative way for backwards compatibility with participants' existing work. To maintain consistency in a production version, this will be removed so speed must be defined absolutely. As speed and dynamics are different orders of magnitude, confusion between them is reduced.
 
 \subsection{Custom Excel Functions}
 
-\paragraph{} Two custom Excel functions were implemented to aid composition. One to define turtles and a second transposes notes. This allows Excello to take advantage of the functionality of the existing Excel ecosystem; drag-fill, autocomplete, cell referencing, etc.
+\paragraph{} Two custom Excel functions have been implemented to aid composition. One to define turtles and a second to transpose notes. This allows Excello to take advantage of the functionality of the existing Excel ecosystem; drag-fill, autocomplete, cell referencing, etc.
 
 \vspace{-20pt}
 \texttt{\subsubsection{EXCELLO.TURTLE}}
 
-\paragraph{} When writing a formula, a prompt informs users the position of arguments and whether they are optional. This outputs the turtle definition as text. All turtles could reference a single cell for their speeds. Relative tempi can be implemented by the speed argument of each turtle being a multiple of this global speed as shown in Figure \ref{implementation:turtleFunction}.
+\paragraph{} When writing a formula, a prompt informs users of the position of arguments, and whether they are optional. This outputs the turtle definition as text. All turtles could reference a single cell for their speeds. Relative tempi could then be implemented by the speed argument of each turtle being a multiple of this global speed as shown in Figure \ref{implementation:turtleFunction}.
 
 \begin{figure}[tbh]
 \centerline{\includegraphics[width=150mm]{figs/turtleFunction.png}}
@@ -171,7 +171,7 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsection{Sustain}
 
-\paragraph{} To prevent confusion between the south instruction and sustains. The symbol ``\texttt{-}" sustains a note. This was chosen because it is light and also has some similarity to a tie.\footnote{A line to increase the length of a note by joining to another.} Again, to maintain backwards compatability, ``\texttt{s}" in a cell is still interpreted as a sustain.
+\paragraph{} To prevent confusion between the south instruction and sustains. The symbol ``\texttt{-}" sustains a note. This was chosen because it is light and also has some similarity to a tie.\footnote{A line used in musical notation to increase the length of a note by joining it to another note.} Again, to maintain backwards compatibility, ``\texttt{s}" in a cell is still interpreted as a sustain.
 
 \subsection{Active Turtles}
 
@@ -179,27 +179,27 @@ Rest& Any cell not interpreted as a note, sustain or multi-note. \\ \hline
 
 \subsection{Automatic Movement}
 
-\paragraph{} To prevent counting the cells in a line, \texttt{m*} instructs a turtle to move as far as there are notes or sustains defined in the direction it is facing. After adding more notes, the turtle instructions do not need editing before pressing play. A part may be meant to finish with a number of rests. As rests are notated with blank cells, a method to extend the path to include these rests was required. A cell can be explicitly defined as a rest with ``\texttt{.}". This is required if multiple turtles were playing a repeating section where one does not have its final cell as a note, sustain or multi-note cell. Without an explicit rest, the turtle would repeat too soon and the parts would be out of phase.
+\paragraph{} To prevent counting the cells in a line, \texttt{m*} instructs a turtle to move as far as there are notes or sustains defined in the direction it is facing. After adding more notes, the turtle instructions do not need editing before pressing play. A part may be meant to finish with a number of rests. As rests are notated with blank cells, a method to extend the path to include these rests was required. A cell can be explicitly defined as a rest with ``\texttt{.}". This is required if multiple turtles are playing a repeating section where one turtle's final cell as a note, sustain or multi-note cell. Without an explicit rest, the turtle would repeat too soon and the parts would consequently be out of phase.
 
 \subsection{Inferred Octave}
 
 \paragraph{} Octave numbers are inferred if omitted. Two methods were considered. Firstly, as most intervals within melodic lines are small, the nearest note could be played.
 % This means that a scale would only need the octave defining in the first note.
-Whilst this may require the fewest explicit statements of octave numbers, it would be hard to find the octave of a given note. The last defined octave in the path would need finding and then all subsequent notes walked through keeping track of the octave. The second consideration was to always use the last defined octave. Whilst this may require many octave definitions around the boundary between octaves, it is easier to find the octave of a note by backtracking. The second option was implemented.
+Whilst this may require the fewest explicit statements of octave numbers, it would be hard to immediately identify the octave of any given note. The last defined octave in the path would need finding and then all subsequent notes walked through keeping track of the octave. The second consideration was to always use the last defined octave. Whilst this may require many octave definitions around the boundary between octaves, it is easier to find the octave of a note by backtracking. The second option was therefore implemented.
 
 \subsection{Chords}
 
-\paragraph{} To aid entering common chords, common types are repeated in a section at the top of the type drop-down. The chord drop-downs layout was improved with labels to make it clearer what the values refer to. If the notes were entered vertically, the order was reversed, increasing correspondence with traditional staff notation.
+\paragraph{} To aid entering common chords, common types are repeated in a section at the top of the type drop-down. The chord drop-downs layout has been improved with labels to make it clearer what the values refer to. If the notes were entered vertically, the order was reversed, increasing correspondence with traditional staff notation.
 
 \subsection{Activation of turtles}
 
-\paragraph{} A ``Toggle Activation" button was added to the add-in window. When a cell or range is highlighted in the spreadsheet, the activation of any turtle definitions in this range will be toggled when the button is pressed.  This significantly decreases the time to toggle activations as only two clicks are required rather than entering the cell edit mode to add or remove an exclamation mark.
+\paragraph{} A ``Toggle Activation" button was added to the add-in window. When a cell or range is highlighted in the spreadsheet, the activation of any turtle definitions in this range will be toggled when the button is pressed.  This significantly decreases the time to toggle activations, as only two clicks are required, rather than entering the cell edit mode to add or remove an exclamation mark.
 
 \section{Final Prototype Implementation}
 
 \paragraph{} This section discusses the underlying implementation of the final prototype, following the participatory design. Excello consists of three main parts: the turtle system for playing the grid contents, the chord input tool, and the custom Excel functions.
 
-\paragraph{} When the play button is pressed, turtle definitions in the grid are identified. For each, the starting cell and movement instructions are used to establish the contents of the cells it passes through. This is converted to a series of note definitions - pitch, start time, duration, volume. The speed and loop parameter are used to create the structure interpreted by the Tone.js library to schedule and initiate playback. An overview of the data flow and subtasks required to create the musical playback is shown in Figure \ref{fig:overview}.
+\paragraph{} When the play button is pressed, turtle definitions in the grid are identified. For each, the starting cell and movement instructions are used to establish the contents of the cells it passes through. This is converted to a series of note definitions - pitch, start time, duration, volume. The speed and loop parameters are used to create the structure interpreted by the Tone.js library to schedule and initiate playback. An overview of the data flow and subtasks required to create the musical playback is shown in Figure \ref{fig:overview}.
 
 \begin{figure}[htb]
 \begin{center}
@@ -208,27 +208,27 @@ Whilst this may require the fewest explicit statements of octave numbers, it wou
 \caption{An overview of the playback algorithm and dataflow of Excello\label{fig:overview}}
 \end{figure}
 
-\paragraph{} The \texttt{Sampler} is an extension of the \texttt{Tone.Instrument} class. This interpolates between pitched samples to create arbitrary notes. A sampler is loaded using the Salamander grand piano samples~\footnote{https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html.} which includes four pitches (out of a possible 12) per octave. This accurately interpolates notes whilst reducing loading times and storage requirements.
+\paragraph{} The \texttt{Sampler} is an extension of the \texttt{Tone.Instrument} class. This interpolates between pitched samples to create arbitrary notes. A sampler is loaded using the Salamander grand piano samples~\footnote{https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html} which includes four pitches (out of a possible 12) per octave. This accurately interpolates notes whilst reducing loading times and storage requirements.
 
 \subsection{Identifying Cells}
 
-\paragraph{} A drop-down is populated with names loaded using the Office API. Having pressed play, the cell values from the selected sheet are loaded then analysed for highlighting and calculating the musical output. Cells containing at least one note definition are highlighted red. A note must contain a note name, an optional accidental, optional octave number, and optional volume instruction following a space. This is a dynamic marking or number between 0 and 1. Notes are identified using the following regular expression:
+\paragraph{} A drop-down is populated with names loaded using the Office API. Having pressed play, the cell values from the selected sheet are loaded and then analysed for highlighting and calculating the musical output. Cells containing at least one note definition are highlighted red. A note must contain a note name, optional accidental, optional octave number, and optional volume instruction following a space. This is a dynamic marking or number between 0 and 1. Notes are identified using the following regular expression:
 
 \begin{verbatim}
 ^[A-G](#|b|)?[1-9]?( (0(\.\[0-9]+)?|1(\.0)?|ppp|pp|p|mp|mf|f|ff|fff))?$
 \end{verbatim}
 
-\paragraph{} Cells containing multiple definitions (e.g. ``\texttt{C4 ff,-, ,D}", ``\texttt{,,G,F\#}") are split using commas. The resulting strings are trimmed of starting and ending whitespace and then must either be a note, a sustain (``\texttt{-}" or ``\texttt{s}"), explicit rest (``\texttt{.}") or an empty string (created from trimming a rest). Cells matching ``\texttt{-}",``\texttt{.}" or ``\texttt{s}" are highlighted a lighter red. Turtle definitions (e.g. ``\texttt{!turtle(B2:B4, r m*, 200, 1)}") are identified using:
+\paragraph{} Cells containing multiple definitions (e.g. ``\texttt{C4 ff,-, ,D}", ``\texttt{,,G,F$\sharp$}") are split using commas. The resulting strings are trimmed of starting and ending whitespace and then must either be a note, sustain (``\texttt{-}" or ``\texttt{s}"), explicit rest (``\texttt{.}") or empty string (created from trimming a rest). Cells matching ``\texttt{-}",``\texttt{.}" or ``\texttt{s}" are highlighted a lighter red. Turtle definitions (e.g. ``\texttt{!turtle(B2:B4, r m*, 200, 1)}") are identified using:
 \begin{verbatim}
 ^(!turtle\().*(\))$
 \end{verbatim}
-and these cells are highlighted green. The address of cells containing a turtle definition are added to the live turtle section of the add-in window.
+and these cells are highlighted green. The addresses of cells containing a turtle definition are added to the live turtle section of the add-in window.
 
 \subsection{Parsing Movement Instructions}
 
-\paragraph{} Movement instructions are converted to a single unnested list of commands (e.g.~``\texttt{(r m2)2}" becomes ``\texttt{[r, m2, r, m2]}") so the turtle's path can be established. The \texttt{parse} method of the Parenthesis\footnote{https://www.npmjs.com/package/parenthesis.} library seemed suitable for aiding this string manipulation. This parses strings containing brackets into a nested array. For example, \texttt{parse(\textcolor[rgb]{0,0.7,0}{\upquote{a(b[c\{d\}])}})} gives \texttt{[\textcolor[rgb]{0,0.7,0}{\upquote{a(}}, [\textcolor[rgb]{0,0.7,0}{\upquote{b[}}, [\textcolor[rgb]{0,0.7,0}{\upquote{c\{}}, [\textcolor[rgb]{0,0.7,0}{\upquote{d}}], \textcolor[rgb]{0,0.7,0}{\upquote{\}}}], \textcolor[rgb]{0,0.7,0}{\upquote{]}}], \textcolor[rgb]{0,0.7,0}{\upquote{)}}]}.
+\paragraph{} Movement instructions are converted to a single unnested list of commands (e.g.~``\texttt{(r m2)2}" becomes ``\texttt{[r, m2, r, m2]}") so the turtle's path can be established. The \texttt{parse} method of the Parenthesis\footnote{https://www.npmjs.com/package/parenthesis} library seemed suitable for aiding this string manipulation. This parses strings containing brackets into a nested array. For example, \texttt{parse(\textcolor[rgb]{0,0.7,0}{\upquote{a(b[c\{d\}])}})} gives \texttt{[\textcolor[rgb]{0,0.7,0}{\upquote{a(}}, [\textcolor[rgb]{0,0.7,0}{\upquote{b[}}, [\textcolor[rgb]{0,0.7,0}{\upquote{c\{}}, [\textcolor[rgb]{0,0.7,0}{\upquote{d}}], \textcolor[rgb]{0,0.7,0}{\upquote{\}}}], \textcolor[rgb]{0,0.7,0}{\upquote{]}}], \textcolor[rgb]{0,0.7,0}{\upquote{)}}]}.
 
-\paragraph{} This suggests the string ``\texttt{(r m2)2}" would become \texttt{[\upquote{(}, [\upquote{r m2}], \upquote{)2}]}.  By removing the brackets from these strings, a simple recursive method could be built to output \texttt{\upquote{r m2 r m2}} from \texttt{[[\upquote{r m2}], \upquote{2}]}. However, upon testing this, the library outputted an undefined array. From investigating the source code, I established strings with a number following a closing parenthesis all produced this error. Substituting characters for the numbers or placing a symbol before all numbers and then later removing these would allow the library to be used. Instead, using the Parenthesis method as inspiration, I implemented my own parsing function tailored to Excello.
+\paragraph{} This suggests the string ``\texttt{(r m2)2}" would become \texttt{[\upquote{(}, [\upquote{r m2}], \upquote{)2}]}. By removing the brackets from these strings, a simple recursive method could be built to output \texttt{\upquote{r m2 r m2}} from \texttt{[[\upquote{r m2}], \upquote{2}]}. However, upon testing this, the library outputted an undefined array. From investigating the source code, I established that strings with a number following a closing parenthesis all produced this error. Substituting characters for the numbers or placing a symbol before all numbers and then later removing these would allow the library to be used. Instead, using the Parenthesis method as inspiration, I implemented my own parsing function tailored to Excello.
 
 \paragraph{} This has two main steps. First, the deepest bracketed expression is stored in an array with the brackets removed. This expression is replaced in the original string with the string \upquote{\texttt{\_\_\_}$x$\texttt{\_\_\_}} where $x$ is the expression's index in the array. This is repeated until the string contains no brackets. Then a recursive function uses the values of $x$ to reconstruct the string in the nested array format. This method is outlined in Algorithm \ref{alg:parenthesis}. The Typescript implementation is in Appendix \ref{appendix:parseBrackets}.
 
@@ -278,9 +278,9 @@ and these cells are highlighted green. The address of cells containing a turtle 
 \end{algorithm}
 
 
-\paragraph{} Having submitted a bug report on the Parenthesis GitHub, and implemented my own method for parsing turtle movement instructions, I implemented a fix to the Parenthesis library. The library previously performed replacements with the string \upquote{\texttt{\_\_\_}$x$}. $x$ and following numbers would concatenate forming a single number, causing the library to fail. My method of having an identifier before and after $x$ fixed the issue. I also added additional tests to Parenthesis to verify my method and ensure that previous tests all passed before submitting a pull request. I have made an open source contribution as this has been merged into the library and published.
+\paragraph{} Having submitted a bug report on the Parenthesis GitHub, and implemented my own method for parsing turtle movement instructions, I implemented a fix to the Parenthesis library. The library previously performed replacements with the string \upquote{\texttt{\_\_\_}$x$}. $x$ and following numbers would concatenate forming a single number, causing the library to fail. My method of having an identifier before and after $x$ fixed this issue. I also added additional tests to Parenthesis to verify my method and ensure that previous tests all passed before submitting a pull request. I have made an open source contribution, as this has since been merged into the library and published.
 
-\paragraph{} I wrote an additional recursive method to unnest the array into a single stream of commands. An empty string, s, is initialised. For each item in the array, if it is an array, unnest the contents recursively and add the result to s. If not, it will be one or more single movement commands. If the single movement commands start with a number, the result is added to \texttt{s} that number of times. The remaining instructions are added to \texttt{s}. This is outlined in Algorithm \ref{alg:unnest}. The implementation is shown in Appendix \ref{appendix:processParsedBrackets}.
+\paragraph{} I wrote an additional recursive method to unnest the array into a single stream of commands. An empty string, \texttt{s}, is initialised. For each item in the array, if it is an array, unnest the contents recursively and add the result to s. If not, it will be one or more single movement commands. If the single movement commands start with a number, the result is added to \texttt{s} that number of times. The remaining instructions are added to \texttt{s}. This is outlined in Algorithm \ref{alg:unnest}. The implementation is shown in Appendix \ref{appendix:processParsedBrackets}.
 
 \begin{algorithm}[!htbp]
 \caption{Unnesting parsed bracketed expressions.}
@@ -310,19 +310,19 @@ and these cells are highlighted green. The address of cells containing a turtle 
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Getting Cells in Turtles' paths}
+\subsection{Getting Cells in Turtles' Paths}
 
-\paragraph{} If the turtle's first argument defines a range of starting cells, the cell addresses of this range are calculated. For each starting cell, the unnested instructions and sheet values are used to find the contents of the cells the turtle passes through. This process models the movement of the turtle within the grid, keeping track of its position and where it is facing. For each instruction, the position and direction are updated as required and the contents of any new cells entered added to a list of notes.
+\paragraph{} If the turtle's first argument defines a range of starting cells, the cell addresses of this range are calculated. For each starting cell, the unnested instructions and sheet values are used to find the contents of the cells the turtle passes through. This process models the movement of the turtle within the grid, keeping track of its position and the direction in which it is facing. For each instruction, the position and direction are updated as required, and the contents of any new cells entered are added to a list of notes.
 
 \paragraph{} For the ``\texttt{m*}" instruction, the number of steps the turtle takes must be computed. Given the turtle's current position and direction, the one-dimensional array of cells in front of it is taken. The turtle should step to the last cell that defines a note, sustain or explicit rest. The number of steps is the array's length minus the index of the first element in the reversed array satisfying this criterion.
 
 \subsection{Creating Note Times}
 
-\paragraph{} The cells a turtle moves through are used to create a data structure containing the information for playback using the Tone library. For each turtle, the following array is produced: \texttt{[[<Note 1>,...,<Note N>], <number of cells>]} (note sequence array). Each note is as follows: \texttt{[<start time>, [<pitch>, <duration>, <volume>]]}. Volume and octave are added to each note if they where omitted from a cell.
+\paragraph{} The cells a turtle moves through are used to create a data structure containing the information for playback using the Tone library. For each turtle, the following array is produced: \texttt{[[<Note 1>,...,<Note N>], <number of cells>]} (note sequence array). Each note is as follows: \texttt{[<start time>, [<pitch>, <duration>, <volume>]]}. Volume and octave are added to each note if they were omitted from a cell.
 
-\paragraph{} The Tone Transport is a timeline along whih events can be scheduled. This supports many different representations of time. I used Transport Time for all note onsets and durations. This is of the form \texttt{\upquote{BARS:QUARTERS:SIXTEENTHS}} where the three values are number and can be non-integer. With \texttt{QUARTERS} representing the number of cells, the calculation of exact times, or arbitrary musical can be avoided. This allowed the contents of cells to easily be converted to times to be interpreted by the Tones library.
+\paragraph{} The Tone Transport is a timeline along which events can be scheduled. This supports many different representations of time. I used Transport Time for all note onsets and durations. This is of the form \texttt{\upquote{BARS:QUARTERS:SIXTEENTHS}} where the three values are numbers and can be non-integer. With \texttt{QUARTERS} representing the number of cells, the calculation of exact times, or arbitrary musical notes can be avoided. This allows the contents of cells to be easily converted to times to be interpreted by the Tones library.
 
-\paragraph{} The note sequence array is initiated by counting the notes that are defined in the cell contents using regular expressions for identifying notes and multi-note cells. The cells are iterated through keeping track of the active note and adding it to the note sequence when it ends. Outside of this loop, variables track how many cells and notes through the process the algorithm is and whether it is currently a rest or note. Variables keep track of the note currently being played - when it started (\texttt{currentStart}), the pitch (\texttt{currentNote}) and volume (\texttt{currentVolume}). As volume and octave number may be omitted, variables also keep track of these. Table \ref{tab:times} outlines the actions performed when a cell is read. Notes are added to the note sequence in the form \texttt{[currentStart, [currentNote, \upquote{0:} + noteLength + \upquote{:0}, currentVolume]]}.
+\paragraph{} The note sequence array is initiated by counting the notes that are defined in the cell contents using regular expressions for identifying notes and multi-note cells. The cells are iterated through keeping track of the active note and adding it to the note sequence when it ends. Outside of this loop, variables track how many cells and notes through the process the algorithm is and whether it is currently a rest or note. Variables keep track of the note currently being played - when it started (\texttt{currentStart}), the pitch (\texttt{currentNote}) and the volume (\texttt{currentVolume}). As volume and octave number may be omitted, variables also keep track of these. Table \ref{tab:times} outlines the actions performed when a cell is read. Notes are added to the note sequence in the form \texttt{[currentStart, [currentNote, \upquote{0:} + noteLength + \upquote{:0}, currentVolume]]}.
 
 \begin{table}[ht]
 \begin{tabular}{|l|l|l|l|l|}
@@ -351,9 +351,9 @@ and these cells are highlighted green. The address of cells containing a turtle 
 \end{table}
 \vspace{-10pt}
 
-\paragraph{} The same method is used for multi-note cells, except the note length and cell count are incremented by the appropriate fraction for each item in the cell. If after the final cell, the state is a note, it is ended and added to the note sequence.
+\paragraph{} The same method is used for multi-note cells, except the note length and cell count are incremented by the appropriate fraction for each item in the cell. If, after the final cell, the state is a note, it is ended and added to the note sequence.
 
-\paragraph{} The values in the note sequence are sufficient for the piano sampler to play a note using the \texttt{triggerAttackRelease} function. The \texttt{Tone.Part} class allows multiple calls to this method be defined which can be started, stopped and looped as a single unit. This is defined with the note sequence and its speed set with the evaluated turtle speed argument. The number of cells, calcuated when creating the note times, number of repeats, and the evaluated speed argument are used to control when looping ends.
+\paragraph{} The values in the note sequence are sufficient for the piano sampler to play a note using the \texttt{triggerAttackRelease} function. The \texttt{Tone.Part} class allows multiple calls to this method to be defined, started, stopped and looped as a single unit. This is defined with the note sequence and its speed set with the evaluated turtle speed argument. The number of cells, calculated when creating the note times, number of repeats, and the evaluated speed argument are used to control when looping ends.
 
 % \begin{verbatim}
 % var turtlePart = new Tone.Part(function(time, note){
@@ -379,9 +379,9 @@ and these cells are highlighted green. The address of cells containing a turtle 
 %   turtlePart.playbackRate = speedFactor;
 % \end{lstlisting}
 
-\subsection{Chord Input}
+\subsection{Chord Input}\label{Chord Input}
 
-\paragraph{} When the insert button in the add-in window is pressed, the note, type, inversion and octave of the chord are extracted from their HTML elements. The chord interface within the add-in window is shown in Figure \ref{fig:chordInput}. The tonal library is used to generate the chord notes:
+\paragraph{} The next two subsections (\S\ref{Chord Input} and \S\ref{Custom Excel Functions}) outline the two smaller parts of the Excello; the chord input tool, and the custom Excel functions. When the insert button in the add-in window is pressed, the note, type, inversion and octave of the chord are extracted from their HTML elements. The chord interface within the add-in window is shown in Figure \ref{fig:chordInput}. The tonal library is used to generate the chord notes:
 
 \begin{verbatim}
 var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
@@ -390,20 +390,20 @@ var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
 
 \begin{figure}[htb]
 \centerline{\includegraphics[width=50mm]{figs/insertChord.png}}
-\caption{The interface within the add-in window for inserting the notes of chord.}
+\caption{The interface within the add-in window for inserting the notes of chords.}
 \label{fig:chordInput}
 \end{figure}
 
 \vspace{-20pt}
-\paragraph{} The tonal \texttt{simplify} function reduces note definitions to contain at most one accidental, as required by Excello. This provides a list of notes in ascending order without octaves or taking into account the inversion. To create the correct inversion of the chord, the array of notes is rotated by the inversion number.
+\paragraph{} The tonal \texttt{simplify} function reduces note definitions to contain at most one accidental, as required by Excello. This provides a list of notes in ascending order, without octaves or taking into account the inversion. To create the correct inversion of the chord, the array of notes is rotated by the inversion number.
 
-\paragraph{} The given octave number is appended to the first note. A dictionary matches note names, accounting for enharmonics,\footnote{Notes that are the same pitch but different names, such as Ab and G\#.} to position in the chromatic scale starting at C (the first note of the octave in SPN). For each preceding note, if it appears in an equal or lower position in the scale than its predecessor, the octave number is incremented before appending. Otherwise, it is in the same octave so the octave number is appended without modification.
+\paragraph{} The given octave number is appended to the first note. A dictionary matches note names, accounting for enharmonics,\footnote{Notes that are the same pitch but different names, such as A$\flat$ and G$\sharp$.} to position in the chromatic scale starting at C (the first note of the octave in SPN). For each preceding note, if it appears in an equal or lower position in the scale than its predecessor, the octave number is incremented before appending. Otherwise, it is in the same octave, so the octave number is appended without modification.
 
 \paragraph{} The selected range is acquired with the Office API. The chord notes are entered starting at the top-left corner of this range. If the range's height is greater or equal to its width, the notes are entered vertically going down. Otherwise, they are entered horizontally going right. Using the Office API, the range is set to the 2D array where the chord is entered.
 
-\subsection{Custom Excel Functions}
+\subsection{Custom Excel Functions}\label{Custom Excel Functions}
 
-\paragraph{} Custom functions are implemented using another add-in. Rather than a separate window like the main Excello add-in, additional functions can be used in cells with the prefix ``\texttt{=EXCELLO.}". The file structure was generated with the Yeomann generator. The name, description, result type, and parameter names and types are stored in a JSON schema. This is used by Excel to provide argument prompts and autofill when writing formulae. Functions are defined in Typescript.
+\paragraph{} Custom functions are implemented using another add-in. Rather than a separate window like the main Excello add-in, additional functions can be used in cells with the prefix ``\texttt{=EXCELLO.}". The file structure was generated with the Yeoman generator. The name, description, result type, and parameter names and types are stored in a JSON schema. This is used by Excel to provide argument prompts and autofill when writing formulae. Functions are defined in Typescript.
 
 \paragraph{} The turtle function concatenates the arguments into the Excello turtle format. Other cells can be referenced, for example, the speed variable can reference a global tempo variable as in Figure \ref{implementation:turtleFunction}.
 
@@ -411,9 +411,9 @@ var chordNotes = Chord.notes(chordNote, chordType).map(x => Note.simplify(x));
 
 \section{MIDI Converter}
 
-\paragraph{} This section explains the Python converter from MIDI to CSV for Excello playback. A MIDI file is divided into up to 16 parallel tracks~\cite{midiSpec}. Each track contains a series of messages defined using predefined status and data bytes. I used the Mido library\footnote{https://mido.readthedocs.io/en/latest/index.html.} to read MIDI files and abstract away from the underlying byte representations to view the messages. Note onsets and offsets are two separate events with two separate messages~\cite{midiSpec}. These messages include the note pitch, velocity, channel (not relevant) and time in ticks since the last message~\cite{midoSpec}.
+\paragraph{} This section explains the Python converter from MIDI to CSV for Excello playback. A MIDI file is divided into up to 16 parallel tracks~\cite{midiSpec}. Each track contains a series of messages defined using predefined status and data bytes. I used the Mido library\footnote{https://mido.readthedocs.io/en/latest/index.html} to read MIDI files and abstract away from the underlying byte representations to view the messages. Note onsets and offsets are two separate events with two separate messages~\cite{midiSpec}. These messages include the note pitch, velocity, channel (not relevant) and time in ticks since the last message~\cite{midoSpec}.
 
-\paragraph{} First, the list of messages is converted to a list of notes defined by onset and offset time, pitch and velocity. For each track, the messages are iterated through, using the time value in every message (including control and meta messages) to update a variable tracking time. For note onset messages, this is added to a dictionary mapping pitches to a list of currently active note start times. Lists are used because a pitch can be active multiple times at once. For note offset messages, or onset messages with zero velocity, the note popped from the active notes at that pitch with end time added is added to the list of all notes defined in the file.
+\paragraph{} First, the list of messages is converted to a list of notes defined by onset and offset time, pitch and velocity. For each track, the messages are iterated through, using the time value in every message (including control and meta messages) to update a variable tracking time. For note onset messages, this is added to a dictionary mapping pitch to a list of currently active note start times. Lists are used because a pitch can be active multiple times at once. For note offset messages, or onset messages with zero velocity, the note popped from the active notes at that pitch with end time added is added to the list of all notes defined in the file.
 
 \paragraph{} As each turtle only plays one note at a time, the notes are split into lists so no list contains concurrently played notes. Provided the initial list of notes is non-empty, a new list is created. The first remaining note is moved to the new list. Then iterating over the remaining notes, the next note starting after the previous note ends is moved to this new list. The number of iterations required is the number of turtles, $n$.
 
@@ -428,11 +428,11 @@ For each note, the times are adjusted as follows:
   $$start \gets start / di\hspace{-0.1em}f\hspace{-0.2em}f\hspace{-0.1em}erenceStat \times ratio_{int} \text{ (rounded to the nearest 0.1)}$$
   $$end \gets start +length$$
 
-\paragraph{} The streams, with note start and end times corresponding to cells, are converted to a CSV file for Excello. Each turtle's path is initialised as an array of empty strings with length equal to the maximum end time for a note in any turtle, $L$.  Each note the turtle plays is entered into the array. MIDI defines pitch using the integers. As there are 12 notes in an octave, modulus and division with 12 gives the note name and octave for SPN. If velocity is different to the previous note played by the turtle (or the note is the first note), the eight-bit MIDI velocity is mapped to Excello's [0,1] range. If the note length is greater than one, sustains are placed in the following cells. These paths go right starting in column A, with the first in row 2.
+\paragraph{} The streams, with note start and end times corresponding to cells, are converted to a CSV file for Excello. Each turtle's path is initialised as an array of empty strings with length equal to the maximum end time for a note in any turtle, $L$. Each note the turtle plays is entered into the array. MIDI defines pitch using the integers. As there are 12 notes in an octave, modulus and division with 12 gives the note name and octave for SPN. If velocity is different from the previous note played by the turtle (or the note is the first note), the eight-bit MIDI velocity is mapped to Excello's [0,1] range. If the note length is greater than one, sustains are placed in the following cells. These paths go right starting in column A, with the first in row 2.
 
 \paragraph{} Finally, the turtle definition is placed in the spreadsheet. The start cell range is ``A2:A$(n+1)$". The movement instruction is ``r m$L$". The MIDI file contains meta data for the \texttt{tempo} (milliseconds per beat) and \texttt{ticks\_per\_beat}. Cells per minute is calculated as follows:
-  $$cells\ per\ tick \times ticks\ per\ beat \times beat\ per\ minute$$
-  $$= \frac{ratio_{int}}{di\hspace{-0.1em}f\hspace{-0.2em}f\hspace{-0.1em}erenceStat} \times \texttt{ticks\_per\_beat} \times \frac{60 \times 10^6}{\texttt{tempo}}$$
+$$cells\ per\ tick \times ticks\ per\ beat \times beat\ per\ minute$$
+$$= \frac{ratio_{int}}{di\hspace{-0.1em}f\hspace{-0.2em}f\hspace{-0.1em}erenceStat} \times \texttt{ticks\_per\_beat} \times \frac{60 \times 10^6}{\texttt{tempo}}$$
 With a value of 1 for repeats, the turtle definition is put in cell A1 and the CSV exported.
 
 \input{chapters/implementation/repo}

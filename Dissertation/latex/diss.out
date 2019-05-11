@@ -19,7 +19,7 @@
 \BOOKMARK [1][-]{section.3.1}{Initial Prototype}{chapter.3}% 19
 \BOOKMARK [2][-]{subsection.3.1.1}{Turtles}{section.3.1}% 20
 \BOOKMARK [2][-]{subsection.3.1.2}{Highlighting}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.3}{Chord input}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.3}{Chord Input}{section.3.1}% 22
 \BOOKMARK [1][-]{section.3.2}{Formative Evaluation}{chapter.3}% 23
 \BOOKMARK [2][-]{subsection.3.2.1}{Issues and Suggestions}{section.3.2}% 24
 \BOOKMARK [1][-]{section.3.3}{Second Prototype}{chapter.3}% 25
@@ -36,7 +36,7 @@
 \BOOKMARK [1][-]{section.3.4}{Final Prototype Implementation}{chapter.3}% 36
 \BOOKMARK [2][-]{subsection.3.4.1}{Identifying Cells}{section.3.4}% 37
 \BOOKMARK [2][-]{subsection.3.4.2}{Parsing Movement Instructions}{section.3.4}% 38
-\BOOKMARK [2][-]{subsection.3.4.3}{Getting Cells in Turtles' paths}{section.3.4}% 39
+\BOOKMARK [2][-]{subsection.3.4.3}{Getting Cells in Turtles' Paths}{section.3.4}% 39
 \BOOKMARK [2][-]{subsection.3.4.4}{Creating Note Times}{section.3.4}% 40
 \BOOKMARK [2][-]{subsection.3.4.5}{Chord Input}{section.3.4}% 41
 \BOOKMARK [2][-]{subsection.3.4.6}{Custom Excel Functions}{section.3.4}% 42
