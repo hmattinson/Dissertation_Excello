@@ -336,9 +336,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
 OUTPUT chapters/title.aux
 INPUT chapters/title.tex
 INPUT chapters/title.tex
-INPUT figs/cam.jpg
-INPUT ./figs/cam.jpg
-INPUT ./figs/cam.jpg
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr6.tfm

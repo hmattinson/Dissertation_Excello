@@ -2,7 +2,7 @@
 
 University of Cambridge final dissertation.
 
-The aim of this project is to take Microsoft's Excel, one of the most omnipresent pieces of software, and create a system for music composition and performance within it.
+This project took Microsoft's Excel, one of the most omnipresent pieces of software, and created a system for music composition and performance within it - Excello.
 
 ## Set up
 
@@ -104,9 +104,9 @@ This example is equivalent to the movement instructions "m3 r m3 r m3 r m3 r" an
 
 ##### Speed
 
-Default 1.
+Default 160.
 
-This is a relative speed factor that can be used to define turtles to move at different speeds. A turtle defined with speed 2 will move through the grid twice as fast as one with speed 1.
+This is cells per minute that the turtle will move at. This used to be a relative amount so currently values less that 10 will be multiplied by 10 to maintain backwards compatibility. 
 
 ##### Number of loops
 
@@ -116,7 +116,7 @@ The number of times the turtle will travel through the path defined. If left bla
 
 #### Examples
 
-Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=BtarK1
+Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=j3hfQz
 
 #### Adding Chords
 
@@ -127,28 +127,25 @@ Rather than working out each note for a chord and typing them in, in the window 
 * Inversion of the chord - which number note in the chord is used to start
 * Octave of the first note in the chord
 
-## Features that could be added
+### Excel Formulae
 
-* Turtles deployed by turtles
-* Definable tempo - DONE
+The Custom_Functions folder contains the implementation of two custom functions that can be loaded into Excel to help with the composition process.
+
+###### EXCELLO.TURTLE
+
+This takes the 4 arguments as required for the turtle (last 2 optional) and creates the turtle definition. This is particularly useful for referring to a global speed variable. 
+
+###### EXCELLO.TRANSPOSE
+
+This allows the tonal library's transpose function to be used. The first argument of the function is any cell (it can include dynamics be multi-note). The second is an interval as defined in the tonal library (<https://github.com/danigb/tonal/tree/master/packages/interval#module_Interval>).
+
+## Stuff to consider for future development
+
+* Turtles launching turtles
 * Turtle tracking
 * Input sanitisation
-* Different Synths - in a more sustainable way, and such that they can be selected
-* Live (https://github.com/Tonejs/Tone.js/blob/master/examples/stepSequencer.html is helpful)
-* move as far as there are notes - DONE
-* Actual excel formula - DONE
-
-## Issues
-
-Active range of spreadsheet currently has to include the top left cell
-
-Double clicking play
-
-Bug with Simon
-
-## PD feedback to implement
-
-9) play selected
+* Different Sounds
+* Live changes to cell contents. 
 
 ## Log
 
@@ -251,4 +248,4 @@ Bug with Simon
 | 8/4             | Actual Implementation write-up                               | 5    | Started actual implementation writup, made changes to parenthesis parsing code, wrote up algorithm, made diagram for overview |                                                              |
 | 9-22/4          | Dissertation write-up                                        | ~30  | Evaluation write up, MIDI corpora conversions, repo neatening. |                                                              |
 | 23/4            | Finish draft of all sections                                 | 6    | Finished draft for all sections, some neatening required then I can send off to people to read. |                                                              |
-| 24/4            | Sort up little loose ends so I can then send to people to read. Action Advait's comments for Prep and Intro. |      |                                                              |                                                              |
+| 24/4 -          | Make a proper Diss, peoples comments, stylistic things, shaving words and pages | ~ 40 |                                                              |                                                              |

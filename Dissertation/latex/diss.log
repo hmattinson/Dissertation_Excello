@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  12 MAY 2019 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.22)  16 MAY 2019 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,12 +1123,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \openout2 = `chapters/title.aux'.
 
 
-(./chapters/title.tex <figs/cam.jpg, id=284, 570.90883pt x 118.67749pt>
-File: figs/cam.jpg Graphic file (type jpg)
-
-<use figs/cam.jpg>
-Package pdftex.def Info: figs/cam.jpg used on input line 18.
-(pdftex.def)             Requested size: 113.81102pt x 23.6572pt.
+(./chapters/title.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1139,7 +1134,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figs/excelloLogoRing.png, id=285, 225.84375pt x 225.84375pt>
+<figs/excelloLogoRing.png, id=284, 225.84375pt x 225.84375pt>
 File: figs/excelloLogoRing.png Graphic file (type png)
 
 <use figs/excelloLogoRing.png>
@@ -1149,7 +1144,7 @@ Package pdftex.def Info: figs/excelloLogoRing.png used on input line 40.
 
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figs/
-cam.jpg> <./figs/excelloLogoRing.png>])
+excelloLogoRing.png>])
 \openout2 = `chapters/initialStuff.aux'.
 
 
@@ -1162,7 +1157,7 @@ l.45 \newpage
 
 
 ]
-Overfull \hbox (19.30571pt too wide) in paragraph at lines 50--65
+Overfull \hbox (19.30571pt too wide) in paragraph at lines 50--66
 []
  []
 
@@ -1176,25 +1171,25 @@ Overfull \hbox (19.30571pt too wide) in paragraph at lines 50--65
 
 ) [5] (./chapters/introduction/content.tex
 Chapter 1.
-<figs/sib.jpg, id=406, 1006.76125pt x 547.04375pt>
+<figs/sib.jpg, id=405, 1006.76125pt x 547.04375pt>
 File: figs/sib.jpg Graphic file (type jpg)
  <use figs/sib.jpg>
 Package pdftex.def Info: figs/sib.jpg used on input line 17.
 (pdftex.def)             Requested size: 213.39566pt x 115.95102pt.
 
-<figs/sonicPi.png, id=407, 1284.8pt x 700.6175pt>
+<figs/sonicPi.png, id=406, 1284.8pt x 700.6175pt>
 File: figs/sonicPi.png Graphic file (type png)
  <use figs/sonicPi.png>
 Package pdftex.def Info: figs/sonicPi.png used on input line 17.
 (pdftex.def)             Requested size: 213.39566pt x 116.36661pt.
 
-<figs/manhattan.png, id=409, 886.31125pt x 639.38875pt>
+<figs/manhattan.png, id=408, 886.31125pt x 639.38875pt>
 File: figs/manhattan.png Graphic file (type png)
 
 <use figs/manhattan.png>
 Package pdftex.def Info: figs/manhattan.png used on input line 21.
 (pdftex.def)             Requested size: 213.39566pt x 153.94424pt.
- <figs/excelloFull.png, id=410, 1284.8pt x 803.0pt>
+ <figs/excelloFull.png, id=409, 1284.8pt x 803.0pt>
 File: figs/excelloFull.png Graphic file (type png)
 
 <use figs/excelloFull.png>
@@ -1219,7 +1214,7 @@ Underfull \hbox (badness 1314) in paragraph at lines 26--27
 m the browser us-ing
  []
 
-[9] <figs/alJazari.jpg, id=487, 390.45876pt x 293.095pt>
+[9] <figs/alJazari.jpg, id=486, 390.45876pt x 293.095pt>
 File: figs/alJazari.jpg Graphic file (type jpg)
 
 <use figs/alJazari.jpg>
@@ -1230,7 +1225,7 @@ LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 51.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [10 <./figs/alJazari.jpg>] <figs/sheetDiss1.png, id=509, 341.275pt x 107.4012
+) [10 <./figs/alJazari.jpg>] <figs/sheetDiss1.png, id=508, 341.275pt x 107.4012
 5pt>
 File: figs/sheetDiss1.png Graphic file (type png)
 
@@ -1238,7 +1233,7 @@ File: figs/sheetDiss1.png Graphic file (type png)
 Package pdftex.def Info: figs/sheetDiss1.png used on input line 62.
 (pdftex.def)             Requested size: 270.30118pt x 85.07056pt.
  [11]
-<figs/sheetDiss22.png, id=522, 339.2675pt x 140.525pt>
+<figs/sheetDiss22.png, id=521, 339.2675pt x 140.525pt>
 File: figs/sheetDiss22.png Graphic file (type png)
 
 <use figs/sheetDiss22.png>
@@ -1253,14 +1248,14 @@ Underfull \hbox (badness 1881) in paragraph at lines 79--80
  []
 
 [12 <./figs/sheetDiss1.png> <./figs/sheetDiss22.png>]
-<figs/withoutMulti.png, id=541, 552.0625pt x 46.1725pt>
+<figs/withoutMulti.png, id=540, 552.0625pt x 46.1725pt>
 File: figs/withoutMulti.png Graphic file (type png)
 
 <use figs/withoutMulti.png>
 Package pdftex.def Info: figs/withoutMulti.png used on input line 208.
 (pdftex.def)             Requested size: 272.15562pt x 22.76219pt.
 
-<figs/withMulti.png, id=542, 296.10625pt x 43.16125pt>
+<figs/withMulti.png, id=541, 296.10625pt x 43.16125pt>
 File: figs/withMulti.png Graphic file (type png)
 
 <use figs/withMulti.png>
@@ -1269,14 +1264,14 @@ Package pdftex.def Info: figs/withMulti.png used on input line 209.
  [13 <./figs/withoutMulti.png> <./figs/withMulti.png>]
 [14]) (./chapters/implementation/content.tex [15]
 Chapter 3.
-<figs/initialPrototype.png, id=589, 1244.65pt x 357.83687pt>
+<figs/initialPrototype.png, id=588, 1244.65pt x 357.83687pt>
 File: figs/initialPrototype.png Graphic file (type png)
 
 <use figs/initialPrototype.png>
 Package pdftex.def Info: figs/initialPrototype.png used on input line 11.
 (pdftex.def)             Requested size: 426.79134pt x 122.70035pt.
 
-<figs/initialScore.png, id=590, 1226.5825pt x 150.5625pt>
+<figs/initialScore.png, id=589, 1226.5825pt x 150.5625pt>
 File: figs/initialScore.png Graphic file (type png)
 
 <use figs/initialScore.png>
@@ -1285,14 +1280,14 @@ Package pdftex.def Info: figs/initialScore.png used on input line 16.
  [16
 
  <./figs/initialPrototype.png> <./figs/initialScore.png>] [17] [18] [19] [20]
-<figs/turtleFunction.png, id=677, 599.23875pt x 180.17313pt>
+<figs/turtleFunction.png, id=676, 599.23875pt x 180.17313pt>
 File: figs/turtleFunction.png Graphic file (type png)
 
 <use figs/turtleFunction.png>
 Package pdftex.def Info: figs/turtleFunction.png used on input line 154.
 (pdftex.def)             Requested size: 426.79134pt x 128.32518pt.
  [21]
-<figs/modulateFunction.png, id=691, 685.05937pt x 61.73062pt>
+<figs/modulateFunction.png, id=690, 685.05937pt x 61.73062pt>
 File: figs/modulateFunction.png Graphic file (type png)
 
 <use figs/modulateFunction.png>
@@ -1330,7 +1325,7 @@ Overfull \hbox (26.40613pt too wide) in paragraph at lines 387--387
 Note.simplify(x)); 
  []
 
-<figs/insertChord.png, id=768, 219.82124pt x 157.58875pt>
+<figs/insertChord.png, id=767, 219.82124pt x 157.58875pt>
 File: figs/insertChord.png Graphic file (type png)
 
 <use figs/insertChord.png>
@@ -1349,14 +1344,14 @@ Underfull \hbox (badness 2318) in paragraph at lines 79--80
 
 )) (./chapters/evaluation/content.tex [32]
 Chapter 4.
-<figs/excelloFranzRedacted.png, id=824, 1251.67625pt x 672.5125pt>
+<figs/excelloFranzRedacted.png, id=823, 1251.67625pt x 672.5125pt>
 File: figs/excelloFranzRedacted.png Graphic file (type png)
 
 <use figs/excelloFranzRedacted.png>
 Package pdftex.def Info: figs/excelloFranzRedacted.png used on input line 24.
 (pdftex.def)             Requested size: 426.79134pt x 229.30797pt.
 
-<figs/manhattanPhase.png, id=828, 546.04pt x 426.59375pt>
+<figs/manhattanPhase.png, id=827, 546.04pt x 426.59375pt>
 File: figs/manhattanPhase.png Graphic file (type png)
 
 <use figs/manhattanPhase.png>
@@ -1366,14 +1361,14 @@ Package pdftex.def Info: figs/manhattanPhase.png used on input line 33.
 Overfull \vbox (105.33675pt too high) detected at line 33
  []
 
-<figs/sonicPiPhase.png, id=829, 637.38126pt x 307.1475pt>
+<figs/sonicPiPhase.png, id=828, 637.38126pt x 307.1475pt>
 File: figs/sonicPiPhase.png Graphic file (type png)
 
 <use figs/sonicPiPhase.png>
 Package pdftex.def Info: figs/sonicPiPhase.png used on input line 33.
 (pdftex.def)             Requested size: 184.9429pt x 89.12204pt.
 
-<figs/excelloPhase.png, id=830, 411.5375pt x 90.3375pt>
+<figs/excelloPhase.png, id=829, 411.5375pt x 90.3375pt>
 File: figs/excelloPhase.png Graphic file (type png)
 
 <use figs/excelloPhase.png>
@@ -1507,7 +1502,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 [48
 
 ] [49]
-<chapters/finalProposalAnonPerm.pdf, id=1080, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1079, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 
 <use chapters/finalProposalAnonPerm.pdf>
@@ -1521,7 +1516,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf used on input line
 238.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
-<chapters/finalProposalAnonPerm.pdf, id=1083, page=1, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1082, page=1, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 1>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page1 used on inpu
@@ -1553,7 +1548,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page1 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [51 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1174, page=2, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1173, page=2, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 2>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page2 used on inpu
@@ -1572,7 +1567,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page2 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [52 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1191, page=3, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1190, page=3, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 3>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page3 used on inpu
@@ -1591,7 +1586,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page3 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [53 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1196, page=4, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1195, page=4, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 4>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page4 used on inpu
@@ -1610,7 +1605,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page4 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [54 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1202, page=5, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1201, page=5, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 5>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page5 used on inpu
@@ -1629,7 +1624,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page5 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [55 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1207, page=6, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1206, page=6, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 6>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page6 used on inpu
@@ -1648,7 +1643,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page6 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [56 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1212, page=7, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1211, page=7, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 7>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page7 used on inpu
@@ -1667,7 +1662,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page7 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [57 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1217, page=8, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1216, page=8, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 8>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page8 used on inpu
@@ -1686,7 +1681,7 @@ Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page8 used on inpu
 t line 238.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [58 <./chapters/finalProposalAnonPerm.pdf>]
-<chapters/finalProposalAnonPerm.pdf, id=1222, page=9, 597.23125pt x 845.1575pt>
+<chapters/finalProposalAnonPerm.pdf, id=1221, page=9, 597.23125pt x 845.1575pt>
 File: chapters/finalProposalAnonPerm.pdf Graphic file (type pdf)
 <use chapters/finalProposalAnonPerm.pdf, page 9>
 Package pdftex.def Info: chapters/finalProposalAnonPerm.pdf, page9 used on inpu
@@ -1718,10 +1713,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
  ) 
 Here is how much of TeX's memory you used:
- 33289 strings out of 493014
- 757006 string characters out of 6133351
- 1016488 words of memory out of 5000000
- 35711 multiletter control sequences out of 15000+600000
+ 33284 strings out of 493014
+ 756932 string characters out of 6133351
+ 1016431 words of memory out of 5000000
+ 35707 multiletter control sequences out of 15000+600000
  16854 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,19n,111p,1899b,2501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1825,10 +1820,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 ve/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on diss.pdf (60 pages, 2581912 bytes).
+Output written on diss.pdf (60 pages, 2413636 bytes).
 PDF statistics:
- 1393 PDF objects out of 1440 (max. 8388607)
+ 1392 PDF objects out of 1440 (max. 8388607)
  1223 compressed objects within 13 object streams
  472 named destinations out of 1000 (max. 500000)
- 725 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 720 words of extra memory for PDF output out of 10000 (max. 10000000)
 
