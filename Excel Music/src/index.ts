@@ -83,7 +83,7 @@ async function run() {
             'release' : 1,
             'baseUrl' : '../assets/samples/salamander/',
             'onload': function() {
-                runTurtles(sheet.values);
+                runTurtles(sheet);
                 Tone.Transport.start("+0.1");
             }
         }).toMaster();

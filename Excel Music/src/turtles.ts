@@ -330,11 +330,12 @@ export function move(current: [number, number], dir: string): [number, number] {
 
 /**
  * Given current coordinates and direction, return coordinates after step forwards
- * @param current current coordinates
- * @param dir compass direction turtle is facing
- * @return new coordinates of turtle
+ * @param start
+ * @param moves
+ * @param sheetVals
+ * @return [notes, trace] where notes is a list of cell contents and trace is a list of coordinates
  */
-export function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): [string, number][] {
+export function getTurtleSequence(start: string, moves: string[], sheetVals: any[][]): [[string, number][],[number,number][]] {
     console.log(start);
 
     var startCoords: [number, number] = getCellCoords(start);
@@ -349,6 +350,9 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
     // place in starting cell facing north
     var dir: string = 'n';
     var pos: [number, number] = [startCoords[1],startCoords[0]];
+
+    // trace for tracking where the turtle is and highlighting - post diss addition
+    var trace = [pos];
 
     for (let entry of moves) {
         if (isDirChange(entry)) {
@@ -382,6 +386,7 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
                 pos = [pos[0] + movements[1], pos[1] + movements[0]];
             }
             notes.push([sheetVals[pos[0]][pos[1]],volume]);
+            trace.push(pos);
         }
         else if (isDynamic(entry)) {
             // No longer supported
@@ -450,11 +455,12 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
                     }
                 }
                 notes.push([sheetVal, volume]);
+                trace.push(pos);
             }
         }
 
     }
-    return notes;
+    return [notes,trace];
 }
 
 /**
@@ -462,12 +468,13 @@ export function getTurtleSequence(start: string, moves: string[], sheetVals: any
  * @param instructions Instructions as defined by the user in the cell: !turtle(<instrutions>)
  * @param sheetVals The values in the used spreadsheet range
  */
-export function turtle(instructions: string, sheetVals: any[][]): void {
+export function turtle(instructions: string, sheetVals: any[][], sheet: Excel.Range): void {
 
     var instructionsArray: string[] = instructions.split(',');
 
     if (isCell(instructionsArray[0])) {
         var notes: [string, number][];
+        var trace: [number, number][];
         // Instead of instructions, end cell given. No longer advertised as a feature
         if (isCell(instructionsArray[1])){
             var rangeStart = getCellCoords(instructionsArray[0]);
@@ -484,7 +491,7 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
             // Start cell and movement instructions
             var start: string = instructionsArray[0];
             var moves: string[] = processParsedBrackets(parseBrackets(instructionsArray[1])).split(" ");
-            notes = getTurtleSequence(start, moves, sheetVals);
+            [notes, trace] = getTurtleSequence(start, moves, sheetVals);
         }
         var speedFactor: number = 1;
         var repeats: number = 0;
@@ -502,6 +509,22 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         }
         // console.log(notes);
         playSequence(notes, speedFactor, repeats);
+        console.log(trace);
+        // Tracing
+        // console.log("tracing");
+        // for (let cellCoords of trace){
+        //     console.log(cellCoords);
+        //     var cellBoarders = sheet.getCell(cellCoords[0],cellCoords[1]).format.borders;
+            // cellBoarders.getItem('EdgeBottom').weight = 'Thick';
+            // cellBoarders.getItem('EdgeBottom').color = 'Green';
+            // cellBoarders.getItem('EdgeRight').weight = 'Thick';
+            // cellBoarders.getItem('EdgeRight').color = 'Green';
+            // cellBoarders.getItem('EdgeLeft').weight = 'Thick';
+            // cellBoarders.getItem('EdgeLeft').color = 'Green';
+            // cellBoarders.getItem('EdgeTop').weight = 'Thick';
+            // cellBoarders.getItem('EdgeTop').color = 'Green';
+        // }
+        // console.log('Done Tracing');
     }
     else {
         // mutliple turtles
@@ -521,7 +544,8 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
         }
         // For each turtle, play that turtle
         for (let turtleStart of turtlesStarts){
-            playSequence(getTurtleSequence(turtleStart, moves, sheetVals), speedFactor, repeats);
+            [notes, trace] = getTurtleSequence(turtleStart, moves, sheetVals);
+            playSequence(notes, speedFactor, repeats);
         }
     }
 }
@@ -530,7 +554,8 @@ export function turtle(instructions: string, sheetVals: any[][]): void {
  * Finds all turtle declarations in the spreadsheet and runs them
  * @param sheetVals values in the spreadsheet
  */
-export function runTurtles(sheetVals: any[][]): void {
+export function runTurtles(sheet: Excel.Range): void {
+    var sheetVals:any[][] = sheet.values;
     var rows: number = sheetVals.length;
     var cols: number = sheetVals[0].length;
     // Make list of active turtles
@@ -543,7 +568,7 @@ export function runTurtles(sheetVals: any[][]): void {
             var value = sheetVals[row][col];
             if (isTurtle(value)) {
                 var  instructions = value.substring(8, value.length - 1);
-                turtle(instructions, sheetVals);
+                turtle(instructions, sheetVals,sheet);
                 // Add to list of active turtles
                 var live_turtle = document.createElement('li');
                 live_turtle.appendChild(document.createTextNode(numberToLetter(col).toUpperCase()+(row+1)));
