@@ -10,8 +10,7 @@ This project took Microsoft's Excel, one of the most omnipresent pieces of softw
 
 * Download the manifest.xml file from the Excel Music folder
 * Download the Excel Music spreadsheet (.xlsx)
-* Visit [https://universityofcambridgecloud-my.sharepoint.com](https://universityofcambridgecloud-my.sharepoint.com/)
-* Log in with your Cambridge University credentials
+* Log into Excel Online (University members can use: [https://universityofcambridgecloud-my.sharepoint.com](https://universityofcambridgecloud-my.sharepoint.com/))
 * Upload and open the spreadsheet.
 * On the Insert tab click Office Add-ins
 * In the top-right of the window click "upload my add-in"
@@ -21,11 +20,10 @@ This project took Microsoft's Excel, one of the most omnipresent pieces of softw
 ### For Developers
 
 - Clone repo
-- Sort of node stuff
-- nom run from within the repo
+- Sort out node stuff
+- run from within the repo (npm run start:web)
 - Open included spreadsheet in Excel Online
-- Add an Add-in
-- Add the manifest from this project
+- Add the local_manifest from this project
 
 This is helpful: https://docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial?tutorial-step=1
 
@@ -113,10 +111,6 @@ This is cells per minute that the turtle will move at. This used to be a relativ
 Default 0 - which creates an infinite loop
 
 The number of times the turtle will travel through the path defined. If left blank or defined as 0, it will loop infinitely.
-
-#### Examples
-
-Have a look at my examples: https://universityofcambridgecloud-my.sharepoint.com/:x:/g/personal/hcm50_cam_ac_uk/EVb6PSwmFlFFoaR6hFjEw4YBh-cy3NiEI20enqYcTovRrQ?e=j3hfQz
 
 #### Adding Chords
 
